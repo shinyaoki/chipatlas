@@ -2,7 +2,7 @@
 #$ -S /bin/sh
 # BED4 ファイルを BED9 形式にする
 # 実行例 sh $projectDir/sh/bed4ToBed9.sh
-
+#
 
 RR=0
 ctn=0
@@ -32,7 +32,7 @@ if [ $Type = "0" ]; then
 
   # tsv ファイルを整形
   # xhipome_ver3/classification/ag_Statistics-hg19-tab.tsv
-  # 5	108	http://www.ncbi.nlm.nih.gov/sra?term=SRX669610	H3K4me3|07-473	His@ H3K4me3	
+  # 5	108	http://www.ncbi.nlm.nih.gov/sra?term=SRX669610	H3K4me3|07-473	His@ H3K4me3
   for TSV in `ls $projectDir/classification/*Statistics-*-tab.tsv`; do
     outIndex=`echo $TSV| sed 's/Statistics-/Index./'| sed 's/-tab.tsv/.tab/'`
     tail -n +2 $TSV| sed 's/?[0-9]//g'| awk -F '\t' '{if($4 != $5) print $4 "\t" $5}' > $outIndex
@@ -47,7 +47,7 @@ if [ $Type = "0" ]; then
   for Genome in `echo $GENOME`; do
     echo $Genome...
     cat $projectDir/results/$Genome/tag/*.tag.txt > $projectDir/results/$Genome/tag/tmp.tag.txt
-    
+
     cat $projectDir/results/$Genome/tag/tmp.tag.txt| awk -v ProjDir=$projectDir -v GENOME=$Genome -F '\t' '
     BEGIN {
       agIndex = ProjDir"/classification/ag_Index."GENOME".tab"
@@ -135,7 +135,7 @@ cat $projectDir/results/$Genome/tag/*.tag.txt| tr ' ' '_'| awk -F '\t' -v TYPE=$
   }
   split($10, antg, "@")
   $10 = antg[2]
-  
+
   if (TYPE == "ALL") {   # ALL
     print
   }
@@ -185,10 +185,10 @@ BEGIN {
       B=0
     }
     COL=int(R)","int(G)","int(B)
-    
+
     if ($5 > 1000) pVal=1000
     else pVal=int($5)
-  
+
     printf "%s\t%s\t%s\t%s\t%s\t.\t%s\t%s\t%s\n", $1, $2, $3, TAG, pVal, $2, $3, COL > tmpDir "/" $1
   }
   close(inBed)
@@ -209,4 +209,3 @@ if [ $qVal = "$LargestQval" ]; then
 fi
 
 rm $bnOut.unsrt.bed
-
