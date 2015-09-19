@@ -2,7 +2,7 @@
 #$ -S /bin/sh
 # BED4 ファイルを BED9 形式にする
 # 実行例 sh $projectDir/sh/bed4ToBed9.sh
-
+# aaaa
 
 RR=0
 ctn=0
