@@ -1,0 +1,113 @@
+cell line
+cell
+ArrayExpress-CellType
+CellLine
+Cell type abbr.
+cell_line
+strain
+line name
+cel_line
+cell-line
+cells
+cell lines
+cell line background
+cell line id
+cell _line_name
+celll line
+cell  line
+cell type abbreviation
+cell line/clone
+Cell line
+source_name
+cell type
+LINE
+Cell type
+label
+cell-type
+cll type
+cell description
+cell lineage
+BIOMATERIAL_TYPE
+TISSUE_TYPE
+TISSUE_DEPOT
+LINEAGE
+tissue
+ArrayExpress-OrganismPart
+ArrayExpress-DevelopmentalStage
+ArrayExpress-DiseaseState
+ArrayExpress-Phenotype
+CELL_TYPE
+OrganismPart
+CellType
+organism part
+Source name
+source
+cell_type
+tissue/cell type
+tissue origin
+cell source
+origin
+tissue of origin
+description
+cell types
+cell subtype
+source tissue
+tag
+cell type/growth condition
+Tissue
+cell type source
+isolation_source
+biopsy site
+tissue type
+tissue_type
+cell line source
+body part
+cell type origin
+organ
+cell line origin
+cell ontology
+tissue-type
+tumor cell type
+Cell_origin
+tissue source
+cell origin
+Cell Type
+celltype
+body_site
+DISEASE
+age description
+DIFFERENTIATION_STAGE
+MARKERS
+developmental stage
+disease state
+tissue subtype
+tissuetype
+DiseaseState
+development point
+sorting markers
+Stage
+DevelopmentalStage
+disease
+growth stage
+developmental stage/cell type
+tumor type
+cell surface marker
+tumor stage
+embryonic day
+development stage
+cell markers
+cell marker
+tissue/development stage
+cell surface markers
+tumor site
+Type
+cell_subtype
+develepmental stage
+embryonic stage
+Disease
+dev stage
+developemental stage
+devstage
+marker
+dev_stage
+health_state

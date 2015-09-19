@@ -1,0 +1,82 @@
+ArrayExpress-Immunoprecipitate
+hgn
+chip antiboy
+factor
+ip antibody
+ChIP
+chip epitope
+antibody target
+target
+chip antibody 1
+chip antibody 2
+transcription factor
+antigen
+chip antibody target
+chip_target
+epitope
+chip target
+antibodies
+chip_or_input
+modification
+lymphoblast antibody
+chromatin ip antibody
+Immunoprecipitate
+ChIPtarget
+antidody
+cell antibody
+ChIP_target
+immunoprecipitated protein
+chip antibody
+antibody
+chip-antibody
+sample type
+chip-seq antibody
+chip antibodies
+ChIP_antibody
+molecule subtype
+antibody/details
+pull-down biotap
+chip ab
+antibody name
+chip/dip antibody
+chip catalog number
+immunoprecipitate
+target_protein
+binding/selection
+antibody/capture
+ip/input
+mbd affinity column/chip antibody
+tagchip antibody
+antibody_target
+chip antibody/mbd affinity column
+chip seq antibody
+antibody vendorid
+antibody targetdescription
+antibody antibodydescription
+antibody description
+antibody target description
+antibody catalogue number
+chromatin ip antibody description
+antibody catalog number
+chip antibody catalog number 1
+chip antibody catalog number 2
+antibody catalog
+antibody source
+chip antibody or biotin-streptavidin pulldown of blrp-tagged proteins
+chip antibody details
+chip antibody vendor/catalog
+chip_antibody_catalog
+catalog
+chip antibody catalog number
+chip antibody info
+antibody vendor/catalog
+catalog number
+antibody info
+antibody vendor and catalog number
+vendor/catalog/lot
+chip vendor/catalog
+catalogue number
+cataog number
+antibody vendor/catalog/lot
+vendor/catalog
+source_name

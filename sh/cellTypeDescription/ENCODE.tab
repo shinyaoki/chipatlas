@@ -1,0 +1,408 @@
+GM12878	Homo sapiens	1	B-lymphocyte, lymphoblastoid, International HapMap Project - CEPH/Utah - European Caucasion, Epstein-Barr Virus	mesoderm	blood	normal	F	ENCODE  	Coriell GM12878	BTO:0002062	GM12878
+H1-hESC	Homo sapiens	1	embryonic stem cells	inner cell mass	embryonic stem cell	normal	M	ENCODE  	WiCell Research Institute WA01	CL:0000007	H1-hESC
+K562	Homo sapiens	1	leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC	mesoderm	blood	cancer	F	ENCODE  	ATCC CCL-243	BTO:0000664	K562
+A549	Homo sapiens	2	epithelial cell line derived from a lung carcinoma tissue. (PMID: 175022), "This line was initiated in 1972 by D.J. Giard, et al. through explant culture of lung carcinomatous tissue from a 58-year-old caucasian male." - ATCC, newly promoted to tier 2: not in 2011 analysis	endoderm	epithelium	cancer	M	Myers 	ATCC CCL-185	BTO:0000018	A549
+CD20+	Homo sapiens	2	B cells from donors RO01778 and RO01794, newly promoted to tier 2: not in 2011 analysis	mesoderm	blood	normal	F	Stam  	Dr. Heimfeld Lab at FHCRC CD20+	BTO:0000776	B-cells CD20+
+CD20+ RO01778	Homo sapiens	2	B cells, caucasian, draw number 1, newly promoted to tier 2: not in 2011 analysis	mesoderm	blood	normal	F	Stam  	Rajinder Kaul, UW CD20+_RO01778	BTO:0000776	B-cells CD20+ (RO01778)
+CD20+ RO01794	Homo sapiens	2	B cells, African American, draw number 1, newly promoted to tier 2: not in 2011 analysis	mesoderm	blood	normal	F	Stam  	Rajinder Kaul, UW CD20+_RO01794	BTO:0000776	B cells CD20+ RO01794
+H1-neurons	Homo sapiens	2	neurons derived from H1 embryonic stem cells, newly promoted to tier 2: not in 2011 analysis	ectoderm	neurons	normal	M	Cellular Dynamics International Batch 1 	CDI TBD	BTO:0000938	H1-neurons
+HeLa-S3	Homo sapiens	2	cervical carcinoma	ectoderm	cervix	cancer	F	ENCODE 	ATCC CCL-2.2	BTO:0000568	HeLa-S3
+HepG2	Homo sapiens	2	hepatocellular carcinoma	endoderm	liver	cancer	M	ENCODE  	ATCC HB-8065	BTO:0000599	HepG2
+HUVEC	Homo sapiens	2	umbilical vein endothelial cells	mesoderm	blood vessel	normal	U	ENCODE  	Lonza CC-2517	BTO:0001949	HUVEC
+IMR90	Homo sapiens	2	fetal lung fibroblasts, newly promoted to tier 2: not in 2011 analysis	endoderm	lung	normal	F	Stam  	ATCC CCL-186	BTO:0001229	IMR90
+LHCN-M2	Homo sapiens	2	skeletal myoblasts derived from satellite cells from the pectoralis major muscle of a 41 year old caucasian heart transplant donor, immortalized with lox-hygro-hTERT ("LH"), and Cdk4-neo ("CN"), Zhu et al. (2007) in Aging Cell, vol. 6, pp 515-523, newly promoted to tier 2: not in 2011 analysis.	mesoderm	skeletal muscle myoblast		M	Wold  	Dr. Woodring Wright Missing	BTO:0005046	LHCN-M2
+MCF-7	Homo sapiens	2	mammary gland, adenocarcinoma. (PMID: 4357757), newly promoted to tier 2: not in 2011 analysis	ectoderm	breast	cancer	F	Crawford 	ATCC HTB-22	BTO:0000093	MCF-7
+Monocytes-CD14+	Homo sapiens	2	Monocytes-CD14+ are CD14-positive cells from human leukapheresis production, from donor RO 01746 (draw 1 ID is RO 01746, draw 2 ID is RO 01826), newly promoted to tier 2: not in 2011 analysis	mesoderm	monocytes	normal	F	Stam  	S. Heimfeld Laboratory, FHCRC Monocytes-CD14+	BTO:0000876	Monocytes CD14+
+Monocytes-CD14+ RO01746	Homo sapiens	2	Monocytes-CD14+ are CD14-positive cells from human leukapheresis production, from donor RO 01746 (draw 1 ID is RO 01746, draw 2 ID is RO 01826), Monocytes-CD14+_RO01746 and Monocytes-CD14+_RO01826 are being used as replicates, newly promoted to tier 2: not in 2011 analysis	mesoderm	monocytes	normal	F	Stam  	S. Heimfeld Laboratory, FHCRC Monocytes-CD14+_RO01746	BTO:0000876	Monocytes CD14+ RO01746
+Monocytes-CD14+ RO01826	Homo sapiens	2	Monocytes-CD14+ are CD14-positive cells from human leukapheresis production, Monocytes-CD14+_RO01826 is a second draw being used as a replicate for Monocytes-CD14+_RO01746, newly promoted to tier 2: not in 2011 analysis	mesoderm	monocytes	normal	F	Stam  	S. Heimfeld Laboratory, FHCRC Monocytes-CD14+_RO01826	BTO:0000876	Monocytes CD14+ RO01826
+SK-N-SH	Homo sapiens	2	neuroblastoma, newly promoted to tier 2: not in 2011 analysis, the SK-N-SH line was established from a neuroblastoma in a 4 year old individual.	ectoderm	brain	cancer	F	Myers  	ATCC HTB-11	BTO:0001620	SK-N-SH
+8988T	Homo sapiens	3	pancreas adenocarcinoma (PA-TU-8988T), "established in 1985 from the liver metastasis of a primary pancreatic adenocarcinoma from a 64-year-old woman" - DSMZ	endoderm	liver	cancer	F	Crawford  	DSMZ ACC 162	BTO:0001521 (non-specific)	8988T
+Adult CD4 naive	Homo sapiens	3	CD4+ cells isolated from human blood and enriched for naive populations	mesoderm	blood	normal	B	Crawford Stam  	Dr. David Randolph at University of Alabama, Birmingham Adult_CD4_naive	BTO:0000782	T cells CD4+ naive adult
+Adult CD4 Th0	Homo sapiens	3	CD4+ cells isolated from human blood and enriched for Th0 populations	mesoderm	blood	normal	B	Crawford  	Dr. David Randolph at University of Alabama, Birmingham Adult_CD4_Th0	BTO:0000782	T cells CD4+ Th0 adult
+Adult CD4 Th1	Homo sapiens	3	CD4+ cells isolated from human blood and enriched for Th1 populations	mesoderm	blood	normal	B	Crawford Stam  	Dr. David Randolph at University of Alabama, Birmingham Adult_CD4_Th1	BTO:0000782	T cells CD4+ Th1 adult
+AG04449	Homo sapiens	3	fetal buttock/thigh fibroblast		skin	normal	M	Stam  	Coriell AG04449	BTO:0001253	AG04449
+AG04450	Homo sapiens	3	fetal lung fibroblast	endoderm	lung	normal	M	Stam  	Coriell AG04450	BTO:0000763	AG04450
+AG09309	Homo sapiens	3	adult toe fibroblast from apparently healthy 21 year old, "7% of the cells examined showing random chromosome loss/gain" -Coriell		skin		F	Stam  	Coriell AG09309	BTO:0001253	AG09309
+AG09319	Homo sapiens	3	gum tissue fibroblasts from apparently heathly 24 year old		gingival	normal	F	Stam  	Coriell AG09319	BTO:0004138	AG09319
+AG10803	Homo sapiens	3	abdominal skin fibroblasts from apparently heathly 22 year old, "8% of the cells examined showing random chromosome loss, 2% showing random chromosome gain, and 2% showing 69,XYY" -Coriell		skin		M	Stam  	Coriell AG10803	BTO:0001253	AG10803
+AoAF	Homo sapiens	3	aortic adventitial fibroblast cells	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-7014, CC-7014T75	BTO:0000135	AoAF
+AoSMC	Homo sapiens	3	aortic smooth muscle cells	mesoderm	blood vessel	normal	U	Crawford  	Lonza CC-2571	BTO:0001685	AoSMC
+BC Adipose UHN00001	Homo sapiens	3	adipose tissue, donor UHN0001, age 35, African American, DNA extract		adipose tissue	normal	F	Myers  	BioChain D4234003_A701166	BTO:0001487	Adipose BC UHN00001
+BC Adrenal Gland H12803N	Homo sapiens	3	adrenal gland, donor H12803N, age 88, caucasian, DNA extract	ectoderm, mesoderm	adrenal gland	normal	F	Myers  	BioChain D1234004_B103117	BTO:0000047	Adrenal Gland BC H12803N
+BC Bladder 01-11002	Homo sapiens	3	urinary bladder, donor 01-11002, age 83, caucasian, DNA extract	endoderm	urinary bladder	normal	F	Myers  	BioChain CP-S12-D1234010-05_B402059	BTO:0001418	Bladder BC 01-11002
+BC Brain H11058N	Homo sapiens	3	brain, donor H11058N, age 66, Asian, DNA extract	ectoderm	brain	normal	M	Myers  	BioChain D4234035_A810101	BTO:0000142	Brain BC H11058N
+BC Breast 02-03015	Homo sapiens	3	breast, donor 02-03015, age 21, caucasian, DNA extract	ectoderm	breast	normal	F	Myers  	BioChain D4234086_A710031	BTO:0000149	Breast BC 02-03015
+BC Colon 01-11002	Homo sapiens	3	colon, donor 01-11002, age 83, caucasian, DNA and RNA extract	endoderm	colon	normal	F	Myers  	BioChain CP-S12-D1234090-05_A903056	BTO:0000269	Colon BC 01-11002
+BC Colon H12817N	Homo sapiens	3	colon, donor H12817N, age 71, caucasian, DNA and RNA extract	endoderm	colon	normal	M	Myers  	BioChain CP-S13-D1234090-05_B111123	BTO:0000269	Colon BC H12817N
+BC Esophagus 01-11002	Homo sapiens	3	esophagus, donor 01-11002, age 83, caucasian, DNA and RNA extract	endoderm	esophagus	normal	F	Myers  	BioChain CP-S12-D1234106-05_A803198	BTO:0000959	Esophagus BC 01-11002
+BC Esophagus H12817N	Homo sapiens	3	esophagus, donor H12817N, age 71, caucasian, DNA extract	endoderm	esophagus	normal	M	Myers  	BioChain CP-S13-D1234106-05_B302113	BTO:0000959	Esophagus BC H12817N
+BC Jejunum H12817N	Homo sapiens	3	jejunum, donor H12817N, age 71, caucasian, DNA and RNA extract	endoderm	jejunum	normal	M	Myers  	BioChain CP-S13-D1234230-05_B402068	BTO:0000657	Jejunum BC H12817N
+BC Kidney 01-11002	Homo sapiens	3	kidney, donor 01-11002, age 83, caucasian, DNA and RNA extract	mesoderm	kidney	normal	F	Myers  	BioChain CP-S12-D1234142-05_B402060	BTO:0000671	Kidney BC 01-11002
+BC Kidney H12817N	Homo sapiens	3	kidney, donor H12817N, age 71, caucasian, DNA and RNA extract	mesoderm	kidney	normal	M	Myers  	BioChain CP-S13-D1234142-05_B402061	BTO:0000671	Kidney BC H12817N
+BC Left Ventricle N41	Homo sapiens	3	left ventricle, donor N41, age 26, Asian, DNA extract	mesoderm	left ventricle	normal	M	Myers  	BioChain D1234138_A705026	BTO:0001629	Left Ventricle BC N41
+BC Leukocyte UHN00204	Homo sapiens	3	peripheral blood mononuclear cell, donor UHN00204, age 54, caucasian, DNA extract	mesoderm	blood	normal	M	Myers  	BioChain D4234148_A612197	BTO:0001025	Leukocyte BC UHN00204
+BC Liver 01-11002	Homo sapiens	3	liver, donor 01-11002, age 83, caucasian, DNA and RNA extract	endoderm	liver	normal	F	Myers  	BioChain CP-S12-D1234149-05_B209118	BTO:0000759	Liver BC 01-11002
+BC Lung 01-11002	Homo sapiens	3	lung, donor 01-11002, age 83, caucasian, DNA and RNA extract	endoderm	lung	normal	F	Myers  	BioChain CP-S12-D1234152-05_A610240	BTO:0000763	Lung BC 01-11002
+BC Lung H12817N	Homo sapiens	3	lung, donor H12817N, age 71, caucasian, DNA and RNA extract	endoderm	lung	normal	M	Myers  	BioChain CP-S13-D1234152-05_B402062	BTO:0000763	Lung BC H12817N
+BC Pancreas H12817N	Homo sapiens	3	pancreas, donor H12817N, age 71, caucasian, DNA and RNA extract	endoderm	pancreas	normal	M	Myers  	BioChain CP-S13-D1234188-05_B402063	BTO:0000988	Pancreas BC H12817N
+BC Penis H12817N	Homo sapiens	3	penis, donor H12817N, age 71, caucasian, DNA extract	mesoderm	penis	normal	M	Myers  	BioChain CP-S13-D1234194-05_B402064	BTO:0000405	Penis BC H12817N
+BC Pericardium H12529N	Homo sapiens	3	pericardium, donor H12529N, age 70, caucasian, DNA extract	mesoderm	pericardium	normal	F	Myers  	BioChain D1234133_A712271	BTO:0000717	Pericardium BC H12529N
+BC Placenta UHN00189	Homo sapiens	3	placenta, donor UHN00189, age 29	extraembryonic mesoderm, trophectoderm	placenta	normal	F	Myers  	BioChain D4234200_A603104	BTO:0001078	Placenta BC UHN00189
+BC Prostate Gland H12817N	Homo sapiens	3	prostate gland, donor H12817N, age 71, caucasian, DNA extract	endoderm	prostate gland	normal	M	Myers  	BioChain CP-D1234201-05_B101058	BTO:0001129	Prostate Gland BC H12817N
+BC Rectum N29	Homo sapiens	3	rectum, donor N29, age 29, Asian, DNA extract	endoderm	rectum	normal	M	Myers  	BioChain D4234206_A712205	BTO:0001158	Rectum BC N29
+BC Skeletal Muscle 01-11002	Homo sapiens	3	skeletal muscle, donor 01-11002, age 83, caucasian, DNA and RNA extract	mesoderm	skeletal muscle	normal	F	Myers  	BioChain CP-S12-D1234171-05_A610262	BTO:0001103	Skeletal Muscle BC 01-11002
+BC Skeletal Muscle H12817N	Homo sapiens	3	skeletal muscle, donor H12817N, age 71, caucasian, DNA and RNA extract	mesoderm	skeletal muscle	normal	M	Myers  	BioChain CP-S13-D1234171-05_B402065	BTO:0001103	Skeletal Muscle BC H12817N
+BC Skin 01-11002	Homo sapiens	3	skin, donor 01-11002, age 83, caucasian, DNA extract	ectoderm, mesoderm	skin	normal	F	Myers  	BioChain CP-S12-D1234218-05_B402066	BTO:0001253	Skin BC 01-11002
+BC Small Intestine 01-11002	Homo sapiens	3	small intestine, donor 01-11002, age 83, caucasian, DNA and RNA extract	endoderm	small intestine	normal	F	Myers  	BioChain CP-S12-D1234226-05_B402067	BTO:0000651	Small Intestine BC 01-11002
+BC Spleen H12817N	Homo sapiens	3	spleen, donor H12817N, age 71, caucasian, DNA and RNA extract	mesoderm	spleen	normal	M	Myers  	BioChain CP-S13-D1234246-05_B402069	BTO:0001281	Spleen BC H12817N
+BC Stomach 01-11002	Homo sapiens	3	stomach, donor 01-11002, age 83, caucasian, DNA extract	endoderm	stomach	normal	F	Myers  	BioChain CP-S12-D1234248-05_A808008	BTO:0001307	Stomach BC 01-11002
+BC Stomach H12817N	Homo sapiens	3	stomach, donor H12817N, age 71, caucasian, DNA and RNA extract	endoderm	stomach	normal	M	Myers  	BioChain CP-S13-D1234248-05_B402070	BTO:0001307	Stomach BC H12817N
+BC Testis N30	Homo sapiens	3	testis, donor N30, age 41, Asian, DNA extract	mesoderm	testis	normal	M	Myers  	BioChain D4234260_A711169	BTO:0001363	Testis BC N30
+BC Uterus BN0765	Homo sapiens	3	uterus, donor BN0765, age 44, Asian, DNA extract		uterus	normal	F	Myers  	BioChain D4234274_A810099	BTO:0001424	Uterus BC BN0765
+BE2 C	Homo sapiens	3	neuroblastoma, BE-C is a clone of the SK-N-BE neuroblastoma cell line (see ATCC CRL-2271) that was established in November of 1972 from a bone marrow biopsy taken from a 2-year-old individual with disseminated neuroblastoma after repeated courses of chemotherapy and radiotherapy.	ectoderm	brain	cancer	M	Stam 	ATCC CRL-2268	BTO:0001620	BE(2)-C
+BG02ES	Homo sapiens	3	embryonic stem cell (hESC), BG02, treatment: H9 conditioned medium	inner cell mass	embryonic stem cell	normal	M	Myers  	BresaGen, Inc. BG02 (hESBGN.02)	BTO:0001086	BG02ES
+BG02ES-EBD	Homo sapiens	3	embryonic stem cell (hESC), BG02, embryoid body-derived	inner cell mass	embryonic stem cell	normal	M	Myers  	BresaGen, Inc. BG02 (hESBGN.02)	BTO:0001086	BG02ES-EBD
+BJ	Homo sapiens	3	skin fibroblast, "The line was established from skin taken from normal foreskin." - ATCC. (PMID: 9916803)		skin	normal	M	Stam  	ATCC CRL-2522	BTO:0001255	BJ
+bone marrow HS27a	Homo sapiens	3	HS27a Human Marrow Stromal Cells are fibroblastoid cells immortalized with HPV16 E6/E7 genes as described in Roecklein and Torok-Storb, 1995 Blood 85:997-1005, insert DNA is LXSN-16 E6E7 packaged in PA31.		bone marrow	normal	M	Stam  	Dr. Beverly Torok-Storb at Fred Hutchison Cancer Research Center HS27a	BTO:0000141	Bone Marrow HS27a
+bone marrow HS5	Homo sapiens	3	HS5 Human Marrow Stromal Cells are fibroblastoid cells immortalized with HPV16 E6/E7 genes as described in Roecklein and Torok-Storb, 1995 Blood 85:997-1005, insert DNA is LXSN-16 E6E7 packaged in PA31.		bone marrow	normal	M	Stam  	Dr. Beverly Torok-Storb at Fred Hutchison Cancer Research Center HS5	BTO:0000141	Bone Marrow HS27a
+bone marrow MSC	Homo sapiens	3	These cells are primary fibroblastoid cells obtained from human bone marrow of normal donors as described in Roecklein and Torok-Storb, 1995 Blood 85:997-1005.		bone marrow	normal	M	Stam  	Dr. Beverly Torok-Storb at Fred Hutchison Cancer Research Center MSC	BTO:0000141	Bone Marrow HS27a
+Breast OC	Homo sapiens	3	Primary frozen breast tissue from NCTC donor IDs 11-0068A (Rep B1) and 11-0067A (Rep B2), both African American		breast	normal	F	Crawford  	NCTC 11-0068A	BTO:0000149	Breast_OC
+Caco-2	Homo sapiens	3	colorectal adenocarcinoma. (PMID: 1939345)	endoderm	colon	cancer	M	Stam  	ATCC HTB-37	BTO:0000195	Caco-2
+CD34+ Mobilized	Homo sapiens	3	hematopoietic progenitor cells- mobilized, from donor RO01679.		blood		M	Stam  	Dr. Heimfeld Lab at FHCRC FHCRC	BTO:0000725	CD34+ Mobilized
+CD4+ Naive Wb11970640	Homo sapiens	3	CD4+ naive sorted cells, donor is Caucasian, male 26 year old, primary pheresis of single normal subject	mesoderm	blood	normal	M	Crawford Stam  	Dr. John Stamatoyannopoulos at UW Wb11970640	BTO:0000782	CD4+_Naive_Wb11970640
+CD4+ Naive Wb78495824	Homo sapiens	3	CD4+ naive sorted cells, donor is Causasian, female 35 year old, primary pheresis of single normal subject	mesoderm	blood	normal	F	Crawford Stam  	Dr. John Stamatoyannopoulos at UW Wb78495824	BTO:0000782	CD4+_Naive_Wb78495824
+Cerebellum OC	Homo sapiens	3	Primary frozen cerebellum tissue from NICHD donor IDs 1104 (Rep B1), 602 (Rep B2), 1442 (Rep B3), all Caucasian		cerebellum	normal	M	Crawford  	NICHD 1104	BTO:0000232	Cerebellum_OC
+Cerebrum frontal OC	Homo sapiens	3	Primary frozen frontal cerebrum tissue from NICHD donor IDs 1104 (Rep B1), 602 (Rep B2), 1442 (Rep B3), all Caucasian		frontal cerebrum	normal	M	Crawford  	NICHD 1104	BTO:0000239	Cerebrum_frontal_OC
+Chorion	Homo sapiens	3	chorion cells (outermost of two fetal membranes), fetal membranes were collected from women who underwent planned cesarean delivery at term, before labor and without rupture of membranes.	extraembryonic mesoderm, trophectoderm	fetal membrane		U	Crawford  	Dr. Amy Murtha at Duke University	BTO:0000252	Chorion
+CLL	Homo sapiens	3	chronic lymphocytic leukemia cell, T-cell lymphocyte	mesoderm	blood	cancer	F	Crawford  	Dr. Jennifer Brown at Harvard Medical School. CLL	BTO:0001546	CLL
+CMK	Homo sapiens	3	acute megakaryocytic leukemia cells, "established from the peripheral blood of a 10-month-old boy with Down's syndrome and acute megakaryocytic leukemia (AML M7) at relapse in 1985" - DSMZ. (PMID: 3016165)	mesoderm	blood	cancer	M	Stam  	DSMZ ACC-392	BTO:0004962	CMK
+Colo829	Homo sapiens	3	malignant melanoma		skin	cancer	M	Crawford  	ATCC CRL-1974	BTO:0000849	Colo829
+Colon BC	Homo sapiens	3	colon, parent cell type to donors BC_01-11002 and BC_H12817N	endoderm	colon	normal	B	Myers  	BioChain CP-S12-D1234090-05_A903056	BTO:0000269	Colon BC
+Colon OC	Homo sapiens	3	Primary frozen colon tissue from NCTC donor IDs 10-0005A (Rep B1) and 10-0170A (Rep B2), African American and caucasian		colon	normal	B	Crawford  	NCTC 10-0005A	BTO:0000269	Colon OC
+Cord CD4 naive	Homo sapiens	3	CD4+ cells isolated from cord blood and enriched for naive populations	mesoderm	blood	normal	B	Crawford Stam  	Dr. David Randolph at University of Alabama, Birmingham Cord_CD4_naive	BTO:0000782	T cells CD4+ naive cord blood
+Cord CD4 Th0	Homo sapiens	3	CD4+ cells isolated from cord blood and enriched for Th0 populations	mesoderm	blood	normal	B	Crawford  	Dr. David Randolph at University of Alabama, Birmingham Cord_CD4_Th0	BTO:0000782	T cells CD4+ Th0 cord blood
+Cord CD4 Th1	Homo sapiens	3	CD4+ cells isolated from cord blood and enriched for Th1 populations	mesoderm	blood	normal	B	Crawford Stam  	Dr. David Randolph at University of Alabama, Birmingham Cord_CD4_Th1	BTO:0000782	T cells CD4+ Th1 cord blood
+Decidua	Homo sapiens	3	decidua cells (part of the mucous membrane lining uterus), Fetal membranes were collected from women who underwent planned cesarean delivery at term, before labor and without rupture of membranes	decidua	cervix		F	Crawford  	Dr. Amy Murtha at Duke University (Durham, NC).	BTO:0001360	Decidua
+Dnd41	Homo sapiens	3	T cell leukemia with Notch mutation	mesoderm	blood	cancer	M	Bernstein  	DSMZ Dnd41	BTO:0001106	Dnd41
+ECC-1	Homo sapiens	3	epithelial cell line derived from an endometrium adenocarcinoma, fetal membranes were collected from women who underwent planned cesarean delivery at term, before labor and without rupture of membranes	endoderm	luminal epithelium	cancer	F	Myers  	ATCC CRL-2923	BTO:0000194	ECC-1
+Endometrium OC	Homo sapiens	3	Endometrium isolated from uterine lining		endometrium	normal	F	Crawford  	Dr. Steven Young Endometrium_OC	BTO:0001422	Endometrium OC
+Esophagus BC	Homo sapiens	3	esophagus, parental cell type to donors 01-11002 and H12817N	endoderm	esophagus	normal	B	Myers  	BioChain CP-S12-D1234106-05_A803198	BTO:0000959	Esophagus BC
+Fibrobl	Homo sapiens	3	child fibroblast		skin	normal	F	Crawford  	Coriell AG08470	BTO:0000452	Fibrobl
+Fibrobl GM03348	Homo sapiens	3	skin fibroblast		skin	normal	M	Crawford  	Coriell GM03348	BTO:0001255	Fibrobl_GM03348
+FibroP	Homo sapiens	3	fibroblasts taken from individuals with Parkinson's disease, AG20443, AG08395 and AG08396 were pooled for this sample		skin	normal	U	Crawford  	Paul Tesar at Case Western University FibroP	BTO:0000452	FibroP
+FibroP AG08395	Homo sapiens	3	fibroblasts taken from individuals with Parkinson's disease		skin fibroblast		F	Crawford  	Coriell AG08395	BTO:0000452	FibroP_AG08395
+FibroP AG08396	Homo sapiens	3	fibroblasts taken from individuals with Parkinson's disease		lung fibroblast		F	Crawford  	Coriell AG08396	BTO:0000452	FibroP_AG08396
+FibroP AG20443	Homo sapiens	3	fibroblasts taken from individuals with Parkinson's disease		skin fibroblast		M	Crawford  	Coriell AG20443	BTO:0000452	FibroP_AG20443
+Frontal cortex OC	Homo sapiens	3	Primary ventromedial prefrontal cortex, from KPBBB donor IDs 673 (Rep B1) and 913 (Rep B2)		frontal cortex	normal	F	Crawford  	Kathleen Price Bryan Brain 673	BTO:0000484	Frontal cortex OC
+GC B cell	Homo sapiens	3	Germinal center B cells (CD77+) isolated from de-identified tonsillectomy		tonsil	normal	U	Crawford  	Dr. Yanwen Jiang GC_B_cell	BTO:0003671	GC_B_cell
+Gliobla	Homo sapiens	3	glioblastoma, these cells (aka H54 and D54) come from a surgical resection from a patient with glioblastoma multiforme (WHO Grade IV). D54 is a commonly studied glioblastoma cell line (Bao et al., 2006) that has been thoroughly described by S Bigner (1981). (PMID: 7252524)	ectoderm	brain	cancer	U	Crawford  	Dr. Darrell Bigner at Duke University Medical Center D54	BTO:0000527	Gliobla
+GM04503	Homo sapiens	3	adult twin pair fibroblasts, monozygotic twin of GM04504		skin	normal	F	Stam  	Coriell GM04503D	BTO:0001253	GM04503
+GM04504	Homo sapiens	3	adult twin pair fibroblasts, monozygotic twin of GM04503, 13% of the cells examined show random chromosome loss		skin	normal	F	Stam  	Coriell GM04504A	BTO:0001253	GM04504
+GM06990	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Stam  	Coriell GM06990	BTO:0002062 (non-specific)	GM06990
+GM08714	Homo sapiens	3	lymphoblastoid cell line, Instability of heterochromatin of chromosomes 1, 9, and 16 with variable combined immunodeficiency; dysmorphic facial features, developmental delay, malabsorption, and recurrent infections; see GM08747 Fibroblast; donor subject is a compound heterozygote: one allele has a G>A transition at nucleotide 1807 (1807G>A) of the DNMT3B gene resulting in an Ala to Thr substitution at codon 603 [Ala603Thr (A603T)], the mutation occurring in a region between motifs I and IV within the catalytic domain of DNMT3B; the second allele has a G>A transition within intron 22 located 11 nucleotides 5-prime of the normal splice acceptor site [IVS22AS,G>A,-11] resulting in the generation of a novel splice acceptor site and a 9-bp insertion in the processed RNA. This results in the insertion of 3 amino acids (serine, threonine, and proline) at codon 744 (744ins3). The insertion was within the conserved region of the catalytic domain, which is likely to be disrupted by the insertion of a proline residue. This mutation was de novo.	mesoderm	blood		F	Farnham  	Coriell GM08714	BTO:0002062	GM08714
+GM10248	Homo sapiens	3	lymphoblastoid cell line, Clinically normal; 4 paternal cousins have Cornelia de Lange syndrome; 46,XY, t(3;22)(q25.3;p12)	mesoderm	blood	normal	M	Crawford  	Coriell GM10248	BTO:0002062	GM10248
+GM10266	Homo sapiens	3	lymphoblastoid cell line, De Lange phenotype; developmental delay; profound retardation; seizures; 3 cousins are also affected; 46,XY,-22,+der (22)t(3;22)(q25.3;p12)	mesoderm	blood	affected	M	Crawford  	Coriell GM10266	BTO:0002062	GM10266
+GM10847	Homo sapiens	3	lymphoblastoid, International HapMap Project, CEPH/Utah, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM10847	BTO:0002062 (non-specific)	GM10847
+GM12801	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Stam  	Coriell GM12801	BTO:0002062 (non-specific)	GM12801
+GM12812	Homo sapiens	3	B-Lymphocyte, Lymphoblastoid, International HapMap Project, CEPH/Utah, Treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Stam  	Coriell GM12812	BTO:0002062	GM12812
+GM12813	Homo sapiens	3	B-Lymphocyte, Lymphoblastoid, International HapMap Project, CEPH/Utah, Treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Stam  	Coriell GM12813	BTO:0002062	GM12813
+GM12864	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Stam  	Coriell GM12864	BTO:0002062 (non-specific)	GM12864
+GM12865	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Stam  	Coriell GM12865	BTO:0002062 (non-specific)	GM12865
+GM12866	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		M	Stam  	Coriell GM12866	BTO:0002062 (non-specific)	GM12866
+GM12867	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		F	Stam  	Coriell GM12867	BTO:0002062 (non-specific)	GM12867
+GM12868	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		F	Stam  	Coriell GM12868	BTO:0002062 (non-specific)	GM12868
+GM12869	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		F	Stam  	Coriell GM12869	BTO:0002062 (non-specific)	GM12869
+GM12870	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		M	Stam  	Coriell GM12870	BTO:0002062 (non-specific)	GM12870
+GM12871	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed.	mesoderm	blood		M	Stam  	Coriell GM12871	BTO:0002062 (non-specific)	GM12871
+GM12872	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Stam  	Coriell GM12872	BTO:0002062 (non-specific)	GM12872
+GM12873	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Stam  	Coriell GM12873	BTO:0002062 (non-specific)	GM12873
+GM12874	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Stam  	Coriell GM12874	BTO:0002062 (non-specific)	GM12874
+GM12875	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1459, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Stam  	Coriell GM12875	BTO:0002062 (non-specific)	GM12875
+GM12878-XiMat	Homo sapiens	3	B-lymphocyte, lymphoblastoid, cloned for maternal X inactivation, International HapMap Project, CEPH/Utah, Epstein-Barr Virus	mesoderm	blood	normal	F	Myers  	Hunt Willard at Duke University GM12878-XiMat	BTO:0002062	GM12878-XiMat
+GM12891	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1463, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Crawford  	Coriell GM12891	BTO:0002062 (non-specific)	GM12891
+GM12892	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, CEPH/Utah pedigree 1463, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Crawford  	Coriell GM12892	BTO:0002062 (non-specific)	GM12892
+GM13976	Homo sapiens	3	lymphoblastoid cell line, clinically normal; monozygotic twin sister with Cornelia De Lange syndrome is GM13977	mesoderm	blood	normal	F	Crawford  	Coriell GM13976	BTO:0002062	GM13976
+GM13977	Homo sapiens	3	lymphoblastoid cell line, Clinically affected; microcephaly; low frontal hairline; synophris; "penciled" arched eyebrows; short nose; crescent shaped mouth; hirsutism; micromelia; short thumbs; mental retardation; clinically normal monozygotic twin sister is GM13976	mesoderm	blood	affected	F	Crawford  	Coriell GM13977	BTO:0002062	GM13977
+GM15510	Homo sapiens	3	lymphoblastoid NIGMS Human Genetic Cell Repository, DNA Polymorphism Discovery Resource Collection, treatment: Epstein-Barr Virus transformed	mesoderm	blood		U	Snyder  	Coriell GM15510	BTO:0002062 (non-specific)	GM15510
+GM18505	Homo sapiens	3	lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM18505	BTO:0002062 (non-specific)	GM18505
+GM18507	Homo sapiens	3	lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	ENCODE  	Coriell GM18507	BTO:0002062 (non-specific)	GM18507
+GM18526	Homo sapiens	3	lymphoblastoid, International HapMap Project, Han Chinese in Beijing, China, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM18526	BTO:0002062 (non-specific)	GM18526
+GM18951	Homo sapiens	3	lymphoblastoid, International HapMap Project, Japanese in Tokyo, Japan, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM18951	BTO:0002062 (non-specific)	GM18951
+GM19099	Homo sapiens	3	lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM19099	BTO:0002062 (non-specific)	GM19099
+GM19193	Homo sapiens	3	lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Snyder  	Coriell GM19193	BTO:0002062 (non-specific)	GM19193
+GM19238	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Crawford  	Coriell GM19238	BTO:0002062 (non-specific)	GM19238
+GM19239	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		M	Crawford  	Coriell GM19239	BTO:0002062 (non-specific)	GM19239
+GM19240	Homo sapiens	3	B-lymphocyte, lymphoblastoid, International HapMap Project, Yoruba in Ibadan, Nigera, treatment: Epstein-Barr Virus transformed	mesoderm	blood		F	Crawford  	Coriell GM19240	BTO:0002062 (non-specific)	GM19240
+GM20000	Homo sapiens	3	lymphoblastoid cell line, De Lange phenotype; developmental delay; profound retardation	mesoderm	blood	affected	M	Crawford  	Coriell GM20000	BTO:0002062	GM20000
+H0287	Homo sapiens	3	EBV-transformed lymphoblastoid cell line (LCL) was derived from peripheral blood donated by a normal healthy male.	mesoderm	blood	normal	M	Stam  	Dr. John Stamatoyannopoulos at UW H0287	BTO:0002807	H0287
+H7-hESC	Homo sapiens	3	undifferentiated embryonic stem cells	inner cell mass			U	StamAndCrawford  	WiCell Research Institute WA07 (H7)	BTO:0001086	H7-hESC
+H9ES	Homo sapiens	3	embryonic stem cell (hESC) H9	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES
+H9ES-AFP+	Homo sapiens	3	embryonic stem cell (hESC), H9-derived, treatment: H9 AFP+	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-AFP+
+H9ES-AFP-	Homo sapiens	3	embryonic stem cell (hESC), H9-derived, treatment: H9 AFP-	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-AFP-
+H9ES-CM	Homo sapiens	3	embryonic stem cell (hESC) H9, treatment: H9 conditioned medium	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-CM
+H9ES-E	Homo sapiens	3	embryonic stem cell (hESC) H9, endoderm	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-E
+H9ES-EB	Homo sapiens	3	embryonic stem cell (hESC) H9, embryoid bodies	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-EB
+H9ES-EBD	Homo sapiens	3	embryonic stem cell (hESC) H9, embryoid body-derived	inner cell mass	embryonic stem cell		F	Myers  	WiCell Research Institute WA09 (H9)	BTO:0001086	H9ES-EBD
+HA-h	Homo sapiens	3	astrocytes-hippocampal	ectoderm	brain hippocampus	normal	U	Stam  	ScienCell 1830	BTO:0000099	HA-h
+HA-sp	Homo sapiens	3	astrocytes spinal cord	ectoderm	spinal cord	normal	U	Stam  	ScienCell 1820	BTO:0000099	HA-sp
+HAc	Homo sapiens	3	astrocytes-cerebellar	ectoderm	cerebellar	normal	U	Stam  	ScienCell 1810	BTO:0000099	HAc
+HAEpiC	Homo sapiens	3	amniotic epithelial cells		epithelium	normal	U	Stam  	ScienCell 7110	BTO:0004660	HAEpiC
+HAL	Homo sapiens	3	adult liver, genomic DNA purified from surgically excised adult human liver	endoderm	liver		U	Myers  	Asterand, Inc. HAL	BTO:0000759	HAL
+HAoAF	Homo sapiens	3	Aortic Adventitial Fibroblasts from two individuals, HAoAF_6090101.11 and HAoAF_6111301.9 from tunica adventitia	mesoderm	blood vessel	normal	B	Gingeras 	PromoCell HAoAF	BTO:0000135	HAoAF
+HAoAF 6090101.11	Homo sapiens	3	Aortic Adventitial Fibroblasts from tunica adventitia	mesoderm	blood vessel	normal	M	Gingeras  	PromoCell C-14037	BTO:0000135	HAoAF_6090101.11
+HAoAF 6111301.9	Homo sapiens	3	Aortic Adventitial Fibroblasts from tunica adventitia	mesoderm	blood vessel	normal	F	Gingeras  	PromoCell C-14037	BTO:0000135	HAoAF_6111301.9
+HAoEC	Homo sapiens	3	Aortic Endothelial Cells (thoracic) from two individuals, HAoEC_7071706.1 and HAoEC_8061102.1	mesoderm	blood vessel	normal	B	Gingeras 	PromoCell HAoEC	BTO:0000394	HAoEC
+HAoEC 7071706.1	Homo sapiens	3	Aortic Endothelial Cells	mesoderm	blood vessel	normal	F	Gingeras  	PromoCell C-14023	BTO:0000394	HAoEC_7071706.1
+HAoEC 8061102.1	Homo sapiens	3	Aortic Endothelial Cells from throracic	mesoderm	blood vessel	normal	M	Gingeras  	PromoCell C-14023	BTO:0000394	HAoEC_8061102.1
+HBMEC	Homo sapiens	3	brain microvascular endothelial cells	mesoderm	blood vessel	normal	U	Stam  	ScienCell 1000	BTO:0003636	HBMEC
+HBVP	Homo sapiens	3	brain vascular pericytes	mesoderm	blood vessel	normal	U	Stam  	ScienCell 1200	BTO:0002441	HBVP
+HBVSMC	Homo sapiens	3	brain vascular smooth muscle cells.	mesoderm	blood vessel	normal	F	Stam  	ScienCell 1100	BTO:0002488	HBVSMC
+HCF	Homo sapiens	3	cardiac fibroblasts	mesoderm	heart	normal	U	Stam  	ScienCell 6300	BTO:0003093	HCF
+HCFaa	Homo sapiens	3	cardiac fibroblasts- adult atrial	mesoderm	heart	normal	F	Stam  	ScienCell 6320	BTO:0003093	HCFaa
+HCH	Homo sapiens	3	Undifferentiated Chondrocytes from two individuals, HCH_8100808.2 and HCH_0011308.2P from knee joint	missing	cartilage	normal	M	Gingeras 	PromoCell HCH	BTO:0000249	HCH
+HCH 0011308.2P	Homo sapiens	3	Undifferentiated Chondrocytes from knee joint	missing	cartilage	normal	F	Gingeras  	PromoCell C-14070	BTO:0000249	HCH_0011308.2P
+HCH 8100808.2	Homo sapiens	3	Undifferentiated Chondrocytes from knee joint	missing	cartilage	normal	M	Gingeras  	PromoCell C-14070	BTO:0000249	HCH_8100808.2
+HCM	Homo sapiens	3	cardiac myocytes	mesoderm	heart	normal	U	Stam  	ScienCell 6200	BTO:0001539	HCM
+HConF	Homo sapiens	3	conjunctival fibroblast	ectoderm	eye		U	Stam  	ScienCell 6570	BTO:0003415	HConF
+HCPEpiC	Homo sapiens	3	choroid plexus epithelial cells	ectoderm	epithelium	normal	U	Stam  	ScienCell 1310	BTO:0000258	HCPEpiC
+HCT-116	Homo sapiens	3	colorectal carcinoma (PMID: 7214343)	endoderm	colon	cancer	M	ENCODE 	ATCC CCL-247	BTO:0002254	HCT-116
+Heart OC	Homo sapiens	3	Primary frozen heart tissue from NICHD donor IDs 1104 (Rep B1 DNase), 602 (Rep B2 DNase), 1442 (Rep B3 DNase), 1863 (Rep B1 FAIRE), 4548 (Rep B2 FAIRE)		heart	normal	B	Crawford  	NICHD 1104	BTO:0000562	Heart_OC
+Heart STL003	Homo sapiens	3	Standard procurement of heart tissue from a 34 year old caucasian male.		heart	normal	M		Snyder lab STL003	BTO:0000562	Heart_STL003
+HEEpiC	Homo sapiens	3	esophageal epithelial cells	endoderm	epithelium	normal	U	Stam  	ScienCell 2720	BTO:0001578	HEEpiC
+HEK293	Homo sapiens	3	embryonic kidney, cells contain Adenovirus 5 DNA (PMID: 11967234)	mesoderm	kidney		U	Stam 	ATCC CRL-1573	BTO:0000007	HEK293
+HEK293-T-REx	Homo sapiens	3	embryonic kidney cells transformed with Adenovirus 5 DNA stably expressing tetracycline repressor, HEK293 (ATCC number CRL-1573) is the parental cell line, hypotriploid, XXX	mesoderm	kidney		F	Farnham  	Invitrogen r71007	BTO:0000007	HEK293-T-REx
+HEK293T	Homo sapiens	3	embryonic kidney that expresses SV40 large T antigen, HEK293 (ATCC number CRL-1573) is the parental cell line	mesoderm	kidney		F	Crawford  	Thermo Scientific Open Biosystems HCL4517	BTO:0000007	HEK293T
+Hepatocytes	Homo sapiens	3	primary hepatocytes, liver perfused by enzymes to generate single cell suspension	endoderm	liver	normal	B	Crawford  	zen-bio Missing	BTO:0000575	Hepatocytes
+HFDPC	Homo sapiens	3	Follicle Dermal Papilla Cells from two individuals, HFDPC_0100503.2 and HFDPC_0102703.3 from lateral scalp (brown, blond)	missing	skin	normal	F	Gingeras 	PromoCell HFDPC	BTO:0001849	HFDPC
+HFDPC 0100503.2	Homo sapiens	3	Follicle Dermal Papilla Cells from lateral scalp (brown)	missing	skin	normal	F	Gingeras  	PromoCell C-14005	BTO:0001849	HFDPC_0100503.2
+HFDPC 0102703.3	Homo sapiens	3	Follicle Dermal Papilla Cells from lateral scalp (blond)	missing	skin	normal	F	Gingeras  	PromoCell C-14005	BTO:0001849	HFDPC_0102703.3
+HFF	Homo sapiens	3	foreskin fibroblast		foreskin	normal	M	Stam  	Dr. Beverly Torok-Storb at Fred Hutchison Cancer Research Center HFF	BTO:0002245	HFF
+HFF-Myc	Homo sapiens	3	foreskin fibroblast cells expressing canine cMyc	fibroblast	foreskin	normal	M	Stam  	Dr. Beverly Torok-Storb at Fred Hutchison Cancer Research Center HFF-Myc	BTO:0002245	HFF-Myc
+HFL11W	Homo sapiens	3	fetal liver 11 weeks, consented fetal liver samples were isolated from legally aborted fetuses at 11 weeks gestation	endoderm	liver		U	ENCODE  	Unknown HFL11W	BTO:0000759	HFL11W
+HFL24W	Homo sapiens	3	fetal liver 24 weeks, consented fetal liver samples were isolated from legally aborted fetuses at 24 weeks gestation	endoderm	liver		U	Myers  	Unknown HFL24W	BTO:0000759	HFL24W
+HGF	Homo sapiens	3	gingival fibroblasts		gingiva	normal	U	Stam  	ScienCell 2620	BTO:0000519 (non-specific)	HGF
+HHSEC	Homo sapiens	3	hepatic sinusoidal endothelial cells	endoderm	liver		U	Stam  	ScienCell 5000	BTO:0001251	HHSEC
+HIPEpiC	Homo sapiens	3	iris pigment epithelial cells	ectoderm	epithelium	normal	U	Stam  	ScienCell 6560	BTO:0000653	HIPEpiC
+HL-60	Homo sapiens	3	promyelocytic leukemia cells, (PMID: 276884)	mesoderm	blood	cancer	F	Stam  	ATCC CCL-240	BTO:0000738	HL-60
+HMEC	Homo sapiens	3	mammary epithelial cells	ectoderm	breast	normal	U	Bernstein 	Lonza CC-2551	BTO:0002178	HMEC
+HMEpC	Homo sapiens	3	Mammary Epithelial Cells (placeholder, waiting on second lot/donor from PromoCell)	ectoderm	mammary gland	normal	F	Gingeras  	PromoCell HMEpC	BTO:0002178	HMEpC
+HMEpC 6022801.3	Homo sapiens	3	Mammary Epithelial Cells	ectoderm	mammary gland	normal	F	Gingeras  	PromoCell C-14066	BTO:0002178	HMEpC_6022801.3
+HMF	Homo sapiens	3	mammary fibroblasts		mammary		F	Stam  	ScienCell 7630	BTO:0000817	HMF
+hMNC-CB	Homo sapiens	3	Mononuclear Cells (umbilical cord blood-single donor) from two individuals, hMNC-CB_9111701.6 and hMNC-CB_8072802.6	missing	blood	normal	B	Gingeras 	PromoCell hMNC-CB	BTO:0004054	hMNC-CB
+hMNC-CB 8072802.6	Homo sapiens	3	Mononuclear Cells, umbilical cord blood-single donor	missing	blood	normal	M	Gingeras  	PromoCell C-14096	BTO:0004054	hMNC-CB_8072802.6
+hMNC-CB 9111701.6	Homo sapiens	3	Mononuclear Cells, umbilical cord blood-single donor	missing	blood	normal	F	Gingeras  	PromoCell C-14096	BTO:0004054	hMNC-CB_9111701.6
+hMNC-PB	Homo sapiens	3	Mononuclear Cells (peripheral blood-single donor) from two individuals, hMNC-PB_0022330.9 and hMNC-PB_0082430.9	missing	blood	normal	B	Gingeras 	PromoCell hMNC-PB	BTO:0001025	hMNC-PB
+hMNC-PB 0022330.9	Homo sapiens	3	Mononuclear Cells, peripheral blood-single donor	missing	blood	normal	M	Gingeras  	PromoCell C-14098	BTO:0001025	hMNC-PB_0022330.9
+hMNC-PB 0082430.9	Homo sapiens	3	Mononuclear Cells, peripheral blood-single donor	missing	blood	normal	F	Gingeras  	PromoCell C-14098	BTO:0001025	hMNC-PB_0082430.9
+hMSC-AT	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from two individuals, hMSC-AT_9061601.12 and hMSC-AT_0102604.12 from subcutaneous abdomen adipose tissue	missing	adipose	normal	F	Gingeras 	PromoCell hMSC-AT	BTO:0003298	hMSC-AT
+hMSC-AT 0102604.12	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from subcutaneous abdomen adipose tissue	missing	adipose	normal	F	Gingeras  	PromoCell C-14092	BTO:0003298	hMSC-AT_0102604.12
+hMSC-AT 9061601.12	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from abdomen	missing	subcutaneous adipose tissue	normal	F	Gingeras  	PromoCell C-14092	BTO:0003298	hMSC-AT_9061601.12
+hMSC-BM	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from two individuals, hMSC-BM_0050602.11 and hMSC-BM_0051105.11 from femoral head	missing	bone marrow	normal	B	Gingeras 	PromoCell hMSC-BM	BTO:0003298	hMSC-BM
+hMSC-BM 0050602.11	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from femoral head	missing	bone marrow	normal	M	Gingeras  	PromoCell C-14090	BTO:0003298	hMSC-BM_0050602.11
+hMSC-BM 0051105.11	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from femoral head	missing	bone marrow	normal	F	Gingeras  	PromoCell C-14090	BTO:0003298	hMSC-BM_0051105.11
+hMSC-UC	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from two individuals, hMSC-UC_0081101.7 and hMSC-UC_0052501.7 from matrix (Wharton's Jelly)	missing	umbilical cord	normal	B	Gingeras 	PromoCell hMSC-UC	BTO:0003298	hMSC-UC
+hMSC-UC 0052501.7	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from matrix (Wharton's Jelly)	missing	umbilical cord	normal	M	Gingeras  	PromoCell C-14091	BTO:0003298	hMSC-UC_0052501.7
+hMSC-UC 0081101.7	Homo sapiens	3	Undifferentiated Mesenchymal Stem Cells from matrix (Wharton's Jelly)	missing	umbilical cord	normal	F	Gingeras  	PromoCell C-14091	BTO:0003298	hMSC-UC_0081101.7
+HMVEC-dAd	Homo sapiens	3	adult dermal microvascular endothelial cells.		blood vessel	normal	F	Stam  	Lonza CC-2543,CC-3202	BTO:0001854	HMVEC-dAd
+HMVEC-dBl-Ad	Homo sapiens	3	adult blood microvascular endothelial cells, dermal-derived	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-2811, CC-2811T75	BTO:0004574	HMVEC-dBl-Ad
+HMVEC-dBl-Neo	Homo sapiens	3	neonatal blood microvascular endothelial cells, dermal-derived	mesoderm	blood vessel	normal	M	Stam  	Lonza CC-2813, CC-2813T75	BTO:0004574	HMVEC-dBl-Neo
+HMVEC-dLy-Ad	Homo sapiens	3	adult lymphatic microvascular endothelial cells, dermal-derived	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-2810, CC-2810T75	BTO:0004574	HMVEC-dLy-Ad
+HMVEC-dLy-Neo	Homo sapiens	3	neonatal lymphatic microvascular endothelial cells, dermal-derived	mesoderm	blood vessel	normal	M	Stam  	Lonza CC-2812, CC-2812T25	BTO:0004574	HMVEC-dLy-Neo
+HMVEC-dNeo	Homo sapiens	3	neonatal microvascular endothelial cells (single donor), dermal-derived	mesoderm	blood vessel	normal	M	Stam  	Lonza CC-2505, CC-2505T225	BTO:0004574	HMVEC-dNeo
+HMVEC-LBl	Homo sapiens	3	blood microvascular endothelial cells, lung-derived	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-2815, CC-2815T75	BTO:0003599	HMVEC-LBl
+HMVEC-LLy	Homo sapiens	3	lymphatic microvascular endothelial cells, lung-derived	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-2814, CC-2814T25	BTO:0003599	HMVEC-LLy
+HNPCEpiC	Homo sapiens	3	non-pigment ciliary epithelial cells		epithelium	normal	U	Stam  	ScienCell 6580	BTO:0001770	HNPCEpiC
+HOB	Homo sapiens	3	Undifferentiated Osteoblasts from two individuals, HOB_0090202.1 and HOB_0091301 from femoral head	missing	cancellous bone	normal	M	Gingeras 	PromoCell HOB	BTO:0004324	HOB
+HOB 0090202.1	Homo sapiens	3	Undifferentiated Osteoblasts from femoral head	missing	cancellous bone	normal	M	Gingeras  	PromoCell C-14071	BTO:0004324	HOB_0090202.1
+HOB 0091301	Homo sapiens	3	Undifferentiated Osteoblasts from femoral head	missing	cancellous bone	normal	F	Gingeras  	PromoCell C-14071	BTO:0004324	HOB_0091301
+HPAEC	Homo sapiens	3	pulmonary artery endothelial cells.	mesoderm	blood vessel	normal	F	Stam  	Lonza CC-2530,CC-3162	BTO:0001141	HPAEC
+HPAEpiC	Homo sapiens	3	pulmonary alveolar epithelial cells		epithelium	normal	U	Stam  	ScienCell 3200	BTO:0003511	HPAEpiC
+HPAF	Homo sapiens	3	pulmonary artery fibroblasts	mesoderm	blood vessel	normal	U	Stam  	ScienCell 3120	BTO:0000778	HPAF
+HPC-PL	Homo sapiens	3	Undifferentiated Pericytes from HPC-PL_0032601.13 and HPC-PL_0101504.13	missing	placenta	normal	B	Gingeras 	PromoCell pericytes	BTO:0001975	HPC-PL
+HPC-PL 0032601.13	Homo sapiens	3	Undifferentiated Pericytes	missing	placenta	normal	M	Gingeras  	PromoCell C-14095	BTO:0001975	HPC-PL_0032601.13
+HPC-PL 0101504.13	Homo sapiens	3	Undifferentiated Pericytes	missing	placenta	normal	F	Gingeras  	PromoCell C-14095	BTO:0001975	HPC-PL_0101504.13
+HPDE6-E6E7	Homo sapiens	3	pancreatic duct cells immortalized with E6E7 gene of HPV	endoderm	pancreatic duct	normal	F	Crawford  	Dr. Ming-Sound Tsao, Ontario Cancer Institute HPDE6-E6E7	BTO:0002362	HPDE6-E6E7
+HPdLF	Homo sapiens	3	periodontal ligament fibroblasts		epithelium	normal	M	Stam  	Lonza CC-7049	BTO:0001020	HPdLF
+HPF	Homo sapiens	3	pulmonary fibroblasts isolated from lung tissue		lung	normal	U	Stam  	ScienCell 3300	BTO:0000764	HPF
+HPIEpC	Homo sapiens	3	Placental Epithelial Cells amniotic membrane	missing	placenta	normal	B	Gingeras 	PromoCell human-placental-epithelial-cells-hplepc	BTO:0001975	HPIEpC
+HPIEpC 9012801.2	Homo sapiens	3	Placental Epithelial Cells amniotic membrane	missing	placenta	normal	F	Gingeras  	PromoCell C-14069	BTO:0001975	HPIEpC_9012801.2
+HPIEpC 9041503.2	Homo sapiens	3	Placental Epithelial Cells amniotic membrane	missing	placenta	normal	M	Gingeras  	PromoCell C-14069	BTO:0001975	HPIEpC_9041503.2
+HRCEpiC	Homo sapiens	3	renal cortical epithelial cells	mesoderm	epithelium	normal	U	Stam  	Lonza CC-2554	BTO:0000059 (non-specific)	HRCEpiC
+HRE	Homo sapiens	3	renal epithelial cells	mesoderm	epithelium	normal	U	Stam  	Lonza CC-2556	BTO:0000059 (non-specific)	HRE
+HRGEC	Homo sapiens	3	renal glomerular endothelial cells	mesoderm	kidney	normal	U	Stam  	ScienCell 4000	BTO:0001176	HRGEC
+HRPEpiC	Homo sapiens	3	retinal pigment epithelial cells	ectoderm	epithelium	normal	U	Stam  	ScienCell 6540	BTO:0001177	HRPEpiC
+HSaVEC	Homo sapiens	3	Saphenous Vein Endothelial Cells from two individuals, HSaVEC_9100101.15 and HSaVEC_0022202.16 from thigh	mesoderm	blood vessel	normal	M	Gingeras 	PromoCell HSaVEC	BTO:0003275	HSaVEC
+HSaVEC 0022202.16	Homo sapiens	3	Saphenous Vein Endothelial Cells from thigh	mesoderm	blood vessel	normal	M	Gingeras  	PromoCell C-14025	BTO:0003275	HSaVEC_0022202.16
+HSaVEC 9100101.15	Homo sapiens	3	Saphenous Vein Endothelial Cells from thigh	mesoderm	blood vessel	normal	M	Gingeras  	PromoCell C-14025	BTO:0003275	HSaVEC_9100101.15
+HSMM	Homo sapiens	3	skeletal muscle myoblasts	mesoderm	muscle	normal	U	Bernstein 	Refer to the protocol documents for differing sources CC-2580	BTO:0000256 (non-specific)	HSMM
+HSMM emb	Homo sapiens	3	embryonic myoblast		muscle		U	Crawford  	Duke/UNC/UT/EBI ENCODE group fetal myoblast cell strain (H246 and H275) from Dr Stephen Hauschka- U. of Washington 1980	BTO:0000222	HSMM_emb
+HSMM FSHD	Homo sapiens	3	primary myoblast from Facioscapulohumeral Muscular Dystrophy (FSHD) patients, muscle needle biopsies		muscle		U	Crawford  	Duke/UNC/UT/EBI ENCODE group HSMM_FSHD	BTO:0000222	HSMM_FSHD
+HSMMtube	Homo sapiens	3	skeletal muscle myotubes differentiated from the HSMM cell line	mesoderm	muscle	normal	U	Bernstein 	Lonza See HSMM	BTO:0001760 (non-specific)	HSMMtube
+HSMMtube emb	Homo sapiens	3	embryonic myotube		muscle		U	Crawford  	Duke/UNC/UT/EBI ENCODE group fetal myoblast cell strain (H246 and H275) from Dr Stephen Hauschka- U. of Washington 1980	BTO:0001760	HSMMtube_emb
+HSMMtube FSHD	Homo sapiens	3	myotube from Facioscapulohumeral Muscular Dystrophy (FSHD) patient, muscle needle biopsies		muscle		U	Crawford  	Duke/UNC/UT/EBI ENCODE group HSMMtube_FSHD	BTO:0001760	HSMMtube_FSHD
+HT-1080	Homo sapiens	3	epithelial cell line derived from a fibrosarcoma, (PMID: 4132053), pseudo-diploid male with a modal chromosome number of 46, numerous chromosome abnormalities	mesoderm	epithelium	cancer	M	 missing  	ATCC CCL-121	BTO:0001282	HT-1080
+HTR8svn	Homo sapiens	3	trophoblast (HTR-8/SVneo) cell line, a thin layer of ectoderm that forms the wall of many mammalian blastulas and functions in the nutrition and implantation of the embryo	ectoderm	blastula	normal	F	Crawford  	Charles H. Graham, Department of Anatomy & Cell Biology, Queen's University at Kingston, Kingston, Ontario, Canada HTR8svn	BTO:0001079	HTR8svn
+Huh-7	Homo sapiens	3	hepatocellular carcinoma	endoderm	liver	cancer	M	Crawford  	Dr. Ravi Jhaveri at Duke University Huh-7	BTO:0001950	Huh-7
+Huh-7.5	Homo sapiens	3	hepatocellular carcinoma, hepatocytes selected for high levels of hepatitis C replication	endoderm	liver	cancer	M	Crawford  	Dr. Ravi Jhaveri at Duke University Huh-7.5	BTO:0001950	Huh-7.5
+HVMF	Homo sapiens	3	villous mesenchymal fibroblast cells		connective	normal	U	Stam 	ScienCell 7130	BTO:0002625	HVMF
+HVMF 6091203.3	Homo sapiens	3	Villous Mesenchymal Fibroblasts from villous tissue	missing	placenta	normal	M	Gingeras  	PromoCell C-14034	BTO:0001975	HVMF_6091203.3
+HVMF 6100401.3	Homo sapiens	3	Villous Mesenchymal Fibroblasts from villous tissue	missing	placenta	normal	F	Gingeras  	PromoCell C-14034	BTO:0001975	HVMF_6100401.3
+HWP	Homo sapiens	3	Undifferentiated White Preadipocytes from two individuals, HWP_0092205 and HWP_8120201.5, subcutaneous adipose tissue from abdomen / upper arm	missing	adipose	normal	B	Gingeras  	PromoCell HWP	BTO:0004042	HWP
+HWP 0092205	Homo sapiens	3	Undifferentiated White Preadipocytes from abdomen	missing	subcutaneous adipose tissue	normal	M	Gingeras 	PromoCell C-14072	BTO:0004042	HWP_0092205
+HWP 8120201.5	Homo sapiens	3	Undifferentiated White Preadipocytes from upper arm	missing	subcutaneous adipose tissue	normal	F	Gingeras  	PromoCell C-14072	BTO:0004042	HWP_8120201.5
+iPS	Homo sapiens	3	induced pluripotent stem cell derived from skin fibroblast	induced pluripotent stem cell derived from skin fibroblast	induced pluripotent stem cell		B	Crawford  	Josh Chenoweth, Laboratory of Molecular Biology, National Institutes of Health, NINDS iPS	BTO:0000001 (nonspecific)	iPS
+iPS CWRU1	Homo sapiens	3	iPS cells derived from MSC658 fibroblast		induced pluripotent cell (iPS)		M	Crawford  	Paul Tesar at Case Western University iPS_CWRU1	BTO:0000001	iPS_CWRU1
+iPS hFib2 iPS4	Homo sapiens	3	induced pluripotent stem cell line 4 derived from skin fibroblast of a 30 year old donor, same donor as iPS_hFib2_iPS5	missing	induced pluripotent cell (iPS)	normal	M	Gilbert  	HSCI iPS Cell Core Facility hFib2_iPS4	BTO:0000001	iPS_hFib2_iPS4
+iPS hFib2 iPS5	Homo sapiens	3	induced pluripotent stem cell line 5 derived from skin fibroblast of a 30 year old donor, same donor as iPS_hFib2_iPS4	missing	induced pluripotent cell (iPS)	normal	M	Gilbert  	HSCI iPS Cell Core Facility hFib2_iPS5	BTO:0000001	iPS_hFib2_iPS5
+iPS NIHi11	Homo sapiens	3	iPS cells derived from AG20443 fibroblast		induced pluripotent cell (iPS)		M	Crawford  	Josh Chenoweth, Laboratory of Molecular Biology, National Institutes of Health, NINDS iPS_NIHi11	BTO:0000001	iPS_NIHi11
+iPS NIHi7	Homo sapiens	3	iPS cells derived from AG08395 fibroblast		induced pluripotent cell (iPS)		F	Crawford  	Josh Chenoweth, Laboratory of Molecular Biology, National Institutes of Health, NINDS iPS_NIHi7	BTO:0000001	iPS_NIHi7
+Ishikawa	Homo sapiens	3	endometrial adenocarcinoma		uterus		F	Crawford  	Sigma-Aldrich 99040201	BTO:0000658	Ishikawa
+Jurkat	Homo sapiens	3	T lymphoblastoid derived from an acute T cell leukemia, "The Jurkat cell line was established from the peripheral blood of a 14 year old boy by Schneider et al., and was originally designated JM." - ATCC. (PMID: 68013)	mesoderm	blood	cancer	M	Myers 	ATCC TIB-152	BTO:0001948	Jurkat
+Kidney BC	Homo sapiens	3	kidney, parental cell type to donors 01-11002 and H12817N	mesoderm	kidney	normal	B	Myers  	BioChain CP-S12-D1234142-05_B402060	BTO:0000671	Kidney BC
+Kidney OC	Homo sapiens	3	Primary frozen kidney tissue from NICHD donor IDs 1104 (Rep B1 DNase), 602 (Rep B2 DNase), 1442 (Rep B3 DNase), 1863 (Rep B3 FAIRE) and NCTC donor ID 10-0022A (Rep B1 FAIRE)		kidney	normal	B	Crawford  	NICHD 1104	BTO:0000671	Kidney OC
+LHSR	Homo sapiens	3	prostate epithelial cells (PrEC), multiple human donors, all of whom are HIV-1, Hepatitis B and Hepatitis C negative, treatment: to create LHSR, cells were infected with amphotropic retroviruses encoding the SV40 large T antigen (L), the telomerase catalytic subunit hTERT (H), the SV40 small T antigen (S) and an oncogenic allele of H-ras (R).	endoderm	epithelium	normal	U	Crawford  	William Hahn at the Dana Farber Cancer Institute, Boston, MA LHSR	BTO:0002398	LHSR
+Liver OC	Homo sapiens	3	Primary frozen liver tissue from NICHD donor IDs 1104 (Rep B1), 602 (Rep B2), 1442 (Rep B3)		liver	normal	M	Crawford  	NICHD 1104	BTO:0000759	Liver_OC
+Liver STL004	Homo sapiens	3	Primary liver tissue from the right portion of a standard liver procurement from a 6 year old female.		liver	normal	F		Snyder lab STL004	BTO:0000759	Liver_STL004
+Liver STL011	Homo sapiens	3	Primary liver tissue of a standard liver procurement from a 36 year old caucasian male.		liver	normal	M		Snyder lab STL011	BTO:0000759	Liver_STL011
+LNCaP	Homo sapiens	3	prostate adenocarcinoma, "LNCaP clone FGC was isolated in 1977 by J.S. Horoszewicz, et al., from a needle aspiration biopsy of the left supraclavicular lymph node of a 50-year-old caucasian male (blood type B+) with confirmed diagnosis of metastatic prostate carcinoma." - ATCC. (Horoszewicz et al. LNCaP Model of Human Prostatic Carcinoma. Cancer Research 43, 1809-1818, April 1983.)	endoderm	prostate	cancer	M	Crawford 	ATCC CRL-1740	BTO:0002021	LNCaP
+Loucy	Homo sapiens	3	T cell leukemia	mesoderm	blood	cancer	F	Bernstein  	DSMZ Loucy	BTO:0002104	Loucy
+Lung BC	Homo sapiens	3	lung, parental cell type to donors 01-11002 and H12817N	endoderm	lung	normal	B	Myers  	BioChain CP-S12-D1234152-05_A610240	BTO:0000763	Lung BC
+Lung OC	Homo sapiens	3	Primary frozen lung tissue from NICHD donor IDs 1104 (Rep B1 DNase), 602 (Rep B2 DNase), 1442 (Rep B3 DNase) and CF Center donor IDs DD006I (Rep B1 FAIRE) and DD007I (Rep B2 FAIRE)		Lung	normal	B	Crawford  	NICHD 1104	BTO:0000763	Lung_OC
+Lymphoblastoid cell line	Homo sapiens	3	parental cell type to lymphoblastoid cell lines	mesoderm	blood	normal	B	Stam  	Coriell various GMXXXXX cell lines	BTO:0002062 (non-specific)	Lymphoblastoid_cell_line
+M059J	Homo sapiens	3	malignant glioblastoma, glioma, lack DNA-dependent protein kinase activity, deficient in repair of DNA double strand breaks, the cells are negative for glial fibrillary acidic protein (GFAP), tumor specimen taken from a 33 year old	ectoderm	brain	cancer	M	Stam  	ATCC CRL-2366	BTO:0000527	M059J
+MCF10A-Er-Src	Homo sapiens	3	mammary gland, non-tumorigenic epithelial, inducible cell line, derived from the MCF-10A parental cells and contain ER-Src, a derivative of the Src kinase oncoprotein (v-Src) that is fused to the ligand-binding domain of the estrogen receptor (ER)	ectoderm	breast		F	Struhl  	Struhl laboratory MCF10A-Er-Src	BTO:0001939	MCF10A-Er-Src
+MDA-MB-231	Homo sapiens	3	breast adenocarcinoma, epithelial cell line, derived from metastatic site: pleural effusion. (PMID: 730202)	ectoderm	breast	cancer	F	Struhl  	ATCC HTB-26	BTO:0000815	MDA-MB-231
+Medullo	Homo sapiens	3	medulloblastoma (aka D721), surgical resection from a patient with medulloblastoma as described by Darrell Bigner (1997)	ectoderm	brain	cancer	U	Crawford  	Dr. Darrell Bigner at Duke University Medical Center	BTO:0001359	Medullo
+Medullo D341	Homo sapiens	3	Medulloblastoma cell line of neuron or neuron precurosr origin		brain	cancer	U	Crawford  	Dr. Darrell Bigner at Duke University Medical Center Medullo_D341	BTO:0001757	Medullo_D341
+Mel 2183	Homo sapiens	3	Melanoma Cell line		Melanoma cell line derived from melanoma metastasis	cancer	U	Crawford  	Dr. Yardena Samuels Mel_2183	BTO:0000849	Mel_2183
+Melano	Homo sapiens	3	epidermal melanocytes	ectoderm	skin	normal	U	Crawford  	ScienCell 2200	BTO:0000847	Melano
+MRT A204	Homo sapiens	3	Malignant rhabdoid tumor (MRT) line, rhabdomyosarcoma	missing	muscle	cancer	F	Crawford  	ATCC HTB-82	BTO:0002062	MRT A204
+MRT G401	Homo sapiens	3	Malignant renal rhabdoid tumor line	missing	kidney	cancer	M	Crawford  	ATCC CRL-1441	BTO:0002062	MRT G401
+MRT TTC549	Homo sapiens	3	Malignant Hepatic Rhabdoid tumor line	missing	liver	cancer	M	Crawford  	ATCC TTC549	BTO:0002062	MRT TTC549
+Myometr	Homo sapiens	3	myometrial cells		myometrium	normal	F	Crawford  	Dr. Jennifer Condon of Magee Women's Research Institute	BTO:0000907	Myometr
+Naive B cell	Homo sapiens	3	Naive B cells (IgD+) isolated from de-identified tonsillectomy		tonsil	normal	U	Crawford  	Dr. Yanwen Jiang Naive_B_cell	BTO:0000776	Naive_B_cell
+NB4	Homo sapiens	3	acute promyelocytic leukemia cell line. (PMID: 1995093)	mesoderm	blood	cancer	U	ENCODE 	Refer to protocol documents for differing sources, UW: DSMZ (Deutsche Sammlung von Mikroorganismen und Zellkulturen) ACC-207 http://www.dsmz.de/ or Yale (Stanford): National Cell Culture Center http://www.nccc.com/ NB4	BTO:0002489	NB4
+NH-A	Homo sapiens	3	astrocytes (also called Astrocy)	ectoderm	brain	normal	U	Bernstein 	Lonza CC-2565	BTO:0000099	NH-A
+NHBE	Homo sapiens	3	bronchial epithelial cells	endoderm	epithelium	normal	F	Crawford  	Lonza CC-2541	BTO:0002022	NHBE
+NHBE RA	Homo sapiens	3	bronchial epithelial cells with retinoic acid		bronchial epithelium	normal	F	UW Stam  	Lonza CC-2540, CC3170	BTO:0001845	NHBE_RA
+NHDF	Homo sapiens	3	Dermal Fibroblasts from temple / breast	missing	skin	normal	F	Gingeras 	PromoCell NHDF	BTO:0003185	NHDF
+NHDF-Ad	Homo sapiens	3	adult dermal fibroblasts	mesoderm	skin	normal	F	Stam 	Lonza CC-2511, CC-2511T225	BTO:0004419	NHDF-Ad
+NHDF-neo	Homo sapiens	3	neonatal dermal fibroblasts	mesoderm	skin	normal	U	Stam  	Lonza CC-2509	BTO:0004419	NHDF-neo
+NHDF 0060801.3	Homo sapiens	3	Dermal Fibroblasts from temple	missing	skin	normal	F	Gingeras  	PromoCell C-14031	BTO:0003185	NHDF_0060801.3
+NHDF 7071701.2	Homo sapiens	3	Dermal Fibroblasts from breast	missing	skin	normal	F	Gingeras  	PromoCell C-14031	BTO:0003185	NHDF_7071701.2
+NHEK	Homo sapiens	3	epidermal keratinocytes	ectoderm	skin	normal	U	ENCODE  	Lonza CC-2501	BTO:0000375	NHEK
+NHEM.f M2	Homo sapiens	3	Epidermal Melanocytes from two individuals, NHEM.f_M2_5071302.2 and NHEM.f_M2_6022001 from foreskin	missing	skin	normal	M	Gingeras 	PromoCell NHEM	BTO:0000847	NHEM.f M2
+NHEM.f M2 5071302.2	Homo sapiens	3	Epidermal Melanocytes (foreskin)	missing	skin	normal	M	Gingeras  	PromoCell C-14042	BTO:0000847	NHEM.f M2 (5071302.2)
+NHEM.f M2 6022001	Homo sapiens	3	Epidermal Melanocytes (foreskin)	missing	skin	normal	M	Gingeras  	PromoCell C-14042	BTO:0000847	NHEM.f M2 (6022001)
+NHEM M2	Homo sapiens	3	Epidermal Melanocytes (adult) from two individuals, NHEM_M2_7011001.2 and NHEM_M2_7012303 from cheek / temple	missing	skin	normal	B	Gingeras 	PromoCell NHEM	BTO:0000847	NHEM M2
+NHEM M2 7011001.2	Homo sapiens	3	Epidermal Melanocytes (adult) from cheek	missing	skin	normal	M	Gingeras  	PromoCell C-14043	BTO:0000847	NHEM M2 (7011001.2)
+NHEM M2 7012303	Homo sapiens	3	Epidermal Melanocytes (adult) from temple	missing	skin	normal	F	Gingeras  	PromoCell C-14043	BTO:0000847	NHEM M2 (7012303)
+NHLF	Homo sapiens	3	lung fibroblasts	endoderm	lung	normal	U	Bernstein 	Lonza CC-2512	BTO:0000161 (non-specific)	NHLF
+NT2-D1	Homo sapiens	3	malignant pluripotent embryonal carcinoma (NTera-2), "The NTERA-2 cl.D1 cell line is a pluripotent human testicular embryonal carcinoma cell line derived by cloning the NTERA-2 cell line." - ATCC. (PMID: 6694356)	inner cell mass	testis	cancer	M	ENCODE  	ATCC CRL-1973	BTO:0000946	NT2-D1
+Olf neurosphere	Homo sapiens	3	Human olfactory neurosphere-derived cells from mucosal biopsies		Nasal biopsy	normal	U	Crawford  	Alan Mackay-Sim Olf_neurosphere	termId BTO:0000961	Olfactory neurosphere
+Osteobl	Homo sapiens	3	osteoblasts (NHOst)	mesoderm	bone	normal	U	Crawford 	Lonza CC-2538	BTO:0001593	Osteoblasts
+ovcar-3	Homo sapiens	3	ovarian adenocarcinoma, "the NIH: OVCAR-3 line was established in 1982 by T.C. Hamilton, et al. from the malignant ascites of a patient with progressive adenocarcinoma of the ovary." - ATCC. (PMID: 6604576)	mesoderm	ovary	cancer	F	Stam  	ATCC HTB-161	BTO:0000812	ovcar-3
+PANC-1	Homo sapiens	3	pancreatic carcinoma, (PMID: 1140870) PANC-1 was established from a pancreatic carcinoma, which was extracted via pancreatico-duodenectomy specimen from a 56-year-old Caucasian individual. Malignancy of this cell line was verified via in vitro and in vivo assays.	endoderm	pancreas	cancer	M	Myers 	ATCC CRL-1469	BTO:0000304	PANC-1
+Pancreas OC	Homo sapiens	3	Primary frozen pancreas tissue from NCTC donor IDs 09-0144A (Rep B1) and 10-0021A (Rep B2)		pancreas	normal	M	Crawford  	NCTC 09-0144A	BTO:0000988	Pancreas OC
+PanIsletD	Homo sapiens	3	dedifferentiated human pancreatic islets from the National Disease Research Interchange (NDRI), same source as PanIslets	endoderm	pancreas		B	Crawford  	National Disease Research Interchange PanIsletD	BTO:0000991 (non-specific)	PanIsletD
+PanIslets	Homo sapiens	3	pancreatic islets from 2 donors, the sources of these primary cells are cadavers from National Disease Research Interchange (NDRI) and another sample isolated as in Bucher, P. et al., Assessment of a novel two-component enzyme preparation for human islet isolation and transplantation. Transplantation 79, 917 (2005)	endoderm	pancreas	normal	M	Crawford 	Refer to publication or NDRI PanIslets	BTO:0000991 (non-specific)	PanIslets
+PBDE	Homo sapiens	3	peripheral blood-derived erythroblasts	mesoderm	blood		M	Farnham  	Dr. Peggy Farnham at USC PBDE	BTO:0000574 (non-specific)	PBDE
+PBDEFetal	Homo sapiens	3	peripheral blood-derived erythroblasts from 16-19 week human fetal liver	mesoderm	liver	normal	U	Farnham  	Bouhassira Lab FetalPBDE	BTO:0000553	PBDEFetal
+PBMC	Homo sapiens	3	peripheral blood mononuclear cells	mesoderm	blood		M	Farnham  	Dr. E.H. Bresnick at UW Madison PBMC	BTO:0001025	PBMC
+PFSK-1	Homo sapiens	3	neuroectodermal cell line derived from a cerebral brain tumor, (PMID: 1316433)	ectoderm	brain	cancer	M	Myers  	ATCC CRL-2060	BTO:0000690 (non-specific)	PFSK-1
+pHTE	Homo sapiens	3	primary tracheal epithelial cells	endoderm	epithelium		U	Crawford  	Dr. Cal Cotton at Case Western Reserve University	BTO:0001120 (non-specific)	pHTE
+Pons OC	Homo sapiens	3	Primary frozen pons mid-brain tissue from NICHD donor IDs 1104 (Rep B1), 602 (Rep B2), 1442 (Rep B3)		pons mid-brain	normal	M	Crawford  	NICHD 1104	BTO:0001101	Pons_OC
+PrEC	Homo sapiens	3	prostate epithelial cell line	epithelial	prostate	normal	U	Stam  	Lonza CC-2555	BTO:0002398	PrEC
+ProgFib	Homo sapiens	3	fibroblasts, Hutchinson-Gilford progeria syndrome (cell line HGPS, HGADFN167, progeria research foundation)		skin		M	Crawford  	Progeria Research Foundation HGADFN167	BTO:0001255 (non-specific)	ProgFib
+prostate	Homo sapiens	3	prostate tissue purchased for CSHL project	endoderm	prostate		M	Gingeras  	ATCC Missing	BTO:0001129	Prostate
+Prostate OC	Homo sapiens	3	Primary frozen prostate tissue from NICHD donor IDs 1669 (Rep B1) and 1540 (Rep B2)		prostate	normal	M	Crawford  	NICHD 1669	BTO:0001129	Prostate_OC
+Psoas muscle OC	Homo sapiens	3	Primary frozen psoas muscle tissue from NICHD donor IDs 1104 (Rep B1 DNase), 602 (Rep B2 DNase), 1442 (Rep B3 DNase), 1540 (Rep B1), 1863 (Rep B2 FAIRE)		psoas muscle	normal	B	Crawford  	NICHD 1104	BTO:0001140	Psoas_muscle_OC
+Raji	Homo sapiens	3	B lymphocyte, "The Raji line of lymphoblast-like cells was established by R.J.V. Pulvertaft in 1963 from a Burkitt's lymphoma of the left maxilla of an 11-year-old Black male." - ATCC. (PMID: 14086209)	mesoderm	blood	cancer	M	Farnham  	ATCC CCl-86	BTO:0001154	Raji
+RCC 7860	Homo sapiens	3	renal cell adenocarcinmoma		kidney	cancer	M	Crawford  	ATCC CRL-1932	BTO:0000037	RCC 7860
+RPMI-7951	Homo sapiens	3	Human Skin Malignant Melanoma Cells, This is a hyperdiploid human cell line with the modal chromosome number of 49, occurring in 24% of cells. Polyploid cells occurred at 22%, which is high.	ectoderm	skin	cancer	F	Stam  	ATCC HTB-66	BTO:0003508	RPMI-7951
+RPTEC	Homo sapiens	3	renal proximal tubule epithelial cells		epithelium	normal	U	Stam  	Lonza CC-2553, CC-2553T225	BTO:0001498	RPTEC
+RWPE1	Homo sapiens	3	prostate epithelial		prostate	normal	M	Crawford  	ATCC CRL-11609	BTO:0002397	RWPE1
+SAEC	Homo sapiens	3	small airway epithelial cells	endoderm	epithelium	normal	U	Stam  	Lonza CC-2547	BTO:0002022 (non-specific)	SAEC
+SH-SY5Y	Homo sapiens	3	neuroblastoma clonal subline of the neuroepithelioma cell line SK-N-SH from the 1970 bone marrow biopsy of a 4-year-old girl with metastatic neuroblastoma, trisomy of 1q	ectoderm	brain	cancer	F	Farnham  	ATCC CC-2266	BTO:0000793	SH-SY5Y
+SK-N-MC	Homo sapiens	3	neuroepithelioma cell line derived from a metastatic supra-orbital human brain tumor, "SK-N-MC was isolated in September of l971 and was found to have moderate dopamine - beta - hydroxylase activity as well as formaldehyde induced fluorescence indicative of intracellular catecholamines." - ATCC. (Biedler, et al. Morphology and Growth, Tumorigenicity, and Cytogenetics of Human Neuroblastoma Cells in Continuous Culture. Cancer Research 33, 2643-2652, November 1973.)	ectoderm	brain	cancer	F	Myers 	ATCC HTB-10	BTO:0002372 (non-specific)	SK-N-MC
+SK-N-SH RA	Homo sapiens	3	neuroblastoma cell line, treatment: differentiated with retinoic acid, (Biedler, et al. Morphology and Growth, Tumorigenicity, and Cytogenetics of Human Neuroblastoma Cells in Continuous Culture. Cancer Research 33, 2643-2652, November 1973.)	ectoderm	brain	cancer	F	Stam  	ATCC HTB-11	BTO:0002372 (non-specific)	SK-N-SH (Retinoic Acid)
+Skeletal Muscle BC	Homo sapiens	3	skeletal muscle, parental cell type to donors 01-11002 and H12817N	mesoderm	skeletal muscle	normal	B	Myers  	BioChain CP-S12-D1234171-05_A610262	BTO:0001103	Skeletal Muscle BC
+SkMC	Homo sapiens	3	Skeletal Striated Muscle Cells from two individuals, SkMC_9011302 SkMC_8121902.17 from M. pectoralis / Mm. intercostales	missing	muscle	normal	B	Gingeras 	PromoCell SkMC	BTO:0002916	SkMC
+SKMC	Homo sapiens	3	skeletal muscle cells	mesoderm	muscle	normal	U	Stam  	Lonza CC-2561	BTO:0001801 (non-specific)	SkMC
+SkMC 8121902.17	Homo sapiens	3	Skeletal Muscle Cells from Mm. intercostales	missing	striated muscle	normal	M	Gingeras  	PromoCell C-14060	BTO:0002916	SkMC_8121902.17
+SkMC 9011302	Homo sapiens	3	Skeletal Muscle Cells from M. pectoralis	missing	striated muscle	normal	F	Gingeras  	PromoCell C-14060	BTO:0002916	SkMC_9011302
+Small intestine OC	Homo sapiens	3	Primary frozen small intestine tissue from NCTC donor IDs 10-0063A (Rep B1) and 09-0143A (Rep B2)		small intestine	normal	M	Crawford  	NCTC 10-0063A	BTO:0000651	Small intestine OC
+Spleen OC	Homo sapiens	3	Primary frozen spleen tissue from NICHD donor IDs 1863 (Rep B1) and 4548 (Rep B2)		spleen	normal	F	Crawford  	NICHD 1863	BTO:0001281	Spleen_OC
+Stellate	Homo sapiens	3	hepatic stellate cells, liver that was perfused with collagenase and sellected for hepatic stellate cells by density gradient	endoderm	liver	normal	F	Crawford  	Dr. Steve Choi at Duke University Stellate	BTO:0002316	Stellate
+Stomach BC	Homo sapiens	3	stomach, parental cell type to donors 01-11002 and H12817N	endoderm	stomach	normal	B	Myers  	BioChain CP-S12-D1234248-05_A808008	BTO:0001307	Stomach BC
+T-47D	Homo sapiens	3	epithelial cell line derived from a mammary ductal carcinoma.		breast	cancer	F	Stam and Myers  	ATCC HTB-133	BTO:0001248	T-47D
+T98G	Homo sapiens	3	fibroblast cell line derived from a glioblastoma multiforme. (PMID: 222778)	ectoderm	brain	cancer	M	 missing  	ATCC CRL-1690	BTO:0001583	T98G
+T cells CD4+	Homo sapiens	3	Parent cell line for T cells CD4+.	mesoderm	blood	unknown	B	Crawford Stam  	Dr. David Randolph at University of Alabama, Birmingham vary	BTO:0000782	T cells CD4+
+TBEC	Homo sapiens	3	trachea and bronchial epithelial cells from frush lung tissue provided by National Disease Research Interchange, passage 2 primary, non-immortalized cells, donor was 21 years old	endoderm	epithelium		M	Crawford  	National Disease Research Interchange DD009C	BTO:0001389 (non-specific)	TBEC
+Th1	Homo sapiens	3	primary Th1 T cells	mesoderm	blood		U	Stam  	Dr. John Stamatoyannopoulos at UW None (primary pheresis of single normal subject)	BTO:0001678	Th1
+Th17	Homo sapiens	3	T helper cells expressing IL-17, primary pheresis of single normal subject	mesoderm	blood	normal	B	Stam  	Dr. John Stamatoyannopoulos at UW Th17	BTO:0002417	Th17
+Th1 Wb33676984	Homo sapiens	3	Th1 cells in vivo isolation	mesoderm	blood	normal donor is Asian, female 26 year old, primary pheresis of single normal subject	F	Stam  	Dr. John Stamatoyannopoulos at UW Wb33676984	BTO:0001678	Th1_Wb33676984
+Th1 Wb54553204	Homo sapiens	3	Th1 cells in vivo isolation, donor is Caucasian, male 33 year old, primary pheresis of single normal subject	mesoderm	blood	normal	M	Stam  	Dr. John Stamatoyannopoulos at UW Wb54553204	BTO:0001678	Th1_Wb54553204
+Th2	Homo sapiens	3	primary Th2 T cells	mesoderm	blood		U	Stam  	Dr. John Stamatoyannopoulos at UW None (primary pheresis of single normal subject)	BTO:0001679	Th2
+Th2 Wb33676984	Homo sapiens	3	Th2 cells in vivo isolation, donor is Asian, female 26 year old, primary pheresis of single normal subject	mesoderm	blood	normal	F	Stam  	Dr. John Stamatoyannopoulos at UW Wb33676984	BTO:0001679	Th2_Wb33676984
+Th2 Wb54553204	Homo sapiens	3	Th2 cells in vivo isolation, donor is Caucasian, male 33 year old, primary pheresis of single normal subject	mesoderm	blood	normal	M	Stam  	Dr. John Stamatoyannopoulos at UW Wb54553204	BTO:0001679	Th2_Wb54553204
+Treg Wb78495824	Homo sapiens	3	T regulatory cells in vivo isolation	mesoderm	blood	normal donor is Causasian, female 35 year old, primary pheresis of single normal subject	F	Stam  	Dr. John Stamatoyannopoulos at UW Wb78495824	BTO:0004520	Treg_Wb78495824
+Treg Wb83319432	Homo sapiens	3	T regulatory cells in vivo isolation, donor is Caucasian, male 28 year old, primary pheresis of single normal subject	mesoderm	blood	normal	M	Stam  	Dr. John Stamatoyannopoulos at UW Wb83319432	BTO:0004520	Treg_Wb83319432
+U2OS	Homo sapiens	3	osteosarcoma from the tibia of a 15 year old, J. Ponten and E. Saksela derived this line (originally 2T) in 1964 from a moderately differentiated sarcoma, viruses were not detected during co-cultivation with WI-38 cells or in CF tests against SV40, RSV or adenoviruses, mycoplasma contamination was detected and eliminated in 1972, (PMID: 6081590)	mesoderm	bone	cancer	F	Farnham  	ATCC HTB-96	BTO:0000970	U2OS
+U87	Homo sapiens	3	glioblastoma, astrocytoma, (PMID: 4332744)	ectoderm	brain	cancer	M	Myers  	ATCC HTB-14	BTO:0002036	U87
+UCH-1	Homo sapiens	3	chordoma cell line	ectoderm	chordoma	cancer	M	Crawford  	Chordoma Research Foundation	BTO:0001768	UCH-1
+Urothelia	Homo sapiens	3	primary ureter cell culture of urothelial cells derived from a 12 year-old girl and immortalized by transfection with a temperature-sensitive SV-40 large T antigen gene		urothelium	normal	F	Crawford  	Dr. D Sens at University of N. Dakota Urothelia	BTO:0001245	Urothelia
+WERI-Rb-1	Homo sapiens	3	retinoblastoma (PMID: 844036)	ectoderm	eye	cancer	F	Stam  	ATCC HTB-169	BTO:0001178 (non-specific)	WERI-Rb-1
+WI-38	Homo sapiens	3	embryonic lung fibroblast cells, hTERT immortalized, includes Raf1 construct	endoderm	embryonic lung	normal	F	Stam  	Dr. Carl Mann, SBIGeM WI-38	BTO:0001958	WI-38
+3134	Mus musculus	Mm	Mammary	cellLine	Mammary		M	Stam  	Stam lab 3134	7035	3134
+416B	Mus musculus	Mm	myeloid progenitor cells, CD34+	cellLine	Blood		M	Stam  	UW lab 416B	7043	416B
+A20	Mus musculus	Mm	B cell lymphoma line derived from a spontaneous reticulum cell neoplasm	cellLine	Blood		M	Stam  	ATCC TIB-208	7069	A20
+AtT-20	Mus musculus	Mm	Pituitary tumor LAF1	cellLine	Cortex		M	ENCODE  	ATCC CCL-89	7087	AtT-20
+B-cell (CD19+)	Mus musculus	Mm	B Cell , CD19+	primaryCells	Blood		M	Stam  	Stam lab B-cell_(CD19+)	7069	B-cell_(CD19+)
+B-cell (CD43-)	Mus musculus	Mm	mouse spleen B cells, CD43-,CD11b-	primaryCells	Blood		M	Stam  	M. Bender (FHCRC) B-cell_(CD43-)	7069	B-cell_(CD43-)
+BoneMarrow	Mus musculus	Mm	Bone Marrow	Tissue	Bone		U	Ren  	LICR lab BoneMarrow	6943	BoneMarrow
+C2C12	Mus musculus	Mm	Myoblast cell line derived from thigh muscle of C3H mice after crush injury	cellLine	Skeletal Muscle		F	Wold  	Barbara Wold lab C2C12	7125	C2C12
+Cerebellum	Mus musculus	Mm	Cerebellum	Tissue	Cerebellum		U	Ren 			
+Stam  	Mus musculus	Mm	LICR lab Cerebellum	7012	Cerebellum						
+Cerebrum	Mus musculus	Mm	Cerebrum	Tissue	Cerebrum		U	Stam  	UW Lab Cerebrum		Cerebrum
+CH12	Mus musculus	Mm	B-cell lymphoma (GM12878 analog)	cellLine	Blood		F	Weissman  	Weissman lab CH12	7069	CH12
+Colon	Mus musculus	Mm	Colon	Tissue	Colon		U	Ren  	LICR lab Colon	6984	Colon
+Cortex	Mus musculus	Mm	Cortex	Tissue	Cortex		U	Ren  	LICR lab Cortex	4465	Cortex
+Erythrobl	Mus musculus	Mm	Erythroblast, ter119+ cells from liver	primaryCells	Blood		U	Hardison  	Mitch Weiss lab Erythroblast	7079	Erythrobl
+ES-Bruce4	Mus musculus	Mm	mouse embryonic stem cells	primaryCells			M	Ren  	University of California, San Diego Transgenic Core and Embryonic Stem Cell ES-Bruce4		ES-Bruce4
+ES-CJ7	Mus musculus	Mm	ES-cells were originally isolated from 129S1/SVImJ mice by Swiatek PJ et al. in 1993 ("Perinatal lethality and defects in hindbrain development in mice homozygous for a targeted mutation of the zinc finger gene Krox20". Swiatek PJ, Gridley T. Genes Dev. 1993 Nov,7(11):2071-84.)	primaryCells			U	Stam  	Uw lab ES-CJ7		ES-CJ7
+FatPad	Mus musculus	Mm	Adipose tissue	Tissue	Adipose		U	Stam  	UW lab FatPad	7108	FatPad
+Fibroblast	Mus musculus	Mm	Fibroblast	Tissue	Lung		U	Stam  	UW lab Fibroblast	6948	Fibroblast
+ForelimbBud	Mus musculus	Mm	embryo forelimb buds	Tissue	Limb		U	Stam  	Selleri lab, Cornell ForelimbBud	3883	ForelimbBud
+G1E	Mus musculus	Mm	Gata1- erythroid progenitor	cellLine	Blood		U	Hardison  	Mitch Weiss lab	7079	G1E
+G1E-ER4+E2	Mus musculus	Mm	Gata1 restored erythroid cells, differentiation induced by estradiol (E2)	cellLine	Blood		U	Hardison  	Mitch Weiss lab	7079	G1E-ER4+E2
+GenitalFatPad	Mus musculus	Mm	Genital Adipose tissue	Tissue	Adipose		U	Stam  	UW lab GenitalFatPad	16230	GenitalFatPad
+HeadlessEmbryo	Mus musculus	Mm	Whole embryos with heads removed	Tissue	Embryo		U	Stam  	Selleri lab, Cornell HeadlessEmbryo	3341	HeadlessEmbryo
+Heart	Mus musculus	Mm	Heart	Tissue	Heart		U	Ren  	LICR lab Heart	7103	Heart
+HindlimbBud	Mus musculus	Mm	embryo hindlimb buds	Tissue	Limb		U	Stam  	Selleri lab, Cornell HindlimbBud	3891	HindlimbBud
+Kidney	Mus musculus	Mm	Kidney	Tissue	Kidney		U	Stam  	UW lab Kidney		Kidney
+Limb	Mus musculus	Mm	Limb	Tissue	Limb		U	Ren  	LICR lab Limb	7127	Limb
+Liver	Mus musculus	Mm	Liver	Tissue	Liver		U	Ren 			
+Stam  	Mus musculus	Mm	LICR lab Liver	6963	Liver						
+Lung	Mus musculus	Mm	Lung	Tissue	Lung		U	Ren  	LICR lab Lung	6948	Lung
+MEF	Mus musculus	Mm	Mouse Embryonic Fibroblast	primaryCells	Embryonic Fibroblast		U	Ren  	LICR lab MEF	6948	MEF
+Megakaryo	Mus musculus	Mm	Megakaryocyte	primaryCells	Blood		U	Hardison  	Mitch Weiss lab	7054	Megakaryo
+MEL	Mus musculus	Mm	Leukemia (K562 analog)	cellLine	Blood		M	Weissman 			
+Stam  	Mus musculus	Mm	Weissman lab MEL		MEL						
+Mesoderm	Mus musculus	Mm	axial somatic and lateral plate mesoderm from eviscerated headless, limbless embryos	Tissue	Mesoderm		U	Stam  	Selleri lab, Cornell Mesoderm	3342	Mesoderm
+Muscle	Mus musculus	Mm	Muscle	Tissue	Blood		U		Hardison lab	7054	Muscle
+Myocyte	Mus musculus	Mm	Myocyte	cellLine	Blood		U		Hardison		Myocyte
+NIH-3T3	Mus musculus	Mm	fibroblast	cellLine	Blood		M	Stam  	ATCC CRL-1658	7146	NIH-3T3
+OlfactBulb	Mus musculus	Mm	Olfactory Bulb	Tissue	Olfactory Bulb		U	Ren  	LICR lab Olfactory Bulb	7015	OlfactBulb
+Pancreas	Mus musculus	Mm	Pancreas	Tissue	Pancreas		U	Ren  	LICR lab Pancreas	7015	Pancreas
+Patski	Mus musculus	Mm	Mouse Embryonic Kidney Fibroblast. As described in Lingenfelter et al., 1998 (Nat Genet. 1998 18:212-3) and Yang et al., 2010 (Genome Res. 2010 20:614-22), PATSKI is a female interspecific mouse fibroblast that was derived from the embryonic kidney of an M.spretus x C57BL/6J hybrid mouse such that the C57Bl/6J X chromosome (maternal) is always the inactive X. This is an adherent cell line.	cellLine	Kidney		F	Stam  	Dr. Christine Disteche (University of Washington) Patski	6948	Patski
+Placenta	Mus musculus	Mm	Placenta	Tissue	Placenta		U	Ren  	LICR lab Placenta	6957	Placenta
+SmIntestine	Mus musculus	Mm	Small Intestine	Tissue	Small Intestine		U	Ren  	LICR lab Small Intestine	6978	SmIntestine
+Spleen	Mus musculus	Mm	Spleen	Tissue	Spleen		U	Ren  	LICR lab Spleen	7038	Spleen
+T-Naive	Mus musculus	Mm	Naive T cells: CD4+, CD25-	primaryCells	Blood		U	Stam  	UW lab T-Naive	7060	T-Naive
+Testis	Mus musculus	Mm	Testis	Tissue	Testis		U	Ren  	LICR lab Testis	9201	Testis
+Thymus	Mus musculus	Mm	Thymus	Tissue	Thymus		U	Ren 			
+Stam  	Mus musculus	Mm	LICR lab Thymus	7037	Thymus						
+TReg	Mus musculus	Mm	Regulatory T cells CD4+,CD25+	primaryCells	Blood		U	Stam  	UW lab TReg	7060	TReg
+WholeBrain	Mus musculus	Mm	Whole Brain	Tissue	Brain		U	Stam  	UW lab Whole Brain	7005	WholeBrain
+ZhBTc4	Mus musculus	Mm	Undifferentiated mouse embryonic stem cells	primaryCells			M	Stam  	Dr. Levasseur (University of Iowa) ZhBTc4		ZhBTc4
