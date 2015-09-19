@@ -1,2 +1,2 @@
 # chipatlas
-Source codes of VhIP-Atlas
+Source codes of ChIP-Atlas
