@@ -22,8 +22,31 @@ function motifOrBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome
   mv tmpForMotifOrBed $inBed
 }
 
+
+# 入力ファイルの遺伝子名を Bed に変換する
+function geneToBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome  $3 = distanceUp  $4 = distanceDown
+  inGene=$1
+  genomeForGeneToBed=$2
+  upBp=$3
+  dnBp=$4
+  tssList="/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genomeForGeneToBed".bed"
+  cat $tssList| awk -v inGene=$inGene -v upBp=$upBp -v dnBp=$dnBp '
+  BEGIN {
+    while ((getline < inGene) > 0) g[tolower($1)]++
+    close(inGene)
+  } {
+    if (g[tolower($4)] > 0) {
+      beg = ($5 == "+")? $2 - upBp : $3 - dnBp
+      end = ($5 == "+")? $2 + dnBp : $3 + upBp
+      if (beg < 1) beg = 1
+      printf "%s\t%s\t%s\t%s\n", $1, beg, end, $4
+    }
+  }' > tmpForGeneToBed
+  mv tmpForGeneToBed $inGene
+}
+
+
 # パラメータの取得, 変数宣言
-shufN=1
 descriptionA="My data"
 descriptionB="Comparison"
 title="My data vs Comparison"
@@ -37,27 +60,53 @@ done
 # typeA : "BED" / "gene"
 # typeB : "random" / "userBED" / "RefSeq" / "userGenes"
 
-case $typeA in
-  BED)
-    motifOrBed $bedA $genome
-
-
-
-
-
-
-
-
-
 expL="/home/w3oki/chipatlas/lib/assembled_list/experimentList.tab"
 filL="/home/w3oki/chipatlas/lib/assembled_list/fileList.tab"
 tmpF="$outF.tmpForbedToBoundProteins"
 outTsv="wabi_result.tsv"
 outHtml="wabi_result.html"
+shufN=`echo $permTime| awk '{printf "%d", ($1 + 0 > 0)? $1 : 1}'`
+
+
+# タイプごとに入力ファイルを処理
+case $typeA in
+  "BED")
+    motifOrBed $bedA $genome
+    case $typeB in
+      "random")
+        for i in `seq $permTime`; do
+          bedtools shuffle -i $bedA -g /home/w3oki/chipatlas/lib/genome_size/$genome.chrom.sizes
+        done > $bedB
+        ;;
+      "userBED")
+        motifOrBed $bedB $genome
+        ;;
+    esac
+    ;;
+  "gene")
+    geneToBed $bedA $genome $distanceUp $distanceDown
+    case $typeB in
+      "RefSeq")
+        cat "/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genome".bed"| awk -v bedA=$bedA '
+        BEGIN {
+          while ((getline < bedA) > 0) g[$4]++
+        } {
+          if (g[$4] < 1) print
+        }' > $bedB
+        geneToBed $bedB $genome $distanceUp $distanceDown
+        ;;
+      "userGenes")
+        geneToBed $bedB $genome $distanceUp $distanceDown
+        ;;
+    esac
+    ;;
+esac
 
 wclA=`cat $bedA| wc -l`
 wclB=`cat $bedB| wc -l`
 
+
+# ライブラリファイルの選択
 bedL=`cat $filL| awk -F '\t' -v genome="$genome" -v antigenClass="$antigenClass" -v cellClass="$cellClass" -v threshold="$threshold" '{
   if ($2 == genome && $3 == antigenClass && $5 == cellClass && $4$6 == "--" && $7 == threshold) {
     printf "/home/w3oki/chipatlas/results/%s/public/%s.bed", genome, $1
@@ -114,7 +163,7 @@ BEGIN {
     for (i=6; i<=NF; i++) printf "%s\t", $i
     printf "\n"
   }
-}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" '
+}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" '  # html に変換
 BEGIN {
   while ((getline < "/home/w3oki/bin/btbpToHtml.txt") > 0) {
     gsub("___Title___", title, $0)
