@@ -1,0 +1,152 @@
+#!/bin/sh
+#$ -S /bin/sh
+
+# $1 配列
+
+while getopts h option
+do
+    case "$option" in
+    h)
+        echo "
+        
+-----------------------------------------------------------
+                       NtoATGC
+-----------------------------------------------------------
+
+引数で指定した塩基配列の全ての組み合わせを出力します。
+（使用可能塩基：A T G C W R M K Y S H B V D N）
+
+例）
+NtoATGC ATGCNWAVC
+
+ATGCAAAAC
+ATGCAAAGC
+ATGCAAACC
+ATGCATAAC
+ATGCATAGC
+ATGCATACC
+ATGCGAAAC
+ATGCGAAGC
+ATGCGAACC
+ATGCGTAAC
+ATGCGTAGC
+ATGCGTACC
+ATGCCAAAC
+ATGCCAAGC
+ATGCCAACC
+ATGCCTAAC
+ATGCCTAGC
+ATGCCTACC
+ATGCTAAAC
+ATGCTAAGC
+ATGCTAACC
+ATGCTTAAC
+ATGCTTAGC
+ATGCTTACC
+"
+        exit 0
+        ;;
+    esac
+done
+
+#一文字標記
+# W = A, T
+# R = A, G
+# M = A, C
+# K = T, G 
+# Y = T, C
+# S = G, C
+# H = A, C, T
+# B = G, C, T
+# V = A, G, C
+# D = A, G, T
+# N = A, G, C, T
+
+tmpdir="/home/w3oki/tmp/NtoATGC_tmp"$RANDOM$RANDOM$RANDOM
+
+len=`echo $1| wc -c`
+len=`expr $len - 1`
+
+mkdir -p $tmpdir
+
+echo $1 | tr '[a-z]' '[A-Z]' > $tmpdir/0.NtoATGC
+
+for num in `seq $len`;do
+  prev=`expr $num - 1`
+  cat $tmpdir/$prev.NtoATGC |\
+  awk -v NUM=$num -v TMPDIR=$tmpdir '{
+    enki = substr($1,NUM,1)
+    if (enki == "T" || enki == "G" || enki == "C" || enki == "A") {
+      print $1 >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "W") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "R") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "M") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "K") {
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "Y") {
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "S") {
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "H") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "B") {
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "V") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "D") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else if (enki == "N") {
+      printf("%sA%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sG%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sC%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+      printf("%sT%s\n", substr($1,1,NUM-1), substr($1,NUM+1) ) >> TMPDIR"/"NUM".NtoATGC"
+    }
+    else {
+      print "error" >> TMPDIR"/err.NtoATGC"
+    }
+  }'
+done 2> $tmpdir/stderr.NtoATGC
+
+echo aaa >> $tmpdir/err.NtoATGC
+err=`grep "error" $tmpdir/err.NtoATGC| wc -l`
+ 
+if [ ${err} -gt "0" ];then
+  NN=`echo $1 | tr '[a-z]' '[A-Z]' |tr -d 'ATGCWRMKYSHBVDN' | wc -c`
+  NN=`expr $NN - 1`
+  for N in `seq $NN`; do
+    echo $1 | tr '[a-z]' '[A-Z]' |tr -d 'ATGCWRMKYSHBVDN'|cut -b $N
+  done| sort |uniq | tr -d '\n' | awk '{print "Error_" $1}'
+else
+  cat $tmpdir/$len.NtoATGC
+fi
+
+rm -r $tmpdir
+

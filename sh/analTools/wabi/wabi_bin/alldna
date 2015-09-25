@@ -1,0 +1,25 @@
+#!/bin/sh
+
+while getopts h option
+do
+    case "$option" in
+    h)
+        echo "
+引数で指定した長さの塩基配列の全ての組み合わせを出力します。
+"
+        exit 0
+        ;;
+    esac
+done
+
+SeqLen=$1
+Seq=`echo $((4 ** $SeqLen))`
+
+i=0
+while [ $i -lt $Seq ];do
+  echo $i
+  let i="$i+1"
+done |\
+/home/w3oki/bin/4shinsu |\
+awk -v SEQLEN=$SeqLen '{printf "%0*d\n", SEQLEN, $1}' |\
+tr 0123 ATGC

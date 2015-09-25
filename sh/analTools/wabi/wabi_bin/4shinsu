@@ -1,0 +1,36 @@
+#!/bin/sh
+
+while getopts h option
+do
+    case "$option" in
+    h)
+        echo "
+このコマンドは、10進数の数字のみからなる標準入力またはファイル入力を、４進数に変換します。
+（例）
+　　　$ echo 64 | 4shinsu
+       1000
+
+　　　$ cat ファイル名
+       16
+       64
+　　　$ cat ファイル名 | 4shinsu
+       100
+       1000
+　　　$ 4shinsu ファイル名
+       100
+       1000
+"
+        exit 0
+        ;;
+    esac
+done
+  
+cat $1 | awk '{
+  KETA_MAX=int(log($1)/log(4))
+  joyo=$1
+  for (keta=KETA_MAX; keta>=0; keta--) {
+    printf "%d", joyo/exp(keta*log(4))
+    joyo=joyo%exp(keta*log(4))
+  }
+  printf "\n"
+}'

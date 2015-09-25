@@ -1,0 +1,92 @@
+#!/bin/sh
+#$ -S /bin/sh
+
+# $1 配列
+# $2 ゲノム
+# $3 ファイル名
+
+zz=0
+
+{
+while getopts hBz option
+do
+    case "$option" in
+    h)
+        echo "
+        
+-----------------------------------------------------------
+                       motifbed
+-----------------------------------------------------------
+
+引数で指定した塩基配列の位置を BigBed ファイルとして出力します。
+（使用可能塩基：A T G C W R M K Y S H B V D N）
+
+基本コマンド
+motifbed query_sequence genome filename
+
+例）
+motifbed ATGCNWAVC mm9 test
+とすると、test.bb がホームディレクトリに生成されます。
+
+qsub でジョブ投入することもできます。
+例）
+qsub -pe def_slot 1-16 bin/motifbed ATGCNATGC mm9 test
+
+
+オプション
+-B    Bed ファイルも生成する。
+
+-z    query sequence を制限酵素で指定できる (大文字小文字は区別される)。
+        例）
+        qsub -pe def_slot 1-16 bin/motifbed -z HindIII mm9 test
+"
+        exit 0
+        ;;
+        
+    B) bb=1 ;;
+    z) zz=1 ;;
+    esac
+done
+shift `expr $OPTIND - 1`
+}
+
+PATH=$PATH:$HOME/bin
+
+query=$1
+
+len=`echo $query| wc -c`
+len=`expr $len - 1`
+
+if [ ${len} -gt "13" ];then
+  alldna_len=1
+else
+  alldna_len=`expr 14 - $len`
+fi
+
+
+tmpdir="/home/w3oki/tmp/motifbed_temp_"$RANDOM$RANDOM$RANDOM
+mkdir -p $tmpdir
+
+for sequence in `/home/w3oki/bin/NtoATGC $query`; do
+  echo $sequence >> $tmpdir/$len.motifbed
+  if [ `echo $sequence| grep "Error"` ]; then
+    echo $sequence    # Error_XL
+    rm -r $tmpdir
+    exit
+  fi
+done 
+
+for LL in `cat $tmpdir/$len.motifbed | tr '\n' ' '`; do
+  /home/w3oki/bin/alldna $alldna_len |\
+  awk -v SEQ=$LL '{printf ">" NR $1 "\n" SEQ $1 "\n"}' >> $tmpdir/input_seq
+done
+
+
+bowtie -t -a -v0 /home/w3oki/chipatlas/lib/bowtie_index/$2 --suppress 1,5,6,7,8 -f $tmpdir/input_seq |\
+awk -v DIR=$tmpdir -v LEN=$len -v ALLDNA_LEN=$alldna_len '{
+  if ($1 == "+") print $2 "\t" $3 "\t" $3+LEN "\t" $1
+  else print $2 "\t" $3+ALLDNA_LEN "\t" $3+LEN+ALLDNA_LEN "\t" $1
+}'| sort -k4| awk '!a[$1,$2,$3]++'
+
+rm -r $tmpdir
+
