@@ -13,10 +13,10 @@ function motifOrBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome
       i++
     }
   } END {
-    printf "%s", (i > 0)? 1 : 0
+    printf "%d", i
   }'`
-  if [ mb = "0" ]; then     # 入力が motif の場合、Bed に変換
-    motif=`cat $inBed| tr -d '[^a-zA-Z]'`
+  if [ $mb = "0" ]; then     # 入力が motif の場合、Bed に変換
+    motif=`cat $inBed| sed 's/[^a-zA-Z]//g'`
     /home/w3oki/bin/motifbed $motif $genomeForMotifOrBed > "tmpForMotifOrBed"
   fi
   mv tmpForMotifOrBed $inBed
@@ -50,11 +50,16 @@ function geneToBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome  $3 = di
 descriptionA="My data"
 descriptionB="Comparison"
 title="My data vs Comparison"
-hed="Search for proteins significantly bound to Bed files."
+hed="Search for proteins significantly bound to your data."
 
 for VAR in bedA bedB bedL outF typeA typeB descriptionA descriptionB title permTime distanceDown distanceUp genome antigenClass cellClass threshold; do
   eval $VAR='$'1
   shift
+done
+
+for fn in $bedA $bedB; do
+  cat $fn| tr -d '\015' > tmpForinBed
+  mv tmpForinBed $fn
 done
 
 # typeA : "BED" / "gene"
@@ -65,37 +70,38 @@ filL="/home/w3oki/chipatlas/lib/assembled_list/fileList.tab"
 tmpF="$outF.tmpForbedToBoundProteins"
 outTsv="wabi_result.tsv"
 outHtml="wabi_result.html"
-shufN=`echo $permTime| awk '{printf "%d", ($1 + 0 > 0)? $1 : 1}'`
+shufN=1
 
 
 # タイプごとに入力ファイルを処理
 case $typeA in
-  "BED")
+  "BED")  # TypeA = BED の場合、モチーフは BED に、BED はそのまま。
     motifOrBed $bedA $genome
     case $typeB in
-      "random")
+      "random")  # TypeB = random の場合、bedtools shuffle を行う
         for i in `seq $permTime`; do
           bedtools shuffle -i $bedA -g /home/w3oki/chipatlas/lib/genome_size/$genome.chrom.sizes
         done > $bedB
+        shufN=$permTime
         ;;
-      "userBED")
+      "userBED")  # TypeB = BED の場合、モチーフは BED に、BED はそのまま。
         motifOrBed $bedB $genome
         ;;
     esac
     ;;
-  "gene")
+  "gene")  # TypeA = gene の場合、geneA を BED に変換
     geneToBed $bedA $genome $distanceUp $distanceDown
     case $typeB in
-      "RefSeq")
+      "RefSeq")  # TypeB = RefSeq の場合、geneA 以外の遺伝子を BED に変換
         cat "/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genome".bed"| awk -v bedA=$bedA '
         BEGIN {
           while ((getline < bedA) > 0) g[$4]++
         } {
-          if (g[$4] < 1) print
+          if (g[$4] + 0 < 1) print $4
         }' > $bedB
         geneToBed $bedB $genome $distanceUp $distanceDown
         ;;
-      "userGenes")
+      "userGenes")  # TypeB = userGenes の場合、そのまま BED に変換
         geneToBed $bedB $genome $distanceUp $distanceDown
         ;;
     esac
@@ -179,8 +185,8 @@ BEGIN {
   for (i=2; i<=5; i++) print "<td>" $i "</td>"
   for (i=6; i<=8; i++) printf "<td align=\"right\">%s</td>\n", $i
   for (i=9; i<=10; i++) printf "<td align=\"right\">%.1f</td>\n", $i
-  printf "<td align=\"right\">%.2f</td>\n", $11
-  printf "<td>%s</td>\n", ($11 > 1)? "TRUE" : "FALSE"
+  printf "<td align=\"right\">%s</td>\n", ($11 == "inf")? 99999 : sprintf("%.2f", $11)
+  printf "<td>%s</td>\n", ($11 > 1 || $11 == "inf")? "TRUE" : "FALSE"
   print "</tr>"
 } END {
   print "</tbody>"
@@ -189,7 +195,7 @@ BEGIN {
 
 
 
-# rm $tmpF "$tmpF"2 "$tmpF"3
+rm $tmpF "$tmpF"2 "$tmpF"3
 
 #       ある SRX と重なる   重ならない
 # bedA              a         c       a+c = bedA の行数 (= wclA)
@@ -199,6 +205,7 @@ BEGIN {
 
 # SRX499128   TFs and others    Pou5f1    Pluripotent stem cell   EpiLC   2453   5535/18356    1801/2623   -310.382    -307.491     0.439
 # SRX         抗原大             抗原小     細胞大                   細胞小   peak数  a / wclA      b / wclB    p-Val     q-Val (BH)   列7,8のオッズ比
+
 
 
 

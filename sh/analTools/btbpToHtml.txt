@@ -102,7 +102,7 @@ $(document).ready(function() {
 <th title="Cell-type calss.">Cell calss</th>
 <th title="Cell-type.">Cell</th>
 <th title="Number of peaks called for the accession ID at column 1.">Num of peaks</th>
-<th title="Number of peaks overlapping with '___Targets___.'">Overlaps / ___Targets___</th>
+<th title="Number of peaks overlapping with '___Targets___'.">Overlaps / ___Targets___</th>
 <th title="Number of peaks overlapping with '___References___'.">Overlaps / ___References___</th>
 <th title="Log10(p-value) calculated by Fisher's exact test to compare the probability of column 7 and 8.">Log p-val </th>
 <th title="Log10(q-value) calculated by Benjamini and Hochberg method.">Log q-val </th>
