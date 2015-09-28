@@ -54,6 +54,7 @@ hed="Search for proteins significantly bound to your data."
 
 for VAR in bedA bedB bedL outF typeA typeB descriptionA descriptionB title permTime distanceDown distanceUp genome antigenClass cellClass threshold; do
   eval $VAR='$'1
+  eval echo $VAR "=" '$'1
   shift
 done
 
@@ -65,6 +66,10 @@ done
 # typeA : "BED" / "gene"
 # typeB : "random" / "userBED" / "RefSeq" / "userGenes"
 
+# typeA : "bed" / "gene"
+# typeB : "rnd" / "bed" / "refseq" / "userlist"
+
+
 expL="/home/w3oki/chipatlas/lib/assembled_list/experimentList.tab"
 filL="/home/w3oki/chipatlas/lib/assembled_list/fileList.tab"
 tmpF="$outF.tmpForbedToBoundProteins"
@@ -75,16 +80,16 @@ shufN=1
 
 # タイプごとに入力ファイルを処理
 case $typeA in
-  "BED")  # TypeA = BED の場合、モチーフは BED に、BED はそのまま。
+  "bed")  # TypeA = BED の場合、モチーフは BED に、BED はそのまま。
     motifOrBed $bedA $genome
     case $typeB in
-      "random")  # TypeB = random の場合、bedtools shuffle を行う
+      "rnd")  # TypeB = random の場合、bedtools shuffle を行う
         for i in `seq $permTime`; do
           bedtools shuffle -i $bedA -g /home/w3oki/chipatlas/lib/genome_size/$genome.chrom.sizes
         done > $bedB
         shufN=$permTime
         ;;
-      "userBED")  # TypeB = BED の場合、モチーフは BED に、BED はそのまま。
+      "bed")  # TypeB = BED の場合、モチーフは BED に、BED はそのまま。
         motifOrBed $bedB $genome
         ;;
     esac
@@ -92,7 +97,7 @@ case $typeA in
   "gene")  # TypeA = gene の場合、geneA を BED に変換
     geneToBed $bedA $genome $distanceUp $distanceDown
     case $typeB in
-      "RefSeq")  # TypeB = RefSeq の場合、geneA 以外の遺伝子を BED に変換
+      "refseq")  # TypeB = RefSeq の場合、geneA 以外の遺伝子を BED に変換
         cat "/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genome".bed"| awk -v bedA=$bedA '
         BEGIN {
           while ((getline < bedA) > 0) g[$4]++
@@ -101,7 +106,7 @@ case $typeA in
         }' > $bedB
         geneToBed $bedB $genome $distanceUp $distanceDown
         ;;
-      "userGenes")  # TypeB = userGenes の場合、そのまま BED に変換
+      "userlist")  # TypeB = userGenes の場合、そのまま BED に変換
         geneToBed $bedB $genome $distanceUp $distanceDown
         ;;
     esac
