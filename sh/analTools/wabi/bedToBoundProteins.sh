@@ -51,8 +51,11 @@ descriptionA="My data"
 descriptionB="Comparison"
 title="My data vs Comparison"
 hed="Search for proteins significantly bound to your data."
+wabiID=`cat job_info.json| tr -d '"":,'| awk '$1 == "requestId" {printf "%s", $2}'`
 
-for VAR in bedA bedB bedL outF typeA typeB descriptionA descriptionB title permTime distanceDown distanceUp genome antigenClass cellClass threshold; do
+
+
+for VAR in bedA bedB outTsv outHtml typeA typeB descriptionA descriptionB title permTime distanceDown distanceUp genome antigenClass cellClass threshold; do
   eval $VAR='$'1
   eval echo $VAR "=" '$'1
   shift
@@ -174,7 +177,7 @@ BEGIN {
     for (i=6; i<=NF; i++) printf "%s\t", $i
     printf "\n"
   }
-}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" '  # html に変換
+}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" -v wabiID="$wabiID" '  # html に変換
 BEGIN {
   while ((getline < "/home/w3oki/bin/btbpToHtml.txt") > 0) {
     gsub("___Title___", title, $0)
@@ -182,6 +185,7 @@ BEGIN {
     gsub("___References___", descriptionB, $0)
     gsub("___Header___", hed, $0)
     gsub("___Caption___", title, $0)
+    gsub("___WABIid___", wabiID, $0)
     print
   }
 } {
@@ -210,6 +214,7 @@ rm $tmpF "$tmpF"2 "$tmpF"3
 
 # SRX499128   TFs and others    Pou5f1    Pluripotent stem cell   EpiLC   2453   5535/18356    1801/2623   -310.382    -307.491     0.439
 # SRX         抗原大             抗原小     細胞大                   細胞小   peak数  a / wclA      b / wclB    p-Val     q-Val (BH)   列7,8のオッズ比
+
 
 
 
