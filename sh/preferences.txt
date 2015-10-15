@@ -3,3 +3,4 @@ qVal	05 10 20	ピークコールの q-val (intialize.sh)
 nSlotForSrT	4	sraTailor のためのスロット数 (Controller.sh)
 HDsize	30	保存容量 (TB) (Controller.sh)
 qLarge	50	MACS2 によらずに作る q-val threshold (bed4ToBigBed.sh)
+www	http://52.68.86.161	Web site の URL

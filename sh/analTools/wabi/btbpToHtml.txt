@@ -25,13 +25,8 @@
 </style>
 </head>
 <body class="bodyMargin" onresize="location.reload()">
-<h1>ChIP-Atlas / Virtual ChIP</h1>
+<h1>ChIP-Atlas / in silico ChIP</h1>
 <p>___Header___</p>
-<p>
-  Download 
-  (<a style="text-decoration: none" href="http://ddbj.nig.ac.jp/wabi/chipatlas/wabi_chipatlas____WABIid___?info=result&format=html">HTML</a>
-  <a style="text-decoration: none" href="http://ddbj.nig.ac.jp/wabi/chipatlas/wabi_chipatlas____WABIid___?info=result&format=tsv">TSV</a>)
-</p>
 
 <script>
 jQuery.fn.dataTableExt.aTypes.unshift(

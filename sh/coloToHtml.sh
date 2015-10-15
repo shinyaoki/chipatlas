@@ -5,14 +5,19 @@
 
 Size=25
 SIZE=100
-url1="http://devbio.med.kyushu-u.ac.jp/chipome/colo/"
-url2="http://devbio.med.kyushu-u.ac.jp/SRX_html/"
+
 inFn="$1"   # inFn の種類: 抗原.細胞大.tsv,  SRX.tsv,  STRING_抗原.細胞大.tsv
 HLM="$2"
 ctL="$3"
 ctl=`echo $ctL| tr '_' ' '`
 Genome="$4"
 qProt=`head -n1 "$inFn"| cut -f4| cut -d '|' -f1`         # POU5F1
+
+url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/colo/"       # html へのリンク
+url2="http://52.68.86.161/view?id="                                   # 個別 SRX へのリンク
+urlDoc="https://github.com/inutano/chip-atlas/wiki#6-colocalization"  # Dicument へのリンク
+urlTSV="$url1$qProt.$ctl.tsv"                                         # TSV へのリンク
+
 fnHead=`basename "$inFn"| cut -d '.' -f1| cut -d '_' -f1` # 抗原 or SRX or STRING
 sortKey=`head -n1 "$inFn"| tr '\t' '\n'| awk -F '\t' -v fnHead=$fnHead -v qProt=$qProt '{
   if (fnHead ~ /^[SED]RX[0-9][0-9][0-9][0-9]/ && $1 ~ fnHead) printf "%s", $1
@@ -38,7 +43,7 @@ wid=`head -n1 "$inFn"| awk -v Size=$Size -v SIZE=$SIZE '{printf "%d", SIZE*4 + (
 cat << DDD
 <!DOCTYPE html>
 <head>
-<title>ChIP-Atlas | Co-aasociation</title>
+<title>ChIP-Atlas | Colocalization</title>
 
 <FONT face="Helvetica">
   <style type="text/css">
@@ -67,8 +72,8 @@ cat << DDD
 </head>
 
 <body class="bodyMargin">
-<h1>ChIP-Atlas: Co-association analysis</h1>
-<h2>Co-association analysis for $qProt</h2>
+<h1>ChIP-Atlas: Colocalization analysis</h1>
+<h2>Colocalization analysis for $qProt</h2>
 
 <div class="lineWidth"><b>Query protein: </b>$qProt</div>
 <div class="lineWidth"><b>Cell class: </b>$ctl</div>
@@ -101,8 +106,8 @@ cat << DDD
 </tr></table>
 <br>
 <div class="lineWidth"><b>Usage: </b><a target="_blank" title="How to" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for co-association analysis in ChIP-Atlas" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href=http://www.yahoo.co.jp>$qProt.$ctl.tsv</a></div>
+<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for Colocalization analysis in ChIP-Atlas" href="$urlDoc">here</a></div>
+<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href="$urlTSV">$qProt.$ctl.tsv</a></div>
 
 
 
@@ -132,7 +137,7 @@ BEGIN {
       split($4, qProt, "|")
       if (i == 2) print "<td align=\"right\" width=" SIZE*2 " height=" Size ">Cell types</td>"
       if (i == 3) print "<td width=" SIZE*1 " height=" Size ">&nbsp;Exp. IDs</td>"
-      if (i == 3) print "<td width=" SIZE*1 " height=" Size "><b>" qProt[1] "</b>\047s Coassociation partners</td>"
+      if (i == 3) print "<td width=" SIZE*1 " height=" Size "><b>" qProt[1] "</b>\047s Colocalization partners</td>"
       if (i == 3) print "<td width=" Size*1 " height=" Size "><p id=\"rotate\">" "</p></td>"
       
       # 4 列目 以降
@@ -176,7 +181,7 @@ BEGIN {
         if (i == NF-1 || i == 4) printf "<td width=%s height=%s></td>", Size, Size  # Average と STRING は一列あける
       }
     } else { # 2 行目以降
-      pUrl = URL1 $1
+      pUrl = URL1 $1 ".html"
       srxUrl = URL2 $1
       if (i == 2) gsub("_", "\\&nbsp;", $2)
       if (i == 2) print "<td align=\"right\" width=" SIZE*2 " height=" Size "><div class=\"nowrap\">" $i "</div></td>"

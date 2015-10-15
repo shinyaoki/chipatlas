@@ -52,6 +52,7 @@ descriptionB="Comparison"
 title="My data vs Comparison"
 hed="Search for proteins significantly bound to your data."
 wabiID=`cat job_info.json| tr -d '"":,'| awk '$1 == "requestId" {printf "%s", $2}'`
+srxUrl="http://52.68.86.161/view?id="
 
 
 
@@ -177,7 +178,7 @@ BEGIN {
     for (i=6; i<=NF; i++) printf "%s\t", $i
     printf "\n"
   }
-}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" -v wabiID="$wabiID" '  # html に変換
+}'| tee $outTsv| awk -F '\t' -v descriptionA="$descriptionA" -v descriptionB="$descriptionB" -v hed="$hed" -v title="$title" -v wabiID="$wabiID" -v srxUrl=$srxUrl '  # html に変換
 BEGIN {
   while ((getline < "/home/w3oki/bin/btbpToHtml.txt") > 0) {
     gsub("___Title___", title, $0)
@@ -190,7 +191,7 @@ BEGIN {
   }
 } {
   print "<tr>"
-  print "<td title=\"Open this Info...\"><a target=\"_blank\" style=\"text-decoration: none\" href=\"http://devbio.med.kyushu-u.ac.jp/SRX_html/" $1 "\">" $1 "</a></td>"
+  print "<td title=\"Open this Info...\"><a target=\"_blank\" style=\"text-decoration: none\" href=\"" srxUrl $1 "\">" $1 "</a></td>"
   for (i=2; i<=5; i++) print "<td>" $i "</td>"
   for (i=6; i<=8; i++) printf "<td align=\"right\">%s</td>\n", $i
   for (i=9; i<=10; i++) printf "<td align=\"right\">%.1f</td>\n", $i

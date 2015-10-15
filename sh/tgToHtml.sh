@@ -7,11 +7,17 @@ Size=25
 SIZE=100
 inFn="$1"   # inFn の種類: 抗原.tsv,  SRX.tsv,  STRING_抗原.tsv
 Genome="$2"
-url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/"
-url2="http://devbio.med.kyushu-u.ac.jp/SRX_html/"
+
+
 qProt=`head -n1 "$inFn"| cut -f2| cut -d '|' -f1`         # POU5F1
 fnHead=`basename "$inFn"| cut -d '.' -f1| cut -d '_' -f1` # 抗原 or SRX or STRING
 Wkb=`basename "$inFn"| cut -d '.' -f2`                    # 1 5 10 (+- TSS kb)
+
+url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/"    # html へのリンク
+url2="http://52.68.86.161/view?id="                                  # 個別 SRX へのリンク
+urlDoc="https://github.com/inutano/chip-atlas/wiki#5-target-genes"   # Dicument へのリンク
+urlTSV="$url1$qProt.$Wkb.tsv"                                        # TSV へのリンク
+
 sortKey=`head -n1 "$inFn"| tr '\t' '\n'| awk -F '\t' -v fnHead=$fnHead -v qProt=$qProt '{
   if (fnHead ~ /^[SED]RX[0-9][0-9][0-9][0-9]/ && $1 ~ fnHead) printf "%s", $1
   else if (fnHead ~ "STRING" && $1 == "STRING") printf "%s|%s", qProt, $1
@@ -30,6 +36,11 @@ projectDir=`echo $0| sed 's[/sh/tgToHtml.sh[['`
 
 wid=`head -n1 "$inFn"| awk -v Size=$Size -v SIZE=$SIZE '{printf "%d", SIZE*1 + (NF-1)*Size}'` # テーブル全体のサイズ
 
+case $Wkb in
+  1)  strKb='&#177; <b>1 kb</b>&nbsp;&nbsp;<a class=dist href="'"$url1$qProt.5.html"'">&#177; 5 kb</a>&nbsp;&nbsp;<a class=dist href="'"$url1$qProt.10.html"'">&#177; 10 kb</a>';;
+  5)  strKb='<a class=dist href="'"$url1$qProt.1.html"'">&#177; 1 kb</a>&nbsp;&nbsp;&#177; <b>5 kb&nbsp;&nbsp;</b><a class=dist href="'"$url1$qProt.10.html"'">&#177; 10 kb</a>';;
+  10) strKb='<a class=dist href="'"$url1$qProt.1.html"'">&#177; 1 kb</a>&nbsp;&nbsp;<a class=dist href="'"$url1$qProt.5.html"'">&#177; 5 kb</a>&nbsp;&nbsp;&#177; <b>10 kb</b>';;
+esac
 
 # html のヘッダ情報
 # margin = 上 右 下 左 を指定
@@ -60,6 +71,7 @@ cat << DDD
   .lineWidth {line-height: 180%;}
   .tableMargin {margin: $Vspace 0px 0px 0px ;}
   .bodyMargin {margin: 30px 0px 30px 30px ;}
+  a.dist { color: rgb(70%,70%,70%); }
 
   </style>
 </head>
@@ -69,7 +81,7 @@ cat << DDD
 <h2>Potential target genes for $qProt</h2>
 
 <div class="lineWidth"><b>Query protein: </b>$qProt</div>
-<div class="lineWidth"><b>Distance from TSS: </b>$Wkb kb</div>
+<div class="lineWidth"><b>Distance from TSS: </b>$strKb</div>
 <div class="lineWidth"><b>Sort key: </b>$sortKey</div>
 <div class="lineWidth">&nbsp;</div>
 
@@ -86,8 +98,8 @@ cat << DDD
 </tr></table>
 <br>
 <div class="lineWidth"><b>Usage: </b><a target="_blank" title="How to" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for target genes in ChIP-Atlas" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href=http://www.yahoo.co.jp>$qProt.tsv</a></div>
+<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for target genes in ChIP-Atlas" href="$urlDoc">here</a></div>
+<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href="$urlTSV">$qProt.$Wkb.tsv</a></div>
 
 
 
@@ -98,7 +110,7 @@ DDD
 # 入力: 各 SRX でソートした TSV ファイル
 proteinList="$projectDir/lib/string/protein.aliases.v10.$Genome.txt"
 
-head -n 1001 "$inFn"| awk -F '\t' -v inFn="$inFn" -v Size=$Size -v SIZE=$SIZE -v URL1="$url1" -v URL2="$url2" -v proteinList="$proteinList" -v fnHead=$fnHead '
+head -n 1001 "$inFn"| awk -F '\t' -v inFn="$inFn" -v Size=$Size -v SIZE=$SIZE -v URL1="$url1" -v URL2="$url2" -v proteinList="$proteinList" -v fnHead=$fnHead -v Wkb=$Wkb '
 BEGIN {
   while ((getline < proteinList) > 0) {
     if (!proteinID[$2]) {   # ID の重複を避ける
@@ -129,9 +141,9 @@ BEGIN {
         }
         
         gsub("_", "\\&nbsp;", tag[2])
-        if (i == 2)       Url = URL1 tag[1] ".html"   # URL1 = http://devbio.med.kyushu-u.ac.jp/chipome/targetGenes/
+        if (i == 2)       Url = URL1 tag[1] "." Wkb ".html"   # URL1 = http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/
         else if (i == NF) Url = URL1 "STRING_" qProt[1] ".html"
-        else              Url = URL1 tag[1] ".html"
+        else              Url = URL1 tag[1] "." Wkb ".html"
         
         printf "<td width=%s height=%s>", Size, Size
         printf "%s", boldA  # ソートキーを太字
@@ -156,7 +168,7 @@ BEGIN {
         if (i == NF-1 || i == 2) printf "<td width=%s height=%s></td>", Size, Size  # Avreage と STRING は一列あける
       }
     } else { # 2 行目以降
-      pUrl = URL1 $1 ".html"   # URL1 = http://devbio.med.kyushu-u.ac.jp/chipome/targetGenes/
+      pUrl = URL1 $1 "." Wkb ".html"   # URL1 = http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/
       if (i == 1) print "<td width=" SIZE*1 " height=" Size "><i><nobr>" $1 "</nobr></i></td>"
       if (i == 1) print "<td title=\"Serach this target genes...\" width=" SIZE*1 " height=" Size "><b><a style=\"text-decoration: none\" href=\"" pUrl "\">&#x21BB</a></b></td>"
       if (i > 1) {

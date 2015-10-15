@@ -1,5 +1,8 @@
 #!/bin/sh
 #$ -S /bin/sh
+
+# sh chipatlas/sh/webList.sh chipatlas
+
 projectDir=$1
 minQval=`cat $projectDir/sh/preferences.txt | awk '$1 ~ "qVal" {printf "%s", $2}'`
 
@@ -52,15 +55,6 @@ done| awk -F '\t' '{
 }' > $projectDir/sh/cellTypeDescription/cellTypeDescription.txt
       # 1       K-562   Primary Tissue=Blood|Tissue Diagnosis=Leukemia Chronic Myelogenous
 
-for fn in `echo $projectDir/results/*/log/*.log.txt| xargs ls`; do
-  SRX=`basename $fn| cut -d '.' -f1`
-  cat $fn| awk -v SRX=$SRX '{
-    if($0 ~ "% overall alignment rate") {
-      sub("%", "", $1)
-      print SRX "\t" $1
-    }
-  }'
-done
 
 echo $projectDir/results/*/log/*.log.txt| xargs cat| awk -v minQval=$minQval '{
   if ($0 ~ "Job ID = ") x = ""

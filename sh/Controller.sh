@@ -22,6 +22,8 @@ let HDsize=$HDsize-2
 
 
 qsub $projectDir/sh/TimeCourse.sh $projectDir "$GENOME"
+qsub -o /dev/null -e /dev/null -pe def_slot 4 $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
+
 
 for Genome in `echo $GENOME`; do
   # Organism Name の取得

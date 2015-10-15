@@ -6,7 +6,7 @@
 
 projectDir=$2
 bedtools="$projectDir/bin/bedtools-2.17.0/bin/bedtools"
-Width="1000 5000 10000"
+Width="10000 5000 1000"
 qVal=`cat $projectDir/sh/preferences.txt| awk '$1 == "qVal" {printf "%s", $2}'`  # 最小の qVal
 
 if [ $1 = "INITIAL" ]; then

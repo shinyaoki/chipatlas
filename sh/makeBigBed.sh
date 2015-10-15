@@ -59,6 +59,7 @@ inBed=$2                            # xhipome_ver3/results/hg19/public/ALL.ALL.0
 inBn=`echo $inBed| sed s/.bed$//`   # xhipome_ver3/results/hg19/public/ALL.ALL.05.AllAg.AllCell
 Genome=`echo $inBed| sed "s/$projectDir//"| cut -d '/' -f3`
 gSize=$projectDir/lib/genome_size/$Genome.chrom.sizes
+www=`cat $projectDir/sh/preferences.txt| awk '$1 == "www" {printf "%s", $2}'`
 
 ls -l $inBed
 
@@ -71,7 +72,7 @@ done > $inBn.bed.meta
 # Genome=hg19
 
 # 抗原 $5, 細胞 $7, SRX $9
-cat $inBn.bed| tr '[]' '\t\t'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome -v meta="$inBn.bed.meta" -v inBn=$inBn '
+cat $inBn.bed| tr '[]' '\t\t'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome -v meta="$inBn.bed.meta" -v inBn=$inBn -v www="$www" '
 function symbolSub(Str,underScore) {
   gsub("%", "%25", Str)   # IGV で表示できない文字 %+;=" space を URL エンコーディング に変換
   gsub("+", "%2B", Str)
@@ -132,7 +133,7 @@ function symbolSub(Str,underScore) {
   }
   printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", p[NumSlash], Genome, agL[z[1]], agS, ctL[z[2]], ctS, z[3], SRX > inBn ".list"
                                              # ファイル名  ゲノム   抗原大     抗原小  細胞大    細胞小  q-Val SRX
-  printf "track name=\"%s (@ %s) %d\" url=\"http://www.chip-atlas.org/view/?id=$$\" gffTags=\"on\"\n", AG, CL, z[3]*10
+  printf "track name=\"%s (@ %s) %d\" url=\"%s/view?id=$$\" gffTags=\"on\"\n", AG, CL, z[3]*10, www
 } {
   if ($7 ~ "_@") {
     sub("_@", SUBSEP, $7)

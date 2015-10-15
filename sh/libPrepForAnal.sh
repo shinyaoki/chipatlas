@@ -28,7 +28,8 @@ for Genome in `ls $projectDir/results`; do
     ;;
     dm3)
       echo -e "$Genome\tFlyBase" >> keyForStringFiltering
-      curl ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/current/gtf/dmel-all-r6.05.gtf.gz| gunzip| awk -F '\t' '{
+      gtfVersion=`curl ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/current/gtf/md5sum.txt| awk '{printf "%s", $2}'`
+      curl ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/current/gtf/$gtfVersion| gunzip| awk -F '\t' '{
         if ($3 == "CDS") {
           split($9, a, "\"")
           print a[4]
@@ -90,10 +91,14 @@ stringDir=$projectDir/lib/string
 homeDir=`pwd`
 rm -rf $stringDir
 mkdir $stringDir
+mkdir $projectDir/lib/TSS
 mv keyForStringFiltering $stringDir/keyForStringFiltering.tab
 cd $stringDir
 
-curl http://string-db.org/newstring_download/protein.aliases.v10.txt.gz| gunzip > protein.aliases.v10.txt
+curl http://string-db.org/newstring_download/protein.aliases.v10.txt.gz| gunzip| sed 's/\./\!/'| tr '!' '\t'| awk -F '\t' '{
+  print $1 "\t" $1 "." $2 "\t" $3 "\t" $4
+}' > protein.aliases.v10.txt
+
 curl http://string-db.org/newstring_download/species.v10.txt > species.v10.txt
 
 # curl http://string.uzh.ch/download/protected/string_10/protein.links.full.v10.txt.gz| gunzip > protein.links.full.v10.txt
