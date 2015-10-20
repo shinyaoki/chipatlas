@@ -18,27 +18,8 @@
 # Curation 終了後のチェック
   全てのファイルを tsv エクスポートし、Downloads/classification 配下に移動させる。
   以下のコマンドでチェック
-{
-  echo "行数 チェック"
-  for fn in `ls Downloads/classification/*_Statistics-*-tab.tsv`; do
-    echo `cat $fn| wc -l` `basename $fn`| tr ' ' '\t'
-  done
-  echo "@ がついているか？"
-  for fn in `ls Downloads/classification/*_Statistics-*-tab.tsv`; do
-    echo `basename $fn`
-    tail -n+2 $fn| awk -F '\t' '{if ($5 !~ "@ ") print}'
-  done
-  echo "無駄なスペースがないか？"
-  for fn in `ls Downloads/classification/*_Statistics-*-tab.tsv`; do
-    echo `basename $fn`
-    tail -n+2 $fn| awk -F '\t' '{if ($5 ~ "  " || $5 ~ / $/) print}'
-  done
-  echo "細胞タイプにハテナを忘れていないか？"
-  for fn in `ls Downloads/classification/ct_Statistics-*-tab.tsv`; do
-    echo `basename $fn`
-    tail -n+2 $fn| awk -F '\t' '{if ($5 !~ "\\?" && $5 !~ "Unc@ ") print}'
-  done
-}
+  
+    checkCuration
 
 # 古い classification フォルダの移動
   スパコンで以下のコマンドを実行
@@ -49,7 +30,23 @@
 
 
 # 新しい assembled ファイルの作成
+  sh chipatlas/sh/bed4ToBed9.sh
+  
+    public 配下に .bed, .bed.idx が作られる
+    chipatlas/lib/assembled_list 配下に experimentList.tab, fileList.tab が作られる。
+    
+    core dump があったかどうかをチェックする。
+    
+      for fn in `ls makeBigBed_log/*log`; do
+        if [ "`tail -n1 $fn`" != "Done" ]; then
+          echo $fn
+        fi
+      done
+      
+# 新しい assembled ファイルの作成
   sh chipatlas/sh/bed4ToBed9.sh 
+
+
 
   
   

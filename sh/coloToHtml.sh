@@ -14,9 +14,9 @@ Genome="$4"
 qProt=`head -n1 "$inFn"| cut -f4| cut -d '|' -f1`         # POU5F1
 
 url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/colo/"       # html へのリンク
-url2="http://52.68.86.161/view?id="                                   # 個別 SRX へのリンク
-urlDoc="https://github.com/inutano/chip-atlas/wiki#6-colocalization"  # Dicument へのリンク
-urlTSV="$url1$qProt.$ctl.tsv"                                         # TSV へのリンク
+url2="http://chip-atlas.org/view?id="                                 # 個別 SRX へのリンク
+urlDoc="https://github.com/inutano/chip-atlas/wiki#6-colocalization"  # Document へのリンク
+urlTSV=`echo "$url1$qProt.$ctl.tsv"| tr ' ' '_'`                      # TSV へのリンク
 
 fnHead=`basename "$inFn"| cut -d '.' -f1| cut -d '_' -f1` # 抗原 or SRX or STRING
 sortKey=`head -n1 "$inFn"| tr '\t' '\n'| awk -F '\t' -v fnHead=$fnHead -v qProt=$qProt '{
@@ -45,7 +45,7 @@ cat << DDD
 <head>
 <title>ChIP-Atlas | Colocalization</title>
 
-<FONT face="Helvetica">
+<FONT face="Helvetica Neue" color="333333">
   <style type="text/css">
 
   #rotate {

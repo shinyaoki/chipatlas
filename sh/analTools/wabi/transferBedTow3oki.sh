@@ -1,16 +1,16 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh 
-
+# sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh chipatlas
+projectDir=$1
 tmpDir=tmpDirFortransferBedTow3oki
 rm -rf $tmpDir
 mkdir -p $tmpDir/results
 mkdir -p $tmpDir/lineNum
 
-for Genome in `ls chipatlas/results/`; do
+for Genome in `ls $projectDir/results/`; do
   mkdir -p $tmpDir/results/$Genome/public
-  for bed in `echo chipatlas/results/$Genome/public/*.AllAg.AllCell.bed`; do
+  for bed in `echo $projectDir/results/$Genome/public/*.AllAg.AllCell.bed`; do
     outBed=$tmpDir/results/$Genome/public/`basename $bed`
     let i=$i+1
     # BED ファイルの整形、5000万行ごとに分割し、core dump を防ぐ
@@ -25,13 +25,18 @@ while :; do
   qN=`qstat| awk '$3 == "trfB2w3"'| wc -l`
   if [ "$qN" -eq 0 ]; then
     break
+  else
+    echo "Waiting for converting Bed files..."
+    date
+    sleep 60
   fi
 done
 
 # BED ファイルの行数を集計。
-cat $tmpDir/lineNum/*| tr ' /' '\t\t'| awk -F '\t' '
+fileList="$projectDir/lib/assembled_list/fileList.tab"
+cat $tmpDir/lineNum/*| tr ' /' '\t\t'| awk -F '\t' -v fileList=$fileList '
 BEGIN {
-  while ((getline < "chipatlas/lib/assembled_list/fileList.tab") > 0) {
+  while ((getline < fileList) > 0) {
     x[$1 ".bed",$2] = $2 "\t" $3 "\t" $5 "\t" $7
   }
 } {
@@ -41,22 +46,21 @@ BEGIN {
 # NBDC サーバの lib フォルダに転送
 nbdc
 put tmpDirFortransferBedTow3oki/lineNum.tsv -o data/lib/lineNum.tsv
+bye
 
-http://dbarchive.biosciencedbc.jp/kyushu-u/lib/lineNum.tsv
+# w3oki アカウントに Bed ファイルをコピー
+w3oki
+rm -rf w3oki/tmpDirFortransferBedTow3oki
+for genome in `ls tmpDirFortransferBedTow3oki/results/`; do
+  dirOkiS="tmpDirFortransferBedTow3oki/results/$genome/public"        # okishinya アカウントの public フォルダ
+  dirWab1="w3oki/tmpDirFortransferBedTow3oki/results/$genome/public"  # w3oki アカウントの 一時的 public フォルダ
+  dirWab2="w3oki/$projectDir/results/$genome/public"                    # w3oki アカウントの 計算用 public フォルダ
+  mkdir -p w3oki/tmpDirFortransferBedTow3oki/results/$genome
+  cp -r "$dirOkiS" "$dirWab1"
+  mv "$dirWab2" "$dirWab2"_old
+  mv "$dirWab1" "$dirWab2"
+  rm -r "$dirWab2"_old
+done
+rm -r "$dirWab1"
+exit
 
-
-
-username="w3oki"
-password="]xwCevL75"
-
-expect -c "
-set timeout 20
-spawn su $username
-expect \"パスワード:\"
-send \"$password\n\"
-send \"rm -r w3oki/chipatlas/results2\n\"
-send \"cp -r $tmpDir/results w3oki/chipatlas/results2\n\"
-interact
-"
-rm -r $tmpDir/lineNum
-mv $tmpDir chipatlas/sh/analTools/wabi/dirFortransferBedTow3oki

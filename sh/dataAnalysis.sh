@@ -7,6 +7,24 @@ projectDir=$1
 
 sh $projectDir/sh/coLocalization.sh INITIAL $projectDir
 sh $projectDir/sh/targetGenes.sh INITIAL $projectDir
+sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh $projectDir
+
+
+trfB2w3
+
+
+
+
+
+
+
+qstat| awk '{
+  if ($3 == "coLocaliza" || $3 == "targetGene") i++
+} END {
+  printf "%s", (i > 0)? 1 : 0
+}'
+
+
 
 
 

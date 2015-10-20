@@ -32,14 +32,19 @@ function geneToBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome  $3 = di
   tssList="/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genomeForGeneToBed".bed"
   cat $tssList| awk -v inGene=$inGene -v upBp=$upBp -v dnBp=$dnBp '
   BEGIN {
-    while ((getline < inGene) > 0) g[tolower($1)]++
+    while ((getline < inGene) > 0) {
+      gsub(/[^a-zA-Z0-9\t_\n]/, "_", $1)
+      g[tolower($1)]++
+    }
     close(inGene)
   } {
+    gene = $4
+    gsub(/[^a-zA-Z0-9\t_\n]/, "_", $4)
     if (g[tolower($4)] > 0) {
       beg = ($5 == "+")? $2 - upBp : $3 - dnBp
       end = ($5 == "+")? $2 + dnBp : $3 + upBp
       if (beg < 1) beg = 1
-      printf "%s\t%s\t%s\t%s\n", $1, beg, end, $4
+      printf "%s\t%s\t%s\t%s\n", $1, beg, end, gene
     }
   }' > tmpForGeneToBed
   mv tmpForGeneToBed $inGene
@@ -52,7 +57,7 @@ descriptionB="Comparison"
 title="My data vs Comparison"
 hed="Search for proteins significantly bound to your data."
 wabiID=`cat job_info.json| tr -d '"":,'| awk '$1 == "requestId" {printf "%s", $2}'`
-srxUrl="http://52.68.86.161/view?id="
+srxUrl="http://chip-atlas.org/view?id="
 
 
 

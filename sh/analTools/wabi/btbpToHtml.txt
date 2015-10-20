@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8'>
-<FONT face="Helvetica" color="555555">
+<FONT face="Helvetica Neue" color="333333">
 <title>___Title___</title>
 
 <script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.js"></script>

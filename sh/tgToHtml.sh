@@ -14,7 +14,7 @@ fnHead=`basename "$inFn"| cut -d '.' -f1| cut -d '_' -f1` # 抗原 or SRX or STR
 Wkb=`basename "$inFn"| cut -d '.' -f2`                    # 1 5 10 (+- TSS kb)
 
 url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/"    # html へのリンク
-url2="http://52.68.86.161/view?id="                                  # 個別 SRX へのリンク
+url2="http://chip-atlas.org/view?id="                                  # 個別 SRX へのリンク
 urlDoc="https://github.com/inutano/chip-atlas/wiki#5-target-genes"   # Dicument へのリンク
 urlTSV="$url1$qProt.$Wkb.tsv"                                        # TSV へのリンク
 
@@ -49,7 +49,7 @@ cat << DDD
 <head>
 <title>ChIP-Atlas | Target genes</title>
 
-<FONT face="Helvetica">
+<FONT face="Helvetica Neue" color="333333">
   <style type="text/css">
 
   #rotate {
@@ -109,14 +109,19 @@ DDD
 
 # 入力: 各 SRX でソートした TSV ファイル
 proteinList="$projectDir/lib/string/protein.aliases.v10.$Genome.txt"
+expList="$projectDir/lib/assembled_list/experimentList.tab"
 
-head -n 1001 "$inFn"| awk -F '\t' -v inFn="$inFn" -v Size=$Size -v SIZE=$SIZE -v URL1="$url1" -v URL2="$url2" -v proteinList="$proteinList" -v fnHead=$fnHead -v Wkb=$Wkb '
+head -n 1001 "$inFn"| awk -F '\t' -v inFn="$inFn" -v Size=$Size -v SIZE=$SIZE -v URL1="$url1" -v URL2="$url2"\
+                                  -v proteinList="$proteinList" -v fnHead=$fnHead -v Wkb=$Wkb -v expList=$expList -v Genome=$Genome '
 BEGIN {
   while ((getline < proteinList) > 0) {
     if (!proteinID[$2]) {   # ID の重複を避ける
       sub(SUBSEP, ".", $1)
       proteinID[$2] = $1    # proteinID["POU5F1"] = 9606.ENSP00000259915
     }
+  }
+  while ((getline < expList) > 0) {
+    if ($2 == Genome && $3 == "TFs and others") tfs[$4]++   # tfs["POU5F1"]++
   }
 } {
   print "<tr>"
@@ -170,7 +175,10 @@ BEGIN {
     } else { # 2 行目以降
       pUrl = URL1 $1 "." Wkb ".html"   # URL1 = http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/
       if (i == 1) print "<td width=" SIZE*1 " height=" Size "><i><nobr>" $1 "</nobr></i></td>"
-      if (i == 1) print "<td title=\"Serach this target genes...\" width=" SIZE*1 " height=" Size "><b><a style=\"text-decoration: none\" href=\"" pUrl "\">&#x21BB</a></b></td>"
+      if (i == 1) {   # ↻ マークの動作設定 (Target gene があるときは pUrl, ないときはグレー表示)
+        href = (tfs[$1] > 0)? " href=\"" pUrl "\"" : " class=\"dist\""
+        print "<td title=\"Serach this target genes...\" width=" SIZE*1 " height=" Size "><b><a style=\"text-decoration: none\"" href ">&#x21BB</a></b></td>"
+      }
       if (i > 1) {
         if (i == NF) {  # STRING の場合
           comment = "Serach " qProt[1] " and " $1 " in STRING."

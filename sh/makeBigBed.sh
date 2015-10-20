@@ -33,7 +33,7 @@ if [ $mode = "initial" ]; then
   split -a 3 -l $splitN $logDir/makeBigBed.list $logDir/MAKEBIGBEDTMP
   short=`sh $projectDir/sh/QSUB.sh shortOrweek`
   for tmpList in `ls $logDir/MAKEBIGBEDTMP*`; do
-    cat $tmpList| qsub $short -N makeBigBed -pe def_slot 2 -o $tmpList.log -e $tmpList.log
+    cat $tmpList| qsub $short -N makeBigBed -l s_vmem=8G,mem_req=8G -o $tmpList.log -e $tmpList.log
   done
 
   # 全部終わったら、サーバにアップロード
@@ -159,11 +159,13 @@ function symbolSub(Str,underScore) {
 
 
 # Bed index の作成
-echo "BedGraph 作成中"
-$projectDir/bin/bedtools-2.17.0/bin/bedtools genomecov -i $inBn.bed -bg -g $gSize > $inBn.bg
-echo "BigWig 作成中"
-$projectDir/bin/bedGraphToBigWig $inBn.bg $gSize $inBn.bw
-rm $inBn.bg $inBn.bed.meta
+
+#echo "BedGraph 作成中"
+#$projectDir/bin/bedtools-2.17.0/bin/bedtools genomecov -i $inBn.bed -bg -g $gSize > $inBn.bg
+#echo "BigWig 作成中"
+#$projectDir/bin/bedGraphToBigWig $inBn.bg $gSize $inBn.bw
+#rm $inBn.bg 
+rm $inBn.bed.meta
 echo "Bed index 作成中"
 mv $inBn.bed.tmp $inBn.bed
 java -Xmx2000m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed

@@ -93,7 +93,7 @@ BEGIN {
 mem=`echo $SGE_HGR_mem_req| tr -d 'G'| awk '{printf "-Xmx%dm", 1000*$1*0.8}'`
 echo "AAAAA" $mem $SGE_HGR_mem_req $NSLOTS `cat $jobDir/list.tab| wc -l ` $ctL $Genome
 
-java $mem -jar $projectDir/bin/coloCA.jar $jobDir/list.tab $jobDir/colo.txt $jobDir/colo.gml
+/usr/local/pkg/java/current-1.7/bin/java $mem -jar $projectDir/bin/coloCA.jar $jobDir/list.tab $jobDir/colo.txt $jobDir/colo.gml
 
 # CoLo が作った gml ファイルを整形
 outGml=`echo $projectDir/results/$Genome/colo/$ctL.gml| tr ' ' '_'`

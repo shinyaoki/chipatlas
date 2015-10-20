@@ -12,7 +12,7 @@ tgt="$2"
 ref="$3"
 hed="Search for proteins significantly bound to Bed files."
 cap="$4"
-srxUrl="http://52.68.86.161/view?id="
+srxUrl="http://chip-atlas.org/view?id="
 
 
 
