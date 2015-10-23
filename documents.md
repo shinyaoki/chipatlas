@@ -7,7 +7,7 @@ Documents for computational processing in ChIP-Atlas.
 4. [Peak browser](#peak_browser_doc)
 5. [Target genes](#target_genes_doc)
 6. [Colocalization](#colocalization_doc)
-7. [Virtual ChIP](#virtual_chip_doc)
+7. [in silico ChIP](#virtual_chip_doc)
 
 <a id="data_source_doc"></a>
 ## 1. Data source
@@ -74,8 +74,7 @@ Experimental materials used for each SRX were manually annotated, by which it is
             * [MGI][MGI] (*M. musculus*)
             * [FlyBase][FlyBase] (*D. melanogaster*)
             * [WormBase][WormBase] (*C. elegans*)
-            * [SGD][SGD] (*S. cerevisiae*)
-
+            * [SGD][SGD] (*S. cerevisiae*)  
             (eg. OCT3/4 => POU5F1; p53 => TP53)
         + Modifications such as phosphorylation were ignored.  
         (eg. phospho-SMAD3 => SMAD3)
@@ -104,7 +103,7 @@ Experimental materials used for each SRX were manually annotated, by which it is
         - Supplementary Table 2 in Yu et. al 2015 ([PMID: 25877200][PMID_25877200]), proposing unified cell-line names
         - [ATCC], a nonprofit repository of cell lines
         - [MeSH] \(Medical Subject Headings\) for tissue names
-        - [FlyBase] for cell lines of *D. melanogaster*
+        - [FlyBase] for cell lines of *D. melanogaster*  
         (eg. MDA-231, MDA231, MDAMB231 => MDA-MB-231)
 5. Antigens or cell types were classified in 'Uncategorized' class if the curators could not understand the meanings of attribute values.
 6. Antigens or cell types were classified in 'No description' class if there was no attribute value.
@@ -167,7 +166,7 @@ BED4-formatted peak-call data made in section **2.5** were analyzed to evaluate 
 (**a**) it compensates the biases derived from different experimental conditions.  
 (**b**) it adjusts the difference of the peak numbers and distributions coming from innate characteristics of the TFs.
 
-The function (**a**) is programed so that MACS2 scores in each BED4 file were fitted to a Gaussian distribution, by which the BED4 file divided into following three groups:
+The function (**a**) is programed so that MACS2 scores in each BED4 file were fitted to a Gaussian distribution, by which the BED4 file were divided into following three groups:
 
   - **H** (High binding; Z-score > 0.5)
   - **M** (Middle binding; -0.5 ≤ Z-score ≤ 0.5)
@@ -207,7 +206,7 @@ Eventually, a set of nine Boolean results (similar or not) is returned to indica
 
 
 <a id="virtual_chip_doc"></a>
-## 7. Virtual ChIP
+## 7. in silico ChIP
 ###Introduction
 This section accepts users' data in following three formats:
 
@@ -215,13 +214,13 @@ This section accepts users' data in following three formats:
 - Sequence motif (to search proteins bound to the motif)
 - Gene list (to search proteins bound to the genes)
 
-In addition, following analyses are applicable by specifying the data for comparison:
+In addition, following analyses are applicable by specifying the data for comparison on the in silico ChIP page:
 
-|My data|Compare with       |Aims and analyses                                                   |
+|Data in 4.|Data in 5.       |Aims and analyses                                                   |
 |-------|-------------------|--------------------------------------------------------------------|
 |BED    |Random permutation |Proteins bound to BED intervals more often than by chance.          |
 |BED    |BED                |Proteins differentially bound between the two sets of BED intervals.|
-|Motif  |Random permutation |Proteins bound to a motif more often than by chance.                |
+|Motif  |Random permutation |Proteins bound to a sequence motif more often than by chance.                |
 |Motif  |Motif              |Proteins differentially bound between the two motifs.               |
 |Genes  |RefSeq coding genes|Proteins bound to genes more often than other RefSeq genes.         |
 |Genes  |Genes              |Proteins differentially bound between the two sets of gene list.    |
@@ -246,7 +245,7 @@ Comprehensive peak-call data as described in **4. Peak browser**. The result wil
   - ce10 (*C. elegans*)
   - sacCer3 (*S. celevisiae*)
   
-  If the BED file is in other genome assembly, convert it to proper assembly with [UCSC liftOver tool][liftOver].
+  If the BED file is in other genome assembly, convert it to proper one with [UCSC liftOver tool][liftOver].
   
 - Motif (lower panels of the submission form)  
 A sequence motif described in [IUPAC nucleic acid notation][IUPAC]. In addition to ATGC, ambiguity characters are also acceptable (WSMKRYBDHVN).
