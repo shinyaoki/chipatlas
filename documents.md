@@ -273,10 +273,11 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
     Unique TSSs of submitted genes are defined with xxxCanonical.txt.gz* library distributed from [UCSC FTP site][UCSC_FTP].  
     \* xxx is a placeholder for:
 
-      - "known" (*H. sapiens* and *M. musculus*)
-      - "flyBase" (*D. melanogaster*)
-      - "sanger" (*C. elegans*)
-      - "sgd" (*S. cerevisiae*)
+     - "known" (*H. sapiens* and *M. musculus*)
+     - "flyBase" (*D. melanogaster*)
+     - "sanger" (*C. elegans*)
+     - "sgd" (*S. cerevisiae*)
+
 
       The locations of TSSs are converted to BED format with the addition of widths specified in 'Distance range from TSS' on the submission form. If 'RefSeq coding genes…' is set for the comparison, RefSeq coding genes excluding those in submitted list are processed to BED format as mentioned above.
 
