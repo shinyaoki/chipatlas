@@ -23,7 +23,9 @@
 
 # 古い classification フォルダの移動
   スパコンで以下のコマンドを実行
-  mv chipatlas/classification chipatlas/classification_201505 # 2015 5月の場合
+  
+    mv chipatlas/classification chipatlas/classification_201505 # 2015 5月の場合
+  
   これを Mac にダウンロードし、/Users/Oki/Desktop/沖　真弥/実験/chipAtlas/classification履歴 配下に移動させる。
   スパコンに Downloads/classification フォルダを chipatlas/ 配下にアップロード
   スパコンの chipatlas/classification_201505 は消去
@@ -35,7 +37,8 @@
     public 配下に .bed, .bed.idx が作られる
     chipatlas/lib/assembled_list 配下に experimentList.tab, fileList.tab が作られる。
     
-    core dump があったかどうかをチェックする。
+    core dump があれば、以下のファイルが作られる。
+      CAUTION_makeBigBed.txt
     
       for fn in `ls makeBigBed_log/*log`; do
         if [ "`tail -n1 $fn`" != "Done" ]; then
@@ -43,10 +46,12 @@
         fi
       done
       
-# 新しい assembled ファイルの作成
-  sh chipatlas/sh/bed4ToBed9.sh 
+# colo, targetGenes の実行
+  sh chipatlas/sh/dataAnalysis.sh
 
+    colo の実行
+    targetGenes の実行
+    in silico ChIP 用の BED ファイルを作成、w3oki へ転送
+    analysisList.tab の作成、全対応表を NBDC に送る。
 
-
-  
-  
+# NBDC サーバにアップロード

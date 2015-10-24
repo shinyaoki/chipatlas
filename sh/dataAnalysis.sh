@@ -1,35 +1,49 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh chipatlas
+# sh chipatlas/sh/dataAnalysis.sh                                            # 初期モード
+# qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l chipatlas   # qsub モード
 
+Type=0
+while getopts l option; do
+  case "$option" in
+    l) Type="1";;
+  esac
+done
+shift `expr $OPTIND - 1`
+
+####################################################################################################################################
+#                                                         初期 モード
+####################################################################################################################################
+if [ $Type = "0" ]; then
+  projectDir=`echo $0| sed 's[/sh/dataAnalysis.sh[['`
+  rm -rf makeBigBed_log
+  
+  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行
+  sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行
+  sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh $projectDir             # in silico ChIP 用の BED ファイルを作成、w3oki へ転送
+  qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成、全対応表を NBDC に送る。
+  exit
+fi
+
+####################################################################################################################################
+#                                                         qsub モード
+####################################################################################################################################
 projectDir=$1
 
-sh $projectDir/sh/coLocalization.sh INITIAL $projectDir
-sh $projectDir/sh/targetGenes.sh INITIAL $projectDir
-sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh $projectDir
+# colo と targetGenes が終わるまで待つ。
+while :; do
+  qNum=$(qstat| awk '{
+    if ($3 == "coLocaliza" || $3 == "targetGene" || $3 == "trfB2w3") i++
+  } END {
+    printf "%s", (i > 0)? 1 : 0
+  }')
+  if [ $qNum = "0" ]; then
+    break
+  fi
+done
 
-
-trfB2w3
-
-
-
-
-
-
-
-qstat| awk '{
-  if ($3 == "coLocaliza" || $3 == "targetGene") i++
-} END {
-  printf "%s", (i > 0)? 1 : 0
-}'
-
-
-
-
-
-
-
+# analysisList.tab の作成
 for Genome in `ls $projectDir/results`; do
   ls $projectDir/results/$Genome/colo| grep ^"STRING_"| grep ".html"$| sed 's/STRING_//'| tr '.' '\t'| cut -f1-2| sort| uniq > tmpFileForColoList
   ls $projectDir/results/$Genome/targetGenes| grep ^"STRING_"| grep ".html"$| sed 's/STRING_//'| tr '.' '\t'| cut -f1| sort| uniq > tmpFileFortargetGenesList
@@ -58,3 +72,16 @@ rm tmpFileForColoList tmpFileFortargetGenesList
 # ファイル名
 # Colo : $1.gsub(" ", "_", $2).html
 # Target : $1.html
+
+
+# NBDC サーバにリストを転送
+eval `cat bin/nbdc| grep "="`  # NBDC のパスワードなどを取得
+cat << EOS | lftp
+  open -u $user,$pass $address
+  put tmpDirFortransferBedTow3oki/lineNum.tsv -o data/util/lineNum.tsv
+  put $projectDir/lib/assembled_list/analysisList.tab -o data/metadata/analysisList.tab
+  put $projectDir/lib/assembled_list/experimentList.tab -o data/metadata/experimentList.tab
+  put $projectDir/lib/assembled_list/fileList.tab -o data/metadata/fileList.tab
+EOS
+
+

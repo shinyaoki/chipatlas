@@ -36,11 +36,20 @@ if [ $mode = "initial" ]; then
     cat $tmpList| qsub $short -N makeBigBed -l s_vmem=8G,mem_req=8G -o $tmpList.log -e $tmpList.log
   done
 
-  # 全部終わったら、サーバにアップロード
+  # 全部終わったら、assembled リストを作成
   while :; do
     qN=`qstat| awk '{if ($3 == "makeBigBed") print}' | wc -l`
     if [ $qN -eq 1 ]; then
-      sh $projectDir/sh/webList.sh $projectDir
+      qsub $projectDir/sh/webList.sh $projectDir
+      
+      # makeBigBed でコアダンプがあれば知らせる。
+      rm -f CAUTION_makeBigBed.txt
+      for fn in `ls makeBigBed_log/*log`; do
+        if [ "`tail -n1 $fn`" != "Done" ]; then
+          echo $fn >> CAUTION_makeBigBed.txt
+        fi
+      done
+
 exit
       qsub -o UploadToServer.log.txt -e UploadToServer.log.txt $projectDir/sh/UploadToServer.sh $projectDir
       rm -r $logDir
@@ -159,14 +168,7 @@ function symbolSub(Str,underScore) {
 
 
 # Bed index の作成
-
-#echo "BedGraph 作成中"
-#$projectDir/bin/bedtools-2.17.0/bin/bedtools genomecov -i $inBn.bed -bg -g $gSize > $inBn.bg
-#echo "BigWig 作成中"
-#$projectDir/bin/bedGraphToBigWig $inBn.bg $gSize $inBn.bw
-#rm $inBn.bg 
 rm $inBn.bed.meta
-echo "Bed index 作成中"
 mv $inBn.bed.tmp $inBn.bed
 java -Xmx2000m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed
 

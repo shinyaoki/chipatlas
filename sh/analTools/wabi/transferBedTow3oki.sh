@@ -43,24 +43,42 @@ BEGIN {
   print x[$6,$4] "\t" $1
 }' > $tmpDir/lineNum.tsv
 
-# NBDC サーバの lib フォルダに転送
-nbdc
-put tmpDirFortransferBedTow3oki/lineNum.tsv -o data/lib/lineNum.tsv
-bye
 
-# w3oki アカウントに Bed ファイルをコピー
-w3oki
-rm -rf w3oki/tmpDirFortransferBedTow3oki
-for genome in `ls tmpDirFortransferBedTow3oki/results/`; do
-  dirOkiS="tmpDirFortransferBedTow3oki/results/$genome/public"        # okishinya アカウントの public フォルダ
-  dirWab1="w3oki/tmpDirFortransferBedTow3oki/results/$genome/public"  # w3oki アカウントの 一時的 public フォルダ
-  dirWab2="w3oki/$projectDir/results/$genome/public"                    # w3oki アカウントの 計算用 public フォルダ
-  mkdir -p w3oki/tmpDirFortransferBedTow3oki/results/$genome
-  cp -r "$dirOkiS" "$dirWab1"
-  mv "$dirWab2" "$dirWab2"_old
-  mv "$dirWab1" "$dirWab2"
-  rm -r "$dirWab2"_old
-done
-rm -r "$dirWab1"
-exit
+## w3oki アカウントに Bed ファイルをコピー
+# w3oki のパスワード取得
+eval `cat bin/w3oki| grep -e "username=" -e "password="`
 
+# w3oki で実行するためのコマンド
+cmnd=$(echo -e '
+  rm -rf w3oki/tmpDirFortransferBedTow3oki
+  for genome in `ls tmpDirFortransferBedTow3oki/results/`; do
+    dirOkiS="tmpDirFortransferBedTow3oki/results/$genome/public"        # okishinya アカウントの public フォルダ
+    dirWab1="w3oki/tmpDirFortransferBedTow3oki/results/$genome/public"  # w3oki アカウントの 一時的 public フォルダ
+    dirWab2="w3oki/chipatlas/results/$genome/public"                    # w3oki アカウントの 計算用 public フォルダ
+    mkdir -p w3oki/tmpDirFortransferBedTow3oki/results/$genome
+    echo okishinya から w3oki へ $genome の BED ファイルを転送中...
+    cp -r "$dirOkiS" "$dirWab1"
+    mv "$dirWab2" "$dirWab2"_old
+    mv "$dirWab1" "$dirWab2"
+    rm -r "$dirWab2"_old
+  done
+  rm -r w3oki/tmpDirFortransferBedTow3oki
+  exit
+'| awk '{
+  gsub("\"", "\\\"", $0)    # ダブルクォートと $ の前にバックスラッシュをつける
+  gsub("\\$", "\\\$", $0)
+  print
+}') #"
+
+# expect でコマンド実行
+expect -c "
+  set timeout 20
+  spawn su $username
+  expect \"パスワード:\"
+  send \"$password\n\"
+  expect \"\$\"
+  send \"
+    $cmnd
+  \"
+  interact
+"

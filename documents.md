@@ -279,6 +279,7 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
      - "sgd" (*S. cerevisiae*)
 
 
+
       The locations of TSSs are converted to BED format with the addition of widths specified in 'Distance range from TSS' on the submission form. If 'RefSeq coding genes…' is set for the comparison, RefSeq coding genes excluding those in submitted list are processed to BED format as mentioned above.
 
 2. Counts the overlaps between the BED (originated from 'My data' or 'Compare with') and reference peak-call data (specified on upper panels of the submission form) with `bedtools intersect` command ([BedTools2][bedtools]; ver 2.23.0).

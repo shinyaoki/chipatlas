@@ -1,7 +1,7 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# sh chipatlas/sh/webList.sh chipatlas
+# qsub chipatlas/sh/webList.sh chipatlas                # makeBigBed.sh の最後に実行
 
 projectDir=$1
 minQval=`cat $projectDir/sh/preferences.txt | awk '$1 ~ "qVal" {printf "%s", $2}'`
