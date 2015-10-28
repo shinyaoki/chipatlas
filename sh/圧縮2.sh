@@ -55,6 +55,23 @@ for Genome in `ls $projectDir/results/`; do
   rm -r $tmpDir/$Genome
 done
 
+
+
+
+# 転送コマンド
+# 7/22 21:55
+eval `cat bin/nbdc| grep "="`
+tmpDir=tmpDirForTransfer
+
+cat << DDD  > UploadToServer.lftp
+  open -u $user,$pass $address
+  set net:limit-total-rate 31457280
+  mirror -R --verbose=3 --parallel=8 --loop $tmpDir data
+DDD
+
+echo "lftp -f UploadToServer.lftp"| qsub -N LFTP -o lftp.log -e lftp.log
+
+
 # NBDC 側の解凍コマンド
 cd data
 for ZIP in `ls *zip`; do
@@ -63,24 +80,6 @@ for ZIP in `ls *zip`; do
     rm $ZIP
   } &
 done
-
-
-
-# 転送コマンド
-# 7/22 21:55
-address=ftp2.biosciencedbc.jp
-user=upload4
-pass=Tocyi6qm
-
-cat << DDD  > UploadToServer.lftp
-  open -u $user,$pass $address
-  set net:limit-total-rate 31457280
-  mirror -R --verbose=3 --parallel=8 $tmpDir data
-DDD
-
-echo "lftp -f UploadToServer.lftp"| qsub -N LFTP -o lftp.log -e lftp.log
-
-
 
 
 

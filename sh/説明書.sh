@@ -1,11 +1,5 @@
 # Curation のためのリストを作成。
-  sh chipatlas/sh/listForClassify.sh
-  # < chipatlas/sh/ag_attributes.txt
-  # < chipatlas/sh/ct_attributes.txt
-  # > chipatlas/results/ce10/tag/SRX003825.tag.txt
-  # > chipatlas/classification/ct_Statistics.mm9.tab
-  # > chipatlas/classification/ag_Statistics.mm9.tab
-
+  sh chipatlas/sh/listForClassify.sh  # <<=== コマンド
 
 # Curation の実行。
   chipatlas/classification を DL
@@ -19,12 +13,12 @@
   全てのファイルを tsv エクスポートし、Downloads/classification 配下に移動させる。
   以下のコマンドでチェック
   
-    checkCuration
+    checkCuration  # <<=== コマンド (Mac)
 
 # 古い classification フォルダの移動
   スパコンで以下のコマンドを実行
   
-    mv chipatlas/classification chipatlas/classification_201505 # 2015 5月の場合
+    mv chipatlas/classification chipatlas/classification_201505 # 2015 5月の場合  <<=== コマンド
   
   これを Mac にダウンロードし、/Users/Oki/Desktop/沖　真弥/実験/chipAtlas/classification履歴 配下に移動させる。
   スパコンに Downloads/classification フォルダを chipatlas/ 配下にアップロード
@@ -32,22 +26,16 @@
 
 
 # 新しい assembled ファイルの作成
-  sh chipatlas/sh/bed4ToBed9.sh
+  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド
   
     public 配下に .bed, .bed.idx が作られる
     chipatlas/lib/assembled_list 配下に experimentList.tab, fileList.tab が作られる。
     
     core dump があれば、以下のファイルが作られる。
       CAUTION_makeBigBed.txt
-    
-      for fn in `ls makeBigBed_log/*log`; do
-        if [ "`tail -n1 $fn`" != "Done" ]; then
-          echo $fn
-        fi
-      done
       
 # colo, targetGenes の実行
-  sh chipatlas/sh/dataAnalysis.sh
+  sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド
 
     colo の実行
     targetGenes の実行

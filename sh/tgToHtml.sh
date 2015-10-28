@@ -103,7 +103,7 @@ cat << DDD
 
 
 
-<table class="tableMargin" border=0 width="$wid" style="table-layout: fixed;">
+<table class="tableMargin" id="mainTable" border=0 width="$wid" style="table-layout: fixed;">
 DDD
 
 
@@ -226,7 +226,6 @@ function color(x) {
   }
   else if (x>=4*N) {
     R=255
-    if (x == MAX+1) R=0
     G=0
     B=0
   }
@@ -236,5 +235,22 @@ function color(x) {
 cat << DDD
 </table>
 </FONT>
+
+<script type="text/javascript">
+(function (){
+  var Tbl = document.getElementById('mainTable');
+  for (var i = 1; i < Tbl.rows.length; i++) {
+    for (var j = 2; j < Tbl.rows[i].cells.length; j++) {
+      var Cells = Tbl.rows[i].cells[j];
+      var Row = Tbl.rows[i].cells[0].innerHTML.replace("<i><nobr>", "").replace("</nobr></i>", "");
+      var Col = Tbl.rows[0].cells[j].innerHTML.replace(/</g, ">").split(">");
+      var srx = String(Col[8]);
+      var cellType = String(Col[12]).replace(":&nbsp;", "").replace(/&nbsp;/g, " ");
+      if (Col[8]) Cells.title = cellType + "\n(" + srx +")\n\n" + Row;
+    }
+  }
+})();
+</script>
+
 DDD
 
