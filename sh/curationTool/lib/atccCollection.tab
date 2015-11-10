@@ -1,0 +1,1566 @@
+CRL-3210	Eph4 1424.2	Mus musculus	Epithelial	Breast Cancer	Breast; Derived From Metastatic Site: Lung
+CRL-3211	PSN-1	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-3212	2A3	Homo sapiens		Squamous Cell Carcinoma	Pharynx
+CRL-3213	Phoenix-AMPHO	Homo sapiens			Kidney
+CRL-3214	Phoenix-ECO	Homo sapiens			Kidney
+CRL-3215	Phoenix-GP	Homo sapiens	Embryonic		Kidney
+CRL-3216	293T	Homo sapiens	Epithelial		Embryonic Kidney
+CRL-3217	U-CH1	Homo sapiens		Tumor, Chordoma	Sacral Bone
+CRL-3218	U-CH2	Homo sapiens		Tumor, Chordoma	Sacral Bone
+CRL-3219	MUG-Chor1	Homo sapiens		Tumor, Chordoma	Sacral Bone
+CRL-3222	A375-MA1	Homo sapiens		Malignant Melanoma	Skin
+CRL-3223	A375-MA2	Homo sapiens		Malignant Melanoma	Skin
+CRL-12103	FDC-P1	Mus musculus		Normal	Bone Marrow
+CRL-3242	3T3-L1 MBX	Mus musculus	Fibroblast		Embryo
+CRL-3243	HMEC-1	Homo sapiens	Dermal Microvascular Endothelium		Dermal Endothelium
+CRL-3244	HULEC-5a	Homo sapiens	Endothelial		Lung
+CRL-3245	HBEC-5i	Homo sapiens	Cerebral Microvascular Endothelium	Normal	Brain, Cerebral Cortex
+CRL-1902	UACC-893	Homo sapiens		Primary Ductal Carcinoma	Mammary Gland; Breast
+CRL-3254	STC-1	Mus musculus	Intestinal Neuroendocrine Tumor Cells	Invasive Small Intestinal Neuroendocrine Carcinoma	Intestine
+CRL-1915	DHFR-G8	Mus musculus	Fibroblast		
+CRL-1918	CFPAC-1	Homo sapiens	Epithelial	Ductal Adenocarcinoma; Cystic Fibrosis	Pancreas; Derived From Metastatic: Liver
+CRL-1923	Ramos.2G6.4C10	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma (American)	
+CRL-1927	SV40 MES 13	Mus musculus	Mesangial Cell		Kidney/Glomerulus
+CRL-1929	SUP-B15	Homo sapiens	B Lymphoblast	Acute Lymphoblastic Leukemia	Bone Marrow
+CRL-1932	786-O [786-0]	Homo sapiens		Renal Cell Adenocarcinoma	Kidney
+CRL-1933	769-P	Homo sapiens		Renal Cell Adenocarcinoma	Kidney
+CRL-1934	ES-D3 [D3]	Mus musculus	Embryonic Multipotent Stem Cell		Embryo
+CRL-1942	SUP-T1 [VB]	Homo sapiens	T Lymphoblast	T-Cell Lymphoblastic Lymphoma	
+CRL-1947	CCD-986Sk	Homo sapiens	Fibroblast		Skin
+CRL-8543	H9/HTLV-IIIB	Homo sapiens	Lymphocyte		
+CRL-1958	H1HeLa	Homo sapiens		Adenocarcinoma	Cervix
+CRL-1964	Clone 15 HL-60	Homo sapiens		Acute Promyelocytic Leukemia	Peripheral Blood
+CRL-1972	M2-10B4	Mus musculus			Bone Marrow/Stroma
+CRL-1973	NTERA-2 cl.D1 [NT2/D1]	Homo sapiens	Pluripotent	Malignant Pluripotent Embryonal Carcinoma	Testis; Derived From Metastatic Site: Lung
+CRL-1974	COLO 829	Homo sapiens	Fibroblast	Melanoma	Skin
+CRL-1976	MES-SA	Homo sapiens	Epithelial	Uterine Sarcoma	Uterus
+CRL-1978	ES-2	Homo sapiens		Clear Cell Carcinoma	Ovary
+HB-9568	BVD2-23B6.4	Mus musculus	Fibroblast	Papilloma	
+CRL-10852	293 c18	Homo sapiens	Transformed With Adenovirus 5 Dna		Kidney
+CRL-1980	COLO 829BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-1990	J45.01	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-1991	T1 (174 x CEM.T1)	Homo sapiens	B Lymphoblast,T Lymphoblast		Lymphoblast
+CRL-1993	HMy2.CIR [C1R, HMy2.C1R]	Homo sapiens	B Lymphoblast		
+CRL-1995	H2.35	Mus musculus	Hepatocyte		Liver
+CRL-1997	HPAF-II	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-1999	T/G HA-VSMC	Homo sapiens			Aorta/Smooth Muscle
+PCS-400-010	Primary Renal Proximal Tubule Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Kidney
+PCS-400-011	Primary Renal Cortical Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Kidney
+PCS-400-012	Primary Renal Mixed Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Kidney
+CRL-2002	RT101	Mus musculus	Chemically Transformed		
+CRL-2003	TF-1	Homo sapiens	Erythroblast	Erythroleukemia	Bone Marrow
+CRL-2010	JB6 Cl 41-5a	Mus musculus		Normal	Skin, Epidermis
+CRL-2012	T36274	Mus musculus	Chemically Transformed		
+CRL-2014	HGF-1	Homo sapiens		Normal	Gingival Biopsy
+CRL-2019	MH-S	Mus musculus	Macrophage		Lung
+CRL-2020	DBTRG-05MG	Homo sapiens	Glial Cell	Glioblastoma	Brain
+CRL-2021	MEG-01	Homo sapiens	Megakaryoblast	Chronic Myelogenous Leukemia (Cml)	Bone Marrow
+CRL-2026	Hepa-1c1c7	Mus musculus		Hepatoma	Liver
+CRL-2028	SR-4987	Mus musculus	Virus Transformed	Leukemia	
+CRL-2029	WSS-1 [WS-1]	Homo sapiens	Transformed With Adenovirus 5 Dna		Kidney
+CRL-2034	10P2	Mus musculus	Mast Cell; Abelson Murine Leukemia Virus Transforme		
+CRL-2036	10P12	Mus musculus	Mast Cell; Abelson Murine Leukemia Virus Transforme		
+CRL-2037	11P0-1	Mus musculus	Mast Cell; Abelson Murine Leukemia Virus Transforme		
+CRL-2049	DMS 79	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung/Pleural Fluid
+CRL-7306	Hs 505.T	Homo sapiens		Chronic Lymphocytic Leukemia (Cll)	
+CRL-2060	PFSK-1	Homo sapiens		Malignant Primitive Neuroectodermal Tumor	Brain, Cerebral Hemisphere
+CRL-2061	SJCRH30 [RC13, RMS 13, SJRH30]	Homo sapiens		Rhabdomyosarcoma	Muscle; Derived From Metastatic Site: Bone Marrow
+CRL-2062	DMS 53	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung
+CRL-2063	J.CaM1.6 (derivative mutant of Jurkat)	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-2064	DMS 153	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung
+CRL-2065	MLTC-1	Mus musculus	Leydig Cell	Leydig Cell Tumor	Testis
+CRL-2066	DMS 114	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung
+CRL-2069	NFPE	Mus musculus		Embryonal Carcinoma	
+CRL-2070	NE	Mus musculus		Nullipotent Embryonal Carcinoma; Teratocarcinoma	
+CRL-2071	CCD-1058Sk	Homo sapiens	Fibroblast		
+CRL-2072	CCD-1059Sk	Homo sapiens	Fibroblast	Normal	Skin
+CRL-2073	NCCIT	Homo sapiens	Pluripotent	Pluripotent Embryonal Carcinoma; Teratocarcinoma	Embryo, Placenta
+CRL-7329	Hs 564(E).Mg	Homo sapiens		Infiltrating Ductal Carcinoma	
+CRL-2075	NF-1	Mus musculus		Nullipotent Embryonal Carcinoma; Teratocarcinoma	
+CRL-2076	CCD-1064Sk	Homo sapiens	Fibroblast	Normal	Skin
+CRL-2077	CCD-1065Sk	Homo sapiens	Fibroblast	Adenocarcinoma	
+CRL-2078	HBE4-E6/E7 [NBE4-E6/E7]	Homo sapiens	Epithelial	Adenocarcinoma, Papilloma	Lung; Bronchus
+CRL-2079	HBE4-E6/E7-C1 [NBE4-E6/E7-C1]	Homo sapiens	Epithelial		
+PCS-110-010	Primary Dermal Microvascular Endothelial Cells; Normal, Human, Neonatal	Homo sapiens	Endothelial	Normal	Neonatal Foreskin
+CRL-2081	MSTO-211H	Homo sapiens		Biphasic Mesothelioma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-7336	Hs 566(B).T	Homo sapiens		Carcinoma	Mammary Gland, Breast
+CRL-2086	CCD-1068Sk	Homo sapiens	Fibroblast	Carcinoma	
+CRL-2088	CCD-1072Sk	Homo sapiens	Fibroblast		
+CRL-2089	CCD-1069Sk	Homo sapiens	Fibroblast	Carcinoma	
+CRL-7343	Hs 573.T	Homo sapiens		Cancer	
+CRL-7344	Hs 573.Lu	Homo sapiens		Cancer	
+CRL-7345	Hs 574.T	Homo sapiens		Ductal Carcinoma	
+CRL-2090	CCD-1074Sk	Homo sapiens	Fibroblast		
+CRL-2091	CCD-1070Sk	Homo sapiens	Fibroblast	Normal	Skin
+CRL-2094	CCD-1077Sk	Homo sapiens	Fibroblast		
+CRL-2095	CAL 27	Homo sapiens	Epithelial	Squamous Cell Carcinoma	Tongue
+CRL-2096	CCD-1076Sk	Homo sapiens	Fibroblast		
+CRL-2097	CCD-1079Sk	Homo sapiens	Fibroblast	Normal	Skin
+CRL-2098	SJSA-1	Homo sapiens		Osteosarcoma; Multipotential Sarcoma	Bone
+CRL-2099	KU812	Homo sapiens	Basophil	Chronic Myelogenous Leukemia (Cml)	Peripheral Blood
+CRL-7353	Hs 590.We	Homo sapiens	Fibroblast		
+PCS-201-010	Primary Dermal Fibroblast Normal; Human, Neonatal	Homo sapiens	Fibroblast	Normal	Foreskin
+PCS-201-011	Primary Dermal Fibroblasts; Normal, Human, Neonatal, Mitomycin C Treated	Homo sapiens	Fibroblast	Normal	Foreskin
+PCS-201-012	Primary Dermal Fibroblasts; Normal, Human, Adult	Homo sapiens	Fibroblast		Skin
+CRL-7360	Hs 600.T	Homo sapiens			Melanoma , Skin
+CRL-7362	Hs 604.T	Homo sapiens		Hodgkin's Disease; Hodgkin's Lymphoma	
+CRL-7364	Hs 605.Sk	Homo sapiens		Normal	Skin
+CRL-12557	7F2	Mus musculus	Osteoblast		Bone Marrow
+CRL-7373	Hs 611.T	Homo sapiens		Hodgkin's Disease; Hodgkin's Lymphoma	
+CRL-12569	2B8	Homo sapiens	B Lymphocyte; Transfected With Plasmid Psv2ne	Burkitt's Lymphoma	
+CRL-7380	Hs 618.T	Homo sapiens		Adenocarcinoma	
+CRL-12582	20B8	Homo sapiens	Epithelial	Burkitt's Lymphoma	
+CL-173	3T3-L1	Mus musculus	Fibroblast		Embryo
+CL-177	XB-2	Mus musculus	Epithelial	Teratoma	
+CRL-8985	MTKP 97-12	Mus musculus	Melanoma		
+SCRC-1007.1	AFT024 IRR	Mus musculus	Embryonic		Liver; Stroma
+CL-187	LS 180	Homo sapiens		Dukes' Type B, Colorectal Adenocarcinoma	Colon
+CL-188	LS 174T	Homo sapiens	Epithelial	Dukes' Type B,Colorectal Adenocarcinoma	Colon
+CRL-8993	8E5 [derivative of CEM]	Homo sapiens	Lymphoblast Human Immunodeficiency Virus (Hiv) Positive	Acute Lymphoblastic Leukemia	Peripheral Blood
+CCL-2.1	HeLa 229	Homo sapiens	Epithelial	Adenocarcinoma	Cervix
+CCL-2.2	HeLa S3	Homo sapiens	Epithelial	Adenocarcinoma	Cervix
+PCS-460-010	Primary Uterine Fibroblast Cells; Normal, Human	Homo sapiens	Fibroblast	Normal	Myometrium; Uterus
+PCS-460-011	Primary Uterine Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cell	Normal	Myometrium; Uterus
+CRM-CRL-1420	MIA PaCa-2	Homo sapiens	Epithelial Cell (Kras Crm)	Carcinoma	Pancreas
+CRL-2404	HEK001	Homo sapiens	Keratinocyte		Skin
+CRL-2407	NK-92	Homo sapiens	Killer Cell	Malignant Non-Hodgkin's Lymphoma	Peripheral Blood
+CRL-2408	NK-92MI	Homo sapiens	Killer Cell	Malignant Non-Hodgkin's Lymphoma	Peripheral Blood, Blood
+CCL-200	CCD-13Lu	Homo sapiens	Fibroblast	Carcinoma	
+CCL-201	CCD-8Lu	Homo sapiens	Fibroblast		
+CCL-202	CCD-11Lu	Homo sapiens	Fibroblast		
+CCL-204	CCD-16Lu	Homo sapiens	Fibroblast	Normal	Lung
+CCL-205	CCD 18Lu	Homo sapiens	Fibroblast		
+CCL-206	MLg [Mlg 2908]	Mus musculus	Fibroblast	Normal	Lung
+CCL-210	CCD-19Lu	Homo sapiens	Fibroblast	Normal	Lung
+CCL-211	Hs888Lu	Homo sapiens	Fibroblast	Osteosarcoma	
+CCL-212	MRC-9	Homo sapiens	Fetal	Normal	Lung
+CCL-213	Daudi	Homo sapiens	B Lymphoblast	Burkitt's Lymphoma	Peripheral Blood
+CCL-214	NC-37	Homo sapiens	B Lymphoblast	Burkitt's Lymphoma	
+CCL-215	CCD-25Lu	Homo sapiens	Fibroblast	Glioma	
+CCL-218	WiDr	Homo sapiens	Epithelial	Colorectal Adenocarcinoma	Colon
+CCL-219	L1210	Mus musculus		Lymphocytic Leukemia	Skin
+CRL-2420	LADMAC	Mus musculus	Macrophage, Monocyte		Bone Marrow
+CRL-2422	MDA PCa 2b	Homo sapiens		Adenocarcinoma	Prostate; Derived From Metastatic Site: Bone
+CRL-2423	PFHR 9 [PFHR-9]	Mus musculus	Epithelial,Epithelial-Like	Embryonal Carcinoma	
+CRL-2429	CCD-1112Sk	Homo sapiens	Fibroblast		Skin; Foreskin
+CCL-220	COLO 320DM	Homo sapiens		Dukes' Type C, Colorectal Adenocarcinoma	Colon
+CCL-221	DLD-1	Homo sapiens	Epithelial	Dukes' Type C, Colorectal Adenocarcinoma	Colon
+CCL-222	COLO 205	Homo sapiens		Dukes' Type D, Colorectal Adenocarcinoma	Colon; Derived From Metastatic Site: Ascites
+CCL-223	CMT-93	Mus musculus	Epithelial	Polyploid Carcinoma	Rectum
+CCL-224	COLO 201	Homo sapiens		Dukes' Type D, Colorectal Adenocarcinoma	Colon; Derived From Metastatic Site: Ascites
+CCL-225	HCT-15	Homo sapiens		Dukes' Type C, Colorectal Adenocarcinoma	Colon
+CCL-226	C3H/10T1/2, Clone 8	Mus musculus	Fibroblast	Sarcoma	Embryo
+CCL-227	SW620 [SW-620]	Homo sapiens		Dukes' Type C, Colorectal Adenocarcinoma	Colon; Derived From Metastatic Site: Lymph Node
+CCL-228	SW480 [SW-480]	Homo sapiens	Epithelial	Dukes' Type B, Colorectal Adenocarcinoma	Colon
+CCL-229	LoVo	Homo sapiens		Dukes' Type C, Grade Iv, Colorectal Adenocarcinoma	Colon; Derived From Metastatic Site: Left Supraclavicular Region
+CRL-2439	CCD-1113Sk	Homo sapiens	Fibroblast		
+CCL-230	SW403 [SW-403]	Homo sapiens	Epithelial	Dukes' Type C, Grade Iii, Colorectal Adenocarcinoma	Colon
+CCL-231	SW48 [SW-48]	Homo sapiens		Dukes' Type C, Grade Iv, Colorectal Adenocarcinoma	Colon
+CCL-233	SW1116 [SW 1116, SW-1116]	Homo sapiens	Epithelial	Dukes' Type A, Grade Iii, Colorectal Adenocarcinoma	Colon
+CCL-234	SW1463 [SW 1463, SW-1463]	Homo sapiens		Dukes' Type C, Colorectal Adenocarcinoma	Rectum
+CCL-235	SW837 [SW-837]	Homo sapiens		Grade Iv, Adenocarcinoma	Rectum
+CCL-237	SW948 [SW-948]	Homo sapiens		Dukes' Type C, Grade Iii, Colorectal Adenocarcinoma	Colon
+CCL-238	SW1417 [SW-1417]	Homo sapiens	Epithelial	Dukes' Type C, Grade Iii, Colorectal Adenocarcinoma	Colon
+CCL-246.1	KG-1a	Homo sapiens	Macrophage	Acute Myelogenous Leukemia	Bone Marrow
+CCL-240	HL-60	Homo sapiens	Promyeloblast	Acute Promyelocytic Leukemia	Peripheral Blood
+CCL-241	FHs 74 Int	Homo sapiens			Small Intestine
+CCL-243	K-562	Homo sapiens		Chronic Myelogenous Leukemia (Cml)	Bone Marrow
+CCL-244	HCT-8 [HRT-18]	Homo sapiens	Adult	Ileocecal Colorectal Adenocarcinoma	Colon
+CCL-245	Mo-B	Homo sapiens	B Lymphoblast	Hairy Cell Leukemia	
+CCL-246	KG-1	Homo sapiens	Macrophage	Acute Myelogenous Leukemia	Bone Marrow
+CCL-247	HCT 116	Homo sapiens	Epithelial	Colorectal Carcinoma	Colon
+CCL-248	T84	Homo sapiens	Epithelial	Colorectal Carcinoma	Colon; Derived From Metastatic Site: Lung
+CRL-2451	TF-1a	Homo sapiens	Erythroblast	Erythroleukemia	Bone Marrow
+CRL-2452	Sl/Sl4	Mus musculus	Mast Cell		Liver
+CRL-2453	Sl/Sl4 hSCF220	Mus musculus	Mast Cell		
+CRL-2454	Sl/Sl4 hSCF248	Mus musculus	Embryonic		Liver
+CRL-2455	AMJ2-C8	Mus musculus	Macrophage		
+CRL-2456	AMJ2-C11	Mus musculus	Macrophage		Lung
+CRL-2457	PMJ2-PC	Mus musculus	Macrophage		
+CRL-2458	PMJ2-R	Mus musculus	Macrophage		
+CRL-2459	SYF	Mus musculus	Fibroblast Immortalized With Sv40 Large T Antigen		Embryo
+CCL-250	SNU-C2B	Homo sapiens		Colorectal Carcinoma	
+CCL-251	NCI-H716 [H716]	Homo sapiens	Epithelial	Colorectal Adenocarcinoma	Cecum
+CCL-252	NCI-H747 [H747]	Homo sapiens		Colorectal Adenocarcinoma	Cecum
+CCL-253	NCI-H508 [H508]	Homo sapiens		Colorectal Adenocarcinoma	Cecum
+CCL-254	NCI-H498 [H498]	Homo sapiens		Colorectal Adenocarcinoma	
+CCL-255	LS123	Homo sapiens	Epithelial	Dukes' Type B, Colorectal Adenocarcinoma	Colon
+CCL-256	NCI-H2126 [H2126]	Homo sapiens	Epithelial	Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CCL-257	NCI-H1688 [H1688]	Homo sapiens	Epithelial	Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Liver
+CRL-2460	MS1 VEGF	Mus musculus	Endothelial	Sarcoma	Pancreas; Islet Of Langerhans, Endothelium
+CRL-2465	CCD-1117Sk	Homo sapiens	Fibroblast		
+CRL-2466	CCD-1118Sk	Homo sapiens	Fibroblast		
+CRL-2467	EOC 2	Mus musculus	Microglia		Brain
+CRL-2468	EOC 13.31	Mus musculus	Microglia		Brain
+CRL-2469	EOC 20	Mus musculus	Microglia		Brain
+CRM-TIB-161	HuT 78	Homo sapiens	Cutaneous T Lymphocyte (Kras Crm)	Sezary Syndrome	
+CRL-11346	32D Clone 3	Mus musculus			Bone Marrow
+CRL-9068	NCI-H929 [H929]	Homo sapiens	B Lymphocyte	Plasmacytoma; Myeloma	Bone Marrow
+CRL-7721	MB 157	Homo sapiens		Carcinoma	Mammary Gland; Breast; Pleural Effusion
+CRL-7724	SH-4	Homo sapiens		Melanoma	Skin
+CRL-2470	I-11.15	Mus musculus	Macrophage		
+CRL-2471	I-13.35	Mus musculus	Macrophage		Spleen
+CRL-11351	H69AR	Homo sapiens	Epithelial	Carcinoma; Small Cell Lung Cancer; Multidrug Resistant	Lung
+CRL-9078	PA317	Mus musculus			Embryo
+CRL-5836_FL	NCI-H711 [H711]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Carcinoma; Classic Small Cell Lung Cancer; Lung
+CRL-7739	TE 90.Sk	Homo sapiens		Leukemia	
+CRL-7744	TE 115.T	Homo sapiens		Fibromatosis	
+CRL-7746	TE 130.T	Homo sapiens		Sacrococcygeal Teratoma	
+CRL-2496	HS-27A	Homo sapiens	Human Papillomavirus 16 (Hpv-16) E6/E7 Transformed		Bone Marrow/Stroma
+CRL-2497	Src++	Mus musculus	Fibroblast		Embryo
+CRL-2498	SYF + c-Src	Mus musculus	Fibroblast		Embryo
+CRL-11372	hFOB 1.19	Homo sapiens	Osteoblast; Sv40 Large T Antigen Transfected		Bone
+CRL-11379	9TR#1 [Embryonic stem cell line]	Mus musculus	Embryonic		
+CRL-7752	TE 159.T	Homo sapiens		Rhabdomyosarcoma	
+CRL-11386	TALL-104	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CRL-7761	TE 353.Sk	Homo sapiens		Normal	Skin
+CRL-7762	TE 354.T	Homo sapiens		Basal Cell Carcinoma	Skin
+CRL-7763	TE 381.T [RD114-B]	Homo sapiens		Rhabdomyosarcoma	
+CRL-7767	TE 441.T	Homo sapiens		Rhabdomyosarcoma	
+CRL-7776	TO 166.M	Homo sapiens		Fibrosarcoma	
+CRL-7779	TO 175.T	Homo sapiens		Hodgkin's Disease; Hodgkin's Lymphoma	
+CRL-7797	HT 1417	Homo sapiens		Lymphoma	
+PCS-200-010	Primary Epidermal Keratinocytes; Normal, Human, Neonatal Foreskin	Homo sapiens	Keratinocyte	Normal	Foreskin
+PCS-200-011	Primary Epidermal Keratinocytes; Normal, Human, Adult	Homo sapiens	Adult	Normal	Skin (Epidermis)
+PCS-200-012	Primary Epidermal Melanoyctes; Normal, Human, Neonatal	Homo sapiens	Melanocyte	Normal	Foreskin, Lightly-Pigmented
+PCS-200-013	Primary Epidermal Melanoyctes; Normal, Human, Adult	Homo sapiens	Adult	Normal	Epidermis (Basal Layer)
+CRL-13002	GH329	Homo sapiens	Epithelial		
+CRL-13003	GH354	Homo sapiens	Epithelial	Adenocarcinoma	Cervix
+CRL-13005	1G2	Homo sapiens	Epithelial	Burkitt's Lymphoma	
+CRL-13006	6.12	Mus musculus	Hybridoma:Lymphoblast B Lymphocyte; Somatic Cell Hybri		
+CRL-13011	HeLa NR1	Homo sapiens	Hela Cells Transfected With Plasmid Psv2neonr101	Adenocarcinoma	
+CRL-2800	MN-11 [Mutatect]	Mus musculus		Fibrosarcoma	
+CRL-2802	MiF-6 [Mutatect]	Mus musculus		Fibrosarcoma	
+CRL-2804	M-7 [Mutatect]	Mus musculus		Fibrosarcoma	
+CRL-2814	L Wnt-5A	Mus musculus	Fibroblast		Subcutaneous Connective Tissue; Areolar And Adipose
+CRL-2816	92TAg	Mus musculus	Fibroblast		
+CRL-2817	127TAg	Mus musculus	Fibroblast		
+CRL-2818	MB355	Mus musculus	Fibroblast		
+CRL-2819	308TAg	Mus musculus	Fibroblast		
+CRL-2820	88TAg	Mus musculus	Fibroblast		
+CRL-2821	MB352	Mus musculus	Fibroblast		Embryo
+CRL-2822	283TAg	Mus musculus	Fibroblast		
+CRL-2823	151TAg	Mus musculus	Fibroblast		
+CRL-2828	PEAKrapid	Homo sapiens	Transformed With Adenovirus 5 Dna		Kidney
+CRL-2830	WT 9-7	Homo sapiens	Epithelial		Kidney, Cortex, Proximal Tubule, Cyst
+CRL-2833	WT 9-12	Homo sapiens	Epithelial		
+CRL-2836	K7M2 wt [K7M2-WT]	Mus musculus	Osteoblast	Osteosarcoma	Bone; Derived From Metastatic Site: Lung
+CRL-2837	K7M2-pCI Neo	Mus musculus	Osteoblast	Osteosarcoma	
+CRL-2846	CHON-001	Homo sapiens	Fibroblast		Long Bone; Cartilage
+CRL-2847	CHON-002	Homo sapiens	Fetal	Normal	Long Bone; Cartilage
+CRL-2849	WPE1-NA22	Homo sapiens	Epithelial		Prostate
+CRL-1608	45.6.TG1.7	Mus musculus	B Lymphoblast	Plasmacytoma; Myeloma	
+CRL-9444	MeT-5A	Homo sapiens	Epithelial Virus Transformed	Pleural Fluids Obtained From Non-Cancerous Individuals.	Mesothelium
+CRL-9446	CHL-1	Homo sapiens	Melanoma	Melanoma	Skin
+CRL-2850	WPE1-NB14	Homo sapiens	Epithelial	Normal	Prostate
+CRL-2851	WPE1-NB11	Homo sapiens	Epithelial	Normal	Prostate
+CRL-2852	WPE1-NB26	Homo sapiens	Epithelial	Normal	Prostate
+CRL-2853	RWPE2-W99	Homo sapiens	Epithelial		
+CRL-2854	WPMY-1	Homo sapiens	Epithelial, Fibroblast, Myofibroblast	Normal	Prostate/Stroma
+CRL-2859	CBRM1/1	Mus musculus	Hybridoma:Lymphoblast B Lymphocyte; Somatic Cell Hybri		
+CRL-1610	GS-109-V-20	Homo sapiens		Adenoma	
+CRL-1611	ACHN	Homo sapiens		Renal Cell Adenocarcinoma	Kidney; Derived From Metastatic Site: Pleural Effusion
+CRL-1613	GS-109-V-34	Homo sapiens		Adenoma	
+CRL-1614	GS-109-V-63 [G96]	Homo sapiens		Adenoma	
+CRL-1616	C127I	Mus musculus			Mammary Gland
+CRL-1619	A-375 [A375]	Homo sapiens		Malignant Melanoma	Skin
+CRL-11730	TOV-21G	Homo sapiens		Grade 3, Stage Iii,Primary Malignant Adenocarcinoma; Clear Cell Carcinoma	Ovary
+CRL-11731	TOV-112D	Homo sapiens		Grade 3, Stage Iiic, Primary Malignant Adenocarcinoma; Endometrioid Carcinoma	Ovary
+CRL-11732	OV-90	Homo sapiens		Grade 3, Stage Iiic, Malignant Papillary Serous Adenocarcinoma	Ovary; Derived From Metastatic Site: Ascites
+CRL-2860	CBRN1/6	Mus musculus	Hybridoma:Lymphoblast B Lymphocyte; Somatic Cell Hybri		
+CRL-2861	CBRM1/10	Mus musculus	Hybridoma:Lymphoblast B Lymphocyte; Somatic Cell Hybri		
+CRL-2862	CBRM1/23	Mus musculus	Hybridoma:Lymphoblast B Lymphocyte; Somatic Cell Hybri		
+CRL-2865	T47D-KBluc	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland; Breast/Duct; Derived From Metastatic Site: Pleural Effusion
+CRL-2868	HCC827	Homo sapiens	Epithelial	Adenocarcinoma	Lung
+CRL-2869	HCC2935	Homo sapiens	Epithelial	Adenocarcinoma	Lung: Pleural Effusion
+CRL-1620	A-172 [A172]	Homo sapiens		Glioblastoma	Brain
+CRL-1621	ARH-77	Homo sapiens	B Lymphoblast	Plasma Cell Leukemia	Peripheral Blood
+CRL-1622	KLE	Homo sapiens		Adenocarcinoma	Uterus/Endometrium
+CRL-1623	SCC-15	Homo sapiens		Squamous Cell Carcinoma	Tongue
+CRL-1624	SCC-4	Homo sapiens		Squamous Cell Carcinoma	Tongue
+CRL-1628	SCC-25	Homo sapiens	Epithelial	Squamous Cell Carcinoma	Tongue
+CRL-1629	SCC-9	Homo sapiens		Squamous Cell Carcinoma	Tongue
+CRL-2871	HCC4006	Homo sapiens	Epithelial	Adenocarcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-2876	VCaP	Homo sapiens	Epithelial	Cancer	Prostate; Derived From Metastatic Site: Vertebral Metastasis
+CRL-1634	Hs27	Homo sapiens	Fibroblast		Skin, Foreskin
+CRL-1635	Hs68	Homo sapiens	Fibroblast	Aspartoacylase Deficiency; Possible Canavan Disease	Skin; Foreskin
+CRL-1636	NMuMG	Mus musculus			Mammary Gland
+CRL-1637	Mm5MT	Mus musculus			Mammary Gland
+CRL-2884	sNF96.2	Homo sapiens	Schwann Cell		
+CRL-2885	sNF02.2	Homo sapiens	Schwann	Neurofibrmatosis Type 1 (Nf1)	Derived From Metastatic Site: Lung
+CRL-2886	sNF94.3	Homo sapiens	Schwann	Neurofibrmatosis Type 1 (Nf1)	Derived From Metastatic Site: Lung
+CRL-2887	WPE-stem	Homo sapiens	Epithelial	Papilloma	Prostate, Normal, Peripheral Zone
+CRL-2888	WPE-int	Homo sapiens	Epithelial	Papilloma	Prostate, Normal, Peripheral Zone
+CRL-2889	WPE1-NB26-64	Homo sapiens	Epithelialhpv-18 Transfected	Hepatitis	
+CRL-1642	LL/2 (LLC1)	Mus musculus		Lewis Lung Carcinoma	Lung
+CRL-1643	GS-109-V-21	Homo sapiens	Fibroblast		
+CRL-1646	FO	Mus musculus	B Lymphoblast	Plasmacytoma; Myeloma	
+CRL-1647	ST486	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	Ascites
+CRL-1648	CA46	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-1649	MC116	Homo sapiens	B Lymphocyte	Undifferentiated Lymphoma	Ascites
+CRL-9482	BBM	Homo sapiens	Epithelialvirus Transformed	Carcinogen	
+CRL-9483	BZR	Homo sapiens	Epithelialvirus Transformed	Carcinogen	
+CRL-2890	WPE1-NB26-65	Homo sapiens	Epithelialhpv-18 Transfected	Hepatitis	
+CRL-2898	Neo Jurkat	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-2899	BCL2 Jurkat	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-1658	NIH/3T3	Mus musculus	Fibroblast		Embryo
+CRL-11776	YS001	Mus musculus	Embryonic		
+CRL-1669	CW13.20-3B3 (clone of BCL1)	Mus musculus	B Lymphocyte	Leukemia	Peripheral Blood
+CRL-1671	RL95-2	Homo sapiens		Carcinoma	Uterus/Endometrium
+CRL-1675	WM-115	Homo sapiens		Melanoma	Skin
+CRL-1676	WM-266-4	Homo sapiens	Melanoma	Melanoma	Derived From Metastatic Site: Skin
+CRL-1679	WEHI-274.1	Mus musculus	Monocyte	Abelson Murine Leukemia Virus-Induced Tumor	
+CRL-1682	AsPC-1	Homo sapiens		Adenocarcinoma	Pancreas; Derived From Metastatic Site: Ascites
+CRL-1687	BxPC-3	Homo sapiens		Adenocarcinoma	Pancreas
+CRL-8286	Reh	Homo sapiens		Acute Lymphocytic Leukemia (Non-T; Non-B)	
+CRL-1690	T98G [T98-G]	Homo sapiens		Glioblastoma Multiforme	Brain
+CRL-1693	NFS-5 C-1	Mus musculus	Lymphoblast	Lymphoma	
+CRL-1694	NFS-70 C-10	Mus musculus	Lymphoblast	Lymphoma	
+CRL-1695	NFS-25 C-3	Mus musculus	Lymphoblast	Lymphoma	
+CRL-1696	McCoy [McCoy B]	Mus musculus	Fibroblast		Unknown
+CRL-8293	C5/MJ	Homo sapiens	Lymphocyte	Leukemia	Cord Blood
+CRL-8294	MJ [G11]	Homo sapiens	Lymphocyte	Cutaneous T Cell Lymphoma; Mycosis Fungoides	Peripheral Blood
+HB-8064	Hep 3B2.1-7 [Hep 3B, Hep-3B, Hep3B]	Homo sapiens		Hepatocellular Carcinoma	Liver
+HB-8065	Hep G2 [HEPG2]	Homo sapiens		Hepatocellular Carcinoma	Liver
+SCRC-1041.1	HFF-1 IRR	Homo sapiens	Fibroblast		Skin, Foreskin
+CRL-7000	Hs 1.Lu	Homo sapiens	Fibroblast		
+CRL-7002	Hs 1.Tes	Homo sapiens	Keratinocyte		
+CRL-7005	Hs 3.T	Homo sapiens		Osteosarcoma	
+CRL-7023	Hs 39.T	Homo sapiens		Osteosarcoma	
+CRL-7033	Hs 53.T	Homo sapiens		Neurofibroma	
+CRL-7037	Hs 57.T	Homo sapiens		Sarcoma Or Lymphoma	
+CRL-7043	Hs 63.T	Homo sapiens		Dermatofibrosarcoma Protuberans	
+CRL-9850	MD	Homo sapiens	Macrophage		Spleen
+CRL-9853	90196B	Homo sapiens			Spleen
+CRL-9855	SC	Homo sapiens	Epithelial	Burkitt's Lymphoma	Peripheral Blood
+CRL-9856	KMA	Homo sapiens			Spleen
+CRL-8621	SVG p12	Homo sapiens	Astroglia; Sv40 Transformed		Brain
+CRL-7060	Hs 88.T	Homo sapiens		Osteosarcoma	
+CRL-7062	Hs 93.T	Homo sapiens		Fibrosarcoma	Connective And Soft Tissue
+CRL-10915	D1.1	Homo sapiens	Lymphoblast	Acute T Cell Leukemia	
+CRL-8644	HuNS1	Homo sapiens	Lymphoblast	Myeloma	
+CRL-7081	Hs 127.T	Homo sapiens		Giant Cell Sarcoma	Connective Tissue
+CRL-7085	Hs 132.T	Homo sapiens		Spindle Cell Sarcoma	
+CRL-10936	F.thy 62891	Homo sapiens	Immortalized With Sv40 Large T Antigen		
+CRL-7090	Hs 142.Sp	Homo sapiens	Fibroblast		
+CRL-7092	Hs 143.We	Homo sapiens	Fibroblast		
+CRL-7093	Hs 144.We	Homo sapiens	Fibroblast		
+79878	pCMV5.32A7	Homo sapiens	Lymphoblast	Acute Lymphoblastic Leukemia	
+HTB-10	SK-N-MC	Homo sapiens		Neuroepithelioma	Brain; Derived From Metastatic Site: Supra-Orbital Area
+HTB-11	SK-N-SH	Homo sapiens		Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+HTB-12	SW 1088 [SW-1088, SW1088]	Homo sapiens		Astrocytoma	Brain
+HTB-13	SW 1783 [SW-1783, SW1783]	Homo sapiens		Grade Iii,Astrocytoma	Brain
+HTB-14	U-87 MG	Homo sapiens		Glioblastoma; Astrocytoma; Classified As Grade Iv As Of 2007	Brain
+HTB-15	U-118 MG	Homo sapiens	Glioblastoma	Classified As Grade Iv As Of 2007, Glioblastoma; Astrocytoma	Brain
+HTB-16	U-138 MG	Homo sapiens	Glioblastoma	Glioblastoma	Brain
+HTB-18	Y79	Homo sapiens	Retinoblastoma	Retinoblastoma	Eye, Retina
+HTB-19	BT-20	Homo sapiens		Carcinoma	Mammary Gland/Breast
+HTB-20	BT-474	Homo sapiens		Ductal Carcinoma	Mammary Gland; Breast/Duct
+HTB-21	CAMA-1	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-22	MCF7	Homo sapiens	Epithelial	Adenocarcinoma	Mammary Gland, Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-23	MDA-MB-134-VI	Homo sapiens		Ductal Carcinoma	Mammary Gland; Breast/Duct;&Nbsp;Derived From Metastatic Site: Pleural Effusion
+HTB-24	MDA-MB-157	Homo sapiens		Medulallary Carcinoma	Mammary Gland; Breast/Medulla
+HTB-25	MDA-MB-175-VII	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland; Breast/Duct; Derived From Metastatic Site: Pleural Effusion
+HTB-26	MDA-MB-231	Homo sapiens	Epithelial	Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-27	MDA-MB-361	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site:Brain
+CCL-163.1	SV-T2	Mus musculus	Fibroblastsv40 Transformed		
+CCL-163.2	M-MSV-BALB/3T3	Mus musculus	Fibroblastmoloney Murine Sarcoma Virus (Mo-Msv) Transformed		
+CCL-163.3	K-BALB (K-234)	Mus musculus	Fibroblastkirsten Murine Sarcoma Virus (Ki-Msv) Transformed		
+HTB-30	SK-BR-3 [SKBR3]	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-31	C-33 A [c-33a]	Homo sapiens	Epithelial, Retinoblastoma	Carcinoma	Cervix
+HTB-32	HT-3	Homo sapiens	Retinoblastoma	Retinoblastoma, Papilloma	Cervix, Lymph Node
+HTB-33	ME-180	Homo sapiens		Epidermoid Carcinoma	Cervix; Derived From Metastatic Site: Omentum
+HTB-34	MS751	Homo sapiens		Epidermoid Carcinoma	Cervix; Derived From Metastatic Site: Lymph Node
+HTB-35	SiHa	Homo sapiens		Grade Ii,Squamous Cell Carcinoma	Cervix
+HTB-36	JEG-3	Homo sapiens		Choriocarcinoma	Placenta
+HTB-37	Caco-2 [Caco2]	Homo sapiens	Epithelial	Colorectal Adenocarcinoma	Colon
+HTB-38	HT-29	Homo sapiens	Epithelial	Colorectal Adenocarcinoma	Colon
+HTB-39	SK-CO-1	Homo sapiens		Colorectal Adenocarcinoma	Colon; Derived From Metastatic Site: Ascites
+CRL-2100	KU812E	Homo sapiens		Chronic Myelogenous Leukemia	
+CRL-2101	KU812F [KU-812-F]	Homo sapiens	Basophil	Chronic Myelogenous Leukemia	Peripheral Blood
+CRL-2102	C2BBe1 [clone of Caco-2]	Homo sapiens	Enterocyte	Colorectal Adenocarcinoma	Colon
+CRL-2103	CCD-1086Sk	Homo sapiens	Fibroblast		
+CRL-2104	CCD-1087Sk	Homo sapiens	Fibroblast		
+CRL-2105	HH	Homo sapiens	Lymphocyte	Cutaneous T Cell Lymphoma	Peripheral Blood
+CRL-2106	CCD-1090Sk	Homo sapiens	Fibroblast		Skin
+HTB-40	HuTu 80	Homo sapiens		Adenocarcinoma	Duodenum
+HTB-41	A-253	Homo sapiens		Epidermoid Carcinoma	Submaxillary Salivary Gland
+HTB-43	FaDu	Homo sapiens		Squamous Cell Carcinoma	Pharynx
+HTB-44	A-498	Homo sapiens		Carcinoma	Kidney
+HTB-45	A-704	Homo sapiens		Adenocarcinoma	Kidney
+HTB-46	Caki-1	Homo sapiens		Clear Cell Carcinoma	Kidney:Skin
+HTB-47	Caki-2	Homo sapiens		Clear Cell Carcinoma	Kidney
+HTB-48	SK-NEP-1	Homo sapiens			 
+CRL-2113	E.G7-OVA [derivative of EL4]	Mus musculus	Lymphocyte	Lymphoma	Lymphocyte
+CRL-2114	CCD-1092Sk	Homo sapiens	Fibroblast		
+CRL-2115	CCD-1093Sk	Homo sapiens	Fibroblast		
+CRL-2116	JC	Mus musculus	Epithelial-Like	Adenocarcinoma	Mammary Gland
+CRL-2119	HPAC	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+HTB-52	SK-HEP-1	Homo sapiens	Endothelial	Adenocarcinoma	Liver / Ascites
+HTB-53	A-427	Homo sapiens		Carcinoma	Lung
+HTB-54	Calu-1	Homo sapiens		Grade Iii,Epidermoid Carcinoma	Lung; Derived From Metastatic Site: Pleura
+HTB-55	Calu-3	Homo sapiens	Epithelial Cell	Adenocarcinoma	Lung Adenocarcinoma; Derived From Metastatic Site: Pleural Effusion
+HTB-56	Calu-6	Homo sapiens		Anaplastic Carcinoma	Unknown, Probably Lung
+HTB-57	SK-LU-1	Homo sapiens	Epithelial Cell	Adenocarcinoma	Lung
+HTB-58	SK-MES-1	Homo sapiens		Squamous Cell Carcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+HTB-59	SW 900 [SW-900, SW900]	Homo sapiens		Grade Iv,Squamous Cell Carcinoma	Lung
+CRL-2120	CCD-1094Sk	Homo sapiens		Carcinoma	
+CRL-2122	CCD-1095Sk	Homo sapiens	Fibroblast	Carcinoma	
+CRL-2124	CCD-1097Sk	Homo sapiens	Fibroblast	Carcinoma	
+CRL-2127	CCD-1098Sk	Homo sapiens	Fibroblast		
+CRL-2128	NCI-H295R [H295R]	Homo sapiens		Carcinoma	Adrenal Gland/Cortex
+CRL-2129	CCD-1096Sk	Homo sapiens	Fibroblast		
+HTB-60	EB1	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+HTB-61	EB2 [EB-2]	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	Lymph Node; Derived From Metastatic Site: Ovary
+HTB-62	P3HR-1	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	Ascites
+HTB-63	HT-144	Homo sapiens	Fibroblast	Malignant Melanoma	
+HTB-64	Malme-3M	Homo sapiens	Fibroblast	Malignant Melanoma	Malignant Melanoma;&Nbsp;Derived From Metastatic Site: Lung
+HTB-65	MeWo	Homo sapiens		Malignant Melanoma	Skin, Derived From Metastatic Site: Lymph Node
+HTB-66	RPMI-7951	Homo sapiens		Malignant Melanoma	Skin; Derived From Metastatic Site: Lymph Node
+HTB-67	SK-MEL-1	Homo sapiens	Melanoma	Malignant Melanoma	Malignant Melanoma; Skin; Derived From Metastatic Site: Lymphatic System
+HTB-68	SK-MEL-2	Homo sapiens		Malignant Melanoma	Skin:Derived From Metastasis On Skin Of Thigh.
+HTB-69	SK-MEL-3	Homo sapiens		Malignant Melanoma	Skin; Derived From Metastatic Site: Lymph Node
+CRL-11005	FL 62891	Homo sapiens	Immortalized With Sv40 Large T Antigen		
+CRL-2134	LS513	Homo sapiens	Epithelial	Dukes' Type C,Colorectal Carcinoma	Cecum
+CRL-2137	SK-N-AS	Homo sapiens	Epithelial	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+CRL-2138	VA-ES-BJ	Homo sapiens	Epithelial	Epithelioid Sarcoma	Derived From Metastatic Site: Bone Marrow
+CRL-2139	SK-PN-DW	Homo sapiens		Malignant Primitive Neuroectodermal Tumor	Retroperitoneal Embryonal Tumor
+HTB-70	SK-MEL-5	Homo sapiens	Melanoma	Malignant Melanoma	Skin: Derived From Metastatic Axillary Node.
+HTB-71	SK-MEL-24	Homo sapiens		Malignant Melanoma	Skin; Derived From Metastatic Site: Lymph Node
+HTB-72	SK-MEL-28	Homo sapiens	Melanoma	Malignant Melanoma	Skin
+HTB-73	SK-MEL-31	Homo sapiens	Epithelial Cell	Malignant Melanoma	Skin
+HTB-75	Caov-3 [Caov3]	Homo sapiens		Adenocarcinoma	Ovary
+HTB-76	Caov-4	Homo sapiens		Adenocarcinoma	Ovary;  Derived From Metastatic Site: Subserosa Of Fallopian Tube
+HTB-77	SK-OV-3 [SKOV-3; SKOV3]	Homo sapiens		Adenocarcinoma	Ovary: Ascites
+HTB-78	SW 626 [SW-626, SW626]	Homo sapiens		Grade Iii, Adenocarcinoma	Ovary
+HTB-79	Capan-1	Homo sapiens		Adenocarcinoma	Pancreas; Derived From Metastatic Site: Liver
+CRL-2142	SK-N-FI	Homo sapiens	Neuroblast	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+CRL-2148	WEHI-13VAR	Mus musculus	Fibroblast	Fibrosarcoma	
+CRL-2149	SK-N-DZ	Homo sapiens	Neuroblast	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+HTB-80	Capan-2	Homo sapiens		Adenocarcinoma	Pancreas
+HTB-81	DU 145	Homo sapiens		Carcinoma	Prostate; Derived From Metastatic Site: Brain
+HTB-82	A-204  [A204]	Homo sapiens		Rhabdomyosarcoma	Muscle
+HTB-85	Saos-2	Homo sapiens		Osteosarcoma	Bone
+HTB-86	SK-ES-1	Homo sapiens		Sarcoma (Anaplastic Osteosarcoma Or Ewing's Sarcoma)	Bone
+HTB-88	SK-LMS-1	Homo sapiens		Leiomyosarcoma	Vulva
+CRL-7400	Hs 675.T	Homo sapiens		Colorectal Cancer	
+CRL-2151	266-6	Mus musculus	Epithelial	Pancreatic Acinar Cell Tumor	Pancreas
+CRL-2158	LS1034	Homo sapiens		Dukes' Type C, Colorectal Carcinoma	Cecum
+CRL-2159	LS411N	Homo sapiens		Dukes' Type B, Colorectal Carcinoma	Cecum
+HTB-91	SW 684 [SW-684, SW684]	Homo sapiens		Fibrosarcoma	Connective Tissue
+HTB-92	SW 872 [SW-872, SW872]	Homo sapiens		Liposarcoma	Connective Tissue
+HTB-93	SW 982 [SW-982, SW982]	Homo sapiens		Synovial Sarcoma	Synovium
+HTB-94	SW 1353 [SW 1353, SW-1353]	Homo sapiens		Chondrosarcoma	Bone
+HTB-96	U-2 OS	Homo sapiens		Osteosarcoma	Bone
+CRL-2160	3B-11	Mus musculus	Endothelial, Sv40 Transformed		
+CRL-2161	SVEC4-10EHR1	Mus musculus	Endothelial, Sv40 Transformed		
+CRL-2162	IP-1B	Mus musculus	Endothelial, Sv40 Transformed		
+CRL-2163	2H-11	Mus musculus	Endothelial, Sv40 Transformed		Axillary Lymph Node/Vascular Epithelium
+CRL-2167	SVEC4-10EE2	Mus musculus	Endothelial, Sv40 Transformed		
+CRL-2168	2F-2B	Mus musculus	Endothelial, Sv40 Transformed		
+CRL-2169	SW 780 [SW-780, SW780]	Homo sapiens		Transitional Cell Carcinoma	Urinary Bladder
+CRL-2170	SW 1573 [SW-1573, SW1573]	Homo sapiens		Alveolar Cell Carcinoma	Lung
+CRL-7425	Hs 688(A).T	Homo sapiens		Melanoma	Skin
+CRL-2172	SW 1990 [SW-1990, SW1990]	Homo sapiens		Adenocarcinoma	Derived From Metastatic Site:
+CRL-7428	Hs 692(A).T	Homo sapiens		Intestinal Carcinoma	
+CRL-2174	Sol8	Mus musculus	Myoblast		Skeletal Muscle
+CRL-2175	SW 156 [SW-156, SW156]	Homo sapiens		Hypernephroma	Kidney
+CRL-2177	SW 1271 [SW-1271, SW1271]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung
+CRL-7433	Hs 697.Sp	Homo sapiens		Granuloma	
+CRL-7435	Hs 698.T	Homo sapiens		Adenocarcinoma	Derived From Metastatic Site
+CRL-2181	SVEC4-10	Mus musculus	Endothelial, Sv40 Transformed		Axillary Lymph Node/Vascular Epithelium
+CRL-2187	PA317 cyclin E-L	Mus musculus	Fibroblast	Sarcoma	
+CRL-2188	PA317 cyclin E-S	Mus musculus	Fibroblast	Sarcoma	
+CRL-2189	WR21	Mus musculus		Adenocarcinoma	
+CRL-7443	Hs 704.Sk	Homo sapiens		Osteosarcoma	
+CRL-7444	Hs 704.T	Homo sapiens		Osteosarcoma	
+CRL-2190	HK-2	Homo sapiens	Epithelial	Papilloma	Kidney, Cortex/Proximal Tubule
+CRL-7447	Hs 706.T	Homo sapiens		Giant Cell Sarcoma	Bone
+CRL-2193	As4.1	Mus musculus			Kidney
+CRL-7448	Hs 707(A).T	Homo sapiens		Osteosarcoma	
+CRL-7449	Hs 707(B).Ep	Homo sapiens		Sarcoma	
+CRL-2195	SHP-77	Homo sapiens	Epithelial	Carcinoma; Small Cell Lung Cancer	Lung
+CRL-2196	GC-2spd(ts)	Mus musculus	Spermatocyte; Sv40 Large T Antigen Transfected		
+HTB-1	J82	Homo sapiens		Transitional Cell Carcinoma	Urinary Bladder
+HTB-2	RT4	Homo sapiens		Transitional Cell Papilloma	Urinary Bladder
+HTB-3	SCaBER	Homo sapiens		Squamous Cell Carcinoma	Urinary Bladder
+HTB-4	T24	Homo sapiens		Transitional Cell Carcinoma	Urinary Bladder
+HTB-5	TCCSUP	Homo sapiens	Epithelial	Grade Iv Transitional Cell Carcinoma	Urinary Bladder
+HTB-9	5637	Homo sapiens		Grade Ii Carcinoma	Urinary Bladder
+CRL-7473	Hs 737.T	Homo sapiens		Giant Cell Sarcoma	Bone
+CRL-7477	Hs 739.T	Homo sapiens		Adenocarcinoma	Mammary Gland; Breast
+CRL-7478	Hs 740.Sk	Homo sapiens		Carcinoma	
+SCRC-1002	C57BL/6	Mus musculus	Embryonic		Embryo
+SCRC-1007	AFT024	Mus musculus	Embryonic		Liver; Stroma
+SCRC-1008	MEF (C57BL/6) [MEF-BL/6-1]	Mus musculus	Fibroblast		Embryo
+CRL-7480	Hs 741.T	Homo sapiens		Adenocarcinoma	
+CRL-7481	Hs 742.Sk	Homo sapiens		Normal	Skin
+CRL-7482	Hs 742.T	Homo sapiens		Scirrhous Adenocarcinoma	Mammary Gland; Breast
+CRL-7486	Hs 748.T	Homo sapiens		Cancer	Mammary Gland; Breast
+SCRC-1010	J1	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1011	R1	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1016	ESF 158	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1018	RW.4	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1019	B6/BLU	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+TIB-6	J558	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-8	P3.6.2.8.1	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-9	P3X63Ag8	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+SCRC-1020	SCC#10	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1021	EDJ#22	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1023	AB2.2	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1033	7AC5/EYFP	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1036	R1/E	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1037	G-Olig2	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1038	CE-1	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+SCRC-1039	CE3	Mus musculus	Embryonic Stem Cell		Inner Cell Mass
+ACS-4500	293T/17 SF [HEK 293T/17 SF]	Homo sapiens			Kidney
+SCRC-1040	MEF (CF-1)	Mus musculus	Embryonic		Embryo
+SCRC-1041	HFF-1	Homo sapiens	Fibroblast	Normal	Skin; Foreskin
+SCRC-1045	MEF (DR4)	Mus musculus	Fibroblast		Embryo
+SCRC-1049	SNL76/7	Mus musculus	Fibroblast		Embryo
+SCRC-1008.1	MEF (C57BL/6) IRR	Mus musculus	Fibroblast		Embryo, Whole
+SCRC-1050	SNLP 76/7-4	Mus musculus	Fibroblast		Embryo
+CRL-2500	A7 [M2A7]	Homo sapiens	Melanoma		
+CRL-2502	ARPE-19/HPV-16	Homo sapiens	Human Papillomavirus 16 (Hpv-16) Transfected		
+CRL-2503	NL20	Homo sapiens	Epithelial	Accident Victim	Lung/Bronchus
+CRL-2504	NL20-TA [NL20T-A]	Homo sapiens	Epithelial	Accident Victim	
+CRL-2505	22Rv1	Homo sapiens	Epithelial	Carcinoma	Prostate
+CRL-2510	CCD-1120Sk	Homo sapiens	Fibroblast		
+CRL-2512	TF-1.CN5a.1	Homo sapiens	Erythroblast	Erythroleukemia	
+CRL-2513	CCD-1122Sk	Homo sapiens	Fibroblast		
+CRL-2522	BJ	Homo sapiens	Fibroblast	Normal	Skin; Foreskin
+CRL-2524	CCD-1123Sk	Homo sapiens	Fibroblast		
+CRM-CRL-1550	Ca Ski	Homo sapiens	Epithelial Cell (Crm)	Epidermoid Carcinoma	
+PCS-700-010	Primary Corneal Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Cornea
+CRL-2534	C8-D30 [Astrocyte type III clone]	Mus musculus	Astrocyte, Type Iii Phenotype		Brian, Cerebellum
+CRL-2535	C8-S [Astrocyte type II clone]	Mus musculus	Astrocyte Type Ii		Brain, Cerebellum
+CRL-2539	4T1	Mus musculus		This Tumor Is An Animal  Stage Iv Human Breast Cancer.	Mammary Gland
+CRL-2540	C8-B4	Mus musculus	Macrophage		Brain, Cerebellum
+CRL-2541	C8-D1A [Astrocyte type I clone]	Mus musculus	Astrocyte		Brain, Cerebellum
+CRL-2543	SaI [Sa I, Sarcoma I]	Mus musculus	Dibenzanthracene Induced	Fibrosarcoma, Malignant	
+CRL-2544	SaI/N	Mus musculus	Dibenzanthracene Induced	Fibrosarcoma, Malignant	
+CRL-2547	Panc 10.05	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2549	Panc 03.27	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-11422	MPRO Cell Line, Clone 2.1	Mus musculus			Bone Marrow
+CRL-7802	Hs 454.T	Homo sapiens		Eosinophilic Granuloma	
+CRL-7804	Hs 456.Sk	Homo sapiens		Carcinoma	
+CRL-7805	Hs 456.Bt	Homo sapiens		Carcinoma	
+CRL-2551	Panc 08.13	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2553	Panc 02.03	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2554	Panc 02.13	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2555	Panc 04.03	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2557	Panc 05.04	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-2558	PL45	Homo sapiens	Epithelial	Ductal Adenocarcinoma	
+CRL-2564	CCD-1126Sk	Homo sapiens	Fibroblast		
+CRL-2565	CCD-1127Sk	Homo sapiens	Fibroblast		
+CRL-2566	CCD-1128Sk	Homo sapiens	Fibroblast		
+CRL-7822	Hs 5.T	Homo sapiens		Leiomyosarcoma	
+CRL-7823	Hs 14.T	Homo sapiens		Osteosarcoma	
+CRL-2570	A3	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-2571	I 9.2	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-7826	Hs 38.T	Homo sapiens		Ovarian Teratoma	
+CRL-2572	I 2.1	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-2575	CCD-1129SK	Homo sapiens	Fibroblast	Carcinoma,Cancer	
+CRL-2577	RKO	Homo sapiens	Epithelial	Carcinoma	Colon
+CRL-2578	RKO-E6	Homo sapiens	Epithelial	Carcinoma, Papillomaâ­	Colon
+CRL-2579	RKO-AS45-1	Homo sapiens		Carcinoma	
+TIB-152	Jurkat, Clone E6-1	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+TIB-153	J.RT3-T3.5	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+TIB-155	LBRM-33 clone 4A2	Mus musculus	Lymphocyte	Lymphoma	
+TIB-158	70Z/3 [70Z/3.12]	Mus musculus	Lymphoblast		
+CRL-2581	C166	Mus musculus	Endothelial		Yolk Sac
+CRL-2582	C166-lacZ	Mus musculus	Endothelial		
+CRL-2583	C166-GFP	Mus musculus	Endothelial		Yolk Sac
+CRL-2586	EOMA	Mus musculus	Endothelial	Hemangioendothelioma	Tumor
+CRL-2587	EOMA-GFP	Mus musculus	Endothelial	Hemangioendothelioma	
+TIB-160	YAC-1	Mus musculus	Lymphoblast	Lymphoma	
+TIB-161	HuT 78	Homo sapiens	Cutaneous T Lymphocyte	Sezary Syndrome	
+TIB-162	HuT 102	Homo sapiens	Cutaneous T Lymphocyte	Lymphoma; Mycosis Fungoides	Peripheral Blood
+CRL-2592	A431NS	Homo sapiens		Epidermoid Carcinoma	Skin/Epidermis
+CRL-2593	MC3T3-E1 Subclone 4	Mus musculus	Preosteoblast		Bone/Calvaria
+CRL-2594	MC3T3-E1 Subclone 14	Mus musculus	Preosteoblast		Bone, Calvaria
+CRL-2595	MC3T3-E1 Subclone 24	Mus musculus	Preosteoblast		Bone, Calvaria
+CRL-2596	MC3T3-E1 Subclone 30	Mus musculus	Preosteoblast		Bone, Calvaria
+CRL-10225	A9 L hD2 S.C. 18 [A9 L cell line hD2 subclone #18]	Mus musculus	Embryonic		
+CRL-7850	Hs 588.T	Homo sapiens		Adenocarcinoma	
+TIB-180	HEL 92.1.7	Homo sapiens	Erythroblast	Erythroleukemia	Bone Marrow
+TIB-181	EL4.IL-2	Mus musculus		Lymphoma	Thymus
+TIB-186	IC-21	Mus musculus	Macrophage		
+CRL-7869	Hs 738.St/Int	Homo sapiens			Mixed; Stomach; Intestine
+TIB-190	CESS	Homo sapiens	Lymphoblast	Myelomonocytic Leukemia	Blood
+TIB-192	M1	Mus musculus	Myeloblast	Myeloid Leukemia	
+TIB-195	CEM-CM3	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	
+TIB-196	U266B1 [U266]	Homo sapiens	B Lymphocyte	Myeloma; Plasmacytoma	Peripheral Blood
+TIB-197	BCL1 clone 5B1b	Mus musculus	B Lymphocyte	Leukemia; Lymphoma	
+PCS-440-010	Primary Prostate Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Prostate
+CRL-7882	Hs 769.T	Homo sapiens		Transitional Cell Carcinoma	
+CRL-7886	Hs 789.T	Homo sapiens		Grade Ii,Transitional Cell Carcinoma	
+CRL-7891	Hs 819.T	Homo sapiens		Chondrosarcoma	Bone
+CRL-7898	A101D	Homo sapiens		Melanoma	Skin
+CRL-10287	L-NGC-5HT2	Mus musculus	Fibroblast		
+TIB-10	P1.17	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-11	C1.18.4	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-12	RPC5.4	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-13	HOPC 1F/12	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-15	MPC 11 OUAr	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-16	XC1.5/51	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-17	XS63	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-18	P3/NSI/1-Ag4-1 [NS-1]	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-19	S194/5.XXO-1	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-20	S194/5.XXO.BU.1	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-23	MOPC 315	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+TIB-27	S1A.TB.4.8.2 (replaces S1A.T4.G8)	Mus musculus	Lymphocyte	Lymphoma	
+TIB-28	S49.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-29	S49.1H.1AG.6/2	Mus musculus	Lymphocyte	Lymphoma	
+SCRC-1040.2a	MEF (CF-1) MITC	Mus musculus	Embryonic		Embryo
+TIB-30	S49.1TB.2	Mus musculus	Lymphocyte	Lymphoma	
+TIB-33	S49.1TB.4 DEX R.63	Mus musculus	Lymphocyte	Lymphoma	
+TIB-34	S49.1G.3	Mus musculus	Lymphocyte	Lymphoma	
+TIB-35	S49.1G.3 PHA.100/0 (replaces S49.1G3 PHA.12P)	Mus musculus	Lymphocyte	Lymphoma	
+TIB-36	S49 (Thy-1-a)	Mus musculus	Lymphocyte	Lymphoma	
+TIB-37	TIMI.4	Mus musculus		Lymphoma	
+TIB-38	TIMI.4G.1.3	Mus musculus	Lymphocyte	Lymphoma	
+TIB-39	EL4	Mus musculus	Lymphocyte	Lymphoma	
+TIB-40	EL4.BU	Mus musculus	Lymphocyte	Lymphoma	
+TIB-41	EL4.BU.1.OUAr.1.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-42	R1.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-43	R1E/TL8x.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-44	R1.G1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-45	R1E/TL8x.1.G1.OUAr.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-47	BW5147.3	Mus musculus	Lymphocyte	Lymphoma	Thymus
+TIB-48	BW5147.G.1.4	Mus musculus	Lymphocyte	Lymphoma	Thymus
+TIB-49	C1498	Mus musculus	Lymphoblast	Acute Myeloid Leukemia	
+CRL-2900	BCL2 (S70A) Jurkat	Homo sapiens	Lymphocyte	Acute T  Cell Leukemia	Peripheral Blood
+CRL-2901	BCL2 (S87A) Jurkat	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-2902	BCL2 (AAA) Jurkat	Homo sapiens	T Cell/ T Lymphocyte	Acute T Cell Leukemia	Peripheral Blood
+CRL-2907	WT SV40 MEF                                                                                                        	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2908	Bcl-2 KO SV40 MEF	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2909	Bad KO SV40 MEF	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-3000	Mino	Homo sapiens	Lymphoblast	Mantle Cell Lymphoma	Peripheral Blood/Mantle Cell Lymphoma (B Cell Non-Hodgkin's Lymphoma)
+CRL-3001	Z-138	Homo sapiens	Lymphoblast	Mantle Cell Lymphoma	Mantle Cell Lymphoma (B Cell Non-Hodgkin's Lymphoma)
+CRL-3002	JVM-2	Homo sapiens	Lymphoblast	Mantle Cell Lymphoma	Peripheral Blood
+CRL-3003	JVM-13	Homo sapiens	Lymphoblast	B-Prolymphocytic Leukemia (B-Pll)	Peripheral Blood
+CRL-3004	REC-1	Homo sapiens	Lymphoblast	Mantle Cell Lymphoma (B Cell Non-Hodgkin's Lymphoma)	
+CRL-3006	JeKo-1	Homo sapiens		Lymphoma	Peripheral Blood, Mantle Cell Lymphoma
+CRL-3008	MAVER-1	Homo sapiens	Lymphoblast	Mantle Cell Lymphoma	Peripheral Blood
+TIB-50	RAW 8.1	Mus musculus	B Lymphocyte	Lymphoma	
+TIB-51	RAW 309F.1.1	Mus musculus		Lymphoma	
+TIB-52	WR19L	Mus musculus		Lymphoma	
+TIB-53	WEHI 7.1	Mus musculus	Lymphocyte	Lymphoma	
+TIB-54	WEHI 22.1	Mus musculus		Lymphoma	
+TIB-55	BB88	Mus musculus	Erythroblast	Leukemia	
+TIB-56	D1B	Mus musculus	Erythroblast	Leukemia	
+TIB-57	T27A	Mus musculus		Leukemia	
+TIB-58	D2N	Mus musculus		Leukemia	
+TIB-59	BC16A	Mus musculus		Leukemia	
+CRL-2910	BAX KO SV40 MEF	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2911	Bid KO SV40 MEF                                                                                                    	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2912	Bak KO SV40 MEF                                                                                                        	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2913	Bax Bak DKO SV40 MEF                                                                                           	Mus musculus	Embryonic		Embryonic Fibroblast
+CRL-2914	M4A4	Homo sapiens	Epithelial	Cancer	
+CRL-2915	M4A4 GFP	Homo sapiens	Melanocyte, Melanoma	Cancer	
+CRL-2916	M4A4 LM3-2 GFP	Homo sapiens	Melanocyte, Melanoma	Cancer	
+CRL-2917	M4A4 LM3-4 CL16 GFP	Homo sapiens	Melanocyte, Melanoma	Cancer	
+CRL-2918	NM2C5	Homo sapiens	Melanocyte, Melanoma	Cancer	
+CRL-2919	NM2C5 GFP	Homo sapiens	Melanocyte,Melanoma	Cancer	
+CRL-9518	L5178Y TK+/- clone (3.7.2C) [TK+/- (clone 3.7.2C)]	Mus musculus		Lymphoma	
+TIB-60	BC3A	Mus musculus		Leukemia	
+TIB-63	P388D1 (IL-1)	Mus musculus	Methylcholanthrene Induced		
+TIB-64	P815	Mus musculus	Mast Cell	Mastocytoma	
+TIB-66	Sarcoma 180	Mus musculus		Sarcoma	Sarcoma; Derived From Metastatic Site: Ascites
+TIB-67	J774A.1	Mus musculus	Macrophage	Reticulum Cell Sarcoma	Ascites
+TIB-68	WEHI-3	Mus musculus		Leukemia	Peripheral Blood
+TIB-69	RAW 309 Cr.1	Mus musculus	Macrophage		
+CRL-2922	EA.hy926	Homo sapiens	Endothelial		Somatic Cell Hybrid
+CRL-2925	NE-4C	Mus musculus	Neural Stem Cell		Brain, Neuroectodermal
+CRL-2926	NE-GFP-4C	Mus musculus	Neural Stem Cell		Brain, Neuroectodermal
+CRL-2927	LUHMES	Homo sapiens			Mesencephalon
+CRL-3020	CHLA-02-ATRT	Homo sapiens		Atypical Teratoid Rhabdoid Tumor (Atrt)	Brain/Brain Tumor
+CRL-3021	CHLA-01-MED	Homo sapiens	Medulloblastoma	Medulloblastoma	Brain/Brain Tumor
+CRL-3022	HEK293S GnTI<sup>-</sup>	Homo sapiens	Embryonic		Embryonic Kidney
+CRL-9520	SV-HUC-1	Homo sapiens	Epithelial		Ureter, Uroepithelium
+TIB-70	WR19M.1	Mus musculus		Abelson Murine Leukemia Virus-Induced Tumor	
+TIB-71	RAW 264.7	Mus musculus	Macrophage	Abelson Murine Leukemia Virus-Induced Tumor	Abelson Murine Leukemia Virus-Induced Tumor; Ascites
+TIB-73	BNL CL.2	Mus musculus	Embryonic		Liver
+TIB-74	BNL SV A.8	Mus musculus	Sv40 Transformed		
+TIB-75	BNL 1ME A.7R.1	Mus musculus	Epithelial		Liver
+TIB-76	BNL 1NG A.2	Mus musculus	Chemically Transformed		
+CRL-2934	alpha TC1 clone 6	Mus musculus	Alpha Cells	Adenoma	Pancreas, Alpha Cells
+CRL-3031	PTEN-P8	Mus musculus		Prostate Tumor	Prostate Epithelium
+CRL-3033	PTEN-CaP8	Mus musculus		Prostate Cancer	Prostate Epithelium
+CRL-3034	CHLA-01R-MED	Homo sapiens		Medulloblastoma	Brain,&Nbsp;
+CRL-3035	CHLA-03-AA     	Homo sapiens		Anaplastic Astrocytoma	Brain (Temporal Lobe)
+CRL-3036	CHLA-04-ATRT	Homo sapiens		Atypical Teratoid Rhabdoid Tumor (Atrt)	Brain (Lateral And Third Ventricle)
+TIB-80	BALB/c CL.7	Mus musculus	Fibroblast		
+TIB-81	BLK CL.4	Mus musculus	Fibroblast		
+CRL-1593.2	U-937	Homo sapiens		Histiocytic Lymphoma	Pleura/Pleural Effusion, Lymphocyte, Myeloid
+TIB-84	BALB/B 0.75BAE A.1R.1 HD A.8	Mus musculus	Fibroblastchemically Transformed		
+TIB-85	BALB/c 10ME HD A.5R.1	Mus musculus	Fibroblastchemically Transformed		
+TIB-86	BALB/c 10CrMCA A.2R.1	Mus musculus	Fibroblast Chemically Transformed		
+TIB-87	BALB/c AMuLV A.3R.1	Mus musculus	Fibroblastvirus Transformed	Leukemia	
+TIB-88	BLK SV HD.2 A.5R.1 A.3R.1	Mus musculus	Fibroblastsv40 Transformed		
+CRL-2945	UWB1.289	Homo sapiens		Ovarian Carcinoma	Ovary
+CRL-2946	UWB1.289+BRCA1	Homo sapiens		Ovarian Carcinoma	Ovary
+CRL-2947	Renca	Mus musculus	Epithelial	Renal Adenocarcinoma	Kidney
+CRL-3043	93T449	Homo sapiens		Liposarcoma; Well-Differentiated	Retroperitoneum
+CRL-3044	94T778	Homo sapiens	Fibroblast	Liposarcoma; Well-Differentiated	Retroperitoneum; Recurring
+CRL-3046	PHM1-41	Homo sapiens	Fibroblast		Uterine Myometrium Smooth Muscle
+CRL-1702	WEHI-231	Mus musculus	B Lymphocyte, Immature	B Cell Lymphoma	
+CRL-1704	WEHI-279	Mus musculus	B Lymphocyte	Lymphoma	Bone Marrow
+CRL-1705	NFS-1.0 C-1	Mus musculus	B Lymphocyte; Follicular Center Cell	Lymphoma	
+CRL-1709	MOP-8	Mus musculus	Sv40 Transformed		
+TIB-90	BALB/c AMuLV A.6R.1	Mus musculus	Fibroblastvirus Transformed	Leukemia	
+CRL-2955	SU-DHL-1	Homo sapiens	Histiocytic	Large Cell Lymphoma; Diffuse Histiocytic Lymphoma	
+CRL-2956	SU-DHL-2	Homo sapiens	Histiocytic	Large Cell Lymphoma; Diffuse Histiocytic Lymphoma	
+CRL-2957	SU-DHL-4	Homo sapiens	B Lymphocyte		Peritoneal Effusion
+CRL-2958	SU-DHL-5	Homo sapiens	B Lymphocyte	Large Cell Lymphoma; Diffuse Mixed Histiocytic And Lymphoma	Lymph Node; Derived From Metastatic Site: Peritoneal Effusion
+CRL-2959	SU-DHL-6	Homo sapiens	B Lymphocyte	Large Cell Lymphoma; Diffuse Mixed Histiocytic And Lymphocytic Lymphoma; Follicular B Cell Lymphoma	Peritoneal Effusion; Derived From Metastatic Site: Peritoneal Cavity
+CRL-8303	143B	Homo sapiens		Osteosarcoma	Bone
+CRL-8304	143B PML BK TK	Homo sapiens		Osteosarcoma	
+CRL-3050	MA-10	Mus musculus	Leydig Cell Tumor		Testes
+CRL-8306	MC/9	Mus musculus	Mast Cell		Liver
+CRL-1714	TM3	Mus musculus	Leydig Cell		Testis
+CRL-1715	TM4	Mus musculus	Sertoli Cell		Testis
+CRL-1718	CCF-STTG1	Homo sapiens		Grade Iv, Astrocytoma	Brain
+CRL-2961	SU-DHL-8	Homo sapiens	B Lymphocyte	Large Cell Lymphoma	Lymph Node; Derived From Metastatic Site: Peritoneal Effusion
+CRL-2963	SU-DHL-10	Homo sapiens	B Lymphocyte	Large Cell Lymphoma	
+CRL-2964	SU-DHL-16	Homo sapiens	Lymphoblast	Large Cell Lymphoma; B Cell Lymphoma	Derived From Metastatic Site:
+CRL-2969	NU-DUL-1	Homo sapiens	Lymphoblast	Undifferentiated Lymphoma, Non-Burkitt's Type	
+PCS-500-010	Umbilical Cord-Derived Mesenchymal Stem Cells; Normal, Human	Homo sapiens	Mesenchymal	Normal	Umbilical Cord Matrix (Wharton's Jelly)
+PCS-500-011	Adipose-Derived Mesenchymal Stem Cells; Normal, Human	Homo sapiens	Mesenchymal	Normal	Lipoaspirate: Derived From White Adipose Tissue
+CRL-3063	EpH4-Ev	Mus musculus	Epithelial		Breast Epithelium (Mammary Gland)
+PCS-500-012	Bone Marrow-Derived Mesenchymal Stem Cells; Normal, Human	Homo sapiens	Mesenchymal	Normal	Bone Marrow
+CRL-3069	B-MEKDD 116	Mus musculus	Epithelial		Breast Epithelium (Mammary Gland)
+CRL-1720	F9	Mus musculus		Embryonal Carcinoma; Testicular Teratoma	Testis
+CRL-1722	L5178-R (LY-R)	Mus musculus	Chemically Induced	Lymphoma	Thymus
+CRL-1723	L5178-S (LY-S)	Mus musculus	Chemically Induced	Lymphoma	Thymus
+CRL-9560	psi 2 BAG alpha	Mus musculus	Fibroblast		
+CRL-2971	SU-CCS-1	Homo sapiens	Clear Cell Sarcoma Cell Line	Clear Cell Sarcoma	Soft Tissue
+CRL-2972	HeLaRC32 [HeRC32]	Homo sapiens		Adenocarcinoma	Cervix
+CRL-2974	MM.1S	Homo sapiens	B Lymphoblast	Immunoglobulin A Lambda Myeloma	Peripheral Blood
+CRL-2975	MM.1R	Homo sapiens	B Lymphoblast	Multiple Myeloma	Peripheral Blood
+CRL-2976	PERK-KO-DR	Mus musculus	Fibroblast		
+CRL-2977	DR-Wildtype	Mus musculus	Fibroblast		Embryo
+CRL-2978	GCN2-KO-DR	Mus musculus	Fibroblast		Embryo
+CRL-2979	CHOP-KO-DR	Mus musculus	Fibroblast		Embryo Fibroblast/Embryo
+CRL-3071	EpH4 1424	Mus musculus	Epithelial	Breast Cancer	Breast (Mammary Gland)
+CRL-1730	HUV-EC-C [HUVEC]	Homo sapiens	Endothelial	Normal	Umbilical Vein/Vascular Endothelium
+CRL-1732	FOX-NY	Mus musculus	B Lymphoblast		
+CRL-1734	SCA-9 clone 15	Mus musculus		Carcinoma	
+CRL-1739	AGS	Homo sapiens		Gastric Adenocarcinoma	Stomach
+CRL-2983	UACC-3199	Homo sapiens		Infiltrating Ductal Carcinoma Of The Breast	Mammary Gland/Breast Duct; Derived From Metastatic Site: Axillary Lymph Node
+CRL-2988	UACC-3133	Homo sapiens	Epithelial-Like	Infiltrating Lobular Carcinoma Of Breast	
+CRL-2989	UACC-462	Homo sapiens	Epithelial	Pancreatic Cancer	Pancreas; Derived From Metastatic Site: Peritoneal Mass
+CRM-CRL-3211	PSN-1	Homo sapiens	Epithelial	Adenocarcinoma	Pancreas
+CRL-3086	M158	Mus musculus	Epithelial	Breast Cancer	Breast; Mammary Gland
+CRL-1740	LNCaP clone FGC	Homo sapiens		Carcinoma	Prostate; Derived From Metastatic Site: Left Supraclavicular Lymph Node
+CRL-1749	UM-UC-3 [UMUC3]	Homo sapiens		Transitional Cell Carcinoma	Urinary Bladder
+CRL-9589	AML-193	Homo sapiens	Monocyte	Acute Monocytic Leukemia	Peripheral Blood
+CRL-2991	Wt MEFs	Mus musculus	Fibroblast		Embryo/Embryo Fibroblast
+CRL-2992	Mfn1-null MEFs	Mus musculus	Fibroblast		Embryo/Embryo Fibroblast
+CRL-2993	Mfn2-null MEFs	Mus musculus	Fibroblast		Embryo Fibroblast
+CRL-2994	Mfn1/Mfn2-null MEFs	Mus musculus	Fibroblast		Embryo/Embryo Fibroblast
+CRL-2995	OPA1-null MEFs	Mus musculus	Fibroblast		Embryo Fibroblasts
+CRL-2997	CCD-1142 FeAE (E6/E7)	Homo sapiens			Airway Epithelium
+CRL-10624	CO 88BV59-1	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme	Cancer	
+CRL-2999	Mu Islet (E6/E7)	Mus musculus			Pancreas/Islet Cells; Hpv16 E6/E7 Transformed
+CRL-3090	NF639	Mus musculus	Epithelial	Breast Cancer	Breast (Mammary Gland)
+CRL-3092	Ac 711	Mus musculus	Epithelial	Breast Cancer	Breast; Mammary Gland
+CRL-1751	WEHI 164	Mus musculus	Methylcholanthrene Induced	Fibrosarcoma	
+CRL-9591	MV-4-11	Homo sapiens	Macrophage	Biphenotypic B Myelomonocytic Leukemia	Peripheral Blood
+CRL-1762	KEL FIB	Homo sapiens		Normal	Skin/Connective Tissue
+CRL-11882	HS-5	Homo sapiens	Hpv-16 E6/E7 Transformed	Normal	Bone Marrow/Stroma
+CRL-1772	C2C12	Mus musculus	Myoblast		Muscle
+CRL-1778	LBRM TG6	Mus musculus	Lymphocyte	Lymphoma	
+CRL-1790	CCD 841 CoN	Homo sapiens	Epithelial	Normal	Colon
+CRL-1795	AtT-20/D16v-F2	Mus musculus			Pituitary, Anterior
+CRL-5800	NCI-H23 [H23]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5803	NCI-H1299	Homo sapiens		Carcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5804	NCI-H187 [H187]	Homo sapiens	Retinoblastoma	Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5807	NCI-H358 [H-358, H358]	Homo sapiens		Bronchioalveolar Carcinoma; Non-Small Cell Lung Cancer	Lung/Bronchiole; Derived From Metastatic Site: Alveolus
+CRL-5808	NCI-H378 [H378]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-6465_FL	UC1B	Mus musculus		Normal	Embryo
+CRL-8399	CMH1a	Mus musculus		Papilloma, Hepatitis	
+CRL-5810	NCI-H522 [H522]	Homo sapiens		Stage 2,Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5811	NCI-H526 [H526]	Homo sapiens	Epithelial	Stage E,Carcinoma; Variant Small Cell Lung Cancer	
+CRL-5813	NCI-H660	Homo sapiens	Epithelial	Stage E, Small Cell Carcinoma	Prostate; Derived From The Metastatic Site: Lymph Node
+CRL-5815	NCI-H727 [H727]	Homo sapiens		Carcinoid	Lung, Bronchus
+CRL-5816	NCI-H810 [H810]	Homo sapiens		Stage 2,Carcinoma; Non-Small Cell Lung Cancer	
+CRL-5817	NCI-H889 [H889]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5818	NCI-H1155 [H1155]	Homo sapiens		Carcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5819	NCI-H1404 [H1404]	Homo sapiens		Papillary Adenocarcinoma	
+CRL-10686	PG13	Mus musculus		Leukemia	
+CRL-5820	NCI-H28 [H28]	Homo sapiens		Stage 4, Mesothelioma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5822	NCI-N87 [N87]	Homo sapiens		Gastric Carcinoma	Stomach; Derived From Metastatic Site: Liver
+CRL-5823	NCI-H196 [H196]	Homo sapiens		Stage E,Carcinoma; Variant Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5824	NCI-H211 [H211]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5825	NCI-H220 [H220]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5826	NCI-H226 [H226]	Homo sapiens		Squamous Cell Carcinoma; Mesothelioma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5828	NCI-H250 [H250]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung
+CRL-5831	NCI-H524 [H524]	Homo sapiens		Stage L,Carcinoma; Variant Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5834	NCI-H647 [H647]	Homo sapiens		Stage 3a, Adenosquamous Carcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5835	NCI-H650 [H650]	Homo sapiens		Bronchioalveolar Carcinoma; Non-Small Cell Lung Cancer	
+CRL-5837	NCI-H719 [H719]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5838	NCI-H720 [H720]	Homo sapiens		Atypical Carcinoid	Lung
+PCS-210-010	 Primary Subcutaneous Pre-adipocytes;  Normal, Human	Homo sapiens			Mature Adipose Tissue
+CCL-53.1	Clone M-3 [Cloudman S91 melanoma]	Mus musculus	Melanocyte	Melanoma	Skin
+CRL-5840	NCI-H740 [H740]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5842	NCI-H774 [H774]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Soft Tissue
+CRL-5843	NCI-H835 [H835]	Homo sapiens		Carcinoid	Lung
+CRL-5844	NCI-H838 [H838]	Homo sapiens		3b, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5845	NCI-H841 [H841]	Homo sapiens		Stage L,Carcinoma; Variant Small Cell Lung Cancer	
+CRL-5846	NCI-H847 [H847]	Homo sapiens		Stage L,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5849	NCI-H865 [H865]	Homo sapiens		Stage L,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5850	NCI-H920 [H920]	Homo sapiens		Stage 4,Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5853	NCI-H1048 [H1048]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5855	NCI-H1092 [H1092]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Bone Marrow
+CRL-5856	NCI-H1105 [H1105]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5858	NCI-H1184 [H1184]	Homo sapiens	Lymphoblast	Stage L,Carcinoma; Small Cell Lung Cancer	
+CRL-5859	NCI-H1238 [H1238]	Homo sapiens		Stage E, Carcinoma; Small Cell Lung Cancer (Sclc)	
+CRL-5864	NCI-H1341 [H1341]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	
+CRL-5865	NCI-H1355 [H1355]	Homo sapiens		Stage 4, Adenocarcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5866	NCI-H1373 [H1373]	Homo sapiens		Stage 3a, Adenocarcinoma	
+CRL-5867	NCI-H1385 [H1385]	Homo sapiens		Stage 3a, Carcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5868	NCI-H1395 [H1395]	Homo sapiens	Epithelial	Stage 2, Adenocarcinoma	Lung
+CRL-5869	NCI-H1417 [H1417]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+PCS-301-010	Primary Small Airway Epithelial Cells; Normal, Human	Homo sapiens	Epithelial		
+CRL-5870	NCI-H1435 [H1435]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5871	NCI-H1436 [H1436]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5872	NCI-H1437 [H1437]	Homo sapiens		Stage 1, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5875	NCI-H1563 [H1563]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5876	NCI-H1568 [H1568]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5877	NCI-H1573 [H1573]	Homo sapiens		Adenocarcinoma (Stage 4)	Lung; Derived From Metastatic Site: Soft Tissue
+CRL-5878	NCI-H1581 [H1581]	Homo sapiens	Large Cell	Stage 4, Non-Small Cell Lung Cancer	Lung
+CRL-5879	NCI-H1618 [H1618]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Bone Marrow
+CRL-5881	NCI-H1623 [H1623]	Homo sapiens		Stage 3b, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5882	NCI-H1648 [H1648]	Homo sapiens	Lymphoblast	Stage 3a,Adenocarcinoma	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5883	NCI-H1650 [H-1650, H1650]	Homo sapiens		Stage 3b,Adenocarcinoma; Bronchoalveolar Carcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5884	NCI-H1651 [H1651]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5885	NCI-H1666 [H-1666, H1666]	Homo sapiens		Adenocarcinoma; Bronchoalveolar Carcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5886	NCI-H1672 [H1672]	Homo sapiens	Lymphoblast	Stage L,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5887	NCI-H1693 [H1693]	Homo sapiens		Stage 3b,Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5888	NCI-H1694 [H1694]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5889	NCI-H1703 [H1703]	Homo sapiens	Squamous Cell	Lung; Squamous Cell; Non-Small Cell Lung Cancer	Lung
+CRL-5891	NCI-H1734 [H-1734, H1734]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5892	NCI-H1755 [H1755]	Homo sapiens		Stage 4, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Liver
+CRL-5893	NCI-H1770 [H1770]	Homo sapiens	Neuroendocrine	Stage 4, Carcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5894	NCI-H1781 [H1781]	Homo sapiens		Stage 3b,Adenocarcinoma; Bronchoalveolar Carcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5895	NCI-H1792 [H1792]	Homo sapiens		Stage 4, Adenocarcinoma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5896	NCI-H1793 [H1793]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5897	NCI-H1819 [H1819]	Homo sapiens		Adenocarcinoma	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5898	NCI-H1836 [H1836]	Homo sapiens		Stage L, Carcinoma; Classic Small Cell Lung Cancer	Lung
+CRL-5899	NCI-H1838 [H1838]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+JHU-73		Mus musculus	Lymphoblast		
+CRL-7489_FL	Hs 755(B).T	Homo sapiens		Osteosarcoma	
+CRL-7134	Hs 184.T	Homo sapiens		Osteosarcoma	
+CRL-7140	Hs 188.T	Homo sapiens		Osteosarcoma	
+CRM-CCL-2	HeLa	Homo sapiens	Epithelial	Adenocarcinoma	
+CRL-9995	PA317 containing JR-gal	Mus musculus	Fibroblast		
+CRL-8752	9D10	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme		
+CRL-8753	C5B7	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme		
+HB-8502	LTR228 [LTR 228-TG, derivative of WIL-2NS (ATCC CRL-8155)]	Homo sapiens	B Lymphoblast		
+CRL-8756	SC-1	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme		
+CRL-7194	Hs 229.T	Homo sapiens		Bronchogenic Adenocarcinoma	
+CRL-1573.3	HEK-293.2sus	Homo sapiens	Embryonic		Embryonic Kidney
+CRL-8795	8E7	Homo sapiens	B Lymphoblast		
+CRL-8798	184A1	Homo sapiens	Chemically Transformed		Mammary Gland; Breast/Epithelium
+CRL-8799	184B5	Homo sapiens	Chemically Transformed		Mammary Gland/Breast: Epithelium
+CRM-HTB-174	NCI-H441 [H441]	Homo sapiens	Epithelial Cell (Kras Crm)	Papillary Adenocarcinoma	Lung
+CRM-CCL-119	CCRF-CEM [CCRF CEM]	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CCL-256.1	NCI-BL2126 [BL2126]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2201	CCD-1099Sk	Homo sapiens	Fibroblast		
+CRL-2202	PA317 LXSN	Mus musculus		Leukemia	
+CRL-2203	PA317 LXSN 16E6E7	Mus musculus		Papilloma	Embryo
+CRL-2204	PA317 LXSN 16E6	Mus musculus		Papilloma	
+CRL-2205	PA317 LXSN 16E7	Mus musculus	Retinoblastoma,Keratinocyte	Papilloma,Retinoblastoma	
+CRL-2206	PA317 LXSN 6E6	Mus musculus		Papilloma	
+CRL-2207	PA317 LXSN 6E7	Mus musculus	Retinoblastoma	Papilloma,Retinoblastoma	
+CRL-2214	MEF-1	Mus musculus	Sv40 Transformed		Embryo
+CRL-2215	PEA 10	Mus musculus	Fibroblast	Lrp Deficient	
+CRL-2216	PEA 13	Mus musculus	Fibroblast	Lrp Deficient	Embryo
+CRL-2217	BpRc1	Mus musculus		Hepatoma	
+CRL-2218	tao BpRc1	Mus musculus		Hepatoma	
+CRL-2220	CA-HPV-10	Homo sapiens	Human Papillomavirus 18 (Hpv-18) Transfected	Adenocarcinoma	Prostate
+CRL-2221	PZ-HPV-7	Homo sapiens	Human Papillomavirus 18 (Hpv-18) Transformed, Epithelial		Prostate; Epithelium
+CRL-11102	DS-1	Homo sapiens	B Lymphocyte	Lymphangiectasia	Derived From Metastatic Site:&Nbsp;Pleural Effusion
+CRM-CCL-155	RPMI 8226	Homo sapiens	B Lymphocyte (Kras Crm)	Plasmacytoma; Myeloma	Peripheral Blood
+CRL-2230	BC-1	Homo sapiens	B Lymphocyte	Lymphoma	
+CRL-2231	BC-2	Homo sapiens	B Lymphocyte	Lymphoma	
+CRL-2233	SNU-398	Homo sapiens		Hepatocellular Carcinoma	Liver
+CRL-2234	SNU-449	Homo sapiens		Grade Ii-Iii/Iv, Hepatocellular Carcinoma	Liver
+CRL-2235	SNU-182	Homo sapiens		Grade Iii/Iv, Hepatocellular Carcinoma	Liver
+CRL-2236	SNU-475	Homo sapiens		Grade Ii-Iv/V, Hepatocellular Carcinoma	Liver
+CRL-2237	SNU-387	Homo sapiens		Grade Iv/V, Pleomorphic Hepatocellular Carcinoma	Liver
+CRL-2238	SNU-423	Homo sapiens		Grade Iii/Iv, Pleomorphic Hepatocellular Carcinoma	Liver
+CRL-11115	59B5	Mus musculus	Embryonic		
+CRL-11116	36.5	Mus musculus	Embryonic		
+CRL-7507	Hs 777.T	Homo sapiens		Lymphoma	
+CRL-2254	AML12	Mus musculus	Hepatocyte	Normal	Liver
+CRL-2257	HL-60/MX2	Homo sapiens		Acute Promyelocytic Leukemia	Peripheral Blood
+CRL-2258	HL-60/MX1	Homo sapiens		Acute Promyelocytic Leukemia	
+PCS-300-010	Primary Bronchial/Tracheal Epithelial Cells; Normal, Human	Homo sapiens	Epithelial	Normal	Bronchus/Trachea
+CRL-11135	HCE-2 [50.B1]	Homo sapiens	Epithelial		Eye, Cornea
+CRM-CCL-185	A549	Homo sapiens	Epithelial Cell (Kras Crm)	Carcinoma	Lung
+CRL-7511	Hs 781.T	Homo sapiens		Osteosarcoma	
+CRL-2260	HT	Homo sapiens	B Lymphoblast	Diffuse Mixed Lymphoma	Ascites
+CRL-2261	RL	Homo sapiens	B Lymphoblast	Non-Hodgkin's Lymphoma	Ascites
+CRL-2262	SR	Homo sapiens	Lymphoblast	Large Cell Immunoblastic Lymphoma	Pleural Effusion
+CRL-2263	N1E-115	Mus musculus	Neuroblast	Neuroblastoma	Brain
+CRL-7518	Hs 789.Sk	Homo sapiens		Carcinoma	
+CRL-2264	CEM/C2	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	
+CRL-2265	CEM/C1	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CRL-2266	SH-SY5Y	Homo sapiens		Neuroblastoma	Bone Marrow
+CRL-2267	BE(2)-M17	Homo sapiens	Neuroblast	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+CRL-2268	BE(2)-C	Homo sapiens	Neuroblast, Neuroblastoma	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+CRL-11147	A2058	Homo sapiens			Skin; Derived From Metastatic Site: Lymph Node
+CRL-7522	Hs 792(C).M	Homo sapiens	Fibroblast		
+CRL-2270	MC-IXC	Homo sapiens	Fibroblast	Neuroblastoma	Brain; Derived From Metastatic Site: Supra-Orbital Area
+CRL-2271	SK-N-BE(2)	Homo sapiens	Neuroblast, Neuroblastoma	Neuroblastoma	Brain; Derived From Metastatic Site: Bone Marrow
+CRL-2273	CHP-212	Homo sapiens		Neuroblastoma	Brain
+CRL-2274	MES-SA/MX2	Homo sapiens		Uterine Sarcoma	
+CRL-2277	BC-3	Homo sapiens	B Lymphocyte	Lymphoma	Pleura, Pleural Effusion
+CRL-2278	RAW 264.7 gamma NO(-)	Mus musculus	Monocyte, Macrophage		
+CRL-2279	MS1 (MILE SVEN 1)	Mus musculus	Sv40 Transformed		Pancreas/Islet Of Langerhans; Endothelium
+CCL-11	NCTC clone 2472	Mus musculus	Fibroblast	Sarcoma	Subcutaneous Connective Tissue; Areolar And Adipose
+CCL-13	HeLa [Chang Liver]	Homo sapiens			Hela Contaminant
+CCL-17	KB	Homo sapiens	Hela Contaminant	Carcinoma, Papilloma	Hela Contaminant
+CRL-2280	SVR (SVEN 1 ras)	Mus musculus	Sv40 Transformed		
+CRL-7535	Hs 804.Sk	Homo sapiens		Adenocarcinoma	
+CRL-2281	CCD-1101Sk	Homo sapiens	Fibroblast		
+CRL-2289	DB	Homo sapiens	B Lymphoblast	Large Cell Lymphoma	Ascites
+CCL-23	HEp-2	Homo sapiens		Carcinoma	Hela Contaminant
+CCL-25	WISH	Homo sapiens	Epithelial		Hela Contaminant
+CCL-28	Dempsey	Homo sapiens	Fibroblast		
+CRL-7548	Hs 815.Pl	Homo sapiens		Osteosarcoma	
+CRL-2294	BCP-1	Homo sapiens	B Lymphoblast	Body Cavity Based Lymphoma	
+CRL-2295	MC57G	Mus musculus	Methylcholanthrene Induced	Fibrosarcoma	
+CRL-2299	bEnd.3 [BEND3]	Mus musculus	Endothelialpolyoma Middle T Antigen Transformed	Endothelioma	Brain, Cerebral Cortex
+CCL-30	RPMI 2650	Homo sapiens	Epithelial	Squamous Cell Carcinoma	Nasal Septum; Derived From Metastatic Site: Pleural Effusion
+CRL-11179	CATH.a	Mus musculus	Neuron		Brain
+CRL-7554	Hs 821.T	Homo sapiens		Giant Cell Sarcoma	Bone
+CRL-7556	Hs 822.T	Homo sapiens		Ewing's Sarcoma	
+CCL-46	P388D1 [P388 D1]	Mus musculus	Macrophage	Lymphoma	
+CRL-7566	Hs 832(C).T [Hs832.Tc]	Homo sapiens		Endometriosis	Ovary/Benign Cyst
+CCL-51	MMT 060562	Mus musculus			Mammary Gland
+CCL-54	Detroit 532	Homo sapiens	Fibroblast		
+CRL-6322	B16-F0	Mus musculus			Skin
+CRL-6323	B16-F1	Mus musculus		Melanoma	Skin
+CRL-7573	Hs 840.T	Homo sapiens		Papilloma	
+CCL-65	Detroit 525	Homo sapiens	Fibroblast		
+CCL-66	Detroit 529	Homo sapiens	Fibroblast		
+CCL-72	Detroit 510	Homo sapiens	Fibroblast		
+CCL-75	WI-38	Homo sapiens	Fetal	Normal	Lung
+CCL-79	Y-1	Mus musculus	Epithelial		Adrenal Gland; Tumor/Cortex
+CRL-7584_FL	Hs 851.T	Homo sapiens			Mammary Gland, Breast
+CRL-7593	Hs 856.T	Homo sapiens		Histiocytoma	
+CRL-7595	Hs 860.T	Homo sapiens		Osteosarcoma	
+CRL-7598	Hs 863.T	Homo sapiens		Ewing's Sarcoma	
+CCL-84	Detroit 539	Homo sapiens	Fibroblast		
+CCL-85	EB-3 [EB3]	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CCL-86	Raji	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	Lymphoblast
+CCL-87	Jiyoye [Jijoye, P-2003, P-3J]	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CCL-89	AtT-20	Mus musculus		Tumor	Pituitary
+CCL-90	Cri du Chat	Homo sapiens	Fibroblast		
+CCL-92	3T3-Swiss albino	Mus musculus	Fibroblast		Embryo
+CRL-8033-1	SKO-007	Homo sapiens	B Lymphocyte		
+CCL-96	3T6-Swiss albino	Mus musculus	Fibroblast		
+CCL-98	BeWo	Homo sapiens		Choriocarcinoma	Placenta
+CRL-6361	K:Molv NIH/3T3	Mus musculus		Sarcoma	
+CRM-HTB-26	MDA-MB-231	Homo sapiens	Epithelial	Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+CRM-HTB-31	C-33 A	Homo sapiens	Epithelial Cell (Crm)	Retinoblastoma	
+CRL-7347_FL	Hs 579.Mg	Homo sapiens		Carcinoma	
+CRL-2610	LN-18	Homo sapiens		Grade Iv,Glioblastoma; Glioma	Brain/Cerebrum; Right Temporal Lobe
+CRL-2611	LN-229	Homo sapiens	Epithelial	Glioblastoma	Brain/Right Frontal Parieto-Occipital Cortex
+CRL-2613	Cyt c-/-	Mus musculus	Epithelial		Embryo
+CRL-2614	Ect1/E6E7	Homo sapiens	Epithelial		Ectocervix; Cervix
+CRL-2615	End1/E6E7	Homo sapiens	Epithelial	Endometriosis	Endocervix; Cervix
+CRL-2616	VK2/E6E7	Homo sapiens	Epithelial	Endometriosis	Vagina, Mucosa
+CRL-2617	CCD-1131Sk	Homo sapiens	Fibroblast		
+CRL-2619	p53NiS1	Mus musculus		Malignant Fibrous Histiocytoma	
+CRL-2620	tsc2 ang1	Mus musculus		Cutaneous Sarcoma	
+CRL-2622	CCD-1132Sk	Homo sapiens	Fibroblast		
+CRL-2623	W-20-17 [W-20 clone 17]	Mus musculus			Bone Marrow; Stroma
+CRL-2625	DG-75 [D.G.-75]	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	Derived From Metastatic Site: Pleural Effusion
+CRL-2627	GDM-1	Homo sapiens	Monoblast	Myelomonoblastic Leukemia	Peripheral Blood
+CRL-2629	Loucy	Homo sapiens	Lymphocyte	T-Cell Acute Lymphoblastic Leukemia	Peripheral Blood
+TIB-202	THP-1	Homo sapiens	Monocyte	Acute Monocytic Leukemia	Peripheral Blood
+TIB-203	2PK-3	Mus musculus	B Lymphocyte	Lymphoma	
+TIB-204	WEHI-265.1	Mus musculus	Monocyte	Abelson Murine Leukemia Virus-Induced Tumor	
+TIB-205	ABE-8.1/2	Mus musculus	Lymphoblast	Lymphoma	
+TIB-206	DAKIKI	Homo sapiens	Lymphoblast	Carcinoma	
+TIB-208	A20 [A-20]	Mus musculus	B Lymphocyte	Reticulum Cell Sarcoma	
+TIB-209	X16C8.5 [X16C]	Mus musculus	B Lymphocyte	Reticulum Cell Sarcoma	
+CRL-2630	Farage	Homo sapiens	B Lymphocyte	Non-Hodgkin's B Cell Lymphoma	Derived From Metastatic Site: Lymph Node
+CRL-2631	Toledo	Homo sapiens	B Lymphocyte	Diffuse Large Cell Lymphoma; Non-Hodgkin's B Cell Lymphoma	Peripheral Blood
+CRL-2632	Pfeiffer	Homo sapiens	Lymphoblast	Diffuse Large Cell Lymphoma; Non-Hodgkin's B Cell Lymphoma	Derived From Metastatic Site: Pleural Effusion
+CRL-2638	CT26.WT	Mus musculus	Fibroblast	Carcinoma	Colon
+CRL-2639	CT26.CL25	Mus musculus		Carcinoma,Leukemia	
+CRL-11515	10.014 pRSV-T	Homo sapiens	Epithelial		Eye, Cornea
+CRL-11516	2.040  pRSV-T	Homo sapiens	Epithelial		Eye, Cornea
+TIB-214	CTLL-2	Mus musculus	Lymphocyte		
+TIB-215	SKW 6.4	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transformed		
+CRL-2644	FAK-/-	Mus musculus	Fibroblast		
+CRL-2645	FAK+/+	Mus musculus	Fibroblast		
+CRL-2647	L Wnt-3A	Mus musculus			Subcutaneous Connective Tissue; Areolar And Adipose
+CRL-2648	L Cells	Mus musculus	Fibroblast		Subcutaneous Connective Tissue; Areolar And Adipose
+SCRC-4000	ASC52telo, hTERT immortalized adipose derived Mesenchymal stem cells	Homo sapiens	Mesenchymal		Adipose Tissue
+CCL-220.1	COLO 320HSR [COLO 320 HSR]	Homo sapiens		Dukes' Type C, Colorectal Adenocarcinoma	Colon
+CRL-1404	SC-1	Mus musculus			Embryo
+TIB-221	CH1	Mus musculus	B Lymphocyte	Lymphoma	
+TIB-223	GCT [Giant Cell Tumor]	Homo sapiens		Fibrous Histiocytoma	Derived From Metastatic Site: Lung
+TIB-224	D10.G4.1	Mus musculus	Helper T Lymphocyte (Th-2)		Lymph Node
+CRL-7905	A388	Homo sapiens		Epidermoid Carcinoma	
+CRL-8006	Sp2/01-Ag	Mus musculus	Hybridoma: B Lymphocyte		
+CRL-11538	Co88BV59H21-2	Homo sapiens	B Lymphoblast	Cancer	
+CRL-11539	Co88BV59H21-2V67-66	Homo sapiens	B Lymphoblast	Cancer	
+TIB-231	S1A(Thy-1-b)	Mus musculus	Lymphocyte	Lymphoma	
+TIB-232	AKR1.G.1.OUA<sup>R</sup>.1.26	Mus musculus		Lymphoma	
+TIB-233	BW5147(T200-a)5.2	Mus musculus	Lymphocyte	Lymphoma	
+TIB-234	BW5147.3(Thy-1-e).10	Mus musculus	Lymphocyte	Lymphoma	
+TIB-239	2E8	Mus musculus	B Lymphoblast		Bone Marrow
+CRL-8015	TK6	Homo sapiens	Lymphoblast	Hereditary Spherocytosis	Spleen
+CRL-1420	MIA PaCa-2	Homo sapiens	Epithelial Cell	Carcinoma	Pancreas
+CRL-1423	G-292, clone A141B1	Homo sapiens		Osteosarcoma	Bone
+CRL-1424	G-361	Homo sapiens		Malignant Melanoma	Skin
+CRL-1427	MG-63	Homo sapiens	Fibroblast	Osteosarcoma	Bone
+CRL-7920	DoTc2 4510	Homo sapiens		Carcinoma	Cervix
+CRL-2673	CCD-1134Sk	Homo sapiens	Fibroblast		
+CRL-2676	P116	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-10302	SW756	Homo sapiens		Squamous Cell Carcinoma	
+CRL-2677	P116.cl39 [P116.c39]	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-2678	J.gamma1	Homo sapiens		Acute T Cell Leukemia	
+CRL-2679	J.gamma1.WT	Homo sapiens	Lymphocyte	Acute T Cell Leukemia	
+CRL-8024	PLC/PRF/5	Homo sapiens	Alexander Cells	Hepatoma	Liver
+CRL-1432	NAMALWA	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-1435	PC-3	Homo sapiens		Grade Iv, Adenocarcinoma	Prostate; Derived From Metastatic Site: Bone
+CRL-11554	Bing [CAK 8, CAK8]	Homo sapiens	Epithelialtransformed With Adenovirus 5 Dna		
+CRL-10317	MCF 10A	Homo sapiens	Epithelial	Fibrocystic Disease	Mammary Gland/Breast
+CRL-10318	MCF 10F	Homo sapiens	Epithelial, Myoepithelial	Fibrocystic Disease	Mammary Gland; Breast
+CRL-8031	KG-1	Homo sapiens		Acute Myelogenous Leukemia	Bone Marrow
+CRL-1440	G-402	Homo sapiens	Epithelial	Renal Leiomyoblastoma	Kidney
+CRL-1441	G-401 [G401]	Homo sapiens		Rhabdoid Tumor (Formerly Classified As Wilms' Tumor)	Kidney
+CRL-1443	BC3H1	Mus musculus	Methylnitrosourea Induced		
+CRL-1447	G-7	Mus musculus	Myoblast Myoblast		
+CRL-7943	T1-73	Homo sapiens		Osteosarcoma	
+CRL-2691	CCD-1135Sk	Homo sapiens	Fibroblast		
+CRL-2692	Het-1A	Homo sapiens	Epithelial; Sv40 Large T Antigen Transfected	Normal	Esophagus
+CRL-2697	CCD-1136Sk	Homo sapiens	Fibroblast		
+CRL-1453	KLN 205	Mus musculus		Squamous Cell Carcinoma	Lung
+CRL-1456	G-8	Mus musculus	Myoblast Myoblast		
+CRL-1459	CCD-18Co	Homo sapiens		Normal	Colon
+CRL-5983_FL	NCI-H2107 [H2107]	Homo sapiens		Stage E, Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Bone Marrow
+CRL-1469	PANC-1	Homo sapiens		Epithelioid Carcinoma	Pancreas/Duct
+CRL-8066	Mo [Mo T]	Homo sapiens	Lymphocyte	Hairy Cell Leukemia	
+CRL-1472	HT-1376	Homo sapiens		Grade 3, Carcinoma	Urinary Bladder
+CRL-1473	HT-1197	Homo sapiens		Carcinoma	Urinary Bladder
+CRL-1474	CCD-25Sk	Homo sapiens	Fibroblast	Glioma	
+CRL-1475	CCD-27Sk	Homo sapiens	Fibroblast	Normal	Skin
+CRL-8079	LBRM-33-1A5	Mus musculus		Lymphoma	
+CRL-1484	HS-Sultan	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-1486	HEPM	Homo sapiens			Palatal Mesenchyme
+CRL-1489	CCD-32Sk	Homo sapiens	Fibroblast		
+CRL-8083	MC/CAR	Homo sapiens	B Lymphocyte	Plasmacytoma; Myeloma	Peripheral Blood
+CRL-1490	CCD-33Lu	Homo sapiens	Fibroblast		Lung
+CRL-1491	CCD-34Lu	Homo sapiens	Fibroblast		
+CRL-1497	CCD-34Sk	Homo sapiens	Fibroblast		
+HB-2	T3-3A1 [3A1]	Mus musculus	Hybridoma: B Lymphocyte; Somatic Cell Hybri	Identifying T Cell Acute Lymphoblastic Leukemia.,Identifying T Cell Acute Lymphoblastic Leukemia.	
+ACS-1003	ATCC-DYP0730 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Episomal Plasmid Reprogrammed Hipsc	Down Syndrome	Derived From Foreskin Fibroblast
+ACS-1004	ATCC-DYP0250 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Episomal Plasmid Reprogrammed Hipsc	Cystic Fibrosis	Derived From Foreskin Fibroblast
+ACS-1007	ATCC-HYR0103 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Retroviral Reprogrammed Hipsc	Normal	Derived From Hepatic Fibroblast
+ACS-1011	ATCC-DYR0100 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Retroviral Reprogrammed Hipsc	Normal	Derived From Foreskin Fibroblast
+ACS-1012	ATCC-DYR0530 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Retroviral Reprogrammed Hipsc	Parkinson's Disease, Asthma, Depression	Derived From Dermal Fibroblast
+ACS-1013	ATCC-DYS0530 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Parkinson's Disease, Asthma, Depression	Derived From Dermal Fibroblast
+ACS-1014	ATCC-DYP0530 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Plasmid Reprogrammed Hipsc	Parkinson's Disease, Asthma, Depression	Derived From Dermal Fibroblast
+ACS-1018	BT142 mut/-	Homo sapiens	Neural	Oligoastrocytoma Grade Iii	Brain
+ACS-1019	ATCC-DYS0100 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Foreskin Fibroblast
+CRL-9607	HMCB [ Human Melanoma Cell Bowes]	Homo sapiens	Epithelial	Melanoma	Skin
+CRL-9609	BEAS-2B	Homo sapiens	Epithelial (Virus Transformed)	Normal	Lung/Bronchus
+PCS-100-010	Primary Umbilical Vein Endothelial Cells; Normal, Human (HUVEC)	Homo sapiens	Endothelial	Normal	Umbilical Vascular Endothelium
+PCS-100-011	Primary Aortic Endothelial Cells; Normal, Human	Homo sapiens	Adult	Normal	Aorta
+PCS-100-012	Primary Aortic Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cells	Normal	Aorta
+PCS-100-013	Primary Umbilical Vein Endothelial Cells; Normal, Human, Pooled	Homo sapiens	Endothelial	Normal	Umbilical Vein Endothelium
+ACS-1020	ATCC-HYS0103 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Hepatic Fibroblast
+ACS-1021	ATCC-CYS0105 Human Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Cardiac Fibroblast
+ACS-1023	KYOU-DXR0109B Human Induced Pluripotent Stem (IPS) Cells [201B7]	Homo sapiens	Yamanaka Retrovirus Reprogrammed Hipsc	Normal	Derived From Dermal Fibroblasts
+ACS-1024	ATCC-BYS0110 Human [African American Male] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1025	ATCC-BYS0111 Human [Hispanic Male] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1026	ATCC-BYS0112 Human [Non-Hispanic Caucasian Male] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1027	ATCC-BYS0113 Human [Asian Male] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1028	ATCC-BXS0114 Human [African American Female] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1029	ATCC-BXS0115 Human [Hispanic Female] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+PCS-100-020	Primary Coronary Artery Endothelial Cells; Normal, Human	Homo sapiens	Endothelial	Normal	Coronary Artery
+PCS-100-021	Primary Coronary Artery Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cells	Normal	Coronary Artery
+PCS-100-022	Primary Pulmonary Artery Endothelial Cells; Normal, Human	Homo sapiens	Endothelial	Normal	Pulmonary Artery Endothelium
+PCS-100-023	Primary Pulmonary Artery Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cells		Pulmonary Artery
+ACS-1030	ATCC-BXS0116 Human [Non-Hispanic Caucasian Female] Induced Pluripotent Stem (IPS) Cells	Homo sapiens	Sendai Virus Reprogrammed Hipsc	Normal	Derived From Bone Marrow Cd34+ Cells
+ACS-1031	ATCC-BXS0117 Human [Asian Female] Induced Pluripotent Stem (iPS) Cells	Homo sapiens	Sendai Viral Reprogrammed Hipsc	Normal	Derived From Cd34+ Bone Marrow Cells
+CRL-3121	UACC-2648	Homo sapiens	Epithelial	Metastatic Stage Iii Infiltrating Ductal Carcinoma Of The Breast	Mammary Gland; Breast; Derived From Metastatic Site: Pleural Fluid
+CRL-3127	UACC-1179	Homo sapiens	Epithelial-Like	Adenocarcinoma	
+CRL-3128	UACC-1598	Homo sapiens		Cystadenocarcinoma, Grade Iv	
+PCS-420-010	Primary Bladder Epithelial Cells (A/T/N), normal	Homo sapiens	Epithelial	Normal	Bladder
+PCS-420-012	Primary Normal  Bladder Smooth Muscle Cells	Homo sapiens	Smooth Muscle Cells	Normal	Bladder
+PCS-420-013	Primary Normal Bladder Fibroblast Cells	Homo sapiens	Fibroblast	Normal	Bladder
+CRL-11904	JAWSII	Mus musculus	Immature Dendritic Cell; Monocyte		Bone Marrow
+CRL-12006	ProPakA.6 [PPA.6, ProPak-A.6]	Homo sapiens		Leukemia	Kidney
+CRL-12007	ProPak-X.36 [PP-X.36]	Homo sapiens		Leukemia	
+CRL-12011	HX [HT1080 xeno]	Homo sapiens		Fibrosarcoma	
+CRL-12012	HP [HT1080 poly]	Homo sapiens		Fibrosarcoma	
+CRL-1803	TT	Homo sapiens		Carcinoma	Thyroid/Medulla
+CRL-1804	C127:LT	Mus musculus			Mammary Gland
+CRL-1806	MTC-M	Mus musculus	C Cell		Thyroid
+CRL-1807	CCD 841 CoTr	Homo sapiens	Sv40 Transformed		
+CRL-1808	Psi2 12S6	Mus musculus	Epithelial		
+CRL-9641	GP+envAM-12	Mus musculus	Fibroblast		Embryo
+CRL-9642	GP+E-86	Mus musculus	Fibroblast		Embryo
+CRL-8400	CSMalphabeta6C [CSMab6C]	Mus musculus	Fibroblast	Papilloma	
+CRL-1817	Wgd5	Mus musculus	Fibroblast	Leukemia	
+CRL-3166	UACC-732	Homo sapiens		Inflammatory Carcinoma Of The Breast	Breast
+CRL-1821	ES-E14TG2a	Mus musculus	Embryonic		Embryo
+CRL-1825	P19	Mus musculus		Teratocarcinoma; Embryonal Carcinoma	Embryo
+CRL-1830	Hepa 1-6 [Hepa1-6]	Mus musculus		Hepatoma	Liver
+CRL-1831	FHC	Homo sapiens	Epithelial	Normal	Colon
+CRL-1834	GK-5	Homo sapiens	B Lymphoblast		
+CRL-1836	CCD-944Sk	Homo sapiens	Fibroblast		
+CRL-1837	SU.86.86	Homo sapiens		Ductal Carcinoma	Pancreas; Derived From Metastatic Site: Liver
+CRL-1838	M-NFS-60	Mus musculus	Virus Induced	Myelogenous Leukemia	
+CCL-120.1	CCRF-HSB-2 [CCRF HSB-2, HSB-2]	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CRL-3180	UACC-2087                                                                                                       	Homo sapiens		Adenocarcinoma	
+CRL-1841	HT-2 clone A5E	Mus musculus	Il-2 Dependent T Lymphocyte		Spleen
+CRL-1848	NCI-H292 [H292]	Homo sapiens		Mucoepidermoid Pulmonary Carcinoma	Lung
+56-X.2	MITC-STO (ATCC 56-X)	Mus musculus	Fibroblast		
+CRL-3192	UACC-2727	Homo sapiens	Adherent	Ovarian Cancer	Ovary
+CRL-1858	CRE BAG 2	Mus musculus		Leukemia	
+CRL-10741	C3A [HepG2/C3A, derivative of Hep G2 (ATCC HB-8065)]	Homo sapiens		Hepatocellular Carcinoma	Liver
+CRL-10742	HCN-2	Homo sapiens	Cortical Neuron	Encephalitis	Brain
+CRL-1872	A375.S2	Homo sapiens	Melanoma	Malignant Melanoma	Skin
+CRL-1873	RS4-11	Homo sapiens	Lymphoblast	Acute Lymphoblastic Leukemia	Bone Marrow
+CRL-11997	HEP G2/2.2.1	Homo sapiens		Hepatocellular Carcinoma	Liver
+CRL-1887	B104-1-1	Mus musculus	Neuroblast,Neuroblastoma,Glioblastoma	Neuroblastoma,Glioblastoma	
+CRL-1888	EJ-6-2-Bam-6a	Mus musculus		Carcinoma	
+CRL-1897	UACC-812	Homo sapiens		Ductal Carcinoma	Mammary Gland; Breast
+PCS-130-010	Primary Lung Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cells	Normal	Lung
+PCS-130-011	Primary Bronchial Tracheal Smooth Muscle Cells; Normal, Human	Homo sapiens	Smooth Muscle Cells	Normal	Bronchial-Tracheal
+CRL-5900	NCI-H1869 [H1869]	Homo sapiens	Squamous Cell	Stage 4,Non-Small Cell Lung Cancer	
+CRL-5902	NCI-H1876 [H1876]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5903	NCI-H1882 [H1882]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5904	NCI-H1915 [H1915]	Homo sapiens	Large Cell	Stage 4,Poorly Differentiated Carcinoma; Non-Small Cell Lung Cancer	
+CRL-5906	NCI-H1930 [H1930]	Homo sapiens		Stage L,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5907	NCI-H1944 [H1944]	Homo sapiens		Stage 3b, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Soft Tissue
+CRL-5908	NCI-H1975 [H-1975, H1975]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5909	NCI-H1993 [H1993]	Homo sapiens		Stage 3a, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5911	NCI-H2009 [H2009]	Homo sapiens		Stage 4, Adenocarcinoma	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5912	NCI-H2023 [H2023]	Homo sapiens		Stage 3a,Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5913	NCI-H2029 [H2029]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5914	NCI-H2030 [H2030]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5915	NCI-H2052 [H2052]	Homo sapiens	Epithelial	Stage 4, Mesothelioma	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5917	NCI-H2066 [H2066]	Homo sapiens		Stage 1,Mixed; Small Cell Lung Cancer; Adenocarcinoma; Squamous Cell Carcinoma	
+CRL-5918	NCI-H2073 [H2073]	Homo sapiens		Stage 3a, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-10781	MCF-10-2A	Homo sapiens	Epithelial	Fibrocystic Disease	Mammary Gland; Breast
+CRL-10782	MCF-12A	Homo sapiens	Epithelial		Mammary Gland; Breast
+CRL-10783	MCF-12F	Homo sapiens	Epithelial	Normal	Mammary Gland; Breast
+CRL-5920	NCI-H2081 [H2081]	Homo sapiens		Stage E,Carcinoma; Classic Small Cell Lung Cancer	
+CRL-5921	NCI-H2085 [H2085]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5922	NCI-H2087 [H2087]	Homo sapiens		Stage 1, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5923	NCI-H2106 [H2106]	Homo sapiens		Stage 4, Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5924	NCI-H2110 [H2110]	Homo sapiens		Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5926	NCI-H2135 [H2135]	Homo sapiens		Non-Small Cell Lung Cancer	
+CRL-5927	NCI-H2141 [H2141]	Homo sapiens	Lymphoblast	Stage E, Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+CRL-5928	NCI-H2170 [H2170]	Homo sapiens		Squamous Cell Carcinoma	Lung
+CRL-5929	NCI-H2171 [H2171]	Homo sapiens	Lymphoblast	Stage E, Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-5930	NCI-H2172 [H2172]	Homo sapiens		Non-Small Cell Lung Cancer	Lung
+CRL-5931	NCI-H2195 [H2195]	Homo sapiens	Lymphoblast	Stage E, Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metatstatic Site: Bone Marrow
+CRL-5932	NCI-H2196 [H2196]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5933	NCI-H2198 [H2198]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5934	NCI-H2227 [H2227]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5935	NCI-H2228 [H2228]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5938	NCI-H2286 [H2286]	Homo sapiens		Stage 1,Mixed; Small Cell Lung Cancer; Adenocarcinoma; Squamous Cell Carcinoma	
+CRL-5939	NCI-H2291 [H2291]	Homo sapiens		Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5940	NCI-H2330 [H2330]	Homo sapiens		Stage L,Carcinoma; Small Cell Lung Cancer	
+CRL-5941	NCI-H2342 [H2342]	Homo sapiens		Stage 3a, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5942	NCI-H2347 [H2347]	Homo sapiens		Stage 1, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung
+CRL-5944	NCI-H2405 [H2405]	Homo sapiens		Stage 4,Adenocarcinoma; Non-Small Cell Lung Cancer	
+CRL-5945	NCI-H2444 [H2444]	Homo sapiens		Non-Small Cell Lung Cancer	
+CRL-5946	NCI-H2452 [H2452]	Homo sapiens		Mesothelioma	Lung
+CRL-5947	NCI-BL128 [BL128]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5948	NCI-BL209 [BL209]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5949	NCI-BL1184 [BL1184]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5950	NCI-BL1339 [BL1339, NCI-BL6]	Homo sapiens	B Lymphoblast		
+CRL-5951	NCI-BL1450 [BL1450]	Homo sapiens	B Lymphoblast		
+CRL-5952	NCI-BL1514 [BL1514]	Homo sapiens	B Lymphoblast		
+CRL-5953	NCI-BL1607 [BL1607, BL9, NCI-BL9]	Homo sapiens	B Lymphoblast	Cancer	
+CRL-5955	NCI-BL2141 [BL2141]	Homo sapiens	B Lymphoblast		
+CRL-5956	NCI-BL2195 [BL2195]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5957	NCI-BL1395 [BL1395]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5958	NCI-BL1437 [BL1437]	Homo sapiens	B Lymphoblast	Adenocarcinoma	Peripheral Blood
+CRL-5959	NCI-BL1672 [BL1672]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5960	NCI-BL1770 [BL1770]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5961	NCI-BL2009 [BL2009]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5962	NCI-BL2028 [BL2028]	Homo sapiens	B Lymphoblast	Carcinoma	
+CRL-5963	NCI-BL2052 [BL2052]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5965	NCI-BL2087 [BL2087]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5966	NCI-BL2107 [BL2107]	Homo sapiens	B Lymphoblast	Cancer	Peripheral Blood
+CRL-5967	NCI-BL2122 [BL2122]	Homo sapiens	B Lymphoblast	Adenocarcinoma	Peripheral Blood
+CRL-5969	NCI-BL2171 [BL2171]	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-5970	NCI-BL2347 [BL2347]	Homo sapiens	B Lymphoblast		
+CRL-5971	SNU-1	Homo sapiens		Gastric Carcinoma	Stomach
+CRL-5972	SNU-C1	Homo sapiens		Adenocarcinoma	Colon; Derived From Metastatic Site: Peritoneum
+CRL-5973	SNU-5	Homo sapiens		Gastric Carcinoma	Stomach; Derived From Metastatic Site: Ascites
+CRL-5974	SNU-16	Homo sapiens		Gastric Carcinoma	Stomach; Derived From Metastatic Site: Ascites
+CRL-5975	UMC-11	Homo sapiens		Carcinoid	
+CRL-5976	NCI-H64 [H64]	Homo sapiens		Stage E, Carcinoma; Small Cell Lung Cancer	
+CRL-5978	NCI-H735 [H735]	Homo sapiens		Stage E, Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Liver
+CRL-5982	NCI-H1963 [H1963]	Homo sapiens		Stage L, Carcinoma; Small Cell Lung Cancer	Lung
+CRL-5984	NCI-H2108 [H2108]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-5985	NCI-H2122 [H2122]	Homo sapiens	Lymphoblast	Stage 4, Adenocarcinoma; Non-Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+CRL-7213	Hs 255.T	Homo sapiens	Fibroblast	Adenocarcinoma	Colon
+CRL-7214	Hs 257.T	Homo sapiens		Colorectal Adenocarcinoma	
+CRL-7222	Hs 274.T	Homo sapiens		Adenocarcinoma	
+CRL-7227	Hs 281.T	Homo sapiens		Adenocarcinoma	Breast
+CRL-5841_FL	NCI-H748 [H748]	Homo sapiens		Stage E, Carcinoma; Classic Small Cell Lung Cancer	
+CRL-7232	Hs 295.Sk	Homo sapiens		Dermatofibrosarcoma	
+CRL-7235	Hs 313.T	Homo sapiens		Lymphoma	
+CRL-7236	Hs 319.T	Homo sapiens		Infiltrating Ductal Cell Carcinoma	
+CCL-95.1	WI-26 VA4	Homo sapiens	Sv40 Transformed		
+CRL-7239	Hs 324.T	Homo sapiens		Reticulum Cell Sarcoma	
+SCRC-2002	hESC BG01V	Homo sapiens	Embryonic		Inner Cell Mass
+CRL-12424	D1 ORL UVA [D1]	Mus musculus			Bone Marrow
+CRL-7245	Hs 343.T	Homo sapiens		Adenocarcinoma	Mammary Gland; Breast
+CRL-7252	Hs 357.T	Homo sapiens		Dermatofibrosarcoma	
+CRL-7253	Hs 362.T	Homo sapiens		Adenocarcinoma	
+CRL-7263	Hs 387.T	Homo sapiens		Osteosarcoma	
+CRL-7287	Hs 414.T	Homo sapiens		Fibrosarcoma	
+CRL-7289	Hs 416.T	Homo sapiens		Squamous Papilloma	
+CRL-12479	ProPak-A.52 Clone #52 [PP-A.52]	Homo sapiens	Transformed With Adenovirus 5 Dna	Leukemia	
+HTB-102	Malme-3	Homo sapiens	Fibroblast		Skin
+HTB-103	KATO III	Homo sapiens		Gastric Carcinoma	Stomach; Derived From Metastatic Site: Pleural Effusion And Supraclavicular And Axillary Lymph Nodes And Douglas Cul-De-Sac
+HTB-104	Cates-1B	Homo sapiens		Embryonal Carcinoma	
+HTB-105	Tera-1	Homo sapiens		Embryonal Carcinoma, Malignant	Testes; Derived From Metastatic Site: Lung
+HTB-106	Tera-2	Homo sapiens		Malignant Embryonal Carcinoma	Derived From Metastatic Site: Lung
+HTB-107	SW579 [SW 579, SW-579]	Homo sapiens		Squamous Cell Carcinoma	Thyroid
+HTB-111	AN3 CA	Homo sapiens		Adenocarcinoma	Uterus/Endometrium
+HTB-112	HEC-1-A	Homo sapiens		Adenocarcinoma	Uterus/Endometrium
+HTB-113	HEC-1-B	Homo sapiens		Adenocarcinoma	Uterus/Endometrium
+HTB-114	SK-UT-1	Homo sapiens		Grade Iii,Mesodermal Tumor (Mixed); Consistent With Leiomyosarcoma	Uterus
+HTB-115	SK-UT-1B	Homo sapiens		Grade Iii,Mesodermal Tumor (Mixed); Consistent With Leiomyosarcoma	Uterus/Endometrium
+HTB-117	SW 954 [SW-954, SW954]	Homo sapiens		Grade Ii, Squamous Cell Carcinoma	Vulva
+HTB-118	SW962 [SW 962, SW-962]	Homo sapiens		Carcinoma	
+HTB-119	NCI-H69 [H69]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung
+PCS-800-010	Primary Peripheral Blood CD14+ Monocytes, Normal, Human	Homo sapiens	Monocyte	Normal	Peripheral Blood
+PCS-800-011	Primary Peripheral Blood Mononuclear Cells (PBMC), Normal, Human	Homo sapiens	Mononuclear	Normal	Peripheral Blood
+PCS-800-012	Primary Bone Marrow CD34+ Cells, Normal, Human	Homo sapiens	Hematopoietic	Normal	Bone Marrow
+PCS-800-013	Primary Bone Marrow Mononuclear Cells, Normal, Human	Homo sapiens	Mononuclear	Normal	Bone Marrow
+PCS-800-014	Primary Cord Blood CD34+ Cells, Normal, Human	Homo sapiens	Hematopoietic	Normal	Cord Blood
+CRL-7945_FL	TE 125.T	Homo sapiens		Rhabdomyosarcoma	
+HTB-120	NCI-H128 [H128]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+HTB-121	BT-483	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland/Breast
+HTB-122	BT-549	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland; Breast
+HTB-123	DU4475	Homo sapiens			Mammary Gland/Breast
+HTB-125	Hs 578Bst	Homo sapiens	Epithelial, Myoepithelial	Normal	Mammary Gland/Breast
+HTB-126	Hs 578T	Homo sapiens	Epithelial	Carcinoma	Mammary Gland/Breast
+HTB-128	MDA-MB-415	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-129	MDA-MB-435S	Homo sapiens	Melanocyte,Melanoma	Previously Described As Ductal Carcinoma	Previously Described As: Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+CRL-8885	WIL2-S	Homo sapiens	B Lymphoblast	Hereditary Spherocytosis	Spleen
+HTB-130	MDA-MB-436	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-131	MDA-MB-453	Homo sapiens		Metastatic Carcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pericardial Effusion
+HTB-132	MDA-MB-468	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Pleural Effusion
+HTB-133	T-47D	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland; Derived From Metastatic Site: Pleural Effusion
+HTB-134	Hs 766T	Homo sapiens	Epithelial	Pancreatic Carcinoma	Pancreas; Derived From Metastatic Site: Lymph Node
+HTB-135	Hs 746T	Homo sapiens	Epithelial,Fibroblast	Gastric Carcinoma	Stomach; Derived From Metastatic Site: Left Leg
+HTB-137	Hs 695T	Homo sapiens	Melanoma	Melanoma, Amelanotic	Skin; Derived From Metastatic Site: Lymph Node
+HTB-138	Hs 683	Homo sapiens		Glioma	Brain
+55-X	IRR-MRC-5 [irradiated MRC-5]	Homo sapiens	Fibroblast		Lung
+HTB-140	Hs 294T	Homo sapiens	Melanoma		Skin; Derived From Metastatic Site: Lymph Node
+HTB-142	Hs 602	Homo sapiens		Lymphoma	
+HTB-144	JAR	Homo sapiens		Choriocarcinoma	Placenta
+HTB-146	Hs 445	Homo sapiens		Hodgkin's Disease; Hodgkin's Lymphoma	
+HTB-147	Hs 700T	Homo sapiens		Adenocarcinoma	Derived From Metastatic Site: Pelvis
+HTB-148	H4	Homo sapiens		Neuroglioma	Brain
+HTB-151	Hs 696	Homo sapiens		Adenocarcinoma	
+HTB-152	Hs 913T	Homo sapiens		Fibrosarcoma	
+HTB-153	Hs 729 [Hs 729T]	Homo sapiens		Rhabdomyosarcoma	Muscle
+HTB-161	NIH:OVCAR-3 [OVCAR3]	Homo sapiens	Epithelial	Adenocarcinoma	Ovary
+HTB-166	RD-ES	Homo sapiens		Ewing's Sarcoma	Bone
+HTB-168	ChaGo-K-1	Homo sapiens		Bronchogenic Carcinoma	Lung,&Nbsp;Bronchus
+HTB-169	WERI-Rb-1	Homo sapiens	Retinoblastoma	Retinoblastoma	Eye, Retina
+CCL-1.3	L-M(TK-) [LM(tk-), LMTK-]	Mus musculus	Fibroblast		Subcutaneous Connective Tissue; Areolar And Adipose
+CCL-1.4	A9 (APRT and HPRT negative derivative of Strain L)	Mus musculus	Fibroblast		Subcutaneous Connective Tissue; Areolar And Adipose
+HTB-171	NCI-H446 [H446]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+HTB-172	NCI-H209 [H209]	Homo sapiens		Carcinoma; Small Cell Lung Cancer (Sclc)	Lung; Derived From Metastatic Site: Bone Marrow
+HTB-173	NCI-H146 [H146]	Homo sapiens	Epithelial	Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Bone Marrow
+HTB-174	NCI-H441 [H441]	Homo sapiens		Papillary Adenocarcinoma	Lung
+HTB-175	NCI-H82 [H82]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Pleural Effusion
+HTB-176	H9 [derivative of HuT 78]	Homo sapiens	Cutaneous T Lymphocyte	Lymphoma	
+HTB-177	NCI-H460 [H460]	Homo sapiens		Carcinoma; Large Cell Lung Cancer	Lung:Pleural Effusion
+HTB-178	NCI-H596 [H596]	Homo sapiens		Adenosquamous Carcinoma	Lung
+HTB-179	NCI-H676B [H676B]	Homo sapiens		Adenocarcinoma	
+HTB-180	NCI-H345 [H345]	Homo sapiens		Carcinoma; Small Cell Lung Cancer	Lung; Derived From Metastatic Site: Bone Marrow
+HTB-181	NCI-H820 [H820]	Homo sapiens		Papillary Adenocarcinoma	Lung; Derived From Metastatic Site: Lymph Node
+HTB-182	NCI-H520 [H520]	Homo sapiens		Squamous Cell Carcinoma	Lung
+HTB-183	NCI-H661 [H661]	Homo sapiens		Carcinoma; Large Cell Lung Cancer	Lung; Derived From Metastatic Site: Lymph Node
+HTB-184	NCI-H510A [H510A, NCI-H510]	Homo sapiens		Carcinoma; Small Cell Lung Cancer; Extrapulmonary Origin	Lung; Derived From Metastatic Tissue: Adrenal Gland
+HTB-185	D283 Med	Homo sapiens	Medulloblastoma	Medulloblastoma	Brain/Cerebellum; Derived From Metastatic Site:  Peritoneum
+HTB-186	Daoy	Homo sapiens		Desmoplastic Cerebellar Medulloblastoma	Brain/Cerebellum
+HTB-187	D341 Med	Homo sapiens	Medulloblastoma	Medulloblastoma	Brain/Cerebellum
+CRL-2302	ARPE-19	Homo sapiens	Epithelial	Normal	Retinal Pigmented Epithelium; Retina
+CRL-2304	CCD 1103 KIDTr	Homo sapiens	Human Papillomavirus 16 (Hpv-16) E6/E7 Transformed		Kidney
+CRL-2305	CCD 1105 KIDTr	Homo sapiens	Human Papillomavirus 16 (Hpv-16) E6/E7 Transformed		
+CRL-2307	MB16tsA, clone 1B5 [Mbeta16tsA, clone 1B5]	Mus musculus	Fibroblastsv40 Large T Antigen Transfected		
+CRL-2308	MB19tsA, clone 2B2 [Mbeta19tsA, clone 2B2]	Mus musculus	Fibroblastsv40 Large T Antigen Transfected		
+CRL-2309	CCD 1106 KERTr	Homo sapiens	Keratinocyte		Skin
+CCL-104	E.H. IV (Elaine IV)	Homo sapiens	B Lymphoblast		
+CCL-105	SW-13	Homo sapiens	Epithelial	Grade Iv,Primary Small Cell Carcinoma	Adrenal Gland/Cortex
+CRL-2310	CCD 1102 KERTr	Homo sapiens	Keratinocyte		
+CRL-2314	HCC38	Homo sapiens	Epithelial	Tnm Stage Iib, Grade 3, Primary Ductal Carcinoma	Mammary Gland; Breast/Duct
+CRL-2315	HCC70	Homo sapiens	Epithelial	Tnm Stage Iiia, Grade 3, Primary Ductal Carcinoma	Breast; Mammary Gland/Duct
+CRL-2316	HCC202	Homo sapiens	Epithelial	Tnm Stage Iiia, Grade 3, Primary Ductal Carcinoma	Breast; Mammary Gland/Duct
+CRL-2319	HCC1007 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CCL-110	Detroit 551	Homo sapiens	Fibroblast	Normal	Skin
+CCL-113	RPMI 6666	Homo sapiens		Hodgkin's Disease; Hodgkin's Lymphoma	Peripheral Blood
+CCL-114	RPMI 7666 [Gerner 7666]	Homo sapiens	B Lymphoblast		
+CCL-116	Detroit 548	Homo sapiens	Fibroblast		
+CCL-117	Detroit 573	Homo sapiens	Fibroblast		
+CCL-119	CCRF-CEM [CCRF CEM]	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CRL-2320	HCC1008	Homo sapiens	Epithelial	Tnm Stage Iia, Grade 3, Ductal Carcinoma	Breast; Mammary Gland/Duct;&Nbsp;Derived From Metastatic Site:&Nbsp;Lymph Node
+CRL-2321	HCC1143	Homo sapiens	Epithelial	Tnm Stage Iia, Grade 3, Primary Ductal Carcinoma	Breast; Mammary Gland/Duct
+CRL-2322	HCC1187	Homo sapiens	Epithelial	Tnm Stage Iia, Grade 3, Primary Ductal Carcinoma	Mammary Gland; Breast
+CRL-2323	HCC1187 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2324	HCC1395	Homo sapiens	Epithelial, Lymphoblast	Tnm Stage I, Grade 3, Primary Ductal Carcinoma	Mammary Gland; Breast/Duct
+CRL-2325	HCC1395 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2326	HCC1419	Homo sapiens	Epithelial	Tnm Stage Iiia, Grade 3,Primary Ductal Carcinoma	Mammary Gland; Breast
+CRL-2327	HCC1428	Homo sapiens	Epithelial	Tnm Stage Iv, Grade 4, Adenocarcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Adenocarcinoma And Pleural Effusion
+CRL-2328	HCC1428 BL	Homo sapiens	B Lymphoblast	Carcinoma,Cancer,Cancer,Adenocarcinoma	
+CRL-2329	HCC1500	Homo sapiens	Epithelial	Tnm Stage Iib, Grade 2, Primary Ductal Carcinoma	Breast; Mammary Gland/Duct
+CCL-120	CCRF-SB [CCRF SB]	Homo sapiens	B Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CCL-121	HT-1080 [HT1080]	Homo sapiens	Epithelial	Fibrosarcoma	Connective Tissue
+CCL-122	HG-261	Homo sapiens	Fibroblast	Fanconi's Anemia	Skin
+CCL-123	C 211	Homo sapiens	Fibroblast	Cri Du Chat Syndrome	Skin
+CCL-124	Amdur II	Homo sapiens	Fibroblast		
+CCL-127	IMR-32	Homo sapiens	Neuroblast	Neuroblastoma	Brain; Derived From Metastatic Site: Abdominal Mass
+CRL-2330	HCC1569	Homo sapiens	Epithelial	Tnm Stage Iv, Grade 3, Primary Metaplastic Carcinoma	Mammary Gland; Breast
+CRL-2331	HCC1599	Homo sapiens	Epithelial, Lymphoblast	Tnm Stage Iiia, Grade 3, Primary Ductal Carcinoma	Mammary Gland; Breast/Duct
+CRL-2332	HCC1599 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2334	HCC1739 BL	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme	Carcinoma	
+CRL-2335	HCC1806	Homo sapiens	Epithelial	Tnm Stage Iib, Grade 2, Primary Acantholytic Squamous Cell Carcinoma	Mammary Gland; Breast
+CRL-2336	HCC1937	Homo sapiens	Lymphoblast, Epithelial	Tnm Stage Iib, Grade 3,Primary Ductal Carcinoma	Mammary Gland; Breast/Duct
+CRL-2337	HCC1937 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2338	HCC1954	Homo sapiens	Epithelial	Tnm Stage Iia, Grade 3, Ductal Carcinoma	Mammary Gland; Breast/Duct
+CCL-46.1	NCTC 3749	Mus musculus		Lymphoma	
+CRL-2339	HCC1954 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CCL-130	MOPC-31C	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+CCL-131	Neuro-2a	Mus musculus	Neuroblast	Neuroblastoma	Brain
+CCL-132	CHP 3 (M.W.)	Homo sapiens	Fibroblast		
+CCL-133	CHP 4 (W.W.)	Homo sapiens	Fibroblast		
+CCL-134	LL 29 (AnHa)	Homo sapiens	Fibroblast	Idiopathic Pulmonary Fibrosis	Lung
+CCL-135	LL 47 (MaDo)	Homo sapiens	Fibroblast		Lung
+CCL-136	RD	Homo sapiens		Rhabdomyosarcoma	Muscle
+CCL-137	HEL 299	Homo sapiens	Fibroblast	Normal	Lung
+CCL-138	Detroit 562	Homo sapiens		Pharyngeal Carcinoma	Pharynx: Derived From Metastatic Site: Pleural Effusion
+CCL-139	TCMK-1	Mus musculus	Sv40 Transformed	Normal	Kidney
+CRL-2340	HCC2157	Homo sapiens	Epithelial	Tnm Stage Iiia, Grade 2,Primary Ductal Carcinoma	Mammary Gland; Breast
+CRL-2341	HCC2157 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2343	HCC2218	Homo sapiens	Epithelial,Lymphoblast	Tnm Stage Iiia, Grade 3,Primary Ductal Carcinoma	Mammary Gland; Breast/Duct
+CRL-2346	HCC38 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CCL-142	RAG	Mus musculus		Renal Adenocarcinoma	Kidney
+CCL-147	NB41A3	Mus musculus	Neuroblast	Neuroblastoma	Brain
+CCL-148	HSDM1C1	Mus musculus		Fibrosarcoma	
+CRL-7601	Hs 865.Sk	Homo sapiens		Adenocarcinoma	
+CRL-7603	Hs 867.Sk	Homo sapiens		Osteosarcoma	
+CRL-7604	Hs 868.T	Homo sapiens		Fibrosarcoma	
+CRL-2350	alphaTC1 Clone 9	Mus musculus	Alpha Cell	Adenoma	Pancreas
+CRL-2351	AU565 [AU-565]	Homo sapiens		Adenocarcinoma	Mammary Gland/Breast; Derived From Metastitic Site: Malignant Pleural Effusion
+CRL-7606	Hs 870.T	Homo sapiens		Osteosarcoma	
+CRL-2352	CCD 1108Sk	Homo sapiens	Fibroblast	Lymphoma	
+CCL-151	LL 24	Homo sapiens	Fibroblast	Normal	Lung
+CCL-153	HFL1	Homo sapiens	Fetal		Lung
+CCL-155	RPMI 8226	Homo sapiens	B Lymphocyte	Plasmacytoma; Myeloma	Peripheral Blood
+CCL-156	RPMI 1788	Homo sapiens	B Lymphocyte		
+CCL-159	IM-9	Homo sapiens	B Lymphoblast	Multiple Myeloma	Peripheral Blood
+CRL-11233	THLE-3	Homo sapiens	Epithelial	Normal	Liver/Left Lobe
+CRL-2361	CCD-1109Sk	Homo sapiens	Fibroblast		
+CRL-2362	HCC1143 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2363	HCC2218 BL	Homo sapiens	B Lymphoblast	Normal	Peripheral Blood
+CRL-2365	M059K	Homo sapiens	Glial Cell	Malignant Glioblastoma; Glioma	Brain
+CRL-2366	M059J	Homo sapiens	Glial Cell	Malignant Glioblastoma; Glioma	Brain
+CRL-2367	TUR	Homo sapiens	Histocyte	Histiocytic Lymphoma	
+CRL-2368	293/CHE-Fc	Homo sapiens		Influenza	
+CRL-2369	C1R-neo	Homo sapiens	B Lymphoblast		
+CCL-163	BALB/3T3 clone A31	Mus musculus	Fibroblast		Embryo
+CCL-164	BALB/3T12-3	Mus musculus	Fibroblast		
+CCL-167	MPC-11	Mus musculus	B Lymphocyte	Plasmacytoma; Myeloma	
+CRL-5874_FL	NCI-H1522 [H1522]	Homo sapiens		Stage E,Carcinoma; Small Cell Lung Cancer	
+CRL-7622	Hs 888.T	Homo sapiens		Osteosarcoma	
+CRL-7623	Hs 888.Sk	Homo sapiens		Osteosarcoma	
+CRL-7624	Hs 888.Lu	Homo sapiens		Osteosarcoma	
+CRL-2370	C1R-sB7	Homo sapiens	B Lymphoblast		Peripheral Blood
+CRL-7625	Hs 889.Sk	Homo sapiens		Normal	Skin
+CRL-2371	C1R-B7	Homo sapiens	B Lymphoblast		
+CRL-7626	Hs 889.T	Homo sapiens		Osteosarcoma	
+CRL-2372	J27-neo	Mus musculus	Fibroblast		
+CRL-7627	Hs 890.Sk	Homo sapiens		Normal	Skin
+CRL-7628	Hs 890.T	Homo sapiens		Osteosarcoma	
+CRL-7629	Hs 891.T	Homo sapiens		Kidney Carcinoma	
+CCL-171	MRC-5	Homo sapiens	Fetal	Normal	Lung
+CRL-7686_FL	Hs 936.T	Homo sapiens		Melanoma	Skin
+CRL-1130	Lo Ren	Homo sapiens		Cancer	
+CRL-1138	Mar Vin	Homo sapiens	Fibroblast		
+CRL-7631	Hs 894(A).T	Homo sapiens		Osteosarcoma	
+CRL-7636	Hs 895.Sk	Homo sapiens	Fibroblast,Melanoma	Normal	Skin
+CRL-7637	Hs 895.T	Homo sapiens	Fibroblast,Melanoma		
+CRL-2386	SVR A221a	Mus musculus	Endothelialsv40 Transformed		
+CRL-2387	SVR bag4	Mus musculus	Endothelialsv40 Transformed		
+CRL-2389	LTPA	Mus musculus	Epithelial	Adenocarcinoma	Pancreas
+CCL-185	A549	Homo sapiens		Carcinoma	Lung
+CCL-186	IMR-90	Homo sapiens	Fibroblast	Normal	Lung
+CRL-1144	Lu Vin	Homo sapiens	Fibroblast		
+CRL-11268	293T/17 [HEK 293T/17]	Homo sapiens			Kidney
+CRL-7644	Hs 899(C).T	Homo sapiens		Osteosarcoma	
+CRL-7645	Hs 899(D).T	Homo sapiens		Osteosarcoma	
+CRL-2390	FL83B	Mus musculus	Hepatocyte		Liver
+CRL-2392	GA-10	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-2393	GA-10 (Clone 4)	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-2394	GA-10 (Clone 20)	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma	
+CRL-2396	TK-1	Mus musculus	Lymphocyte	Lymphoma	
+CCL-190	LL 86 (LeSa)	Homo sapiens	Fibroblast	Sarcoma	
+CCL-191	LL 97A (AlMy)	Homo sapiens	Fibroblast	Idiopathic Pulmonary Fibrosis	Lung
+CCL-196	LA-4	Mus musculus	Epithelial	Adenoma	Lung
+CCL-197	NOR-10	Mus musculus	Fibroblast		
+CCL-198	BLO-11	Mus musculus	Fibroblast		
+CCL-199	HLF-a	Homo sapiens		Epidermoid Carcinoma	
+CRL-11285	AtT-20ins (CGT-6)	Mus musculus		Sarcoma	
+CRL-7660	Hs 910.Thm	Homo sapiens		Fibrosarcoma	
+CRL-7668	Hs 913(F).T	Homo sapiens		Fibrosarcoma	
+CRL-7669	Hs 917.T	Homo sapiens			Parotid Salivary Gland
+CRL-7671	Hs 919.Sk	Homo sapiens		Osteoma	
+CRL-7672	Hs 919.T	Homo sapiens		Benign Osteoid Osteoma	
+CRL-7676	Hs 925.Sk	Homo sapiens		Normal	Skin
+CRL-7677	Hs 925.T	Homo sapiens		Pagetoid Sarcoma	
+CRL-7678	Hs 926.T	Homo sapiens		Renal Rhabdomyosarcoma	
+CRL-7681	Hs 929.Sk	Homo sapiens		Granuloma	
+CRL-7684	Hs 934.T	Homo sapiens		Malignant Melanoma	Connective Tissue
+CRL-7687	Hs 936.T(C1)	Homo sapiens			Skin
+CRL-6469	+/+ SCT	Mus musculus		Cancer	
+CRL-6475	B16-F10	Mus musculus		Melanoma	Skin
+CCL-75.1	WI-38 VA-13 subline 2RA	Homo sapiens	Fetal		Lung
+CRL-4000	hTERT RPE-1	Homo sapiens	Epithelial Cells Immortalized With Htert	Normal	Retina, Eye; Pigmented Epithelium
+CRL-4001	BJ-5ta	Homo sapiens	Fibroblast	Normal	Foreskin
+CRL-4003	T HESCs	Homo sapiens	Fibroblast	Non-Malignant Myomas	Uterus; Endometrium
+CRL-4004	UMB1949	Homo sapiens	Melanocyte	Tuberous Sclerosis	Kidney; Angiomyolipoma
+CRL-4005	TelCOFS02MA	Homo sapiens	Fibroblast	Cofs (Cerebro-Oculo-Facio-Skeletal Syndrome)	Skin
+CRL-4008	SV7tert PDGF tumor-1	Homo sapiens	Epithelial Cells Immortalized With Htert And Sv40 Large T Antigen Expression	Tuberous Sclerosis	Kidney; Angiomyolipoma
+CRL-4010	hTERT-HME1 [ME16C]	Homo sapiens	Adult	Normal	Breast; Mammary Gland; Epithelium
+CRL-4011	NuLi-1	Homo sapiens	Epithelial	Normal	Lung; Epithelium, Bronchus
+CRL-4013	CuFi-1	Homo sapiens	Epithelial	Cystic Fibrosis	Lung; Epithelium, Bronchus
+CRL-4015	CuFi-4	Homo sapiens	Epithelial	Cystic Fibrosis	Lung; Bronchus
+CRL-4016	CuFi-5	Homo sapiens	Epithelial	Cystic Fibrosis	Lung; Bronchus
+CRL-4017	CuFi-6	Homo sapiens	Epithelial	Cystic Fibrosis	Lung; Bronchus
+CRL-4023	hTERT-HPNE	Homo sapiens	Intermediary Cells Formed During Acinar-To-Ductal Metaplasia	Normal	Pancreas, Duct
+CRL-4025	TIME	Homo sapiens	Endothelial	Normal	Foreskin; Dermal Microvascular Endothelium
+CRL-4027	CP-A (KR-42421)	Homo sapiens	Epithelial Cells Immortalized With Htert	Non-Dysplastic Metaplasia	Esophagus; Epithelium
+CRL-4028	CP-B (CP-52731)	Homo sapiens	Epithelial Cells Immortalized With Htert	High-Grade Dysplasia, Barrett's Esophagus	Esophagus; Epithelium
+CRL-4029	CP-C (CP-94251)	Homo sapiens	Epithelial Cells Immortalized With Htert	Cancer, Barrett's Esophagus	Esophagus; Epithelium
+CRL-4030	CP-D (CP-18821)	Homo sapiens	High-Grade Dysplasia	Cancer, Barrett's Esophagus	Esophagus; Epithelium
+CRL-4031	RPTEC/TERT1	Homo sapiens	Epithelial Cells Immortalized With Htert		Renal Cortex; Proximal Tubules, Epithelium
+CRL-4036	hTERT-HPNE E6/E7	Homo sapiens			Pancrease, Duct
+CRL-4037	hTERT-HPNE E6/E7/st	Homo sapiens			Pancrease, Duct
+CRL-4038	hTERT-HPNE E6/E7/K-RasG12D	Homo sapiens			Pancrease, Duct
+CRL-4039	hTERT-HPNE E6/E7/K-RasG12D/st	Homo sapiens			Pancrease, Duct
+CRL-4045	TIME-GFP	Homo sapiens	Microvascular Endothelial Cell	Normal	Foreskin
+CRL-4048	Ker-CT	Homo sapiens	Keratinocyte	Normal	Foreskin
+CRL-4049	NFκB-TIME	Homo sapiens	Endothelial	Normal	Foreskin
+CRL-2703	CCD-1137Sk	Homo sapiens	Fibroblast		
+CRL-2704	C13589	Homo sapiens	B Lymphoblast		
+CRL-2706	THLE-2	Homo sapiens	Epithelial Cells Transformed With Sv40 Large T Antigen		Liver/Left Lobe
+CRL-2707	CCD-1138Sk	Homo sapiens	Fibroblast		
+CRL-2708	CCD-1139Sk	Homo sapiens	Fibroblast		
+CRL-2709	mh [mocha]	Mus musculus	Fibroblast		
+CRL-9300	20H11	Homo sapiens	B Lymphocyte; Epstein-Barr Virus (Ebv) Transforme		
+CRL-4050	HSAEC1-KT	Homo sapiens	Epithelial	Normal	Lung, Small Airway
+CRL-4051	HBEC3-KT	Homo sapiens	Epithelial	Normal	Lung, Bronchial
+CRL-4052	TeloHAEC	Homo sapiens	Endothelial	Normal	Aorta
+CRL-4054	TeloHAEC-GFP	Homo sapiens	Endothelial	Normal	Aorta
+CRL-2710	c12 (B15ECiii2)	Mus musculus	Epithelial	Hepatoma	
+CRL-2711	c37 (B7IFi1)	Mus musculus	Epithelial	Hepatoma	
+CRL-2712	vT{2}	Mus musculus	Epithelial	Hepatoma	
+CRL-2713	MDA-kb2	Homo sapiens	Epithelial		Mammary Gland /Breast
+CRL-2714	CCD-1140Sk	Homo sapiens	Fibroblast		
+CRL-2716	c1 (B6NLxv1c2)	Mus musculus		Hepatoma	
+CRL-2717	c4 (B13NBii1)	Mus musculus	Epithelial	Hepatoma	
+CRL-2724	Kasumi-1	Homo sapiens	Myeloblast	Acute Myeloblastic Leukemia	Peripheral Blood
+CRL-2725	Kasumi-3	Homo sapiens	Lymphoblast	Acute Myeloblastic Leukemia	Peripheral Blood
+CRL-2726	Kasumi-4	Homo sapiens		Chronic Myeloblastic Leukemia (Cml)	Peripheral Blood
+CCL-1	NCTC clone 929 [L cell, L-929, derivative of Strain L]	Mus musculus	Fibroblast		Subcutaneous Connective Tissue; Areolar And Adipose
+CCL-2	HeLa	Homo sapiens	Epithelial	Adenocarcinoma	Cervix
+CCL-6	intestine 407	Homo sapiens	Epithelial		Hela Contaminant
+CCL-8	CCRF S-180 II	Mus musculus		Sarcoma	
+CRL-11609	RWPE-1	Homo sapiens	Epithelial	Normal	Prostate
+CRL-11610	RWPE-2	Homo sapiens	Epithelial	Normal	Prostate
+CRL-11611	PWR-1E	Homo sapiens	Epithelial		Prostate
+CRL-2740	BDCM	Homo sapiens	B Lymphoblast	Acute Myelogenous Leukemia (Aml)	Peripheral Blood
+CRL-2741	HBE135-E6E7	Homo sapiens	Epithelial Hpv-16 E6/E7 Transformed	Lung Cancer	Lung/Bronchus
+CRL-2745	PYS-2	Mus musculus	Epithelial		
+CRL-2749	OP9	Mus musculus	Embryonic Stem Cells, Macrophage		Bone Marrow/Stroma
+CRL-1500	ZR-75-1	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland:Breast/Duct; Derived From Metastatic Site: Ascites
+CRL-1501	CCD-39Sk	Homo sapiens	Fibroblast		
+CRL-1502	WS1	Homo sapiens	Fibroblast	Normal	Skin
+CRL-1503	STO	Mus musculus	Fibroblast		Embryo
+CRL-1504	ZR-75-30	Homo sapiens	Epithelial	Ductal Carcinoma	Mammary Gland/Breast; Derived From Metastatic Site: Ascites
+CRL-1509	CCD-43Sk	Homo sapiens	Fibroblast		
+CRL-2751	23 ScCr [10ScNCr/23]	Mus musculus	Macrophage	Fiv	Bone Marrow
+CRL-2752	3T3 MEFs WT	Mus musculus	Fibroblast		Embryo
+CRL-2753	3T3 MEFs KO	Mus musculus	Fibroblast		Embryo
+CRL-2755	EMT6	Mus musculus	Epithelial	Mammary Carcinoma	Breast
+CRL-1513	CCD-42Sk	Homo sapiens	Fibroblast		
+CRL-11632	ES-D3 [D3]	Mus musculus	Embryonic		
+CRL-2766	SW10	Mus musculus	Neuronal Schwann Cell;  Immortalized With Sv40 Large T Antigen		
+CRL-8119	1A2	Homo sapiens	Lymphoblast	Lymphoma	
+CRL-2770	L10BIOBR-GFP	Mus musculus	Melanocyte		
+CRL-2771	L10BIOBR-MAPKK	Mus musculus	Melanocyte		
+CRL-2775	Kasumi-6	Homo sapiens	Myeloblast	Acute Myeloid Leukemia, Subtype M2	Peripheral Blood
+CRL-1532	182-PF SK	Homo sapiens		Hereditary Adenomatosis	
+CRL-1533	166-ME SK	Homo sapiens		Hereditary Adenomatosis (Gardner's Variant)	
+CRL-1535	SCC-PSA1	Mus musculus	Fibroblast	Pluripotent Teratocarcinoma	
+CRL-1539	CCD-33Co	Homo sapiens		Normal	Colon
+CRL-11654	90.74	Homo sapiens	Transformed With Adenovirus 5 Dna		
+CRL-2780	ATRFLOX [Mutatect]	Homo sapiens	Epithelial	Colorectal Carcinoma	Colon
+CRL-1541	CCD-112CoN	Homo sapiens		Normal	Colon
+CRL-1543	HOS	Homo sapiens		Osteosarcoma	Bone
+CRL-1544	KHOS/NP (R-970-5)	Homo sapiens		Osteosarcoma	Bone
+CRL-1545	KHOS-240S	Homo sapiens		Osteosarcoma	Bone
+CRL-1546	KHOS-312H	Homo sapiens		Osteosarcoma	Bone
+CRL-1547	MNNG/HOS Cl #5 [R-1059-D]	Homo sapiens		Osteosarcoma	Bone
+CRL-2794	GFPu-1	Homo sapiens	Epithelialtransformed With Adenovirus 5 Dna		
+CRL-2796	CCD-1141Sk	Homo sapiens	Fibroblast		
+CRL-2797	MOVAS	Mus musculus	Immortalized With Sv40 Large T Antigen		Aorta/Smooth Muscle
+CRL-10423	JM1	Homo sapiens	Lymphoblast	B Cell Lymphoma	
+CRL-2799	MC-TGS17-51 [MC17-51, Mutatect]	Mus musculus		Fibrosarcoma	
+CRL-8146	AHH-1	Homo sapiens	B Lymphocyte		
+CRL-8147	MC/CAR-Z2 [derivative of MC/CAR (ATCC CRL-8083)]	Homo sapiens	B Lymphocyte	Plasmacytoma; Myeloma	
+CRL-1550	Ca Ski	Homo sapiens		Epidermoid Carcinoma	Cervix; Derived From Metastatic Site: Small Intestine
+CRL-1552	MOLT-3	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	Peripheral Blood
+CRL-1554	BUD-8	Homo sapiens	Fibroblast		
+CRL-1555	A-431	Homo sapiens		Epidermoid Carcinoma	Skin/Epidermis
+CRL-9391	Swiss SFME (Serum Free Mouse Embryo)	Mus musculus	Astrocyte		
+CRL-9392	BALB SFME Serum Free Mouse Embryo	Mus musculus	Astrocyte	Normal	Embryo
+CRL-8155	WIL2-NS	Homo sapiens	B Lymphocyte		
+CRL-1566	NULLI-SCC1	Mus musculus		Teratocarcinoma	
+CRL-1568	3197-3 (3T3-MSV)	Mus musculus	Fibroblast	Sarcoma	
+PCS-600-010	Primary Mammary Epithelial Cells; Normal, Human	Homo sapiens		Normal	Breast
+CRL-1572	PA-1 [PA1]	Homo sapiens		Teratocarcinoma	Ovary; Derived From Metastatic Site: Ascites
+CRL-1573	293 [HEK-293]	Homo sapiens	Embryonic		Embryonic Kidney
+CRL-1579	C32TG [C32-r16TG]	Homo sapiens		Amelanotic Melanoma	Skin
+CRL-11691	EML Cell Line, Clone 1	Mus musculus	Basophil		Bone Marrow
+CRL-1580	P3X63Ag8.653	Mus musculus	B Lymphoblast	Plasmacytoma; Myeloma	
+CRL-1582	MOLT-4	Homo sapiens	T Lymphoblast	Acute Lymphoblastic Leukemia	
+CRL-1583	3A(tPA-30-1)	Homo sapiens	Sv40 Transformed		Placenta
+CRL-1584	3A-sub E [post crisis of 3A(tPA-30-1)]	Homo sapiens	Sv40 Transformed		Placenta
+CRL-1585	C32	Homo sapiens		Melanoma, Amelanotic	Skin
+CRL-1594	C-4 I	Homo sapiens		Carcinoma	Cervix
+CRL-1595	C-4 II	Homo sapiens		Carcinoma	Cervix
+CRL-1596	Ramos (RA 1)	Homo sapiens	B Lymphocyte	Burkitt's Lymphoma (American)	
+CRL-1597	P3X63Ag8U.1	Mus musculus	B Lymphoblast	Plasmacytoma; Myeloma	
+CRL-1598	A-673	Homo sapiens		Ewing's Sarcoma	Muscle
+CCL-250.1	SNU-C2A	Homo sapiens		Colorectal Carcinoma	Cecum
+CCL-9.1	NCTC clone 1469 [derivative of NCTC 721]	Mus musculus		Normal	Liver
+HB-225	N22	Mus musculus	Embryonic		
+CRL-3209	EpH4 1424.1	Mus musculus	Epithelial	Breast Cancer	Breast Epithelium (Mammary Gland);
+SCRC-1040.1	MEF (CF-1) IRR	Mus musculus	Fibroblast		Embryo

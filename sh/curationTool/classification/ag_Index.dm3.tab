@@ -1,0 +1,1735 @@
+NoAb	NoD@ NA
+DNase-seq	DNS@ DNase-Seq
+S2 cell line	Unc@ Unclassified
+None|muscle FAC sorted from dissociated embryos	InP@ Input control
+none|Schneider's Drosophila Line 2; S2 cells	InP@ Input control
+Kc167 cells	Unc@ Unclassified
+E16-24h	Unc@ Unclassified
+whole embryos, 0-16 hours	Unc@ Unclassified
+none|S2 cells	InP@ Input control
+Pol II|Covance 8WG16 (MMS-126R)|Staged embryos	Pol@ RNA polymerase II
+Pol II (8WG16, Covance)|muscle FAC sorted from dissociated embryos	Pol@ RNA polymerase II
+E8-16h	Unc@ Unclassified
+anti-RNA Pol II (CTD-pSer5), abcam ab5408|embryo	Pol@ RNA polymerase II
+Pol II (CTD48H, Millipore)|muscle FAC sorted from dissociated embryos	Pol@ RNA polymerase II
+E16-24	Unc@ Unclassified
+E0-8	Unc@ Unclassified
+none|S2 cell line	InP@ Input control
+embryo	Unc@ Unclassified
+none|embryo	InP@ Input control
+WPP	Unc@ Unclassified
+E0-8h	Unc@ Unclassified
+Salivary Glands	Unc@ Unclassified
+none|S2 cell culture	InP@ Input control
+Drosophila Rpb1 antibody (Smith et al., Mol Cell. 2011 Dec 23;44(6):954-65)|S2 cell culture	Pol@ RpII215
+TBP|rabbit poly-antibody against dTBP|Staged embryos	Oth@ Tbp
+(rb) -H3K4me1 (39297;Active Motif)|Schneider's Drosophila Line 2; S2 cells	His@ H3K4me1
+Anti Twist|Twist ChIP-Seq from 2-4 h wild type embryos	Oth@ twi
+N/A|S2 cell line	InP@ Input control
+S2 cells-DRSC (lot 181A1)	Unc@ Unclassified
+CBP|Kc167	Oth@ CBP
+ELAV|rat anti-ELAV-7E8A10|whole embryos	Oth@ elav
+Abcam Anti-Histone H3 (di methyl K9) antibody mAbcam 1220|Salivary Glands	His@ H3K9me2
+Adult Drosophila ovary	Unc@ Unclassified
+none|Blastoderm embryos	InP@ Input control
+dFOXO|female adult flies	Oth@ foxo
+none|female adult flies	InP@ Input control
+H3K4me3|Cell Signaling Technology 9751S|Staged embryos	His@ H3K4me3
+(rb) -H3K27ac (4729; Abcam)|Schneider's Drosophila Line 2; S2 cells	His@ H3K27ac
+CLAMP ChIP SL2 cells control RNAi	Oth@ Clamp
+CLAMP ChIP SL2 cells MSL2 RNAi	Oth@ Clamp
+CLAMP ChIP Kc cells control RNAi	Oth@ Clamp
+PSC custom made rabbit polyclonal antibody that was affinity purified (described in Francis et al., 2009. PMID: 19303136)|S2 cell line	Oth@ Psc
+BEAF-32B (Bushey et. al 2009)|ChIP against BEAF-32 Wing	Oth@ BEAF-32
+H3K27me3 (ab6002, abcam)|muscle FAC sorted from dissociated embryos	His@ H3K27me3
+H3|m--HA (Covance, MMS-101P)|whole larvae	His@ H3
+H3K27me3|rb--H3K27me3 (Active Motif, 39155)|whole larvae	His@ H3K27me3
+NONE|none|whole larvae	InP@ Input control
+Su(z)12|rb--Su(z)12 full length (Jrg Mller)|whole larvae	Oth@ Su(z)12
+dJarid2|rb--Jarid2 (Masamitsu Yamaguchi)|whole larvae	Oth@ Jarid2
+Anti-FLAG M2|HSF IP	Oth@ Epitope tags
+Adult male fatbody	Unc@ Unclassified
+Adult female fatbody	Unc@ Unclassified
+TFIIIC|Kc167	Oth@ TfIIIC
+RNAPII|Kc167	Pol@ RNA polymerase II
+Rad21|Kc167	Oth@ vtd
+CP190|Kc167	Oth@ Cp190
+Chromator|Kc167	Oth@ Chro
+CapH2|Kc167	Oth@ Cap-H2
+Hr78|Anti-GFP|ab290|Hr78-GFP	Oth@ Hr78
+None|Input DNA	InP@ Input control
+DREF Rabbit polyclonal|Kc167	Oth@ Dref
+E8-16	Unc@ Unclassified
+H3|S2 cells	His@ H3
+GT  (Li et al. 2008)|Blastoderm embryos	Oth@ gt
+Active Motif H2Av pAb #39715|ChIPed chromatin, Active Motif H2Av pAb #39715	His@ H2A.V
+anti-Ice1 (CG13550, aa 1-192; Smith et al., Mol Cell. 2011 Dec 23;44(6):954-65)|S2 cell culture	Oth@ Ice1
+Anti-RNA polymerase II CTD repeat YSPTSPS antibody 8WG16|Pol II ChIP	Pol@ RNA polymerase II
+none|S3 cells	InP@ Input control
+H3K27me3|Active Motif 39155|Staged embryos	His@ H3K27me3
+(rb) -H3K27me3 (39155; Active Motif)|Schneider's Drosophila Line 2; S2 cells	His@ H3K27me3
+(rb) -H3K4me3 (#528; Ali Shilatifard)|Schneider's Drosophila Line 2; S2 cells	His@ H3K4me3
+anti-Yki|8-16hr embryo ChIP; Iso1 strain; Yki antibody	Oth@ yki
+anti-Trl (antii-GAF)|8-16hr embryo ChIP; Iso1 strain; GAF antibody	Oth@ Trl
+anti-BEAF32B|Kc cells	Oth@ BEAF-32
+none|wing imaginal discs, wild type, input	InP@ Input control
+white prepupae	Unc@ Unclassified
+PSC|Kc genomic DNA	Oth@ Psc
+AdultMale	Unc@ Unclassified
+AdultFemale	Unc@ Unclassified
+IgG|Kc167	InP@ Input control
+H3K4me3|Kc167	His@ H3K4me3
+H3K4me1|Kc167	His@ H3K4me1
+Fs1h-L|Kc167	Oth@ fs(1)h
+CTCF|Kc167	Oth@ CTCF
+input_Pc_mixed	InP@ Input control
+h|KW3-h-D1|KW3-h-D1|Kc167	Oth@ h
+insv|KW1-insv|NA|Kc167	Oth@ insv
+Su(H)|Su(H)d-300|sc-25761|Kc167	Oth@ Su(H)
+None|Staged embryos	InP@ Input control
+none (input)|Input	InP@ Input control
+W3L	Unc@ Unclassified
+Kc167	Unc@ Unclassified
+S2_roX2	Oth@ roX2
+anti-dCTCF|Kc cells	Oth@ CTCF
+anti-Su(Hw)|Kc cells	Oth@ su(Hw)
+anti-CP190|Kc cells	Oth@ Cp190
+anti-ZLD|Embryos	Oth@ vfl
+E0-12	Unc@ Unclassified
+7T_W3L	Unc@ Unclassified
+E0-4h	Unc@ Unclassified
+E4-8	Unc@ Unclassified
+Pupae	Unc@ Unclassified
+anti-Green Fluorescent Protein, millipore ab3080|embryo	Oth@ GFP
+Protein A purified control rabbit IgG|embryo	InP@ Input control
+PC|D. Melanogaster_PC Phdel	Oth@ Pc
+PHO|D. Melanogaster_PHO Phdel	Oth@ pho
+none (input)|D. Melanogaster_Input Phdel	InP@ Input control
+PC|D. Melanogaster_PC WT	Oth@ Pc
+PHO|D. Melanogaster_PHO WT	Oth@ pho
+none (input)|D. Melanogaster_Input WT	InP@ Input control
+none (input)|D. Melanogaster_Input	InP@ Input control
+H3K4me3, Millipore #07-473|D. Melanogaster_H3K4me3	His@ H3K4me3
+PC|D. Melanogaster_PC	Oth@ Pc
+PH|D. Melanogaster_PH	Oth@ ph-d
+H3K27me3, Millipore, #07-449|D. Melanogaster_H3K27me3	His@ H3K27me3
+anti-RNA Pol II phospho-S5|Pol2_mixed	Pol@ RNA polymerase II
+anti-RNA Pol II phospho-S5|Pol2_PS7	Pol@ RNA polymerase II
+Santa cruz rabbit polyclonal #sc-25761|Whole cell embryonic extract	Oth@ Su(H)
+Santa cruz goat polyclonal #sc-15813|Whole cell embryonic extract	Oth@ Su(H)
+-|0-16h embryos	Unc@ Unclassified
+anti-H3K27me3, CS200603 (Milipore)|0-16h embryos	His@ H3K27me3
+anti-E(Z), Carrington &amp; Jones, Development (1996).|0-16h embryos	Oth@ E(z)
+Anti-dimethyl-Histone H3 (Lys4)|H3K4me2 ChIP from control germline knock-down ovaries	His@ H3K4me2
+Histone H3K9me3 antibody (pAb)|H3K9me3 ChIP from piwi germline knock-down ovaries	His@ H3K9me3
+Histone H3K9me3 antibody (pAb)|H3K9me3 ChIP from rhino germline knock-down ovaries	His@ H3K9me3
+Histone H3K9me3 antibody (pAb)|H3K9me3 ChIP from control germline knock-down ovaries	His@ H3K9me3
+custom-made rabbit polyclonal antibody|Rhino ChIP from piwi germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Rhino ChIP from control germline knock-down ovaries	Unc@ Unclassified
+anti-Ph (residues 772-984)|Ph_PS7	Oth@ ph-d
+anti-Ph (residues 772-984)|Ph_mixed	Oth@ ph-d
+none|eye disks from 3rd instar larvae	InP@ Input control
+JIL-1 monoclonal antibody 5C9|Salivary Glands	Oth@ JIL-1
+none|input genomice DNA|Control, Input	InP@ Input control
+H3K9me2|H3K9me2 ChIPed DNA|Tau, ChIP-seq	His@ H3K9me2
+H3K9me2|H3K9me2 ChIPed DNA|Control, ChIP-seq	His@ H3K9me2
+H3K27me3|fruitfly testis nos&gt;shRNA E(z)	His@ H3K27me3
+guinea pig anti-So (from I. Rebay)|eye-antennal imaginal disc	Oth@ so
+CP190|IP|Third instar larvae	Oth@ Cp190
+none|Input|Third instar larvae	InP@ Input control
+Mouse monoclonal to Ago2, gift from M. Siomi|S2 cells	Oth@ AGO2
+KR (Li et al., 2008)|Blastoderm embryos	Oth@ Kr
+HB (Li et al., 2008)|Blastoderm embryos	Oth@ hb
+Bicoid (Li et al. 2008)|Blastoderm embryos	Oth@ bcd
+anti-EcR monoclonal antibody (DDA2.7) developed by C. Thummel in D. Hogness laboratory|S2 cells	Oth@ EcR
+anti-GFP|12-14 hour old embryos svb::GFP	Oth@ GFP
+H3K27me3|H3K27me3 chromatin from embryonic nuclei	His@ H3K27me3
+Pc n-ChIP BG3-c2	Oth@ Pc
+Pc n-ChIP S2	Oth@ Pc
+H3K27Me3 n-ChIP S2R+	His@ H3K27me3
+Pc n-ChIP S2R+	Oth@ Pc
+anti-Yki|S2 cell line ChIP; Yki antibody	Oth@ yki
+H3K9me3|ChIP H3K9me3|Drosophila melanogaster ovary	His@ H3K9me3
+none|ChIP input|Drosophila melanogaster ovary	InP@ Input control
+Anti-RNA polymerase II CTD repeat YSPTSPS (phospho S) antibody clone 4H8|ovary shWhite PolII	Pol@ RNA polymerase II
+Anti-RNA polymerase II CTD repeat YSPTSPS (phospho S) antibody clone 4H8|ovary shPiwi PolII	Pol@ RNA polymerase II
+Anti-Histone H3 (tri methyl K9) antibody|ovary shPiwi H3K9me3	His@ H3K9me3
+PAP antibody (Sigma P1291)|Female larvae	Oth@ CG4747
+None|Male larvae	InP@ Input control
+PAP antibody (Sigma P1291)|Male larvae	Oth@ CG4747
+Rrp40|S3 cells	Oth@ Rrp40
+Rrp6|S3 cells	Oth@ Rrp6
+Rrp40|S2 cells	Oth@ Rrp40
+Rrp6|S2 cells	Oth@ Rrp6
+antiRpb3|Rpb3-bound DNA|tj-GAL4&gt;RNAi tej	Pol@ RpII33
+antiRpb3|Rpb3-bound DNA|tj-GAL4&gt;RNAi armi	Pol@ RpII33
+total DNA|DNA input_Piwi-KD	InP@ Input control
+total DNA|DNA input_Mael-KD	InP@ Input control
+total DNA|DNA input_GFP-KD	InP@ Input control
+H3Ac|Millipore 07-360|Staged embryos	His@ H3ac
+(rb) -LPT (#470, Ali Shilatifard)|Schneider's Drosophila Line 2; S2 cells	Oth@ Lpt
+(rb) -dUTX (#663, Ali Shilatifard)|Schneider's Drosophila Line 2; S2 cells	Oth@ Utx
+dCTCF antibody 68 (rat)|S2 cells	Oth@ CTCF
+Mod(mdg4)2.2 antibody (rabbit)|S2 cells	Oth@ mod(mdg4)
+Su(Hw) antibody 406 (rabbit)|S2 cells	Oth@ su(Hw)
+CP190 antibody (rabbit)|S2 cells	Oth@ Cp190
+none (control)|wing imaginal discs	InP@ Input control
+V5 (Sigma)|body_w_ip	Oth@ Epitope tags
+V5 (Sigma)|head_w_ip	Oth@ Epitope tags
+none (input)|DRSC-S2 cell line	InP@ Input control
+None|Wing imaginal disc Input chromatin; Iso1 strain; no antibody	InP@ Input control
+anti-Trl (antii-GAF)|Wing imaginal disc ChIP; Iso1 strain; GAF antibody	Oth@ Trl
+anti-H3K4me3|8-16hr embryo ChIP; Iso1 strain; H3K4me3 antibody	His@ H3K4me3
+0-2hr Embryo ORC Chip-Seq	Oth@ Orc2
+none (streptavidin-coated beads used to pulldown biotinlyated PH)|S2 cell line	InP@ Input control
+monoclonal rat 6E11|MLE ChIP-Seq	Oth@ mle
+polyclonal rabbit MOF SA 4897, crude serum|MOF ChIP-Seq	Oth@ mof
+polyclonal rabbit MSL3, crude serum|MSL3 ChIP-Seq	Oth@ msl-3
+polyclonal rabbit MSL2, crude serum|MSL2 ChIP-Seq	Oth@ msl-2
+polyclonal rabbit MSL1, crude serum|MSL1 ChIP-Seq	Oth@ msl-1
+H3K27me3 Millipore Cat. # 07-449 Lot # JBC1924326|Kc cells	His@ H3K27me3
+H3K27me3 (Millipore: 07-449)|Octopaminergic neurons	His@ H3K27me3
+H3K27me3 (Millipore: 07-449)|Head neurons	His@ H3K27me3
+H3K27Ac (Abcam: 4729)|Head neurons	His@ H3K27ac
+H3K4me3 (Abcam: 8580)|Head neurons	His@ H3K4me3
+input DNA|Chromatin Input	InP@ Input control
+Pol II (8WG16, Covance)|Toll10b mutant	Pol@ RNA polymerase II
+NONE|none|eye-antenna imaginal disc	InP@ Input control
+Su(z)12|rb--Su(z)12 full length (Jrg Mller)|eye-antenna imaginal disc	Oth@ Su(z)12
+BEAF|Kc cells	Oth@ BEAF-32
+dCTCF|Kc cells	Oth@ CTCF
+CP190|Kc cells	Oth@ Cp190
+Anti-FLAG M2|mock IP (no HSF)	Oth@ Epitope tags
+in house none|Schneider's Drosophila Line 2	InP@ Input control
+Hsp90|DRSC-S2 cell line	Oth@ Hsp83
+none|Kc cells	InP@ Input control
+none|Third instar larval brain and wing/haltere/third leg imaginal discs tissue, input	InP@ Input control
+guinea pig 1 anti-l(3)mbt 1244-1477aa (glycine elution)|Third instar larval brain and wing/haltere/third leg imaginal discs tissue,  l(3)mbt ChIP	Oth@ l(3)mbt
+anti-SuHw|S2 cell line	Oth@ su(Hw)
+anti-H3K36me3|S2 cell line	His@ H3K36me3
+E0-4	Unc@ Unclassified
+none|wing imaginal discs, LID RNAi knock-down, input	InP@ Input control
+H3K4me3|ab8580|wing imaginal discs, LID RNAi knock-down, H3K4me3 ChIP	His@ H3K4me3
+H3K4me3|ab8580|wing imaginal discs, wild type, H3K4me3 ChIP	His@ H3K4me3
+none|DRSC-S2 cell line	InP@ Input control
+Trx-C|DRSC-S2 cell line	Oth@ trx
+Psc|DRSC-S2 cell line	Oth@ Psc
+Ph|DRSC-S2 cell line	Oth@ ph-d
+Pc|DRSC-S2 cell line	Oth@ Pc
+3rd instart Drosophila larvae	Unc@ Unclassified
+Homotypic H2Av (H2Av/H2Av) pull-down DNA	His@ H2A.V
+Heterotypic H2Av (H2A/H2Av) pull-down DNA	His@ H2A.V
+none|whole embryos	InP@ Input control
+Z4|Kc167	Unc@ Unclassified
+Pc_RJ|Kc167	Oth@ Pc
+Modmdg4|Kc167	Oth@ mod(mdg4)
+L3mbt|Kc167	Oth@ l(3)mbt
+H3K9me2|Kc167	His@ H3K9me2
+DREF|Kc167	Oth@ Dref
+BEAF|Kc167	Oth@ BEAF-32
+input|inp_CP190_PS7	InP@ Input control
+input|inp_CP190_mixed	InP@ Input control
+anti-CP190|CP190_PS7	Oth@ Cp190
+anti-CP190|CP190_mixed	Oth@ Cp190
+PHO|D. Melanogaster_PHO	Oth@ pho
+DSP1|D. Melanogaster_DSP1	Oth@ Dsp1
+input_Pc_PS7	InP@ Input control
+input_Pol2_PS7	InP@ Input control
+anti-SU(Z)12|Suz12_mixed	Oth@ Su(z)12
+anti-SU(Z)12|Suz12_PS7	Oth@ Su(z)12
+anti-Pc|Pc_mixed	Oth@ Pc
+anti-Pc|Pc_PS7	Oth@ Pc
+Anti-H3K4me2|mutant_mutant_Anti-H3K4me2	His@ H3K4me2
+Anti-H3K9me3|mutant_mutant_Anti-H3K9me3	His@ H3K9me3
+anti-HP1|mutant_mutant_anti-HP1	Oth@ Su(var)205
+Anti-H3K4me2|WT_WT_Anti-H3K4me2	His@ H3K4me2
+Anti-H3K9me3|WT_WT_Anti-H3K9me3	His@ H3K9me3
+anti-HP1|WT_WT_anti-HP1	Oth@ Su(var)205
+ChIP Input	InP@ Input control
+input_Ph_PS7	InP@ Input control
+input_H3K4me3_PS7	InP@ Input control
+input_H3K4me3_mixed	InP@ Input control
+input_H3K27ac_PS7	InP@ Input control
+input_H3K27ac_mixed	InP@ Input control
+input_CTCF_PS7	InP@ Input control
+input_CTCF_mixed	InP@ Input control
+input_H3K27me3_PS7	InP@ Input control
+input_H3K27me3_PS6	InP@ Input control
+input_H3K27me3_PS5	InP@ Input control
+input_H3K27me3_PS4	InP@ Input control
+input_H3K27me3_mixed	InP@ Input control
+anti-K4me3|H3K4me3_PS7	His@ H3K4me3
+anti-K4me3|H3K4me3_mixed	His@ H3K4me3
+anti-K27ac|H3K27ac_PS7	His@ H3K27ac
+anti-K27ac|H3K27ac_mixed	His@ H3K27ac
+anti-CTCF|CTCF_PS7	Oth@ CTCF
+anti-CTCF|CTCF_mixed	Oth@ CTCF
+anti-K27me3|H3K27me3_PS7	His@ H3K27me3
+anti-K27me3|H3K27me3_PS6	His@ H3K27me3
+anti-K27me3|H3K27me3_PS5	His@ H3K27me3
+anti-K27me3|H3K27me3_PS4	His@ H3K27me3
+anti-K27me3|H3K27me3_mixed	His@ H3K27me3
+None|zld_input	InP@ Input control
+Bcd|zld_Bcd	Oth@ bcd
+None|wt_input	InP@ Input control
+Bcd|wt_Bcd	Oth@ bcd
+none|input genomice DNA|Tau, Input	InP@ Input control
+Adf1 n-ChIP S2	Oth@ Adf1
+GAF n-ChIP S2	Oth@ Trl
+Pho n-ChIP S2	Oth@ pho
+input|Kc167_input	InP@ Input control
+prd|Prd-RF13|RF13|E0-12	Oth@ prd
+prd|Prd-RF12|RF12|E0-12	Oth@ prd
+cnc|KW0-cnc|KW0-cnc|AdultFemale	Oth@ cnc
+br|KW1-br-core|KW1-br-core|E0-8	Oth@ br
+AbdB|Anti-GFP|ab290|AbdB-GFP	Oth@ Abd-B
+CG8478|KW1-CG8478-D1|KW1-CG8478-D1|S2	Oth@ CG8478
+Cmi|KW1-cmi|NA|Exd-GFP	Oth@ Lpt
+NA|NA|NA|Hr78-GFP	InP@ Input control
+Lola|Anti-GFP|ab290|LolaI-GFP	Oth@ lola
+dm|KW1-dm-D1|KW1-dm-D1|Kc167	Oth@ dm
+Notch|Anti-GFP|ab290|Notch-GFP	Oth@ N
+Stat92E|Anti-GFP|ab290|Stat92E-GFP	Oth@ Stat92E
+Pho n-ChIP S2R+	Oth@ pho
+Adf1 n-ChIP S2R+	Oth@ Adf1
+GAF n-ChIP S2R+	Oth@ Trl
+None|Female larvae	InP@ Input control
+antiRpb3|Rpb3-bound DNA|Rpb3 ChIP-seq_Piwi-KD	Pol@ RpII33
+antiRpb3|Rpb3-bound DNA|Rpb3 ChIP-seq_Mael-KD	Pol@ RpII33
+antiRpb3|Rpb3-bound DNA|Rpb3 ChIP-seq_GFP-KD	Pol@ RpII33
+antiH3K9me3|H3K9m3-bound DNA|H3K9m3 ChIP-seq_Piwi-KD	His@ H3K9me3
+antiH3K9me3|H3K9m3-bound DNA|H3K9m3 ChIP-seq_Mael-KD	His@ H3K9me3
+antiH3K9me3|H3K9m3-bound DNA|H3K9m3 ChIP-seq_GFP-KD	His@ H3K9me3
+--|body_w_input	Unc@ Unclassified
+--|body_cyc_input	Unc@ Unclassified
+V5 (Sigma)|body_cyc_ip	Oth@ Epitope tags
+--|body_clk_input	Unc@ Unclassified
+V5 (Sigma)|body_clk_ip	Oth@ Epitope tags
+--|head_w_input	Unc@ Unclassified
+--|head_cyc_input	Unc@ Unclassified
+V5 (Sigma)|head_cyc_ip	Oth@ Epitope tags
+--|head_clk_input	Unc@ Unclassified
+V5 (Sigma)|head_clk_ip	Oth@ Epitope tags
+rabbit anti-Dp1|S2R+ cells	Oth@ Dp1
+EcR_mF3d	Oth@ EcR
+R13-E1-6h-Set2	Unc@ Unclassified
+EcR_WPP-4-5h	Oth@ EcR
+E1-6h	Unc@ Unclassified
+Kc	Unc@ Unclassified
+7T	Unc@ Unclassified
+10T-W3L	Unc@ Unclassified
+E0-12h	Unc@ Unclassified
+E8-12	Unc@ Unclassified
+E12-16	Unc@ Unclassified
+H3K27Ac|ab4729|L2	His@ H3K27ac
+L2	Unc@ Unclassified
+L1	Unc@ Unclassified
+L3	Unc@ Unclassified
+anti-histoneH4	His@ H4
+anti-histoneH4K16ac	His@ H4K16ac
+input	InP@ Input control
+anti-MOF	Oth@ mof
+none|wing disc, third instar larvae, input	InP@ Input control
+anti-histone H3|wing disc, third instar larvae, H3 ChIP	His@ H3
+SuHw|Kc167	Oth@ su(Hw)
+Pc_VP|Kc167	Oth@ Pc
+H3K27ac|Kc167	His@ H3K27ac
+none (input)|eye-antennal discs	InP@ Input control
+anti-GFP|eye-antennal discs	Oth@ GFP
+IgG (made in-house)|pooled stage 12 and 13 egg chambers	InP@ Input control
+Cdc45 (made in-house)|pooled stage 12 and 13 egg chambers	Oth@ CDC45L
+SUUR (made in-house)|pooled stage 12 and 13 egg chambers	Oth@ SuUR
+NA|pooled stage 12 and 13 egg chambers	InP@ Input control
+IgG (made in-house)|stage 10 egg chambers from OrR	InP@ Input control
+Cdc45 (made in-house)|stage 10 egg chambers from OrR	Oth@ CDC45L
+SUUR (made in-house)|stage 10 egg chambers from OrR	Oth@ SuUR
+NA|stage 10 egg chambers from OrR	InP@ Input control
+input_Suz12_mixed	InP@ Input control
+input_Suz12_Pol2_mixed	InP@ Input control
+input_Suz12_PS7	InP@ Input control
+input_Pol2_mixed	InP@ Input control
+H3K79me2|3594|S2	His@ H3K79me2
+anti RNA-polymerase II-CTD|wing disc, third instar larvae, RNApol II ChIP	Pol@ RNA polymerase II
+anti-histone H3 (mono+di+tri methyl K79)|wing disc, third instar larvae, H3K79m1-2-3 ChIP	His@ H3K79me1
+anti-histone H3 (acetyl K27)|wing disc, third instar larvae, H3K27Ac ChIP	His@ H3K27ac
+anti-histone H3 (tri methyl K27)|wing disc, third instar larvae, H3K27m3 ChIP	His@ H3K27me3
+anti-histone H3 (di+tri methyl K4)|wing disc, third instar larvae, H3K4m2-3 ChIP	His@ H3K4me2
+anti-histone H3 (mono methyl K4)|wing disc, third instar larvae, H3K4m1 ChIP	His@ H3K4me1
+Cutoff-EGFP_PFA_ChIP-seq	Unc@ Unclassified
+GFP|Cutoff-EGFP_PFA_ChIP-seq	Oth@ GFP
+Cutoff-EGFP_EGS_ChIP-seq	Unc@ Unclassified
+GFP|Cutoff-EGFP_EGS_ChIP-seq	Oth@ GFP
+Rhino-BioTAP_ChIP-seq	Oth@ rhi
+pan Mouse IgG dynabeads|Rhino-BioTAP_ChIP-seq	Oth@ rhi
+None|Whole cell embryonic extract	InP@ Input control
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, zelda mutant, H3K18ac ChIP	His@ H3K18ac
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, wt, H3K18ac ChIP	His@ H3K18ac
+anti-H3K4me1 (Abcam, ab8895, lot GR127871-1)|embryos, zelda mutant, H3K4me1 ChIP	His@ H3K4me1
+anti-H3K4me1 (Abcam, ab8895, lot GR127871-1)|embryos, wt, H3K4me1 ChIP	His@ H3K4me1
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, zelda mutant, H3 ChIP	His@ H3
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, wt, H3 ChIP	His@ H3
+anti-Zelda antibody (Harrison et al., 2011, PLoS Genet. 7(10):e1002266)|embryos, zelda mutant, Zelda ChIP	Oth@ vfl
+anti-Zelda antibody (Harrison et al., 2011, PLoS Genet. 7(10):e1002266)|embryos, wt, Zelda ChIP	Oth@ vfl
+input|ChIP Input|Eye-Antennal disc	InP@ Input control
+CTCF|CTCF Immunoprecipitated|Eye-Antennal disc	Oth@ CTCF
+none|embryos, cycle 14c, input	InP@ Input control
+none|embryos, cycle 14a, input	InP@ Input control
+none|embryos, cycle 12, input	InP@ Input control
+none|embryos, cycle 8, input	InP@ Input control
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, cycle 14c, H3 ChIP	His@ H3
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, cycle 14a, H3 ChIP	His@ H3
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, cycle 12, H3 ChIP	His@ H3
+anti-H3 (Abcam, 1791, lot GR65697-1)|embryos, cycle 8, H3 ChIP	His@ H3
+anti-H3K36me3 (Abcam, ab9050, lot GR52625-1)|embryos, cycle 14c, H3K36me3 ChIP	His@ H3K36me3
+anti-H3K36me3 (Abcam, ab9050, lot GR52625-1)|embryos, cycle 14a, H3K36me3 ChIP	His@ H3K36me3
+anti-H3K36me3 (Abcam, ab9050, lot GR52625-1)|embryos, cycle 12, H3K36me3 ChIP	His@ H3K36me3
+anti-H3K27me3 (Millipore, 07-449, lot JBC1873477)|embryos, cycle 14c, H3K27me3 ChIP	His@ H3K27me3
+anti-H3K27me3 (Millipore, 07-449, lot JBC1873477)|embryos, cycle 14a, H3K27me3 ChIP	His@ H3K27me3
+anti-H3K27me3 (Millipore, 07-449, lot JBC1873477)|embryos, cycle 12, H3K27me3 ChIP	His@ H3K27me3
+anti-H3K9ac (ActiveMotif, 39138, lot 981102)|embryos, cycle 14c, H3K9ac ChIP	His@ H3K9Ac
+anti-H3K9ac (ActiveMotif, 39138, lot 981102)|embryos, cycle 14a, H3K9ac ChIP	His@ H3K9Ac
+anti-H3K9ac (ActiveMotif, 39138, lot 981102)|embryos, cycle 12, H3K9ac ChIP	His@ H3K9Ac
+anti-H3K9ac (ActiveMotif, 39138, lot 981102)|embryos, cycle 8, H3K9ac ChIP	His@ H3K9Ac
+anti-H3K4me3 (Abcam, ab8580, lot GR65368-1)|embryos, cycle 14c, H3K4me3 ChIP	His@ H3K4me3
+anti-H3K4me3 (Abcam, ab8580, lot GR65368-1)|embryos, cycle 14a, H3K4me3 ChIP	His@ H3K4me3
+anti-H3K4me3 (Abcam, ab8580, lot GR65368-1)|embryos, cycle 12, H3K4me3 ChIP	His@ H3K4me3
+anti-H3K4me3 (Abcam, ab8580, lot GR65368-1)|embryos, cycle 8, H3K4me3 ChIP	His@ H3K4me3
+anti-H3K4me1 (Abcam, ab8895, lot GR46388)|embryos, cycle 14c, H3K4me1 ChIP	His@ H3K4me1
+anti-H3K4me1 (Abcam, ab8895, lot GR46388)|embryos, cycle 14a, H3K4me1 ChIP	His@ H3K4me1
+anti-H3K4me1 (Abcam, ab8895, lot GR46388)|embryos, cycle 12, H3K4me1 ChIP	His@ H3K4me1
+anti-H3K4me1 (Abcam, ab8895, lot GR46388)|embryos, cycle 8, H3K4me1 ChIP	His@ H3K4me1
+anti-H3K27ac (Abcam, ab4729, lot GR45787-1)|embryos, cycle 14c, H3K27ac ChIP	His@ H3K27ac
+anti-H3K27ac (Abcam, ab4729, lot GR45787-1)|embryos, cycle 14a, H3K27ac ChIP	His@ H3K27ac
+anti-H3K27ac (Abcam, ab4729, lot GR45787-1)|embryos, cycle 12, H3K27ac ChIP	His@ H3K27ac
+anti-H3K27ac (Abcam, ab4729, lot GR45787-1)|embryos, cycle 8, H3K27ac ChIP	His@ H3K27ac
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, cycle 14c, H3K18ac ChIP	His@ H3K18ac
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, cycle 14a, H3K18ac ChIP	His@ H3K18ac
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, cycle 12, H3K18ac ChIP	His@ H3K18ac
+anti-H3K18ac (Abcam, ab1191, lot GR46473-1)|embryos, cycle 8, H3K18ac ChIP	His@ H3K18ac
+anti-H4K8ac (Abcam, ab15823, lot GR25500-1)|embryos, cycle 14c, H4K8ac ChIP	His@ H4K8ac
+anti-H4K8ac (Abcam, ab15823, lot GR25500-1)|embryos, cycle 14a, H4K8ac ChIP	His@ H4K8ac
+anti-H4K8ac (Abcam, ab15823, lot GR25500-1)|embryos, cycle 12, H4K8ac ChIP	His@ H4K8ac
+anti-H4K8ac (Abcam, ab15823, lot GR25500-1)|embryos, cycle 8, H4K8ac ChIP	His@ H4K8ac
+anti-H4K5ac (Millipore, 07-327, lot 1911263)|embryos, cycle 14c, H4K5ac ChIP	His@ H4K5ac
+anti-H4K5ac (Millipore, 07-327, lot 1911263)|embryos, cycle 14a, H4K5ac ChIP	His@ H4K5ac
+anti-H4K5ac (Millipore, 07-327, lot 1911263)|embryos, cycle 12, H4K5ac ChIP	His@ H4K5ac
+anti-H4K5ac (Millipore, 07-327, lot 1911263)|embryos, cycle 8, H4K5ac ChIP	His@ H4K5ac
+wild-type cells - anti-RNAPII	Pol@ RNA polymerase II
+wild-type cells - anti-H3K36me3	His@ H3K36me3
+wild-type cells - anti-H3K36me2	His@ H3K36me2
+Input|Kc167 cells	InP@ Input control
+CP190|Kc167 cells	Oth@ Cp190
+Condensin II (CAPH2)|Kc167 cells	Oth@ Cap-H2
+Cohesin (Rad21)|Kc167 cells	Oth@ vtd
+dTFIIIC220|Kc167 cells	Oth@ CG7099
+Chromatin bound to Protein-A-sepharose without antibody|mutant_mutant_PAS preincubation	InP@ Input control
+Input chromatin|mutant_mutant_Input DNA	InP@ Input control
+Chromatin bound to Protein-A-sepharose without antibody|WT_WT_PAS preincubation	InP@ Input control
+Input chromatin|WT_WT_Input DNA	InP@ Input control
+Su(H) Kc late embryo ChIP Rep.3	Oth@ Su(H)
+Su(H) Kc late embryo ChIP Rep.2	Oth@ Su(H)
+Su(H) Kc late embryo ChIP Rep.1	Oth@ Su(H)
+Su(H) Kc late embryo Input	InP@ Input control
+dMyc S2 late embryo ChIP Rep.2	Oth@ dm
+dMyc S2 late embryo ChIP Rep.1	Oth@ dm
+dMyc S2 late embryo Input	InP@ Input control
+dMyc Kc167 late embryo ChIP Rep.2	Oth@ dm
+dMyc Kc167 late embryo ChIP Rep.1	Oth@ dm
+dMyc Kc167 late embryo Input	InP@ Input control
+Hr78-GFP L3 ChIP Rep.2	Oth@ Hr78
+Hr78-GFP L3 ChIP Rep.1	Oth@ Hr78
+Hr78-GFP L3 Input	InP@ Input control
+H Kc late embryo ChIP Rep.3	Oth@ h
+H Kc late embryo ChIP Rep.2	Oth@ h
+H Kc late embryo ChIP Rep.1	Oth@ h
+H Kc late embryo Input	InP@ Input control
+HP1 8-16h embryo ChIP Rep.1	Oth@ Su(var)205
+HP1 8-16h embryo Input	InP@ Input control
+Dfd-GFP_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ Dfd
+Dfd-GFP_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ Dfd
+Dfd-GFP_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+Dfd-GFP_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+TCF_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ pan
+TCF_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ pan
+TCF_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+TCF_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+yki_8-16h_embryonic_ChIP-seq_Input_Rep3	InP@ Input control
+yki_8-16h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+yki_8-16h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+Trl_8-16h_embryonic_ChIP-seq_ChIP_Rep3	Oth@ Trl
+Trl_8-16h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Trl
+Trl_8-16h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Trl
+Trl_8-16h_embryonic_ChIP-seq_Input_Rep3	InP@ Input control
+Trl_8-16h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+Trl_8-16h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+Notch-GFP_W3L_ChIP-seq_ChIP_Rep2	Oth@ N
+Notch-GFP_W3L_ChIP-seq_ChIP_Rep1	Oth@ N
+Notch-GFP_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+Notch-GFP_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+lola-PI-GFP_W3L_ChIP-seq_ChIP_Rep2	Oth@ lola-PI
+lola-PI-GFP_W3L_ChIP-seq_ChIP_Rep1	Oth@ lola-PI
+lola-PI-GFP_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+lola-PI-GFP_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+insv_Kc_cells_ChIP-seq_ChIP_Rep3	Oth@ insv
+insv_Kc_cells_ChIP-seq_ChIP_Rep1	Oth@ insv
+insv_Kc_cells_ChIP-seq_Input_Rep3	InP@ Input control
+insv_Kc_cells_ChIP-seq_Input_Rep2	InP@ Input control
+insv_Kc_cells_ChIP-seq_Input_Rep1	InP@ Input control
+Hr78-GFP_8-16_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Hr78
+Hr78-GFP_8-16_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Hr78
+Hr78-GFP_8-16_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+Hr78-GFP_8-16_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+H3K4me3_S2_cells_ChIP-seq_ChIP_Rep2	His@ H3K4me3
+H3K4me3_S2_cells_ChIP-seq_ChIP_Rep1	His@ H3K4me3
+H3K4me3_S2_cells_ChIP-seq_Input_Rep2	InP@ Input control
+H3K4me3_S2_cells_ChIP-seq_Input_Rep1	InP@ Input control
+H3K4me3_8-16h_embryonic_ChIP-seq_ChIP_Rep2	His@ H3K4me3
+H3K4me3_8-16h_embryonic_ChIP-seq_ChIP_Rep1	His@ H3K4me3
+H3K4me3_8-16h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+H3K4me3_8-16h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+H3K4me1_W3L_ChIP-seq_ChIP_Rep2	His@ H3K4me1
+H3K4me1_W3L_ChIP-seq_ChIP_Rep1	His@ H3K4me1
+H3K4me1_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+H3K4me1_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+H3K4me1_S2_cells_ChIP-seq_ChIP_Rep2	His@ H3K4me1
+H3K4me1_S2_cells_ChIP-seq_ChIP_Rep1	His@ H3K4me1
+H3K4me1_S2_cells_ChIP-seq_Input_Rep2	InP@ Input control
+H3K4me1_S2_cells_ChIP-seq_Input_Rep1	InP@ Input control
+cmi_0-8h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Lpt
+cmi_0-8h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Lpt
+cmi_0-8h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+cmi_0-8h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+CG8478_S2_cells_ChIP-seq_ChIP_Rep2	Oth@ CG8478
+CG8478_S2_cells_ChIP-seq_ChIP_Rep1	Oth@ CG8478
+CG8478_S2_cells_ChIP-seq_Input_Rep2	InP@ Input control
+CG8478_S2_cells_ChIP-seq_Input_Rep1	InP@ Input control
+Abd-B-GFP_W3L_ChIP-seq_ChIP_Rep2	Oth@ Abd-B
+Abd-B-GFP_W3L_ChIP-seq_ChIP_Rep1	Oth@ Abd-B
+Abd-B-GFP_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+Abd-B-GFP_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+Abd-B-GFP_vMock_W3L_ChIP-seq_ChIP_Rep2	Oth@ Abd-B
+Abd-B-GFP_vMock_W3L_ChIP-seq_ChIP_Rep1	Oth@ Abd-B
+Abd-B-GFP_vMock_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+Abd-B-GFP_vMock_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+H3K4me3_WPP-seq_ChIP_Rep2	His@ H3K4me3
+H3K4me3_WPP-seq_ChIP_Rep1	His@ H3K4me3
+H3K4me3_WPP-seq_Input_Rep2	InP@ Input control
+H3K4me3_WPP-seq_Input_Rep1	InP@ Input control
+USP-GFP_0-12-seq_ChIP_Rep2	Oth@ usp
+USP-GFP_0-12-seq_ChIP_Rep1	Oth@ usp
+USP-GFP_0-12-seq_Input_Rep2	InP@ Input control
+USP-GFP_0-12-seq_Input_Rep1	InP@ Input control
+USP-GFP_WPP+12-seq_ChIP_Rep3	Oth@ usp
+USP-GFP_WPP+12-seq_ChIP_Rep2	Oth@ usp
+USP-GFP_WPP+12-seq_ChIP_Rep1	Oth@ usp
+USP-GFP_WPP+12-seq_Input_Rep3	InP@ Input control
+USP-GFP_WPP+12-seq_Input_Rep2	InP@ Input control
+USP-GFP_WPP+12-seq_Input_Rep1	InP@ Input control
+Usp_W3L_ChIP_Rep2	Oth@ usp
+Usp_W3L_ChIP_Rep1	Oth@ usp
+Usp_W3L_Input_Rep2	InP@ Input control
+Usp_W3L_Input_Rep1	InP@ Input control
+TCF_16-24-seq_ChIP_Rep2	Oth@ pan
+TCF_16-24-seq_ChIP_Rep1	Oth@ pan
+TCF_16-24-seq_Input_Rep2	InP@ Input control
+TCF_16-24-seq_Input_Rep1	InP@ Input control
+Su(Hw)_WPP-seq_ChIP_Rep2	Oth@ su(Hw)
+Su(Hw)_WPP-seq_ChIP_Rep1	Oth@ su(Hw)
+Su(Hw)_WPP-seq_Input_Rep2	InP@ Input control
+Su(Hw)_WPP-seq_Input_Rep1	InP@ Input control
+Su(Hw)_16-24-seq_ChIP_Rep2	Oth@ su(Hw)
+Su(Hw)_16-24-seq_ChIP_Rep1	Oth@ su(Hw)
+Su(Hw)_16-24-seq_Input_Rep2	InP@ Input control
+Su(Hw)_16-24-seq_Input_Rep1	InP@ Input control
+Stat92E_WPP-seq_ChIP_Rep2	Oth@ Stat92E
+Stat92E_WPP-seq_ChIP_Rep1	Oth@ Stat92E
+Stat92E_WPP-seq_Input_Rep2	InP@ Input control
+Stat92E_WPP-seq_Input_Rep1	InP@ Input control
+Sin3A_Kc-seq_ChIP_Rep2	Oth@ Sin3A
+Sin3A_Kc-seq_ChIP_Rep1	Oth@ Sin3A
+Sin3A_Kc-seq_Input_Rep2	InP@ Input control
+Sin3A_Kc-seq_Input_Rep1	InP@ Input control
+sc_0-12-seq_ChIP_Rep2	Oth@ sc
+sc_0-12-seq_ChIP_Rep1	Oth@ sc
+sc_0-12-seq_Input_Rep2	InP@ Input control
+sc_0-12-seq_Input_Rep1	InP@ Input control
+psq_WPP-seq_ChIP_Rep2	Oth@ psq
+psq_WPP-seq_ChIP_Rep1	Oth@ psq
+psq_WPP-seq_Input_Rep2	InP@ Input control
+psq_WPP-seq_Input_Rep1	InP@ Input control
+Prd-RF13_0-12-seq_ChIP_Rep2	Oth@ prd
+Prd-RF13_0-12-seq_ChIP_Rep1	Oth@ prd
+Prd-RF13_0-12-seq_Input_Rep2	InP@ Input control
+Prd-RF13_0-12-seq_Input_Rep1	InP@ Input control
+Prd-RF12_0-12-seq_ChIP_Rep2	Oth@ prd
+Prd-RF12_0-12-seq_ChIP_Rep1	Oth@ prd
+Prd-RF12_0-12-seq_Input_Rep2	InP@ Input control
+Prd-RF12_0-12-seq_Input_Rep1	InP@ Input control
+mod(mdg4)_W3L-seq_ChIP_Rep2	Oth@ mod(mdg4)
+mod(mdg4)_W3L-seq_ChIP_Rep1	Oth@ mod(mdg4)
+mod(mdg4)_W3L-seq_Input_Rep2	InP@ Input control
+mod(mdg4)_W3L-seq_Input_Rep1	InP@ Input control
+Fru_0-8-seq_ChIP_Rep2	Oth@ fru
+Fru_0-8-seq_ChIP_Rep1	Oth@ fru
+Fru_0-8-seq_Input_Rep2	InP@ Input control
+Fru_0-8-seq_Input_Rep1	InP@ Input control
+CNC_AdultFemale-seq_ChIP_Rep2	Oth@ cnc
+CNC_AdultFemale-seq_ChIP_Rep1	Oth@ cnc
+CNC_AdultFemale-seq_Input_Rep2	InP@ Input control
+CNC_AdultFemale-seq_Input_Rep1	InP@ Input control
+CNC_16-24-seq_ChIP_Rep2	Oth@ cnc
+CNC_16-24-seq_ChIP_Rep1	Oth@ cnc
+CNC_16-24-seq_Input_Rep2	InP@ Input control
+CNC_16-24-seq_Input_Rep1	InP@ Input control
+CG8478_WPP_ChIP-seq_ChIP_Rep2	Oth@ CG8478
+CG8478_WPP_ChIP-seq_ChIP_Rep1	Oth@ CG8478
+CG8478_WPP_ChIP-seq_Input_Rep2	InP@ Input control
+CG8478_WPP_ChIP-seq_Input_Rep1	InP@ Input control
+CG16778_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ lov
+CG16778_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ lov
+CG16778_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+CG16778_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+broad_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ br
+broad_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ br
+broad_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+broad_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+scute_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ sc
+scute_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ sc
+scute_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+scute_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+homothorax_0-8h_embryo_ChIP-seq_ChIP_Rep2	Oth@ hth
+homothorax_0-8h_embryo_ChIP-seq_ChIP_Rep1	Oth@ hth
+homothorax_0-8h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+homothorax_0-8h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+Su(H)_8-16h_embryo_ChIP-seq_ChIP_Rep2	Oth@ Su(H)
+Su(H)_8-16h_embryo_ChIP-seq_ChIP_Rep1	Oth@ Su(H)
+Su(H)_8-16h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+Su(H)_8-16h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+gamma-H2Av (Rockland)|third instar salivary gland from SuUR	His@ H2A.V
+NA|third instar salivary gland from SuUR	InP@ Input control
+IgG (Abcam)|third instar salivary gland from OrR	InP@ Input control
+gamma-H2Av (Rockland)|third instar salivary gland from OrR	His@ H2A.V
+NA|third instar salivary gland from OrR	InP@ Input control
+Anti-RNA polymerase II CTD repeat YSPTSPS 8WG16 antibody|RNA Polymerase II ChIP from rhino germline knock-down ovaries	Pol@ RNA polymerase II
+Anti-RNA polymerase II CTD repeat YSPTSPS 8WG16 antibody|RNA Polymerase II ChIP from control germline knock-down ovaries	Pol@ RNA polymerase II
+custom-made rabbit polyclonal antibody|Cutoff ChIP from cutoff germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Cutoff ChIP from control germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Deadlock ChIP from deadlock germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Deadlock ChIP from control germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Rhino ChIP from cutoff germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Rhino ChIP from deadlock germline knock-down ovaries	Unc@ Unclassified
+custom-made rabbit polyclonal antibody|Rhino ChIP from rhino germline knock-down ovaries	Unc@ Unclassified
+anti-Max rabbit polyclonal, Santa Cruz Technology, catalog # sc-28209, lot # D-2504|Max ChIP-seq (Drosophila S2 cells) Rep 1	Oth@ Max
+anti-Dorsal rabbit polyclonal, custom (GenScript)|Dorsal ChIP-seq (Drosophila embryos) Rep 1	Oth@ dl
+H3K9ac|H3K9ac 14-16 hr OR Emb ChIP expt.2488	His@ H3K9Ac
+H3K9ac|H3K9ac 14-16 hr OR Emb ChIP expt.1911	His@ H3K9Ac
+none|H3K9ac 14-16 hr OR Emb Input expt.1733	InP@ Input control
+none|H3K9ac 14-16 hr OR Emb Input expt.1912	InP@ Input control
+H3K4me2-Abcam|H3K4me2-Abcam 14-16 hr OR Emb ChIP expt.1959	His@ H3K4me2
+H3K4me2-Abcam|H3K4me2-Abcam 14-16 hr OR Emb ChIP expt.1976	His@ H3K4me2
+none|H3K4me2-Abcam 14-16 hr OR Emb Input expt.1962	InP@ Input control
+none|H3K4me2-Abcam 14-16 hr OR Emb Input expt.1815	InP@ Input control
+none|Input	InP@ Input control
+Polycomb|PC 2	Oth@ Pc
+Polycomb|PC 1	Oth@ Pc
+Velo|Velo 2	Oth@ velo
+Velo|Velo 1	Oth@ velo
+SUMO|SUMO 2	Oth@ smt3
+SUMO|SUMO 1	Oth@ smt3
+input_Ph_mixed	InP@ Input control
+H3K9me2	His@ H3K9me2
+H3K27me3	His@ H3K27me3
+H3K36me3	His@ H3K36me3
+H3K4me3	His@ H3K4me3
+H3K36me2 W BG3 ChIP expt.2393	His@ H3K36me2
+H3K36me2 W BG3 ChIP expt.2392	His@ H3K36me2
+H3K36me2 W BG3 Input expt.2436	InP@ Input control
+H3K36me2 W BG3 Input expt.2435	InP@ Input control
+H2AV 9751 S2 GFP RNAi ChIP expt.2579	His@ H2A.V
+H2AV 9751 S2 GFP RNAi ChIP expt.2577	His@ H2A.V
+H2AV 9751 S2 GFP RNAi Input expt.2575	InP@ Input control
+H2AV 9751 S2 GFP RNAi Input expt.2574	InP@ Input control
+H2AV 9751 S2 H2AV RNAi ChIP expt.2578	His@ H2A.V
+H2AV 9751 S2 H2AV RNAi ChIP expt.2576	His@ H2A.V
+H2AV 9751 S2 H2AV RNAi Input expt.2573	InP@ Input control
+H2AV 9751 S2 H2AV RNAi Input expt.2572	InP@ Input control
+Smc3 Q2580 3rd Instar D.mel ChIP expt.2498	Oth@ SMC3
+Smc3 Q2580 3rd Instar D.mel ChIP expt.2497	Oth@ SMC3
+Smc3 Q2580 3rd Instar D.mel Input expt.2494	InP@ Input control
+Smc3 Q2580 3rd Instar D.mel Input expt.2493	InP@ Input control
+POF (MO 459) 3rd Instar D.mel ChIP expt.2238	Oth@ Pof
+POF (MO 459) 3rd Instar D.mel ChIP expt.2237	Oth@ Pof
+POF (MO 459) 3rd Instar D.mel Input expt.2223	InP@ Input control
+POF (MO 459) 3rd Instar D.mel Input expt.2221	InP@ Input control
+JMJD2A-KDM4A Q2541 3rd Instar D.mel ChIP expt.2385	Oth@ Kdm4A
+JMJD2A-KDM4A Q2541 3rd Instar D.mel ChIP expt.2384	Oth@ Kdm4A
+JMJD2A-KDM4A Q2541 3rd Instar D.mel Input expt.2317	InP@ Input control
+JMJD2A-KDM4A Q2541 3rd Instar D.mel Input expt.2316	InP@ Input control
+BEAF-HB.14-16 hr OR emb ChIP expt.1972	Oth@ BEAF-32
+BEAF-HB.14-16 hr OR emb ChIP expt.1964	Oth@ BEAF-32
+BEAF-HB.14-16 hr OR emb Input expt.1962	InP@ Input control
+BEAF-HB.14-16 hr OR emb Input expt.1823	InP@ Input control
+TCF_WPP_ChIP-seq_ChIP_Rep3	Oth@ pan
+TCF_WPP_ChIP-seq_ChIP_Rep2	Oth@ pan
+TCF_WPP_ChIP-seq_ChIP_Rep1	Oth@ pan
+TCF_WPP_ChIP-seq_Input_Rep3	InP@ Input control
+TCF_WPP_ChIP-seq_Input_Rep2	InP@ Input control
+TCF_WPP_ChIP-seq_Input_Rep1	InP@ Input control
+TCF_W3L_ChIP-seq_ChIP_Rep3	Oth@ pan
+TCF_W3L_ChIP-seq_ChIP_Rep2	Oth@ pan
+TCF_W3L_ChIP-seq_ChIP_Rep1	Oth@ pan
+TCF_W3L_ChIP-seq_Input_Rep3	InP@ Input control
+TCF_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+TCF_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+TCF_nonISO1_0-8_embryonic_ChIP-seq_ChIP_Rep2	Oth@ pan
+TCF_nonISO1_0-8_embryonic_ChIP-seq_ChIP_Rep1	Oth@ pan
+TCF_nonISO1_0-8_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+TCF_nonISO1_0-8_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+dTBP_0-8h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Tbp
+dTBP_0-8h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Tbp
+dTBP_0-8h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+dTBP_0-8h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+Su(H)_0-8_embryonic_ChIP-seq_ChIP_Rep3	Oth@ Su(H)
+Su(H)_0-8_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Su(H)
+Su(H)_0-8_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Su(H)
+Su(H)_0-8_embryonic_ChIP-seq_Input_Rep3	InP@ Input control
+Su(H)_0-8_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+Su(H)_0-8_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+Stat92E-GFP_12-24h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Stat92E
+Stat92E-GFP_12-24h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Stat92E
+Stat92E-GFP_12-24h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+Stat92E-GFP_12-24h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+dMyc_W3L_ChIP-seq_ChIP_Rep2	Oth@ dm
+dMyc_W3L_ChIP-seq_ChIP_Rep1	Oth@ dm
+dMyc_W3L_ChIP-seq_Input_Rep2	InP@ Input control
+dMyc_W3L_ChIP-seq_Input_Rep1	InP@ Input control
+lola-PJ-GFP_12-24h_embryo_ChIP-seq_ChIP_Rep2	Oth@ lola-PJ
+lola-PJ-GFP_12-24h_embryo_ChIP-seq_ChIP_Rep1	Oth@ lola-PJ
+lola-PJ-GFP_12-24h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+lola-PJ-GFP_12-24h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+lola-PJ-GFP_0-12h_embryo_ChIP-seq_ChIP_Rep2	Oth@ lola-PJ
+lola-PJ-GFP_0-12h_embryo_ChIP-seq_ChIP_Rep1	Oth@ lola-PJ
+lola-PJ-GFP_0-12h_embryo_ChIP-seq_Input_Rep2	InP@ Input control
+lola-PJ-GFP_0-12h_embryo_ChIP-seq_Input_Rep1	InP@ Input control
+H_0-8h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ h
+H_0-8h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ h
+H_0-8h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+H_0-8h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+gro_WPP_ChIP-seq_ChIP_Rep2	Oth@ gro
+gro_WPP_ChIP-seq_ChIP_Rep1	Oth@ gro
+gro_WPP_ChIP-seq_Input_Rep2	InP@ Input control
+gro_WPP_ChIP-seq_Input_Rep1	InP@ Input control
+Eip74EF-GFP_8-16h_embryonic_ChIP-seq_ChIP_Rep2	Oth@ Eip74EF
+Eip74EF-GFP_8-16h_embryonic_ChIP-seq_ChIP_Rep1	Oth@ Eip74EF
+Eip74EF-GFP_8-16h_embryonic_ChIP-seq_Input_Rep2	InP@ Input control
+Eip74EF-GFP_8-16h_embryonic_ChIP-seq_Input_Rep1	InP@ Input control
+Dll_WPP_ChIP-seq_ChIP_Rep2	Oth@ Dll
+Dll_WPP_ChIP-seq_ChIP_Rep1	Oth@ Dll
+Dll_WPP_ChIP-seq_Input_Rep2	InP@ Input control
+Dll_WPP_ChIP-seq_Input_Rep1	InP@ Input control
+Anti-Pol II|eye disks from 3rd instar larvae	Pol@ RNA polymerase II
+Anti-Sd|eye disks from 3rd instar larvae	Oth@ sd
+Anti-Yki|eye disks from 3rd instar larvae	Oth@ yki
+Active Motif Histone H3S10ph antibody (pAb) #39253|Salivary Glands	His@ H3S10ph
+Cell signalling Phospho-Histone H3 (Ser10) (D2C8) XP Rabbit mAb|Salivary Glands	His@ H3S10ph
+anti-ZIPIC|S2 cells	Oth@ CG7928
+anti-Pita|S2 cells	Oth@ pita
+none|input DNA|fruitfly testis nos&gt;shRNA E(z)	InP@ Input control
+anti-IgG control antibody|S2 cells	InP@ Input control
+anti-Beaf32|S2 cells	Oth@ BEAF-32
+none|eye-antennal imaginal disc	InP@ Input control
+anti-Trf2 275 Antibody (custom polyclonal antibody generated in rabbits)|Staged embryos	Oth@ Trf2
+anti-Trf2 274 Antibody (custom polyclonal antibody generated in rabbits)|Staged embryos	Oth@ Trf2
+anti-TBP 518 Antibody (custom polyclonal antibody generated in rabbits)|Staged embryos	Oth@ Tbp
+anti-TBP 517 Antibody (custom polyclonal antibody generated in rabbits)|Staged embryos	Oth@ Tbp
+Su(Hw) rabbit|Kc167_Su(Hw)_ChIP-seq	Oth@ su(Hw)
+Shep rabbit|Kc167_Shep_ChIP-seq	Oth@ shep
+Shep guinea pig|Kc167_Shep_ChIP-seq	Oth@ shep
+Rump 5g4|Kc167_Rump_ChIP-seq	Oth@ rump
+Rump 10c3|Kc167_Rump_ChIP-seq	Oth@ rump
+Mod(mdg4)2.2 rabbit|Kc167_Mod(mdg4)2.2_ChIP-seq	Oth@ mod(mdg4)
+Mod(mdg4)2.2 guinea pig|Kc167_Mod(mdg4)2.2_ChIP-seq	Oth@ mod(mdg4)
+CP190 rabbit|Kc167_CP190_ChIP-seq	Oth@ Cp190
+KR, counter-purified agians D. virilis protein (Li et al., 2008)|Blastoderm embryos	Oth@ Kr
+HB, counter-purified agians D. virilis protein (Li et al., 2008)|Blastoderm embryos	Oth@ hb
+Bicoid, counter-purified agians D. virilis protein (Li et al. 2008)|Blastoderm embryos	Oth@ bcd
+NA|NA|NA|E0-12	InP@ Input control
+NA|NA|NA|AdultFemale	InP@ Input control
+NA|NA|NA|E0-8	InP@ Input control
+NA|NA|NA|Kc167	InP@ Input control
+NA|NA|NA|S2	InP@ Input control
+NA|NA|NA|AbdB-GFP	InP@ Input control
+NA|NA|NA|Exd-GFP	InP@ Input control
+NA|NA|NA|LolaI-GFP	InP@ Input control
+NA|NA|NA|Notch-GFP	InP@ Input control
+NA|NA|NA|Stat92E-GFP	InP@ Input control
+RPLII_ab5408.Clone_8 ChIP expt.2460	Pol@ RNA polymerase II
+RPLII_ab5408.Clone_8 ChIP expt.2459	Pol@ RNA polymerase II
+RPLII_ab5408.Clone_8 Input expt.2434	InP@ Input control
+RPLII_ab5408.Clone_8 Input expt.2433	InP@ Input control
+RLPII_phospho5_ab5131.Clone_8 ChIP expt.2468	Pol@ RNA polymerase II
+RLPII_phospho5_ab5131.Clone_8 ChIP expt.2467	Pol@ RNA polymerase II
+RLPII_phospho5_ab5131.Clone_8 Input expt.2434	InP@ Input control
+RLPII_phospho5_ab5131.Clone_8 Input expt.2433	InP@ Input control
+RLPII_phospho5_ab5131.Kc ChIP expt.2466	Pol@ RNA polymerase II
+RLPII_phospho5_ab5131.Kc ChIP expt.2465	Pol@ RNA polymerase II
+RLPII_phospho5_ab5131.Kc Input expt.2432	InP@ Input control
+RLPII_phospho5_ab5131.Kc Input expt.2431	InP@ Input control
+RLPII_phospho2_ab5095.Kc ChIP expt.2462	Pol@ RNA polymerase II
+RLPII_phospho2_ab5095.Kc ChIP expt.2461	Pol@ RNA polymerase II
+RLPII_phospho2_ab5095.Kc Input expt.2432	InP@ Input control
+RLPII_phospho2_ab5095.Kc Input expt.2431	InP@ Input control
+H4K8ac.L3 ChIP expt.2517	His@ H4K8ac
+H4K8ac.L3 ChIP expt.2516	His@ H4K8ac
+H4K8ac.L3 Input expt.2404	InP@ Input control
+H4K8ac.L3 Input expt.2402	InP@ Input control
+H4K16ac(M).L3 ChIP expt.2515	His@ H4K16ac
+H4K16ac(M).L3 ChIP expt.2514	His@ H4K16ac
+H4K16ac(M).L3 Input expt.2404	InP@ Input control
+H4K16ac(M).L3 Input expt.2402	InP@ Input control
+Su(var)3-9-Q2598.L3 ChIP expt.2234	Oth@ Su(var)3-9
+Su(var)3-9-Q2598.L3 ChIP expt.2233	Oth@ Su(var)3-9
+Su(var)3-9-Q2598.L3 Input expt.2420	InP@ Input control
+Su(var)3-9-Q2598.L3 Input expt.2226	InP@ Input control
+HP1c_(MO_462).L3 ChIP expt.2244	Oth@ HP1c
+HP1c_(MO_462).L3 ChIP expt.2243	Oth@ HP1c
+HP1c_(MO_462).L3 Input expt.2224	InP@ Input control
+HP1c_(MO_462).L3 Input expt.2222	InP@ Input control
+H3K79me3_(Abcam_ab2621_lot_1).L3 ChIP expt.2351	His@ H3K79me3
+H3K79me3_(Abcam_ab2621_lot_1).L3 ChIP expt.2350	His@ H3K79me3
+H3K79me3_(Abcam_ab2621_lot_1).L3 Input expt.2331	InP@ Input control
+H3K79me3_(Abcam_ab2621_lot_1).L3 Input expt.2330	InP@ Input control
+H3K79me2_(Abcam_ab3594_lot_1).L3 ChIP expt.2349	His@ H3K79me2
+H3K79me2_(Abcam_ab3594_lot_1).L3 ChIP expt.2348	His@ H3K79me2
+H3K79me2_(Abcam_ab3594_lot_1).L3 Input expt.2331	InP@ Input control
+H3K79me2_(Abcam_ab3594_lot_1).L3 Input expt.2330	InP@ Input control
+H3K79me1_(Abcam_lot_1).L3 ChIP expt.2347	His@ H3K79me1
+H3K79me1_(Abcam_lot_1).L3 ChIP expt.2346	His@ H3K79me1
+H3K79me1_(Abcam_lot_1).L3 Input expt.2331	InP@ Input control
+H3K79me1_(Abcam_lot_1).L3 Input expt.2330	InP@ Input control
+H3K4me3_(ab8580_lot_2).L3 ChIP expt.2337	His@ H3K4me3
+H3K4me3_(ab8580_lot_2).L3 ChIP expt.2336	His@ H3K4me3
+H3K4me3_(ab8580_lot_2).L3 Input expt.2331	InP@ Input control
+H3K4me3_(ab8580_lot_2).L3 Input expt.2330	InP@ Input control
+H3K27me3_(Abcam_lot3).L3 ChIP expt.2343	His@ H3K27me3
+H3K27me3_(Abcam_lot3).L3 ChIP expt.2342	His@ H3K27me3
+H3K27me3_(Abcam_lot3).L3 Input expt.2331	InP@ Input control
+H3K27me3_(Abcam_lot3).L3 Input expt.2330	InP@ Input control
+H3K27me1_(Millipore).L3 ChIP expt.2339	His@ H3K27me1
+H3K27me1_(Millipore).L3 ChIP expt.2338	His@ H3K27me1
+H3K27me1_(Millipore).L3 Input expt.2331	InP@ Input control
+H3K27me1_(Millipore).L3 Input expt.2330	InP@ Input control
+H3K27ac_(Active_Motif).L3 ChIP expt.2345	His@ H3K27ac
+H3K27ac_(Active_Motif).L3 ChIP expt.2344	His@ H3K27ac
+H3K27ac_(Active_Motif).L3 Input expt.2331	InP@ Input control
+H3K27ac_(Active_Motif).L3 Input expt.2330	InP@ Input control
+H2B-ubiq_(NRO3).L3 ChIP expt.2519	His@ H2Bub
+H2B-ubiq_(NRO3).L3 ChIP expt.2518	His@ H2Bub
+H2B-ubiq_(NRO3).L3 Input expt.2404	InP@ Input control
+H2B-ubiq_(NRO3).L3 Input expt.2402	InP@ Input control
+none|S2 cells without transfection	InP@ Input control
+anti-V5 (Invitrogen)|S2 cells transfected with pMT5.1- DSXM-V5-His B	Oth@ Epitope tags
+anti-V5 (Invitrogen)|S2 cells transfected with pMT5.1- DSXF -V5-His B	Oth@ Epitope tags
+input|12-14 hour old embryos svb::GFP	InP@ Input control
+anti-Rpb3 (gift of Karen Adelman, Adelman et al. Mol Cell 2005)|Rpb3-bound DNA|Ovarian Somatic Cells (OSC), ChIPseq_Rpb3r_siDmGtsf1	Pol@ RpII33
+total DNA|Ovarian Somatic Cells (OSC), ChIPseq_inputr_siDmGtsf1	InP@ Input control
+anti-H3K9me3 (abcam, catalog #ab8898, lot/batch #943260)|H3K9m3-bound DNA|Ovarian Somatic Cells (OSC), ChIPseq_H3K9m3r_siDmGtsf1	His@ H3K9me3
+RLPII_phospho2_ab5095.Clone_8 ChIP expt.2464	Pol@ RNA polymerase II
+RLPII_phospho2_ab5095.Clone_8 ChIP expt.2463	Pol@ RNA polymerase II
+RLPII_phospho2_ab5095.Clone_8 Input expt.2434	InP@ Input control
+RLPII_phospho2_ab5095.Clone_8 Input expt.2433	InP@ Input control
+RPLII_ab5408.Kc ChIP expt.2458	Pol@ RNA polymerase II
+RPLII_ab5408.Kc ChIP expt.2457	Pol@ RNA polymerase II
+RPLII_ab5408.Kc Input expt.2432	InP@ Input control
+RPLII_ab5408.Kc Input expt.2431	InP@ Input control
+HP1b_(Henikoff).L3 ChIP expt.2252	Oth@ HP1b
+HP1b_(Henikoff).L3 ChIP expt.2251	Oth@ HP1b
+HP1b_(Henikoff).L3 Input expt.2224	InP@ Input control
+HP1b_(Henikoff).L3 Input expt.2222	InP@ Input control
+H3K9ac.L3 ChIP expt.2411	His@ H3K9ac
+H3K9ac.L3 ChIP expt.2410	His@ H3K9ac
+H3K9ac.L3 Input expt.2226	InP@ Input control
+H3K9ac.L3 Input expt.2225	InP@ Input control
+H1.L3 ChIP expt.2399	Oth@ H1
+H1.L3 ChIP expt.2398	Oth@ H1
+H1.L3 Input expt.2404	InP@ Input control
+H1.L3 Input expt.2402	InP@ Input control
+dSFMBT_Q2642.L3 ChIP expt.2426	Oth@ Sfmbt
+dSFMBT_Q2642.L3 ChIP expt.2425	Oth@ Sfmbt
+dSFMBT_Q2642.L3 Input expt.2331	InP@ Input control
+dSFMBT_Q2642.L3 Input expt.2330	InP@ Input control
+anti-Pol II antibody 8WG16|CG3893-KD_PolII ChIP-seq	Pol@ RNA polymerase II
+anti-Pol II antibody 8WG16|Mael-KD_PolII ChIP-seq	Pol@ RNA polymerase II
+anti-Pol II antibody 8WG16|Piwi-KD_PolII ChIP-seq	Pol@ RNA polymerase II
+anti-Pol II antibody 8WG16|EGFP-KD_PolII ChIP-seq	Pol@ RNA polymerase II
+H3K36me2 W OR Head Nuc ChIP expt.2395	His@ H3K36me2
+H3K36me2 W OR Head Nuc ChIP expt.2394	His@ H3K36me2
+H3K36me2 W OR Head Nuc Input expt.2306	InP@ Input control
+H3K36me2 W OR Head Nuc Input expt.2305	InP@ Input control
+H3K36me2 W 14-16 hr OR Emb ChIP expt.2397	His@ H3K36me2
+H3K36me2 W 14-16 hr OR Emb ChIP expt.2396	His@ H3K36me2
+H3K36me2 W 14-16 hr OR Emb Input expt.2308	InP@ Input control
+H3K36me2 W 14-16 hr OR Emb Input expt.2307	InP@ Input control
+Su var 3-7-Q3448 OR Head Nuclei ChIP expt.2220	Oth@ Su(var)3-7
+Su var 3-7-Q3448 OR Head Nuclei ChIP expt.2219	Oth@ Su(var)3-7
+Su var 3-7-Q3448 OR Head Nuclei Input expt.2188	InP@ Input control
+Su var 3-7-Q3448 OR Head Nuclei Input expt.2187	InP@ Input control
+RPD3 Q3451 OR Head Nuc ChIP expt.2418	Oth@ Rpd3
+RPD3 Q3451 OR Head Nuc ChIP expt.2413	Oth@ Rpd3
+RPD3 Q3451 OR Head Nuc Input expt.2415	InP@ Input control
+RPD3 Q3451 OR Head Nuc Input expt.2183	InP@ Input control
+POF MO 459 OR Head Nuc ChIP expt.2204	Oth@ Pof
+POF MO 459 OR Head Nuc ChIP expt.2203	Oth@ Pof
+POF MO 459 OR Head Nuc Input expt.2188	InP@ Input control
+POF MO 459 OR Head Nuc Input expt.2187	InP@ Input control
+LSD1 Q3430 L3 Nuc ChIP expt.2500	Oth@ Su(var)3-3
+LSD1 Q3430 L3 Nuc ChIP expt.2499	Oth@ Su(var)3-3
+LSD1 Q3430 L3 Nuc Input expt.2494	InP@ Input control
+LSD1 Q3430 L3 Nuc Input expt.2493	InP@ Input control
+JMJD2A-KDM4A Q2541 OR Head Nuc ChIP expt.2315	Oth@ Kdm4A
+JMJD2A-KDM4A Q2541 OR Head Nuc ChIP expt.2314	Oth@ Kdm4A
+JMJD2A-KDM4A Q2541 OR Head Nuc Input expt.2271	InP@ Input control
+JMJD2A-KDM4A Q2541 OR Head Nuc Input expt.2270	InP@ Input control
+HP2 Ab2-90 OR Head Nuc ChIP expt.2194	Oth@ Su(var)2-HP2
+HP2 Ab2-90 OR Head Nuc ChIP expt.2193	Oth@ Su(var)2-HP2
+HP2 Ab2-90 OR Head Nuc Input expt.2188	InP@ Input control
+HP2 Ab2-90 OR Head Nuc Input expt.2187	InP@ Input control
+HP1 wa191 OR Head Nuc ChIP expt.2218	Oth@ Su(var)205
+HP1 wa191 OR Head Nuc ChIP expt.2217	Oth@ Su(var)205
+HP1 wa191 OR Head Nuc Input expt.2212	InP@ Input control
+HP1 wa191 OR Head Nuc Input expt.2211	InP@ Input control
+HP1c MO 462 OR Head Nuclei D.melanogaster ChIP expt.2198	Oth@ HP1c
+HP1c MO 462 OR Head Nuclei D.melanogaster ChIP expt.2197	Oth@ HP1c
+HP1c MO 462 OR Head Nuclei D.melanogaster Input expt.2188	InP@ Input control
+HP1c MO 462 OR Head Nuclei D.melanogaster Input expt.2187	InP@ Input control
+HP1b Q4114 OR Head Nuc ChIP expt.2196	Oth@ HP1b
+HP1b Q4114 OR Head Nuc ChIP expt.2195	Oth@ HP1b
+HP1b Q4114 OR Head Nuc Input expt.2188	InP@ Input control
+HP1b Q4114 OR Head Nuc Input expt.2187	InP@ Input control
+H3K79me3 Abcam ab2621 lot 1 14-16 hr OR Emb ChIP expt.2548	His@ H3K79me3
+H3K79me3 Abcam ab2621 lot 1 14-16 hr OR Emb ChIP expt.2547	His@ H3K79me3
+H3K79me3 Abcam ab2621 lot 1 14-16 hr OR Emb Input expt.2471	InP@ Input control
+H3K79me3 Abcam ab2621 lot 1 14-16 hr OR Emb Input expt.2470	InP@ Input control
+H3K9acS10P new lot OR Head Nuc ChIP expt.2202	His@ H3K9ac
+H3K9acS10P new lot OR Head Nuc ChIP expt.2201	His@ H3K9ac
+H3K9acS10P new lot OR Head Nuc Input expt.2188	InP@ Input control
+H3K9acS10P new lot OR Head Nuc Input expt.2187	InP@ Input control
+HP1c MO 462 14-16 hr OR Emb ChIP expt.2541	Oth@ HP1c
+HP1c MO 462 14-16 hr OR Emb ChIP expt.2032	Oth@ HP1c
+HP1c MO 462 14-16 hr OR Emb Input expt.2471	InP@ Input control
+HP1c MO 462 14-16 hr OR Emb Input expt.2024	InP@ Input control
+H3K79me3 Abcam ab2621 lot 1 OR Head Nuc ChIP expt.2373	His@ H3K79me3
+H3K79me3 Abcam ab2621 lot 1 OR Head Nuc ChIP expt.2372	His@ H3K79me3
+H3K79me3 Abcam ab2621 lot 1 OR Head Nuc Input expt.2353	InP@ Input control
+H3K79me3 Abcam ab2621 lot 1 OR Head Nuc Input expt.2352	InP@ Input control
+H3K79me2 Abcam ab3594 lot 1 OR Head Nuc ChIP expt.2371	His@ H3K79me2
+H3K79me2 Abcam ab3594 lot 1 OR Head Nuc ChIP expt.2370	His@ H3K79me2
+H3K79me2 Abcam ab3594 lot 1 OR Head Nuc Input expt.2353	InP@ Input control
+H3K79me2 Abcam ab3594 lot 1 OR Head Nuc Input expt.2352	InP@ Input control
+H3K79me1 Abcam lot 1 OR Head Nuc ChIP expt.2369	His@ H3K79me1
+H3K79me1 Abcam lot 1 OR Head Nuc ChIP expt.2368	His@ H3K79me1
+H3K79me1 Abcam lot 1 OR Head Nuc Input expt.2353	InP@ Input control
+H3K79me1 Abcam lot 1 OR Head Nuc Input expt.2352	InP@ Input control
+H3K27me3 Abcam lot3 OR Head Nuc ChIP expt.2365	His@ H3K27me3
+H3K27me3 Abcam lot3 OR Head Nuc ChIP expt.2364	His@ H3K27me3
+H3K27me3 Abcam lot3 OR Head Nuc Input expt.2353	InP@ Input control
+H3K27me3 Abcam lot3 OR Head Nuc Input expt.2352	InP@ Input control
+H3K27me2 Ab24684 OR Head Nuc ChIP expt.2363	His@ H3K27me2
+H3K27me2 Ab24684 OR Head Nuc ChIP expt.2362	His@ H3K27me2
+H3K27me2 Ab24684 OR Head Nuc Input expt.2353	InP@ Input control
+H3K27me2 Ab24684 OR Head Nuc Input expt.2352	InP@ Input control
+H4K8ac OR Head Nuc ChIP expt.2300	His@ H4K8ac
+H4K8ac OR Head Nuc ChIP expt.2299	His@ H4K8ac
+H4K8ac OR Head Nuc Input expt.2306	InP@ Input control
+H4K8ac OR Head Nuc Input expt.2305	InP@ Input control
+H3K27ac Active Motif OR Head Nuc ChIP expt.2367	His@ H3K27ac
+H3K27ac Active Motif OR Head Nuc ChIP expt.2366	His@ H3K27ac
+H3K27ac Active Motif OR Head Nuc Input expt.2353	InP@ Input control
+H3K27ac Active Motif OR Head Nuc Input expt.2352	InP@ Input control
+dSFMBT Q2642 OR Head Nuc ChIP expt.2428	Oth@ Sfmbt
+dSFMBT Q2642 OR Head Nuc ChIP expt.2427	Oth@ Sfmbt
+dSFMBT Q2642 OR Head Nuc Input expt.2353	InP@ Input control
+dSFMBT Q2642 OR Head Nuc Input expt.2352	InP@ Input control
+JHDM1 Q2634 OR Head Nuc ChIP expt.2407	Oth@ Kdm2
+JHDM1 Q2634 OR Head Nuc ChIP expt.2406	Oth@ Kdm2
+JHDM1 Q2634 OR Head Nuc Input expt.2271	InP@ Input control
+JHDM1 Q2634 OR Head Nuc Input expt.2270	InP@ Input control
+LSD1 Q3430 OR Head Nuc ChIP expt.2422	Oth@ Su(var)3-3
+LSD1 Q3430 OR Head Nuc ChIP expt.2421	Oth@ Su(var)3-3
+LSD1 Q3430 OR Head Nuc Input expt.2271	InP@ Input control
+LSD1 Q3430 OR Head Nuc Input expt.2270	InP@ Input control
+HP2 Ab2-90 14-16 hr OR Emb ChIP expt.2029	Oth@ Su(var)2-HP2
+HP2 Ab2-90 14-16 hr OR Emb ChIP expt.2028	Oth@ Su(var)2-HP2
+HP2 Ab2-90 14-16 hr OR Emb ChIP expt.1736	Oth@ Su(var)2-HP2
+HP2 Ab2-90 14-16 hr OR Emb Input expt.2025	InP@ Input control
+HP2 Ab2-90 14-16 hr OR Emb Input expt.2024	InP@ Input control
+HP2 Ab2-90 14-16 hr OR Emb Input expt.1733	InP@ Input control
+H3K9me2 OR Head Nuc ChIP expt.2380	His@ H3K9me2
+H3K9me2 OR Head Nuc ChIP expt.2200	His@ H3K9me2
+H3K9me2 OR Head Nuc Input expt.2416	InP@ Input control
+H3K9me2 OR Head Nuc Input expt.2188	InP@ Input control
+H2AV 9751 OR Head Nuc ChIP expt.2273	His@ H2A.V
+H2AV 9751 OR Head Nuc ChIP expt.2272	His@ H2A.V
+H2AV 9751 OR Head Nuc Input expt.2271	InP@ Input control
+H2AV 9751 OR Head Nuc Input expt.2270	InP@ Input control
+H1 14-16 hr OR Emb ChIP expt.2292	Oth@ H1
+H1 14-16 hr OR Emb ChIP expt.2291	Oth@ H1
+H1 14-16 hr OR Emb ChIP expt.1725	Oth@ H1
+H1 14-16 hr OR Emb ChIP expt.1715	Oth@ H1
+H1 14-16 hr OR Emb Input expt.2308	InP@ Input control
+H1 14-16 hr OR Emb Input expt.2307	InP@ Input control
+H1 14-16 hr OR Emb Input expt.1730	InP@ Input control
+H1 14-16 hr OR Emb Input expt.1729	InP@ Input control
+ZW5 14-16 hr OR Emb ChIP expt.1966	Oth@ dwg
+ZW5 14-16 hr OR Emb ChIP expt.1827	Oth@ dwg
+ZW5 14-16 hr OR Emb Input expt.1962	InP@ Input control
+ZW5 14-16 hr OR Emb Input expt.1823	InP@ Input control
+Su var 3-7 Q3448 L3 Nuc ChIP expt.2236	Oth@ Su(var)3-7
+Su var 3-7 Q3448 L3 Nuc ChIP expt.2235	Oth@ Su(var)3-7
+Su var 3-7 Q3448 L3 Nuc Input expt.2223	InP@ Input control
+Su var 3-7 Q3448 L3 Nuc Input expt.2221	InP@ Input control
+RPD3-Q3451 L3 Nuc ChIP expt.2232	Oth@ Rpd3
+RPD3-Q3451 L3 Nuc ChIP expt.2231	Oth@ Rpd3
+RPD3-Q3451 L3 Nuc Input expt.2223	InP@ Input control
+RPD3-Q3451 L3 Nuc Input expt.2221	InP@ Input control
+RPD3-Q3451 14-16 hr OR Emb ChIP expt.2485	Oth@ Rpd3
+RPD3-Q3451 14-16 hr OR Emb ChIP expt.2484	Oth@ Rpd3
+RPD3-Q3451 14-16 hr OR Emb Input expt.1734	InP@ Input control
+RPD3-Q3451 14-16 hr OR Emb Input expt.1733	InP@ Input control
+RNA Pol II abcam OR Head Nuc ChIP expt.2419	Pol@ RNA polymerase II
+RNA Pol II abcam OR Head Nuc ChIP expt.2414	Pol@ RNA polymerase II
+RNA Pol II abcam OR Head Nuc Input expt.2415	InP@ Input control
+RNA Pol II abcam OR Head Nuc Input expt.2183	InP@ Input control
+RNA Pol II abcam L3 Nuc ChIP expt.2412	Pol@ RNA polymerase II
+RNA Pol II abcam L3 Nuc ChIP expt.2256	Pol@ RNA polymerase II
+RNA Pol II abcam L3 Nuc Input expt.2226	InP@ Input control
+RNA Pol II abcam L3 Nuc Input expt.2225	InP@ Input control
+RNA Pol II abcam 14-16 hr OR Emb ChIP expt.2481	Pol@ RNA polymerase II
+RNA Pol II abcam 14-16 hr OR Emb ChIP expt.2480	Pol@ RNA polymerase II
+RNA Pol II abcam 14-16 hr OR Emb Input expt.1656	InP@ Input control
+RNA Pol II abcam 14-16 hr OR Emb Input expt.1655	InP@ Input control
+POF MO 459 14-16 hr OR Emb ChIP expt.1654	Oth@ Pof
+POF MO 459 14-16 hr OR Emb ChIP expt.1653	Oth@ Pof
+POF MO 459 14-16 hr OR Emb Input expt.1656	InP@ Input control
+POF MO 459 14-16 hr OR Emb Input expt.1655	InP@ Input control
+NURF301 Q2602 14-16 hr OR Emb ChIP expt.2456	Oth@ E(bx)
+NURF301 Q2602 14-16 hr OR Emb ChIP expt.2455	Oth@ E(bx)
+NURF301 Q2602 14-16 hr OR Emb Input expt.2308	InP@ Input control
+NURF301 Q2602 14-16 hr OR Emb Input expt.2307	InP@ Input control
+MOF Q4145 14-16 hr OR Emb ChIP expt.1723	Oth@ mof
+MOF Q4145 14-16 hr OR Emb ChIP expt.1713	Oth@ mof
+MOF Q4145 14-16 hr OR Emb Input expt.1730	InP@ Input control
+MOF Q4145 14-16 hr OR Emb Input expt.1729	InP@ Input control
+MBD-R2 Q4167 14-16 hr OR Emb ChIP expt.2444	Oth@ MBD-R2
+MBD-R2 Q4167 14-16 hr OR Emb ChIP expt.2443	Oth@ MBD-R2
+MBD-R2 Q4167 14-16 hr OR Emb Input expt.2308	InP@ Input control
+MBD-R2 Q4167 14-16 hr OR Emb Input expt.2307	InP@ Input control
+LSD1 Q3430 14-16 hr OR Emb ChIP expt.1749	Oth@ Su(var)3-3
+LSD1 Q3430 14-16 hr OR Emb ChIP expt.1748	Oth@ Su(var)3-3
+LSD1 Q3430 14-16 hr OR Emb Input expt.1658	InP@ Input control
+LSD1 Q3430 14-16 hr OR Emb Input expt.1657	InP@ Input control
+JHDM1 Q2634 14-16 hr OR Emb ChIP expt.2098	Oth@ Kdm2
+JHDM1 Q2634 14-16 hr OR Emb ChIP expt.1664	Oth@ Kdm2
+JHDM1 Q2634 14-16 hr OR Emb Input expt.1658	InP@ Input control
+JHDM1 Q2634 14-16 hr OR Emb Input expt.1657	InP@ Input control
+HP2 Ab2-90 L3 Nuc ChIP expt.2248	Oth@ Su(var)2-HP2
+HP2 Ab2-90 L3 Nuc ChIP expt.2247	Oth@ Su(var)2-HP2
+HP2 Ab2-90 L3 Nuc Input expt.2224	InP@ Input control
+HP2 Ab2-90 L3 Nuc Input expt.2222	InP@ Input control
+HP1b Q4114 14-16 hr OR Emb ChIP expt.2031	Oth@ HP1b
+HP1b Q4114 14-16 hr OR Emb ChIP expt.2030	Oth@ HP1b
+HP1b Q4114 14-16 hr OR Emb Input expt.2025	InP@ Input control
+HP1b Q4114 14-16 hr OR Emb Input expt.2024	InP@ Input control
+H4K20me1 4th lot 14-16 hr OR Emb ChIP expt.2496	His@ H4K20me1
+H4K20me1 4th lot 14-16 hr OR Emb ChIP expt.2495	His@ H4K20me1
+H4K20me1 4th lot 14-16 hr OR Emb Input expt.2471	InP@ Input control
+H4K20me1 4th lot 14-16 hr OR Emb Input expt.2470	InP@ Input control
+H4K16ac M OR Head Nuc ChIP expt.2304	His@ H4K16ac
+H4K16ac M OR Head Nuc ChIP expt.2303	His@ H4K16ac
+H4K16ac M OR Head Nuc Input expt.2306	InP@ Input control
+H4K16ac M OR Head Nuc Input expt.2305	InP@ Input control
+H4 14-16 hr OR Emb ChIP expt.2475	His@ H4
+H4 14-16 hr OR Emb ChIP expt.2474	His@ H4
+H4 14-16 hr OR Emb Input expt.2471	InP@ Input control
+H4 14-16 hr OR Emb Input expt.2470	InP@ Input control
+H3K9me1 new lot 2 OR Head Nuc ChIP expt.2379	His@ H3K9me1
+H3K9me1 new lot 2 OR Head Nuc ChIP expt.2378	His@ H3K9me1
+H3K9me1 new lot 2 OR Head Nuc Input expt.2417	InP@ Input control
+H3K9me1 new lot 2 OR Head Nuc Input expt.2416	InP@ Input control
+H3K9me1 new lot 2 L3 Nuc ChIP expt.2383	His@ H3K9me1
+H3K9me1 new lot 2 L3 Nuc ChIP expt.2382	His@ H3K9me1
+H3K9me1 new lot 2 L3 Nuc Input expt.2420	InP@ Input control
+H3K9me1 new lot 2 L3 Nuc Input expt.2227	InP@ Input control
+H3K9acS10P new abcam lot L3 Nuc ChIP expt.2246	His@ H3K9ac
+H3K9acS10P new abcam lot L3 Nuc ChIP expt.2245	His@ H3K9ac
+H3K9acS10P new abcam lot L3 Nuc Input expt.2224	InP@ Input control
+H3K9acS10P new abcam lot L3 Nuc Input expt.2222	InP@ Input control
+H3K9acS10P Ab12181 lot838296 14-16 hr OR Emb ChIP expt.2023	His@ H3K9ac
+H3K9acS10P Ab12181 lot838296 14-16 hr OR Emb ChIP expt.2022	His@ H3K9ac
+H3K9acS10P Ab12181 lot838296 14-16 hr OR Emb Input expt.1656	InP@ Input control
+H3K9acS10P Ab12181 lot838296 14-16 hr OR Emb Input expt.1655	InP@ Input control
+H3K4me3 ab8580 lot 2 OR Head Nuc ChIP expt.2359	His@ H3K4me3
+H3K4me3 ab8580 lot 2 OR Head Nuc ChIP expt.2358	His@ H3K4me3
+H3K4me3 ab8580 lot 2 OR Head Nuc Input expt.2353	InP@ Input control
+H3K4me3 ab8580 lot 2 OR Head Nuc Input expt.2352	InP@ Input control
+H3K4me3 ab8580 lot 2 14-16 hr OR Emb ChIP expt.1977	His@ H3K4me3
+H3K4me3 ab8580 lot 2 14-16 hr OR Emb ChIP expt.1960	His@ H3K4me3
+H3K4me3 ab8580 lot 2 14-16 hr OR Emb Input expt.1962	InP@ Input control
+H3K4me3 ab8580 lot 2 14-16 hr OR Emb Input expt.1815	InP@ Input control
+H3K4me2-Active motif OR Head Nuc ChIP expt.2357	His@ H3K4me2
+H3K4me2-Active motif OR Head Nuc ChIP expt.2356	His@ H3K4me2
+H3K4me2-Active motif OR Head Nuc Input expt.2353	InP@ Input control
+H3K4me2-Active motif OR Head Nuc Input expt.2352	InP@ Input control
+H3K4me1 ab8895 new lot 2 OR Head Nuc ChIP expt.2355	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 OR Head Nuc ChIP expt.2354	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 OR Head Nuc Input expt.2353	InP@ Input control
+H3K4me1 ab8895 new lot 2 OR Head Nuc Input expt.2352	InP@ Input control
+H3K4me1 ab8895 new lot 2 L3 Nuc ChIP expt.2333	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 L3 Nuc ChIP expt.2332	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 L3 Nuc Input expt.2331	InP@ Input control
+H3K4me1 ab8895 new lot 2 L3 Nuc Input expt.2330	InP@ Input control
+H3K4me1 ab8895 new lot 2 14-16 hr OR Emb ChIP expt.1975	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 14-16 hr OR Emb ChIP expt.1958	His@ H3K4me1
+H3K4me1 ab8895 new lot 2 14-16 hr OR Emb Input expt.1962	InP@ Input control
+H3K4me1 ab8895 new lot 2 14-16 hr OR Emb Input expt.1815	InP@ Input control
+H3K36me3 abcam OR Head Nuc ChIP expt.2302	His@ H3K36me3
+H3K36me3 abcam OR Head Nuc ChIP expt.2301	His@ H3K36me3
+H3K36me3 abcam OR Head Nuc Input expt.2306	InP@ Input control
+H3K36me3 abcam OR Head Nuc Input expt.2305	InP@ Input control
+H3K36me1 OR Head Nuc ChIP expt.2290	His@ H3K36me1
+H3K36me1 OR Head Nuc ChIP expt.2289	His@ H3K36me1
+H3K36me1 OR Head Nuc Input expt.2306	InP@ Input control
+H3K36me1 OR Head Nuc Input expt.2305	InP@ Input control
+H3K27me2 Ab24684 L3 Nuc ChIP expt.2341	His@ H3K27me2
+H3K27me2 Ab24684 L3 Nuc ChIP expt.2340	His@ H3K27me2
+H3K27me2 Ab24684 L3 Nuc Input expt.2331	InP@ Input control
+H3K27me2 Ab24684 L3 Nuc Input expt.2330	InP@ Input control
+H3K27me2 Ab24684 14-16 hr OR Emb ChIP expt.1974	His@ H3K27me2
+H3K27me2 Ab24684 14-16 hr OR Emb ChIP expt.1956	His@ H3K27me2
+H3K27me2 Ab24684 14-16 hr OR Emb Input expt.1961	InP@ Input control
+H3K27me2 Ab24684 14-16 hr OR Emb Input expt.1823	InP@ Input control
+H3K9me1 (new lot) 14-16 hr OR Emb ChIP expt.2021	His@ H3K9me1
+H3K9me1 (new lot) 14-16 hr OR Emb ChIP expt.2020	His@ H3K9me1
+H3K9me1 (new lot) 14-16 hr OR Emb Input expt.1656	InP@ Input control
+H3K9me1 (new lot) 14-16 hr OR Emb Input expt.1655	InP@ Input control
+H3K27me1 Millipore OR Head Nuc ChIP expt.2361	His@ H3K27me1
+H3K27me1 Millipore OR Head Nuc ChIP expt.2360	His@ H3K27me1
+H3K27me1 Millipore OR Head Nuc Input expt.2353	InP@ Input control
+H3K27me1 Millipore OR Head Nuc Input expt.2352	InP@ Input control
+H3K23ac 14-16 hr OR Emb ChIP expt.2483	His@ H3K23ac
+H3K23ac 14-16 hr OR Emb ChIP expt.2482	His@ H3K23ac
+H3K23ac 14-16 hr OR Emb Input expt.2025	InP@ Input control
+H3K23ac 14-16 hr OR Emb Input expt.1913	InP@ Input control
+H3K18Ac new lot 14-16 hr OR Emb ChIP expt.2490	His@ H3K18ac
+H3K18Ac new lot 14-16 hr OR Emb ChIP expt.2489	His@ H3K18ac
+H3K18Ac new lot 14-16 hr OR Emb Input expt.2492	InP@ Input control
+H3K18Ac new lot 14-16 hr OR Emb Input expt.2491	InP@ Input control
+H3 antibody3 OR Head Nuc ChIP expt.2190	His@ H3
+H3 antibody3 OR Head Nuc ChIP expt.2189	His@ H3
+H3 antibody3 OR Head Nuc Input expt.2188	InP@ Input control
+H3 antibody3 OR Head Nuc Input expt.2187	InP@ Input control
+H3 antibody3 L3 Nuc ChIP expt.2242	His@ H3
+H3 antibody3 L3 Nuc ChIP expt.2241	His@ H3
+H3 antibody3 L3 Nuc Input expt.2224	InP@ Input control
+H3 antibody3 L3 Nuc Input expt.2222	InP@ Input control
+H3 antibody3 14-16 hr OR Emb ChIP expt.2037	His@ H3
+H3 antibody3 14-16 hr OR Emb ChIP expt.2036	His@ H3
+H3 antibody3 14-16 hr OR Emb Input expt.2025	InP@ Input control
+H3 antibody3 14-16 hr OR Emb Input expt.2024	InP@ Input control
+H2B-ubiq NRO3 OR Head Nuc ChIP expt.2298	His@ H2Bub
+H2B-ubiq NRO3 OR Head Nuc ChIP expt.2297	His@ H2Bub
+H2B-ubiq NRO3 OR Head Nuc Input expt.2306	InP@ Input control
+H2B-ubiq NRO3 OR Head Nuc Input expt.2305	InP@ Input control
+H2B-ubiq NRO3 14-16 hr OR Emb ChIP expt.2505	His@ H2Bub
+H2B-ubiq NRO3 14-16 hr OR Emb ChIP expt.2504	His@ H2Bub
+H2B-ubiq NRO3 14-16 hr OR Emb ChIP expt.1708	His@ H2Bub
+H2B-ubiq NRO3 14-16 hr OR Emb Input expt.2507	InP@ Input control
+H2B-ubiq NRO3 14-16 hr OR Emb Input expt.2506	InP@ Input control
+H2B-ubiq NRO3 14-16 hr OR Emb Input expt.1729	InP@ Input control
+H2AV 9751 14-16 hr OR Emb ChIP expt.2473	His@ H2A.V
+H2AV 9751 14-16 hr OR Emb ChIP expt.2472	His@ H2A.V
+H2AV 9751 14-16 hr OR Emb ChIP expt.1706	His@ H2A.V
+H2AV 9751 14-16 hr OR Emb Input expt.1707	InP@ Input control
+H2AV 9751 14-16 hr OR Emb Input expt.1658	InP@ Input control
+H2AV 9751 14-16 hr OR Emb Input expt.1657	InP@ Input control
+H1 OR Head Nuc ChIP expt.2294	Oth@ H1
+H1 OR Head Nuc ChIP expt.2293	Oth@ H1
+H1 OR Head Nuc Input expt.2306	InP@ Input control
+H1 OR Head Nuc Input expt.2305	InP@ Input control
+dRING Q3200 14-16 hr OR Emb ChIP expt.2065	Oth@ Sce
+dRING Q3200 14-16 hr OR Emb ChIP expt.1819	Oth@ Sce
+dRING Q3200 14-16 hr OR Emb Input expt.2062	InP@ Input control
+dRING Q3200 14-16 hr OR Emb Input expt.1815	InP@ Input control
+dMi-2 Q4443 14-16 hr OR Emb ChIP expt.2448	Oth@ Mi-2
+dMi-2 Q4443 14-16 hr OR Emb ChIP expt.2447	Oth@ Mi-2
+dMi-2 Q4443 14-16 hr OR Emb Input expt.2308	InP@ Input control
+dMi-2 Q4443 14-16 hr OR Emb Input expt.2307	InP@ Input control
+CTCF 14-16 hr OR Emb ChIP expt.1967	Oth@ CTCF
+CTCF 14-16 hr OR Emb ChIP expt.1825	Oth@ CTCF
+CTCF 14-16 hr OR Emb Input expt.1962	InP@ Input control
+CTCF 14-16 hr OR Emb Input expt.1823	InP@ Input control
+Chro Chriz WR 14-16 hr OR Emb ChIP expt.1721	Oth@ Chro
+Chro Chriz WR 14-16 hr OR Emb ChIP expt.1711	Oth@ Chro
+Chro Chriz WR 14-16 hr OR Emb Input expt.1730	InP@ Input control
+Chro Chriz WR 14-16 hr OR Emb Input expt.1729	InP@ Input control
+H3K23ac OR Head Nuc ChIP expt.2206	His@ H3K23ac
+H3K23ac OR Head Nuc ChIP expt.2205	His@ H3K23ac
+H3K23ac OR Head Nuc Input expt.2188	InP@ Input control
+H3K23ac OR Head Nuc Input expt.2187	InP@ Input control
+H3K4me2-Active motif L3 Nuc ChIP expt.2335	His@ H3K4me2
+H3K4me2-Active motif L3 Nuc ChIP expt.2334	His@ H3K4me2
+H3K4me2-Active motif L3 Nuc Input expt.2331	InP@ Input control
+H3K4me2-Active motif L3 Nuc Input expt.2330	InP@ Input control
+H3K9me2 antibody2 L3 Nuc ChIP expt.2268	His@ H3K9me2
+H3K9me2 antibody2 L3 Nuc ChIP expt.2267	His@ H3K9me2
+H3K9me2 antibody2 L3 Nuc Input expt.2230	InP@ Input control
+H3K9me2 antibody2 L3 Nuc Input expt.2223	InP@ Input control
+H2AV 9751 L3 Nuc ChIP expt.2389	His@ H2A.V
+H2AV 9751 L3 Nuc ChIP expt.2388	His@ H2A.V
+H2AV 9751 L3 Nuc Input expt.2317	InP@ Input control
+H2AV 9751 L3 Nuc Input expt.2316	InP@ Input control
+H3K9me3 new lot L3 Nuc ChIP expt.2264	His@ H3K9me3
+H3K9me3 new lot L3 Nuc ChIP expt.2263	His@ H3K9me3
+H3K9me3 new lot L3 Nuc Input expt.2229	InP@ Input control
+H3K9me3 new lot L3 Nuc Input expt.2228	InP@ Input control
+H3K23ac L3 Nuc ChIP expt.2240	His@ H3K23ac
+H3K23ac L3 Nuc ChIP expt.2239	His@ H3K23ac
+H3K23ac L3 Nuc Input expt.2224	InP@ Input control
+H3K23ac L3 Nuc Input expt.2222	InP@ Input control
+H3K36me3 14-16 hr OR Emb ChIP expt.1719	His@ H3K36me3
+H3K36me3 14-16 hr OR Emb ChIP expt.1709	His@ H3K36me3
+H3K36me3 14-16 hr OR Emb Input expt.1730	InP@ Input control
+H3K36me3 14-16 hr OR Emb Input expt.1729	InP@ Input control
+H3K9ac OR Head Nuc ChIP expt.2208	His@ H3K9ac
+H3K9ac OR Head Nuc ChIP expt.2207	His@ H3K9ac
+H3K9ac OR Head Nuc Input expt.2188	InP@ Input control
+H3K9ac OR Head Nuc Input expt.2187	InP@ Input control
+H4K20me1 3rd lot L3 Nuc ChIP expt.2391	His@ H4K20me1
+H4K20me1 3rd lot L3 Nuc ChIP expt.2390	His@ H4K20me1
+H4K20me1 3rd lot L3 Nuc Input expt.2317	InP@ Input control
+H4K20me1 3rd lot L3 Nuc Input expt.2316	InP@ Input control
+H3K18Ac new lot OR Head Nuc ChIP expt.2210	His@ H3K18ac
+H3K18Ac new lot OR Head Nuc ChIP expt.2209	His@ H3K18ac
+H3K18Ac new lot OR Head Nuc Input expt.2186	InP@ Input control
+H3K18Ac new lot OR Head Nuc Input expt.2183	InP@ Input control
+H3K79me2 Abcam ab3594 lot 1 14-16 hr OR Emb ChIP expt.1978	His@ H3K79me2
+H3K79me2 Abcam ab3594 lot 1 14-16 hr OR Emb ChIP expt.1970	His@ H3K79me2
+H3K79me2 Abcam ab3594 lot 1 14-16 hr OR Emb Input expt.1962	InP@ Input control
+H3K79me2 Abcam ab3594 lot 1 14-16 hr OR Emb Input expt.1961	InP@ Input control
+HP4 Q4072 14-16 hr OR Emb ChIP expt.1650	Oth@ HP4
+HP4 Q4072 14-16 hr OR Emb ChIP expt.1649	Oth@ HP4
+HP4 Q4072 14-16 hr OR Emb Input expt.1656	InP@ Input control
+HP4 Q4072 14-16 hr OR Emb Input expt.1655	InP@ Input control
+Suvar 3-7 Q3448 14-16 hr OR Emb ChIP expt.2035	Oth@ Su(var)3-7
+Suvar 3-7 Q3448 14-16 hr OR Emb ChIP expt.2034	Oth@ Su(var)3-7
+Suvar 3-7 Q3448 14-16 hr OR Emb Input expt.2025	InP@ Input control
+Suvar 3-7 Q3448 14-16 hr OR Emb Input expt.2024	InP@ Input control
+H3K36me1 L3 Nuc ChIP expt.2401	His@ H3K36me1
+H3K36me1 L3 Nuc ChIP expt.2400	His@ H3K36me1
+H3K36me1 L3 Nuc Input expt.2404	InP@ Input control
+H3K36me1 L3 Nuc Input expt.2402	InP@ Input control
+H3K36me3 abcam L3 Nuc ChIP expt.2260	His@ H3K36me3
+H3K36me3 abcam L3 Nuc ChIP expt.2259	His@ H3K36me3
+H3K36me3 abcam L3 Nuc Input expt.2226	InP@ Input control
+H3K36me3 abcam L3 Nuc Input expt.2225	InP@ Input control
+H3K9me2 Ab2 new lot 14-16 hr OR Emb ChIP expt.2039	His@ H3K9me2
+H3K9me2 Ab2 new lot 14-16 hr OR Emb ChIP expt.2038	His@ H3K9me2
+H3K9me2 Ab2 new lot 14-16 hr OR Emb Input expt.2025	InP@ Input control
+H3K9me2 Ab2 new lot 14-16 hr OR Emb Input expt.2024	InP@ Input control
+H3K9me3 abcam 14-16 hr OR Emb ChIP expt.2077	His@ H3K9me3
+H3K9me3 abcam 14-16 hr OR Emb ChIP expt.2076	His@ H3K9me3
+H3K9me3 abcam 14-16 hr OR Emb Input expt.1656	InP@ Input control
+H3K9me3 abcam 14-16 hr OR Emb Input expt.1655	InP@ Input control
+H4K16acM 14-16 hr OR Emb ChIP expt.1720	His@ H4K16ac
+H4K16acM 14-16 hr OR Emb ChIP expt.1710	His@ H4K16ac
+H4K16acM 14-16 hr OR Emb Input expt.1730	InP@ Input control
+H4K16acM 14-16 hr OR Emb Input expt.1729	InP@ Input control
+H4K20me1 3rd lot OR Head Nuc ChIP expt.2275	His@ H4K20me1
+H4K20me1 3rd lot OR Head Nuc ChIP expt.2274	His@ H4K20me1
+H4K20me1 3rd lot OR Head Nuc Input expt.2271	InP@ Input control
+H4K20me1 3rd lot OR Head Nuc Input expt.2270	InP@ Input control
+HP1 wa191 L3 Nuc ChIP expt.2266	Oth@ Su(var)205
+HP1 wa191 L3 Nuc ChIP expt.2265	Oth@ Su(var)205
+HP1 wa191 L3 Nuc Input expt.2229	InP@ Input control
+HP1 wa191 L3 Nuc Input expt.2228	InP@ Input control
+H3K9me3 new lot OR Head Nuc ChIP expt.2216	His@ H3K9me3
+H3K9me3 new lot OR Head Nuc ChIP expt.2215	His@ H3K9me3
+H3K9me3 new lot OR Head Nuc Input expt.2212	InP@ Input control
+H3K9me3 new lot OR Head Nuc Input expt.2211	InP@ Input control
+14-16 hr OR Emb H3K36me1 expt.1724	His@ H3K36me1
+14-16 hr OR Emb H3K36me1 expt.1714	His@ H3K36me1
+14-16 hr OR Emb Input expt.1730	InP@ Input control
+14-16 hr OR Emb Input expt.1729	InP@ Input control
+H3K79Me1 14-16 hr OR Emb ChIP expt.1955	His@ H3K79me1
+H3K79Me1 14-16 hr OR Emb ChIP expt.1826	His@ H3K79me1
+H3K79Me1 14-16 hr OR Emb Input expt.1961	InP@ Input control
+H3K79Me1 14-16 hr OR Emb Input expt.1823	InP@ Input control
+H3K27Ac 14-16 hr OR Emb ChIP expt.1969	His@ H3K27ac
+H3K27Ac 14-16 hr OR Emb ChIP expt.1952	His@ H3K27ac
+H3K27Ac 14-16 hr OR Emb Input expt.1962	InP@ Input control
+H3K27Ac 14-16 hr OR Emb Input expt.1961	InP@ Input control
+GAF 14-16 hr OR Emb ChIP expt.1973	Oth@ Trl
+GAF 14-16 hr OR Emb ChIP expt.1951	Oth@ Trl
+GAF 14-16 hr OR Emb Input expt.1961	InP@ Input control
+GAF 14-16 hr OR Emb Input expt.1823	InP@ Input control
+Psc 14-16 hr OR Emb ChIP expt.1949	Oth@ Psc
+Psc 14-16 hr OR Emb ChIP expt.1817	Oth@ Psc
+Psc 14-16 hr OR Emb Input expt.1961	InP@ Input control
+Psc 14-16 hr OR Emb Input expt.1815	InP@ Input control
+CP190-HB 14-16 hr OR Emb ChIP expt.1971	Oth@ Cp190
+CP190-HB 14-16 hr OR Emb ChIP expt.1963	Oth@ Cp190
+CP190-HB 14-16 hr OR Emb Input expt.1962	InP@ Input control
+CP190-HB 14-16 hr OR Emb Input expt.1823	InP@ Input control
+SU(HW)-HB 14-16 hr OR Emb ChIP expt.1965	Oth@ su(Hw)
+SU(HW)-HB 14-16 hr OR Emb ChIP expt.1824	Oth@ su(Hw)
+SU(HW)-HB 14-16 hr OR Emb Input expt.1962	InP@ Input control
+SU(HW)-HB 14-16 hr OR Emb Input expt.1823	InP@ Input control
+Pc 14-16 hr OR Emb ChIP expt.1948	Oth@ Pc
+Pc 14-16 hr OR Emb ChIP expt.1816	Oth@ Pc
+Pc 14-16 hr OR Emb Input expt.1815	InP@ Input control
+Pc 14-16 hr OR Emb Input expt.1961	InP@ Input control
+HP1 wa191 14-16 hr OR Emb ChIP expt.2027	Oth@ Su(var)205
+HP1 wa191 14-16 hr OR Emb ChIP expt.2026	Oth@ Su(var)205
+HP1 wa191 14-16 hr OR Emb ChIP expt.1916	Oth@ Su(var)205
+HP1 wa191 14-16 hr OR Emb ChIP expt.1914	Oth@ Su(var)205
+HP1 wa191 14-16 hr OR Emb Input expt.2025	InP@ Input control
+HP1 wa191 14-16 hr OR Emb Input expt.2024	InP@ Input control
+HP1 wa191 14-16 hr OR Emb Input expt.1915	InP@ Input control
+HP1 wa191 14-16 hr OR Emb Input expt.1913	InP@ Input control
+H3K27me3 14-16 hr OR Emb ChIP expt.1957	His@ H3K27me3
+H3K27me3 14-16 hr OR Emb ChIP expt.1820	His@ H3K27me3
+H3K27me3 14-16 hr OR Emb Input expt.1961	InP@ Input control
+H3K27me3 14-16 hr OR Emb Input expt.1815	InP@ Input control
+H3K9me2 antibody2 S2 ChIP expt.742	His@ H3K9me2
+H3K9me2 antibody2 S2 ChIP expt.568	His@ H3K9me2
+H3K9me2 antibody2 S2 Input expt.741	InP@ Input control
+H3K9me2 antibody2 S2 Input expt.567	InP@ Input control
+CG9740|IP|S2 cells	Oth@ Ibf2
+CG8436|IP|S2 cells	Oth@ Ibf1
+CP190|IP|S2 cells	Oth@ Cp190
+none|Input|S2 cells	InP@ Input control
+no antibody (input control)|S2 cell line ChIP; Input	InP@ Input control
+ovary shWhite PolII Input	InP@ Input control
+Anti-RNA polymerase II CTD repeat YSPTSPS (phospho S) antibody clone 4H8|ovary shWhite H3K9me3	Pol@ RNA polymerase II
+ovary shWhite Input H3K9me3	InP@ Input control
+ovary shPiwi PolII Input	InP@ Input control
+ovary shPiwi H3K9me3 Input	InP@ Input control
+ovary shWhite Input	InP@ Input control
+Anti-Histone H3 (tri methyl K9) antibody|ovary shWhite H3K9me3	His@ H3K9me3
+ovary shPiwi Input	InP@ Input control
+H3K9me3 (Abcam, ab8898)|ChIP-seq H3K9me3 nos-GAL4-&gt;piwi	His@ H3K9me3
+none (input)|ChIP-seq input nos-GAL4-&gt;piwi	InP@ Input control
+H3K9me3 (Abcam, ab8898)|ChIP-seq H3K9me3 nos-GAL4-&gt;white	His@ H3K9me3
+none (input)|ChIP-seq input nos-GAL4-&gt;white	InP@ Input control
+H3K9me3 (Abcam, ab8898)|ChIP-seq H3K9me3 Tj-GAL4-&gt;piwi	His@ H3K9me3
+none (input)|ChIP-seq input Tj-GAL4-&gt;piwi	InP@ Input control
+H3K9me3 (Abcam, ab8898)|ChIP-seq H3K9me3 Tj-GAL4-&gt;white	His@ H3K9me3
+none (input)|ChIP-seq input Tj-GAL4-&gt;white	InP@ Input control
+none (input)|Eye/antennal imaginal discs, scrib mutant input	InP@ Input control
+none (input)|Eye/antennal imaginal discs input	InP@ Input control
+anti-Abrupt (a polyclonal rabbit antibody from Steven Crews)|Eye/antennal imaginal discs, scrib mutant ChIP	Oth@ ab
+anti-Abrupt (a polyclonal rabbit antibody from Steven Crews)|Eye/antennal imaginal discs ChIP	Oth@ ab
+none|Female late embryo-derived cell line, input	InP@ Input control
+rabbit polyclonal antibody to both isoforms of Fs(1)h|Female late embryo-derived cell line, ChIP of both isoforms of Fs(1)h	Oth@ fs(1)h
+rabbit polyclonal antibody specific to Fs(1)h long isoform|Female late embryo-derived cell line, ChIP of Fs(1)h long isoform	Oth@ fs(1)h
+Su(Hw)|S3 cells	Oth@ su(Hw)
+Su(Hw)|S2 cells	Oth@ su(Hw)
+KC_WT_LateSphase_2	Unc@ Unclassified
+KC_WT_MidLateSphase_2	Unc@ Unclassified
+KC_WT_MidEarlySphase_2	Unc@ Unclassified
+KC_WT_EarlySphase_2	Unc@ Unclassified
+KC_WT_LateSphase_1	Unc@ Unclassified
+KC_WT_MidLateSphase_1	Unc@ Unclassified
+KC_WT_MidEarlySphase_1	Unc@ Unclassified
+KC_WT_EarlySphase_1	Unc@ Unclassified
+(rb) -Rpb1 (#828+829, Ali Shilatifard)|Schneider's Drosophila Line 2; S2 cells	Pol@ RpII215
+(rb) -Trr (#570, Ali Shilatifard)|Schneider's Drosophila Line 2; S2 cells	Oth@ trr
+Cabut|Wing imaginal discs	Oth@ cbt
+Brinker|Wing imaginal discs	Oth@ brk
+Mod(mdg4)2.2, rabbit|BG3 cells	Oth@ mod(mdg4)
+Mod(mdg4)2.2, guinea pig|BG3 cells	Oth@ mod(mdg4)
+Shep, rabbit|BG3 cells	Oth@ shep
+Shep, guinea pig|BG3 cells	Oth@ shep
+Su(Hw)|BG3 cells	Oth@ su(Hw)
+none|BG3 cells	InP@ Input control
+Anti Twist|Input DNA	Oth@ twi
+anti-GAF|S2 cells depleted of GAF by RNAi	Oth@ Trl
+anti-GAF|untreated S2 cells	Oth@ Trl
+POLIISER2 anti-PolIIS2P|ab5095|wing imaginal discs	Pol@ RNA polymerase II
+POLIISER5 anti-PolIIS5P|ab5131|wing imaginal discs	Pol@ RNA polymerase II
+Myc (sc-28208)|Kc cells in mitosis	Oth@ dm
+Myc (sc-28208)|Kc cells in interphase	Oth@ dm
+none|S2R+ cells	InP@ Input control
+anti-Yki|Wing imaginal disc ChIP; Iso1 strain; Yki antibody	Oth@ yki
+None|8-16hr embryo Input chromatin; Iso1 strain; no antibody	InP@ Input control
+Cl8-PolII_ChipSeq_IP2	Pol@ RNA polymerase II
+Cl8-PolII_ChipSeq_IP1	Pol@ RNA polymerase II
+Cl8-PolII_ChipSeq_Input	InP@ Input control
+Cl8-ORC_ChIP-Seq_IP4	Oth@ Orc2
+Cl8-ORC_ChIP-Seq_IP3	Oth@ Orc2
+Cl8-ORC_ChIP-Seq_IP2	Oth@ Orc2
+Cl8-ORC_ChIP-Seq_IP1	Oth@ Orc2
+Cl8-ORC_ChIP-Seq_Input	InP@ Input control
+none (input)|input	InP@ Input control
+Lmd2 Cunha et al. 2010 PLoS Genet 6(7): e1001014|Lmd2_ChIPSeq	Oth@ lmd
+Lmd1 Cunha et al. 2010 PLoS Genet 6(7): e1001014|Lmd1_ChIPSeq	Oth@ lmd
+0-2hr Embryo ORC Input	InP@ Input control
+0-2hr Embryo PolII Chip-Seq	Pol@ RNA polymerase II
+0-2hr Embryo PolII Input	InP@ Input control
+monoclonal rat Pol S5p 3E8|RNA Pol II S5p ChIP-Seq	Pol@ RNA polymerase II
+polyclonal rabbit H4K16ac, Active Motif 39167|H4K16ac ChIP-Seq	His@ H4K16ac
+none|Octopaminergic neurons	InP@ Input control
+H3K27Ac (Abcam: 4729)|Octopaminergic neurons	His@ H3K27ac
+H3K4me3 (Abcam: 8580)|Octopaminergic neurons	His@ H3K4me3
+none|Kenyon cells	InP@ Input control
+H3K27me3 (Millipore: 07-449)|Kenyon cells	His@ H3K27me3
+H3K27Ac (Abcam: 4729)|Kenyon cells	His@ H3K27ac
+H3K4me3 (Abcam: 8580)|Kenyon cells	His@ H3K4me3
+none|Head neurons	InP@ Input control
+L(3)mbt|Kc cells	Oth@ l(3)mbt
+Mod(mdg4)BTB|Kc cells	Oth@ mod(mdg4)
+Mod(mdg4)2.2|Kc cells	Oth@ mod(mdg4)
+FSH-S and FSH-L|S2-DRSC cells	Oth@ Lgr1
+FSH-S|S2-DRSC cells	Oth@ Lgr1
+ASH1C|S2-DRSC cells	Oth@ ash1
+ASH1N|S2-DRSC cells	Oth@ ash1
+H3K27acS28ph|Kc167 cells	His@ H3K27ac
+H3K9acS10ph|Kc167 cells	His@ H3K9AcS10ph
+JIL-1|Kc167 cells	Oth@ JIL-1
+H3K27ac|Kc167 cells	His@ H3K27ac
+H3K4me1|Kc167 cells	His@ H3K4me1
+H3K4me3|Kc167 cells	His@ H3K4me3
+Pol II (4H8, Millipore)|Pol II IP DNA from Toll10b embryos expressing the pnrenhancer-tupPr-yellow plasmid	Pol@ RNA polymerase II
+none (input)|input DNA from Toll10b embryos expressing the pnrenhancer-tupPr-yellow plasmid	InP@ Input control
+Pol II (4H8, Millipore)|Pol II IP DNA from gd7 embryos expressing the transgene twiBAC-Yellow	Pol@ RNA polymerase II
+none (input)|input DNA from gd7 embryos expressing the transgene twiBAC-Yellow	InP@ Input control
+Pol II (4H8, Millipore)|Pol II IP DNA from gd7 embryos expressing the transgene twiBAC-snaPr-Yellow	Pol@ RNA polymerase II
+none (input)|input DNA from gd7 embryos expressing the transgene twiBAC-snaPr-Yellow	InP@ Input control
+4-7hr PolII ChIP-Seq ChIP Oregon-R strain Replicate 3	Pol@ RNA polymerase II
+4-7hr PolII ChIP-Seq ChIP Oregon-R strain Replicate 2	Pol@ RNA polymerase II
+4-7hr PolII ChIP-Seq ChIP Oregon-R strain Replicate 1	Pol@ RNA polymerase II
+4-7hr PolII ChIP-Seq Input Oregon-R strain	InP@ Input control
+4-7hr ORC ChIP-Seq ChIP Oregon-R strain Replicate 3	Oth@ Orc2
+4-7hr ORC ChIP-Seq ChIP Oregon-R strain Replicate 2	Oth@ Orc2
+4-7hr_ORC ChIP-Seq ChIP Oregon-R strain Replicate 1	Oth@ Orc2
+4-7hr ORC ChIP-Seq Input Oregon-R strain	InP@ Input control
+sim|N/A|E0-8	Oth@ sim
+sc|N/A|E0-8	Oth@ sc
+Fru|N/A|E0-8	Oth@ fru
+Ubx|N/A|E0-12	Oth@ Ubx
+Usp|N/A|W3L	Oth@ usp
+SuHw|N/A|WPP	Oth@ su(Hw)
+H3K4me3|N/A|WPP	His@ H3K4me3
+WPP+12	Unc@ Unclassified
+USP|N/A|WPP+12	Oth@ usp
+modmdg4|N/A|W3L	Oth@ mod(mdg4)
+Zfh1|N/A|Kc167	Oth@ zfh1
+Ttk|N/A|Kc167	Oth@ ttk
+Ttk|N/A|E16-24	Oth@ ttk
+TCF|N/A|E16-24	Oth@ pan
+Dfd|N/A|E0-8	Oth@ Dfd
+SuHw|N/A|E16-24	Oth@ su(Hw)
+TCF|N/A|E0-8	Oth@ pan
+Hth|N/A|E0-8	Oth@ hth
+CG16778|N/A|E0-8	Oth@ lov
+USP|N/A|E0-12	Oth@ usp
+FAIRE|N/A|CNS	Unc@ Unclassified
+CG8478|N/A|WPP	Oth@ CG8478
+Stat92E|N/A|WPP	Oth@ Stat92E
+psq|N/A|WPP	Oth@ psq
+en|N/A|W3L	Oth@ en
+Sin3A|N/A|Kc167	Oth@ Sin3A
+psq|N/A|Kc167	Oth@ psq
+Kr|N/A|Kc167	Oth@ Kr
+dCTBP|N/A|Kc167	Oth@ CtBP
+SuH|N/A|E8-16	Oth@ Su(H)
+sr|N/A|E8-16	Oth@ sr
+jim|N/A|E8-16	Oth@ jim
+Hth|N/A|E8-16	Oth@ hth
+HP1|N/A|E8-16	Oth@ Su(var)205
+SuH|N/A|E16-24	Oth@ Su(H)
+sr|N/A|E16-24	Oth@ sr
+Fru|N/A|E16-24	Oth@ fru
+CNC|N/A|E16-24	Oth@ cnc
+CG16778|N/A|E16-24	Oth@ lov
+dm|N/A|E0-8	Oth@ dm
+br-core|N/A|E0-8	Oth@ br
+sc|N/A|E0-12	Oth@ sc
+Prd|N/A|E0-12	Oth@ prd
+Ash2|N/A|E0-12	Oth@ ash2
+CNC|N/A|AdultMale	Oth@ cnc
+None|Oregon R (wild-type)	InP@ Input control
+None|Toll10b mutant	InP@ Input control
+None|neurons FAC sorted from dissociated embryos	InP@ Input control
+H3K4me3 (ab8580, abcam)|muscle FAC sorted from dissociated embryos	His@ H3K4me3
+H3K27me3 (ab6002, abcam), Pol II (CTD4H8, Millipore)|Pol II (CTD4H8, Millipore)|Oregon R (wild type)	His@ H3K27me3
+H3K27me3 (ab6002, abcam)|Oregon R (wild type)	His@ H3K27me3
+H3K27me3 (ab6002, abcam)|Toll10b mutant	His@ H3K27me3
+H3K27me3 (ab6002, abcam)|neurons FAC sorted from dissociated embryos	His@ H3K27me3
+Pol II (CTD48H, Millipore)|Oregon R (wild type)	Pol@ RNA polymerase II
+Pol II (8WG16, Covance)|neurons FAC sorted from dissociated embryos	Pol@ RNA polymerase II
+CNC|N/A|AdultFemale	Oth@ cnc
+none|Stage 11 Drosophila embryos	InP@ Input control
+gp anti-Yan|Stage 11 Drosophila embryos	Oth@ aop
+anti-Su(Hw)|F_INPUT	Oth@ su(Hw)
+anti-Su(Hw)|F_PREIMM	Oth@ su(Hw)
+anti-Su(Hw)|F_IP	Oth@ su(Hw)
+anti-Su(Hw)|WT_INPUT	Oth@ su(Hw)
+anti-Su(Hw)|WT_PREIMM	Oth@ su(Hw)
+anti-Su(Hw)|WT_IP	Oth@ su(Hw)
+Su(Hw)|Kc cells	Oth@ su(Hw)
+CNC|N/A|WPP	Oth@ cnc
+in house Rabbit anti-ELL-fl (aa 1-1079)|Schneider's Drosophila Line 2	Oth@ Su(Tpl)
+in house Drosophila Rpb1 antibody was raised in rabbits against the synthetic peptide ERLMKKVFTDDVIKEMTDSG(C) conjugated via cysteine to KLH|Schneider's Drosophila Line 2	Pol@ RpII215
+in house Guinea Pig anti-Lilli-CT (aa 1427-1673)|Schneider's Drosophila Line 2	Oth@ lilli
+in house Rabbit anti-Ice1 (CG13550, aa 1-192)|Schneider's Drosophila Line 2	Oth@ Ice1
+in house Rabbit anti-ELL-MR (aa 301-584)|Schneider's Drosophila Line 2	Oth@ Su(Tpl)
+orc2 (steve bell lab, MIT)|third instar salivary gland from SuUR	Oth@ Orc2
+orc2 (steve bell lab, MIT)|third instar salivary gland from OrR	Oth@ Orc2
+FSH_ID173 raised against protein 4.1 (recognizes FSH-L only)|DRSC-S2 cell line	Oth@ Lgr1
+FSH_ID166 raised against the N-terminal, common part of FSH-S and FSH-L, protein 1.2|DRSC-S2 cell line	Oth@ Lgr1
+Ash1N|DRSC-S2 cell line	Oth@ ash1
+Ash1C|DRSC-S2 cell line	Oth@ ash1
+Chromatin IP against H3K9me3	His@ H3K9me3
+none|FACS isolated untagged neuronal cells	InP@ Input control
+none|FACS isolated neuronal cells	InP@ Input control
+none|FACS isolated muscle cells	InP@ Input control
+FLAG|F1804|FACS isolated untagged neuronal cells	Oth@ Epitope tags
+4H8|ab5408|FACS isolated muscle cells	Pol@ RNA polymerase II
+FLAG|F1804|FACS isolated neuronal cells	Oth@ Epitope tags
+FLAG|F1804|FACS isolated muscle cells	Oth@ Epitope tags
+antiAGO2 pAb Mueller PMID:16934003|S2 cells	Oth@ AGO2
+SG Orc ChIP-Seq extraction2_seq1 channel_2	Oth@ Orc2
+SG Orc ChIP-Seq extraction2_seq1 channel_1	Oth@ Orc2
+SG Orc ChIP-Seq extraction1_seq1 channel_2	Oth@ Orc2
+SG Orc ChIP-Seq extraction1_seq1 channel_1	Oth@ Orc2
+0-24h Embryo PolII ChIP-Seq extraction4_seq1 channel_1	Pol@ RNA polymerase II
+0-24h Embryo PolII ChIP-Seq extraction3_seq1 channel_1	Pol@ RNA polymerase II
+0-24h Embryo PolII ChIP-Seq extraction2_seq1 channel_1	Pol@ RNA polymerase II
+0-24h Embryo PolII ChIP-Seq extraction1_seq1 channel_1	Pol@ RNA polymerase II
+24h Embryo Orc ChIP-Seq extraction4_seq1 channel_1	Oth@ Orc2
+24h Embryo Orc ChIP-Seq extraction3_seq1 channel_1	Oth@ Orc2
+24h Embryo Orc ChIP-Seq extraction2_seq1 channel_1	Oth@ Orc2
+24h Embryo Orc ChIP-Seq extraction1_seq1 channel_1	Oth@ Orc2
+MCM S2 July 2010 extraction3_seq1 channel_1	Oth@ Mcm2
+MCM S2 July 2010 extraction2_seq1 channel_1	Oth@ Mcm2
+MCM S2 July 2010 extraction1_seq1 channel_1	Oth@ Mcm2
+BRC	Unc@ Unclassified
+core|N/A|BRC	Unc@ Unclassified
+K27me3|07-449|WPP	His@ H3K27me3
+Hr4_GFP|N/A|E0-12	Oth@ Hr4
+KW3-Trl-D2|N/A|WPP	Oth@ Trl
+E16-24h_13T	Unc@ Unclassified
+exd-GFP|N/A|E16-24h_13T	Oth@ exd
+Yki-91|N/A|E0-4	Oth@ yki
+anti-cbt|N/A|E16-24h	Oth@ cbt
+KW4-Fer3-D1|N/A|E16-24h	Oth@ Fer3
+GFP|N/A|EcR_mF3d	Oth@ GFP
+KW3-h-D1|N/A|E8-16h	Oth@ h
+lid|wing imaginal discs, wild type, LID ChIP	Oth@ lid
+anti-Bonus-GP37|N/A|E16-24h	Oth@ bon
+Suvar3-9|ab4811|E0-12h	Oth@ Su(var)3-9
+KW3-Kr-D2|N/A|E16-24h	Oth@ Kr
+GFP|N/A|R13-E1-6h-Set2	Oth@ GFP
+5T-8-16h	Unc@ Unclassified
+GFP|N/A|5T-8-16h	Oth@ GFP
+GFP|N/A|EcR_WPP-4-5h	Oth@ GFP
+GFP|N/A|7T_W3L	Oth@ GFP
+KW3-D-D2|N/A|E0-8h_D	Oth@ D
+Adult-Female	Unc@ Unclassified
+Trem|N/A|Adult-Female	Oth@ trem
+15T_8-16_NW	Unc@ Unclassified
+GFP|N/A|15T_8-16_NW	Oth@ GFP
+HP1-Abcam|820130|E16-24h	Oth@ Su(var)205
+HP1-Covance|14923202|E16-24h	Oth@ Su(var)205
+KW3-Trl-D2|N/A|E8-16h	Oth@ Trl
+KW4-Hr39-D1|N/A|E16-24h	Oth@ Hr39
+ECR-WPP+90	Oth@ EcR
+GFP|Custom|ECR-WPP+90	Oth@ GFP
+ECR-WPP+12	Oth@ EcR
+GFP|Custom|ECR-WPP+12	Oth@ GFP
+GFP|Custom|E16-24h	Oth@ GFP
+5T-0-6	Unc@ Unclassified
+GFP|Custom|5T-0-6	Oth@ GFP
+CG8478|Custom|E16-24h	Oth@ CG8478
+Trl|Custom|E0-8h	Oth@ Trl
+H3K4me3|DRSC-S2 cell line	His@ H3K4me3
+CTCF-C|Custom|white prepupae	Oth@ CTCF
+NW-GFP-Goateve|Custom|E8-16h	Oth@ eve
+KW4-CG8478-D1|Custom|E8-16h	Oth@ CG8478
+NW-GFP-Goateve|Custom|E1-6h	Oth@ eve
+NW-GFP-GoatDfd|Custom|E0-8h	Oth@ Dfd
+NW-GFP-Goattll|Custom|E0-4h	Oth@ tll
+none|Wing imaginal discs, input	InP@ Input control
+Pol2Ser5P|ab5131|Wing imaginal discs, Pol2Ser5P ChIP	Pol@ RNA polymerase II
+Pol2Ser2P|ab5095|Wing imaginal discs, Pol2Ser2P ChIP	Pol@ RNA polymerase II
+H3K36me3|ab9050|Wing imaginal discs, H3K36me3 ChIP	His@ H3K36me3
+H3K27me3|07_449|Wing imaginal discs, H3K27me3 ChIP	His@ H3K27me3
+H3K4me3|07_473|Wing imaginal discs, H3K4me3 ChIP	His@ H3K4me3
+ASH2|ab9110|Wing imaginal discs, ASH2 ChIP	Oth@ ash2
+anti-Rpb3 (subunit of Pol II)|Pol II (rpb3) ChIP-seq	Pol@ RpII33
+KW3-disco-D2|E8-16h	Oth@ disco
+KW3-Trl-D2|Kc	Oth@ Trl
+H3K4me3-LP|Kc	His@ H3K4me3
+rbCBP|E0-4h	Oth@ CBP
+KW3-kni-D2|E8-16h	Oth@ kni
+KW3-Trl-D2|E16-24h	Oth@ Trl
+NWG-GFP|7T	Oth@ GFP
+KW3-disco-D2|E0-8h	Oth@ disco
+KW4-Pcl-D2|E0-8h	Oth@ Pcl
+10T-E16-24h	Unc@ Unclassified
+NWG-GFP|10T-E16-24h	Oth@ GFP
+NWG-GFP|10T-W3L	Oth@ GFP
+KW3-hkb-D1|E8-16h	Oth@ hkb
+Sin3A|E0-12h	Oth@ Sin3A
+anti-AGO2 mAb 9D6|S3 cells	Oth@ AGO2
+anti-AGO2 mAb 9D6|S2 cells	Oth@ AGO2
+single H2Av pull-down DNA	His@ H2A.V
+PolII|ab5408|bam testis	Pol@ RNA polymerase II
+H3K36me3|ab9050|bam testis	His@ H3K36me3
+H3K27me3|07-449|bam testis	His@ H3K27me3
+H3K4me3|ab8580|bam testis	His@ H3K4me3
+PolII|ab5408|S2 cells	Pol@ RNA polymerase II
+H3K36me3|ab9050|S2 cells	His@ H3K36me3
+H3K27me3|07-449|S2 cells	His@ H3K27me3
+H3K4me3|ab8580|S2 cells	His@ H3K4me3
+ORC2_KC167_Input_1 extraction3_seq1 channel_1	InP@ Input control
+ORC2_KC167_2 extraction2_seq1 channel_1	Oth@ Orc2
+ORC2_KC167_1 extraction1_seq1 channel_1	Oth@ Orc2
+MCM_KC167_Input_1 extraction3_seq1 channel_1	InP@ Input control
+MCM_KC167_2 extraction2_seq1 channel_1	Oth@ Mcm2
+MCM_KC167_1 extraction1_seq1 channel_1	Oth@ Mcm2
+ORC2_ML_DmBG3_c2_Input_1 extraction3_seq1 channel_1	InP@ Input control
+ORC2_ML_DmBG3_c2_2 extraction2_seq1 channel_1	Oth@ Orc2
+ORC2_ML_DmBG3_c2_1 extraction1_seq1 channel_1	Oth@ Orc2
+ORC2_S2_DSRC_Input_1 extraction3_seq1 channel_1	InP@ Input control
+ORC2_S2_DRSC_2 extraction2_seq1 channel_1	Oth@ Orc2
+ORC2_S2_DRSC_1 extraction1_seq1 channel_1	Oth@ Orc2
+w3L_7TGFP_INPUT_3	InP@ Input control
+w3L_7TGFP_INPUT_2	InP@ Input control
+w3L_7TGFP_INPUT_1	InP@ Input control
+goat anti GFP|w3L_7TGFP_ChIPSeq_1, 2 and 3	Oth@ GFP
+WPP_EcRGFP_INPUT_3	InP@ Input control
+WPP_EcRGFP_INPUT_2	InP@ Input control
+WPP_EcRGFP_INPUT_1	InP@ Input control
+goat anti GFP|WPP_EcRGFP_ChIPSeq_1, 2 and 3	Oth@ GFP
+WPP30-33_EcRGFP_INPUT_3	InP@ Input control
+WPP30-33_EcRGFP_INPUT_2	InP@ Input control
+WPP30-33_EcRGFP_INPUT_1	InP@ Input control
+goat anti GFP|WPP30-33_EcRGFP_ChIPSeq_1, 2 and 3	Oth@ GFP
+S2_CTCF500_INPUT_1	InP@ Input control
+CTCF|S2_CTCF500_ChIPSeq_1 and 2	Oth@ CTCF
+S2_CTCF200_INPUT_1	InP@ Input control
+CTCF|S2_CTCF200_ChIPSeq_1 and 2	Oth@ CTCF
+E4-8h_7T_INPUT_1	InP@ Input control
+goat anti GFP|E4-8h_7T_ChIPSeq_1	Oth@ GFP
+E0-4h_7T_INPUT_2	InP@ Input control
+E0-4h_7T_INPUT_1	InP@ Input control
+Caudal|E0-4h_7T_ChIPSeq_1 and 2	Oth@ cad
+HDAC1|E0-12_HDAC-501_ChIPSeq_1 and 2	Oth@ Rpd3
+HDAC1|E0-12_HDAC-500_ChIPSeq_1 and 2	Oth@ Rpd3
+HDAC3|E0-12_HDAC-499_ChIPSeq_1 and 2	Oth@ Hdac3
+HDAC3|E0-12_HDAC-498_ChIPSeq_1 and 2	Oth@ Hdac3
+HDAC6|E0-12_HDAC-497_ChIPSeq_1 amd 2	Oth@ HDAC6
+HDAC6|E0-12_HDAC-496_ChIPSeq_1 and 2	Oth@ HDAC6
+HDAC11|E0-12_HDAC-495_ChIPSeq_1 and 2	Oth@ HdacX
+HDAC11|E0-12_HDAC-494_ChIPSeq_1 and 2	Oth@ HdacX
+HDAC4a|E0-12_HDAC-493_ChIPSeq_1 and 2	Oth@ HDAC4
+E0-12_HDAC-492..501_INPUT_1	InP@ Input control
+HDAC4a|E0-12_HDAC-492_ChIPSeq_1 and 2	Oth@ HDAC4
+A-Female_7T_INPUT_1	InP@ Input control
+goat anti GFP|A-Female_7T_ChIPSeq_1	Oth@ GFP
+Pol II Rpb3 subunit|S2 cells	Pol@ RpII33
+CBP|E8-12	Oth@ CBP
+PolII|MMS-126R|L2	Pol@ RNA polymerase II
+H3K4me1|ab8895|AdultFemale	His@ H3K4me1
+H3K4me1|ab8895|E20-24	His@ H3K4me1
+CBP|E0-4	Oth@ CBP
+CBP|E20-24	Oth@ CBP
+PolII|MMS-126R|E12-16	Pol@ RNA polymerase II
+PolII|MMS-126R|E20-24	Pol@ RNA polymerase II
+H3K9Ac|ab4441|AdultFemale	His@ H3K9Ac
+H3K9Ac|ab4441|E12-16	His@ H3K9Ac
+H3K9me3|ab8898|E0-4	His@ H3K9me3
+H3K9me3|ab8898|E4-8	His@ H3K9me3
+H3K9me3|ab8898|E8-12	His@ H3K9me3
+H3K9me3|ab8898|E12-16	His@ H3K9me3
+H3K9me3|ab8898|E16-20	His@ H3K9me3
+H3K9me3|ab8898|E20-24	His@ H3K9me3
+H3K9me3|ab8898|L1	His@ H3K9me3
+H3K9me3|ab8898|L2	His@ H3K9me3
+H3K9me3|ab8898|Pupae	His@ H3K9me3
+H3K27me3|07-449|E0-4	His@ H3K27me3
+H3K27me3|07-449|E4-8	His@ H3K27me3
+H3K27me3|07-449|E8-12	His@ H3K27me3
+H3K27me3|07-449|E12-16	His@ H3K27me3
+H3K27me3|07-449|E16-20	His@ H3K27me3
+H3K27me3|07-449|E20-24	His@ H3K27me3
+H3K27me3|07-449|L1	His@ H3K27me3
+H3K27me3|07-449|L2	His@ H3K27me3
+H3K27me3|07-449|L3	His@ H3K27me3
+H3K27me3|07-449|Pupae	His@ H3K27me3
+H3K27me3|07-449|AdultMale	His@ H3K27me3
+L3_PolII	Pol@ RNA polymerase II
+L1_PolII	Pol@ RNA polymerase II
+PolII|MMS-126R|E8-12	Pol@ RNA polymerase II
+H3K4me1|ab8895|E8-12	His@ H3K4me1
+H3K9Ac|ab4441|E8-12	His@ H3K9Ac
+H3K4me1|ab8895|E12-16	His@ H3K4me1
+PolII|MMS-126R|E16-20	Pol@ RNA polymerase II
+PolII|MMS-126R|L1	Pol@ RNA polymerase II
+H3K4me1|ab8895|L1	His@ H3K4me1
+PolII|MMS-126R|L3	Pol@ RNA polymerase II
+PolII|MMS-126R|Pupae	Pol@ RNA polymerase II
+H3K4me3|ab8580|E8-12	His@ H3K4me3
+CBP|E16-20	Oth@ CBP
+H3K27Ac|ab4729|E8-12	His@ H3K27ac
+H3K27Ac|ab4729|E12-16	His@ H3K27ac
+H3K27Ac|ab4729|L1	His@ H3K27ac
+H3K4me3|ab8580|E12-16	His@ H3K4me3
+H3K9Ac|ab4441|AdultMale	His@ H3K9Ac
+PolII|MMS-126R|E4-8	Pol@ RNA polymerase II
+CBP|Pupae	Oth@ CBP
+CBP|L3	Oth@ CBP
+CBP|L1	Oth@ CBP
+CBP|E4-8	Oth@ CBP
+CBP|E12-16	Oth@ CBP
+CBP|AdultMale	Oth@ CBP
+CBP|AdultFemale	Oth@ CBP
+H3K9Ac|ab4441|E20-24	His@ H3K9Ac
+H3K27Ac|ab4729|E20-24	His@ H3K27ac
+H3K9Ac|ab4441|L1	His@ H3K9Ac
+H3K4me1|ab8895|L2	His@ H3K4me1
+H3K9Ac|ab4441|L2	His@ H3K9Ac
+H3K4me1|ab8895|L3	His@ H3K4me1
+H3K9Ac|ab4441|L3	His@ H3K9Ac
+H3K27Ac|ab4729|L3	His@ H3K27ac
+H3K4me1|ab8895|Pupae	His@ H3K4me1
+H3K9Ac|ab4441|Pupae	His@ H3K9Ac
+H3K27Ac|ab4729|Pupae	His@ H3K27ac
+H3K27Ac|ab4729|AdultFemale	His@ H3K27ac
+H3K4me1|ab8895|AdultMale	His@ H3K4me1
+H3K27Ac|ab4729|AdultMale	His@ H3K27ac
+H3K4me1|ab8895|E0-4	His@ H3K4me1
+H3K9Ac|ab4441|E0-4	His@ H3K9Ac
+H3K27Ac|ab4729|E0-4	His@ H3K27ac
+H3K4me1|ab8895|E4-8	His@ H3K4me1
+H3K9Ac|ab4441|E4-8	His@ H3K9Ac
+H3K27Ac|ab4729|E4-8	His@ H3K27ac
+H3K4me1|ab8895|E16-20	His@ H3K4me1
+H3K9Ac|ab4441|E16-20	His@ H3K9Ac
+H3K27Ac|ab4729|E16-20	His@ H3K27ac
+H3K4me3|ab8580|E4-8	His@ H3K4me3
+E20-24	Unc@ Unclassified
+H3K4me3|ab8580|E20-24	His@ H3K4me3
+H3K4me3|ab8580|AdultFemale	His@ H3K4me3
+H3K4me3|ab8580|L2	His@ H3K4me3
+H3K4me3|ab8580|AdultMale	His@ H3K4me3
+H3K4me3|ab8580|Pupae	His@ H3K4me3
+H3K4me3|ab8580|L1	His@ H3K4me3
+H3K4me3|ab8580|L3	His@ H3K4me3
+E16-20	Unc@ Unclassified
+H3K4me3|ab8580|E16-20	His@ H3K4me3
+H3K4me3|ab8580|E0-4	His@ H3K4me3
+input|larvae	InP@ Input control
+MSL3-TAP ChIP|larvae	Oth@ msl-3
