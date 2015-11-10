@@ -1,3 +1,6 @@
+# データのアップデート。
+  sh chipatlas/sh/upDate.sh  # <<=== コマンド
+
 # Curation のためのリストを作成。
   sh chipatlas/sh/listForClassify.sh  # <<=== コマンド
 
