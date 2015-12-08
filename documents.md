@@ -295,7 +295,7 @@ All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentLis
 
 - **BigWig**  
   _Download URL_:  
-  http\://dbarchive.biosciencedbc.jp/kyushu-u/**Genome_assembly**/eachData/bw/**Experimental_ID**.bw  
+  http&#58;//dbarchive.biosciencedbc.jp/kyushu-u/**Genome_assembly**/eachData/bw/**Experimental_ID**.bw  
   
   _Example_:  
   http\://dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/eachData/bw/**SRX097088**.bw
