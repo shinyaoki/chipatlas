@@ -321,7 +321,7 @@ All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentLis
 ###Assembled Peak-call data used in Peak Browser
 _Download URL_:  
   <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/assembled/**File_name**.bed  
-  (**Genome_assembly** and **File_name** is summarized in **fileList.tab** \[[Download] [fileList], [Table schema](#fileList_schema)\])  
+  (**Genome** and **File_name** is summarized in **fileList.tab** \[[Download] [fileList], [Table schema](#fileList_schema)\])  
   
 _Example_:  
   <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/assembled/**Oth.ALL.05.GATA2.AllCell**.bed  
