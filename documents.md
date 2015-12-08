@@ -337,6 +337,16 @@ _Example_:
   <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/target/**POU5F1**.**5**.tsv  
   (TSV file describing the genes bound by POU5F1 at TSS ± 5 kb.)
 
+###Analized data used in Colocalization
+_Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell_type_class**.tsv  
+  (**Protein** and **Cell_type_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
+  
+_Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent_stem_cell**.tsv  
+  (TSV file describing the proteins colocalizing with POU5F1 in Pluripotent` `stem` `cell.)  
+  (Spaces ` ` in the name of cell type class must be replaced with underscores `_`.)
+
 
   
 ****
