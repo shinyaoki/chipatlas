@@ -46,8 +46,8 @@ stringList="$projectDir/lib/string/protein.actions.v10.$Genome.txt"
 jobDir="tmpDirForTargetGenes/$JOB_ID"
 mkdir $jobDir
 
-srxCell=`cat $projectDir/lib/assembled_list/experimentList.tab| awk -F '\t' -v qProt="$qProt" '{
-  if($4 == qProt) {
+srxCell=`cat $projectDir/lib/assembled_list/experimentList.tab| awk -F '\t' -v qProt="$qProt" -v Genome="$Genome" '{
+  if($4 == qProt && $2 == Genome) {
     gsub(" ", "_", $6)
     print $1 "\t" $6    
   }

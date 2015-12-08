@@ -1,15 +1,17 @@
 # データのアップデート。
-  sh chipatlas/sh/upDate.sh  # <<=== コマンド
+  sh chipatlas/sh/upDate.sh  # <<=== コマンド (DDBJ)
+
+# 全部 run が終わったら、残った SRX フォルダがコアダンプかどうかをチェック
+# Unknown と表示された場合は検証が必要。Core dump と表示された場合は放置してよい  。
+  sh chipatlas/sh/checkCoreDump.sh  # <<=== コマンド (DDBJ)
 
 # Curation のためのリストを作成。
-  sh chipatlas/sh/listForClassify.sh  # <<=== コマンド
+  sh chipatlas/sh/listForClassify.sh  # <<=== コマンド (DDBJ)
+  sh chipatlas/sh/transferDDBJtoNBDC.sh "eachData"  # <<=== コマンド (DDBJ)  個別データを NBDC に転送
 
 # Curation の実行。
   chipatlas/classification を DL
-  classification/ct_Statistics.mm9.tab を Google Refine で開く
-  OR 支援ツール > 初期設定 をコピー
   Google Refine > Undo / Redo > Apply にペースト
-  OR 支援ツール > Judge をコピー
   Google Refine > Judge タブ > Facet > Custom text facet にペースト
 
 # Curation 終了後のチェック
@@ -18,18 +20,14 @@
   
     checkCuration  # <<=== コマンド (Mac)
 
-# 古い classification フォルダの移動
-  スパコンで以下のコマンドを実行
-  
-    mv chipatlas/classification chipatlas/classification_201505 # 2015 5月の場合  <<=== コマンド
-  
-  これを Mac にダウンロードし、/Users/Oki/Desktop/沖　真弥/実験/chipAtlas/classification履歴 配下に移動させる。
+# 古い classification フォルダやリストのバックアップ
+  sh chipatlas/sh/backUpOldList.sh 201509  # <<=== コマンド (DDBJ)
+
   スパコンに Downloads/classification フォルダを chipatlas/ 配下にアップロード
-  スパコンの chipatlas/classification_201505 は消去
 
 
 # 新しい assembled ファイルの作成
-  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド
+  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド (DDBJ)
   
     public 配下に .bed, .bed.idx が作られる
     chipatlas/lib/assembled_list 配下に experimentList.tab, fileList.tab が作られる。
@@ -38,11 +36,30 @@
       CAUTION_makeBigBed.txt
       
 # colo, targetGenes の実行
-  sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド
+  sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド (DDBJ)
+  sh chipatlas/sh/transferDDBJtoNBDC.sh "assemble"  # <<=== コマンド (DDBJ)  assemble データを NBDC に転送
 
     colo の実行
     targetGenes の実行
     in silico ChIP 用の BED ファイルを作成、w3oki へ転送
-    analysisList.tab の作成、全対応表を NBDC に送る。
-
+    analysisList.tab の作成
+    
 # NBDC サーバにアップロード
+  sh chipatlas/sh/transferDDBJtoNBDC.sh "analysed"  # <<=== コマンド (DDBJ)  colo, target, 全対応表を NBDC に転送
+
+# Wabi データの消去
+  wabi              # <<=== コマンド (Mac)  w3oki アカウントにログイン
+  deleteWabiResult  # <<=== コマンド (w3oki)  二週間前までのデータを消去
+
+# 不要な tmp ファイルや log
+UploadToServer_assemble.lftp
+UploadToServer_assemble.log
+UploadToServer_eachData.lftp
+UploadToServer_eachData.log
+UploadToServer_analysed.lftp
+UploadToServer_analysed.log
+tmpDirForColo
+tmpDirForTargetGenes
+tmpDirFortransferBedTow3oki
+
+

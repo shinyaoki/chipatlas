@@ -17,6 +17,10 @@ url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/colo/"       # html へ
 url2="http://chip-atlas.org/view?id="                                 # 個別 SRX へのリンク
 urlDoc="https://github.com/inutano/chip-atlas/wiki#6-colocalization"  # Document へのリンク
 urlTSV=`echo "$url1$qProt.$ctl.tsv"| tr ' ' '_'`                      # TSV へのリンク
+urlGML="$url1$ctL.gml"                                                # GML へのリンク
+urlYuT="https://youtu.be/kM9YkPOfsyY"                                 # YouTube へのリンク
+urlCA="http://chip-atlas.org"                                         # ChIP-Atlas へのリンク
+urlCl="http://chip-atlas.org/colo"                                    # colo へのリンク
 
 fnHead=`basename "$inFn"| cut -d '.' -f1| cut -d '_' -f1` # 抗原 or SRX or STRING
 sortKey=`head -n1 "$inFn"| tr '\t' '\n'| awk -F '\t' -v fnHead=$fnHead -v qProt=$qProt '{
@@ -105,11 +109,9 @@ cat << DDD
 <td align="center" valign="middle">&nbsp;(Values = STRING's binding scores)</td>
 </tr></table>
 <br>
-<div class="lineWidth"><b>Usage: </b><a target="_blank" title="How to" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for Colocalization analysis in ChIP-Atlas" href="$urlDoc">here</a></div>
-<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href="$urlTSV">$qProt.$ctl.tsv</a></div>
 
-
+<div class="lineWidth"><b>Downloads: </b><a target="_blank" href="$urlTSV">TSV</a><a> (text), </a><a target="_blank" href="$urlGML">GML</a><a> (Cytoscape)</a></div>
+<div class="lineWidth"><b>Links: </b><a target="_blank" href="$urlYuT">Movie</a><a> and </a><a target="_blank" href="$urlDoc">Document</a><a> for </a><a target="_blank" href="$urlCA">ChIP-Atlas</a><a> </a><a target="_blank" href="$urlCl">Colocalization</a></div>
 
 <table class="tableMargin" id="mainTable" border=0 width="$wid" style="table-layout: fixed;">
 DDD

@@ -62,6 +62,9 @@ cmnd=$(echo -e '
     mv "$dirWab1" "$dirWab2"
     rm -r "$dirWab2"_old
   done
+  
+  cp -f $projectDir/lib/assembled_list/experimentList.tab w3oki/chipatlas/lib/assembled_list/experimentList.tab
+  cp -f $projectDir/lib/assembled_list/fileList.tab w3oki/chipatlas/lib/assembled_list/fileList.tab
   rm -r w3oki/tmpDirFortransferBedTow3oki
   exit
 '| awk '{

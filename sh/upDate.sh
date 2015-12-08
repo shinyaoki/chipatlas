@@ -55,7 +55,7 @@ for fn in $newMeta $oldMeta; do
   awk -v RND=$rndStr -F '\t' '{
     printf "%s\t%s", $1, RND
     for (i=2; i<NF; i++) printf "\t%s", $i
-    print $NF
+    print "\t" $NF
   }' $fn > $fn.tmp
 done
 

@@ -15,8 +15,11 @@ Wkb=`basename "$inFn"| cut -d '.' -f2`                    # 1 5 10 (+- TSS kb)
 
 url1="http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/"    # html へのリンク
 url2="http://chip-atlas.org/view?id="                                  # 個別 SRX へのリンク
-urlDoc="https://github.com/inutano/chip-atlas/wiki#5-target-genes"   # Dicument へのリンク
+urlDoc="https://github.com/inutano/chip-atlas/wiki#5-target-genes"   # Document へのリンク
 urlTSV="$url1$qProt.$Wkb.tsv"                                        # TSV へのリンク
+urlYuT="https://youtu.be/UBOyoTlDAH4"                                # YouTube へのリンク
+urlCA="http://chip-atlas.org"                                        # ChIP-Atlas へのリンク
+urlTG="http://chip-atlas.org/target_genes"                           # Target Genes へのリンク
 
 sortKey=`head -n1 "$inFn"| tr '\t' '\n'| awk -F '\t' -v fnHead=$fnHead -v qProt=$qProt '{
   if (fnHead ~ /^[SED]RX[0-9][0-9][0-9][0-9]/ && $1 ~ fnHead) printf "%s", $1
@@ -97,11 +100,9 @@ cat << DDD
 <td align="center" valign="middle">&nbsp;(Values = Binding scores of MACS2 and STRING)</td>
 </tr></table>
 <br>
-<div class="lineWidth"><b>Usage: </b><a target="_blank" title="How to" href=http://www.yahoo.co.jp>here</a></div>
-<div class="lineWidth"><b>Documents: </b><a target="_blank" title="Documents for target genes in ChIP-Atlas" href="$urlDoc">here</a></div>
-<div class="lineWidth"><b>Download: </b><a target="_blank" title="Download in TSV format" href="$urlTSV">$qProt.$Wkb.tsv</a></div>
 
-
+<div class="lineWidth"><b>Download: </b><a target="_blank" href="$urlTSV">TSV</a><a> (text)</a></div>
+<div class="lineWidth"><b>Links: </b><a target="_blank" href="$urlYuT">Movie</a><a> and </a><a target="_blank" href="$urlDoc">Document</a><a> for </a><a target="_blank" href="$urlCA">ChIP-Atlas</a><a> </a><a target="_blank" href="$urlTG">Target Genes</a></div>
 
 <table class="tableMargin" id="mainTable" border=0 width="$wid" style="table-layout: fixed;">
 DDD
@@ -147,7 +148,7 @@ BEGIN {
         
         gsub("_", "\\&nbsp;", tag[2])
         if (i == 2)       Url = URL1 tag[1] "." Wkb ".html"   # URL1 = http://dbarchive.biosciencedbc.jp/kyushu-u/$Genome/target/
-        else if (i == NF) Url = URL1 "STRING_" qProt[1] ".html"
+        else if (i == NF) Url = URL1 "STRING_" qProt[1] "." Wkb ".html"
         else              Url = URL1 tag[1] "." Wkb ".html"
         
         printf "<td width=%s height=%s>", Size, Size

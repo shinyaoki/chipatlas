@@ -168,7 +168,7 @@ MACS() { # $1=Qval
   $macs2 callpeak -t $bn.bam -f BAM -g $macsg -n $BN -q 1e-$1
   cat $BN"_"peaks.narrowPeak | sort -k1,1 -k2,2n > $BN"_"peaks.unclip   # cut -f1-3,5 は後回し
   $bedClip $BN"_"peaks.unclip /home/$LoginID/$projectDir/lib/genome_size/$Genome.chrom.sizes $BN.bed
-  awk '{printf "%s\t%s\t%s\t%.1f\n", $1, $2, $3, $5/10}' $BN.bed > $BN.bed.tmp
+  awk '{printf "%s\t%s\t%s\t%s\n", $1, $2, $3, $5}' $BN.bed > $BN.bed.tmp
   $bedToBigBed -type=bed4 $BN.bed.tmp /home/$LoginID/$projectDir/lib/genome_size/$Genome.chrom.sizes $BN.bb
   rm $BN"_"model.r $BN"_"*.xls $BN"_"peaks.narrowPeak $BN"_"peaks.unclip $BN.bed.tmp
   echo CompletedMACS2peakCalling

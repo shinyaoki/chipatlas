@@ -1,24 +1,100 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# qsub -o transferDDBJtoNBDC.log -e transferDDBJtoNBDC.log chipatlas/sh/transferDDBJtoNBDC.sh chipatlas
-projectDir=$1
-data="/mnt/nfs1/archive/kyushu/data"
+# sh chipatlas/sh/transferDDBJtoNBDC.sh eachData
+# sh chipatlas/sh/transferDDBJtoNBDC.sh assemble
+# sh chipatlas/sh/transferDDBJtoNBDC.sh analysed
+# qsub chipatlas/sh/transferDDBJtoNBDC.sh QSUB $projectDir $fn $qn
 
-# NBDC の address, user, pass を変数定義
+Type=$1
 eval `cat bin/nbdc| grep "="`
 
+if [ "$Type" != "QSUB" ]; then
+#####################################################################################
+#                                     初期モード                                     #
+#####################################################################################
+  projectDir=`echo $0| sed 's[/sh/transferDDBJtoNBDC.sh[['`
+  fn="UploadToServer_""$Type"
+  qn="$Type"TF
+  
+  {
+    echo "open -u $user,$pass $address"
+    echo "set net:limit-total-rate 31457280"
+  
+    case $Type in
+      "eachData" )
+        for Genome in `ls $projectDir/results`; do
+          echo "echo == $Genome BigWig =="
+          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/BigWig data/$Genome/eachData/bw"
+          for qVal in `ls $projectDir/results/$Genome/| grep Bed| cut -c4-`; do
+            echo "echo == $Genome BigBed $qVal =="
+            echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/Bed$qVal/BigBed data/$Genome/eachData/bb$qVal"
+            echo "echo == $Genome Bed $qVal =="
+            echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/Bed$qVal/Bed data/$Genome/eachData/bed$qVal"
+          done
+        done
+      ;;
+      "assemble" )
+        for Genome in `ls $projectDir/results`; do
+          echo "echo == $Genome assembled =="
+          echo "mkdir data/$Genome/assembled_new"
+          echo "mirror -R --verbose=3 --parallel=8 $projectDir/results/$Genome/public data/$Genome/assembled_new"
+        done
+      ;;
+      "analysed" )
+        echo "echo == assembled_list =="
+        echo "put -c $projectDir/lib/inSilicoChIP/lineNum.tsv -o data/util/lineNum.tsv"
+        echo "put -c $projectDir/lib/assembled_list/analysisList.tab -o data/metadata/analysisList.tab"
+        echo "put -c $projectDir/lib/assembled_list/experimentList.tab -o data/metadata/experimentList.tab"
+        echo "put -c $projectDir/lib/assembled_list/fileList.tab -o data/metadata/fileList.tab"
+        for Genome in `ls $projectDir/results`; do
+          echo "echo == $Genome colo =="
+          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/colo data/$Genome/colo"
+          echo "echo == $Genome target =="
+          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/targetGenes data/$Genome/target"
+        done
+      ;;
+    esac
+  } > $fn.lftp
+  rm -f $fn.log
+  qsub -o $fn.log -e $fn.log -N $qn $projectDir/sh/transferDDBJtoNBDC.sh QSUB $projectDir $fn $qn
+else
+#####################################################################################
+#                                     qsub モード                                    #
+#####################################################################################
+  projectDir=$2
+  fn=$3
+  qn=$4
+  while :; do
+    echo $fn $qn
+    lftp -f $fn.lftp
+    echo "finished"
+    Nerror=`cat $fn.log| grep -c "gnutls_record_recv"`
+    if [ "$Nerror" = "0" ]; then
+      break
+    fi
+    : > $fn.log
+  done
+  
+  if [ "$qn" = "assembleTF" ]; then
+    {
+      echo "open -u $user,$pass $address"
+      echo "mkdir data/assembled_old"
+      for Genome in `ls $projectDir/results`; do
+        echo "echo Moving $Genome assembled directory."
+        echo "mv data/$Genome/assembled data/assembled_old/$Genome"
+        echo "mv data/$Genome/assembled_new data/$Genome/assembled"
+      done
+      echo "echo Removing assembled_old directiory..."
+      echo "rm -r data/assembled_old"
+      echo "echo Finished"
+    } > $fn.lftp
+    lftp -f $fn.lftp
+  fi
+fi
 
+exit
 
-{
-  echo "open -u $user,$pass $address"
-  for Genome in `ls $projectDir/results`; do
-
-
-nbdc
-mkdir data2
-set net:limit-total-rate 31457280
-mirror -R --parallel=1000 -I "public/*.bed" -I "public/*.bed.idx" chipatlas/results data2
 
 
 
@@ -36,30 +112,3 @@ data/$Genome/target/
 
 同期
 data/$Genome/eachData/
-
-
-{
-  echo "open -u $user,$pass $address"
-  echo "mkdir data2"
-  
-  
-  for Genome in `ls $projectDir/results`; do
-    cat << EOS
-      mkdir data/$Genome
-      mkdir data/$Genome/assembled
-      mkdir data/$Genome/eachData
-      mkdir data/$Genome/eachData/bw
-      mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/BigWig data/$Genome/eachData/bw
-      mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/public data/$Genome/assembled
-EOS
-    for qVal in `ls $projectDir/results/$Genome/| grep Bed| cut -c4-`; do
-      cat << EOS
-        mkdir data/$Genome/eachData/bb$qVal
-        mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/Bed$qVal/BigBed data/$Genome/eachData/bb$qVal
-EOS
-    done
-  done
-} > UploadToServer.fltp
-
-lftp -f UploadToServer.fltp
-

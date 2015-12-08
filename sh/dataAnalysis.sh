@@ -22,7 +22,7 @@ if [ $Type = "0" ]; then
   sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行
   sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行
   sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh $projectDir             # in silico ChIP 用の BED ファイルを作成、w3oki へ転送
-  qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成、全対応表を NBDC に送る。
+  qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成
   exit
 fi
 
@@ -42,6 +42,11 @@ while :; do
     break
   fi
 done
+
+
+rm -rf $projectDir/lib/inSilicoChIP
+mv tmpDirFortransferBedTow3oki $projectDir/lib/inSilicoChIP
+
 
 # analysisList.tab の作成
 for Genome in `ls $projectDir/results`; do
@@ -72,16 +77,5 @@ rm tmpFileForColoList tmpFileFortargetGenesList
 # ファイル名
 # Colo : $1.gsub(" ", "_", $2).html
 # Target : $1.html
-
-
-# NBDC サーバにリストを転送
-eval `cat bin/nbdc| grep "="`  # NBDC のパスワードなどを取得
-cat << EOS | lftp
-  open -u $user,$pass $address
-  put tmpDirFortransferBedTow3oki/lineNum.tsv -o data/util/lineNum.tsv
-  put $projectDir/lib/assembled_list/analysisList.tab -o data/metadata/analysisList.tab
-  put $projectDir/lib/assembled_list/experimentList.tab -o data/metadata/experimentList.tab
-  put $projectDir/lib/assembled_list/fileList.tab -o data/metadata/fileList.tab
-EOS
 
 

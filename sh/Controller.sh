@@ -82,7 +82,7 @@ for Genome in `echo $GENOME`; do
       fi
       
       if [ $nQ -le 10 -a $Sz -lt $HDsize ]; then # ジョブ待ち数が 11 以下で、HDD 容量が 18 TB 以下の時に submit する
-        short=`sh $projectDir/sh/QSUB.sh shortOrweek`
+#        short=`sh $projectDir/sh/QSUB.sh shortOrweek`
         qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $short $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
         sleep 1
         break

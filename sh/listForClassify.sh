@@ -6,6 +6,7 @@
 
 if [ "$1" = "" ]; then
   projectDir=`echo $0| sed 's[/sh/listForClassify.sh[['`
+  qstat| awk '$3 == "TimeCourse" && $4 == "okishinya" {print "qdel " $1}'| sh
   QSUB="sh $projectDir/sh/QSUB.sh"
   for Genome in `ls $projectDir/results`; do
     $QSUB -o /dev/null -e /dev/null $projectDir/sh/listForClassify.sh $projectDir $Genome
