@@ -1,1 +1,1 @@
-  http&#58;//dbarchive.biosciencedbc.jp/kyushu-u/**Genome_assembly**/eachData/bw/**Experimental_ID**.bw  
+  `http\://dbarchive.biosciencedbc.jp/kyushu-u/<Genome_assembly>/eachData/bw/<Experimental_ID>.bw`  
