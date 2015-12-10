@@ -62,8 +62,8 @@ Experimental materials used for each SRX were manually annotated, by which it is
 
 ###Methods
 
-1. Sample metadata for all SRXs (biosample_set.xml) were downloaded [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies ([Doc S1][Doc_S1]) and those for cell types and tissues ([Doc S2][Doc_S2]).
-2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in [Table S1][Table_S1].
+1. Sample metadata for all SRXs (biosample_set.xml) were downloaded [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies (see [here][ag_attributes]) and those for cell types and tissues (see [here][ct_attributes]).
+2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in [Antigen List][antigenList] and [Cell type List][celltypeList].
 3. Criteria for antigens annotation:
     - **Histones**  
     Based on Brno nomenclature ([PMID: 15702071][PMID_15702071]).  
@@ -101,7 +101,7 @@ Experimental materials used for each SRX were manually annotated, by which it is
       Classified with yeast strains.
     - **Standardized Nomenclatures**  
       Nomenclatures of cell lines and tissue names were standardized according to those recorded in following frameworks and resources.
-        - Supplementary Table 2 in Yu et. al 2015 ([PMID: 25877200][PMID_25877200]), proposing unified cell-line names
+        - Supplementary Table S2 in Yu et. al 2015 ([PMID: 25877200][PMID_25877200]), proposing unified cell-line names
         - [ATCC], a nonprofit repository of cell lines
         - [MeSH] \(Medical Subject Headings\) for tissue names
         - [FlyBase] for cell lines of *D. melanogaster*  
@@ -339,11 +339,11 @@ _Example_:
 
 ###Analized data used in Colocalization
 _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell_type_class**.tsv  
-  (**Protein** and **Cell_type_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell\_type\_class**.tsv  
+  (**Protein** and **Cell\_type\_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
   
 _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent_stem_cell**.tsv  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent\_stem\_cell**.tsv  
   (TSV file describing the proteins colocalizing with POU5F1 in Pluripotent` `stem` `cell.)  
   (Spaces ` ` in the name of cell type class must be replaced with underscores `_`.)
 
@@ -402,13 +402,13 @@ Describing all proteins shown in Target Genes and Colocalization. ([Download] [a
 <!-- Links to files -->
 [dataNumber]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/DataNumber.png "Data number"
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
-[Doc_S1]: http://devbio.med.kyushu-u.ac.jp/chipatlas/docs/Doc_S1.txt
-[Doc_S2]: http://devbio.med.kyushu-u.ac.jp/chipatlas/docs/Doc_S2.txt
-[Table_S1]: https://docs.google.com/spreadsheets/d/1W-ehO9nZd638sdKIQNw6ENLHsD3Oi5UuxQNLaOAJXIQ/pubhtml
+[ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt
+[ct_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ct_attributes.txt
+[antigenList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenList.tab
+[celltypeList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/celltypeList.tab
 [experimentList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/experimentList.tab
 [fileList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/fileList.tab
 [analysisList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/analysisList.tab
-
 
 <!-- Links to external web sites -->
 [NCBI]: http://www.ncbi.nlm.nih.gov/
