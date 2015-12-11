@@ -62,13 +62,8 @@ Experimental materials used for each SRX were manually annotated, by which it is
 
 ###Methods
 
-<<<<<<< HEAD
 1. Sample metadata for all SRXs (biosample_set.xml) were downloaded from [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies (see [here][ag_attributes]) and those for cell types and tissues (see [here][ct_attributes]).
 2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in **antigenList.tab** ([Download][antigenList], [Table schema](#antigenList_schema)) and **celltypeList.tab** ([Download][celltypeList], [Table schema](#celltypeList_schema)).
-=======
-1. Sample metadata for all SRXs (biosample_set.xml) were downloaded [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies (see [here][ag_attributes]) and those for cell types and tissues (see [here][ct_attributes]).
-2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in [Antigen List][antigenList] and [Cell type List][celltypeList].
->>>>>>> origin/master
 3. Criteria for antigens annotation:
     - **Histones**  
     Based on Brno nomenclature ([PMID: 15702071][PMID_15702071]).  
@@ -434,118 +429,6 @@ Describing all celltypes recorded in ChIP-Atlas.
 | 3   | Cell type                                       | VCaP |
 | 4   | Number of experiments                                   | 185      |
 | 5   | Experimental IDs included | SRX020917,SRX020918,SRX020919,SRX020920,SRX020921,...|
-
-
-
-<a id="downloads_doc"></a>
-## 8. Downloads
-###Data for each experiment
-All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentList.tab** ([Download] [experimentList], [Table schema](#experimentList_schema))  
-
-- **BigWig**  
-  _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bw/**Experimental_ID**.bw  
-
-  _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bw/**SRX097088**.bw
-  
-- **Peak-call (BED)**  
-  _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bed**Threshold**/**Experimental_ID**.**Threshold**.bed  
-  (**Threshold** = 05, 10, or 20)  
-  
-  _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bed**05**/**SRX097088**.**05**.bed  
-  (Peak-call data of SRX097088 with q-value < 1E-05.)
-  
-- **Peak-call (BigBed)**  
-  _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bb**Threshold**/**Experimental_ID**.**Threshold**.bb  
-  (**Threshold** = 05, 10, or 20)  
-  
-  _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bb**05**/**SRX097088**.**05**.bb  
-  (Peak-call data of SRX097088 with q-value < 1E-05.)
-
-###Assembled Peak-call data used in Peak Browser
-_Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/assembled/**File_name**.bed  
-  (**Genome** and **File_name** is summarized in **fileList.tab** \[[Download] [fileList], [Table schema](#fileList_schema)\])  
-  
-_Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/assembled/**Oth.ALL.05.GATA2.AllCell**.bed  
-  (All peak-call data of GATA2 in all cell types with q-value < 1E-05.)
-
-###Analized data used in Target Genes
-_Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/target/**Protein**.**Distance**.tsv  
-  (**Protein**s are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
-  (**Distance** = 1, 5 or 10, indicating the distance [kb] from TSS.)  
-  
-_Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/target/**POU5F1**.**5**.tsv  
-  (TSV file describing the genes bound by POU5F1 at TSS ± 5 kb.)
-
-###Analized data used in Colocalization
-_Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell\_type\_class**.tsv  
-  (**Protein** and **Cell\_type\_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
-  
-_Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent\_stem\_cell**.tsv  
-  (TSV file describing the proteins colocalizing with POU5F1 in Pluripotent` `stem` `cell.)  
-  (Spaces ` ` in the name of cell type class must be replaced with underscores `_`.)
-
-
-  
-****
-<a id="experimentList_schema"></a>
-###experimentList.tab
-Describing all ChIP-seq experiments recorded in ChIP-Atlas ([Download] [experimentList])
-
-| Column     | Description                             | Example   |
-|------------|-----------------------------------------|-----------|
-| 1   | Experimental ID (SRX, ERX, DRX)         | SRX097088     |
-| 2   | Genome assembly                                   | hg19      |
-| 3   | Antigen class                                     | TFs and others      |
-| 4   | Antigen                         | GATA2 |
-| 5   | Cell type class  | Blood       |
-| 6   | Cell type                                       | K-562 |
-| 7   | Cell type description                      | Primary Tissue=Blood\|Tissue Diagnosis=Leukemia Chronic Myelogenous      |
-| 8   | Processing logs (# of reads, % mapped, % duplicates, # of peaks [q < 1E-05])                       | 30180878,82.3,42.1,6691      |
-| 9 | Title                              | GSM722415: GATA2 K562bmp r1 110325 3  |
-| 10- | Meta data by the authors                              | source_name=GATA2 ChIP-seq K562 BMP  |
-|  |                               | cell line=K562  |
-|  |                               | chip antibody=GATA2  |
-|  |                               | antibody catalog number=Santa Cruz SC-9008  |
-  
-****
-<a id="fileList_schema"></a>
-###fileList.tab
-Describing all assembled peak-call data used in Peak Browser ([Download] [fileList])
-
-| Column     | Description                             | Example   |
-|------------|-----------------------------------------|-----------|
-| 1   | File name         | Oth.ALL.05.GATA2.AllCell     |
-| 2   | Genome assembly                                   | hg19      |
-| 3   | Antigen class                                     | TFs and others      |
-| 4   | Antigen                         | GATA2 |
-| 5   | Cell type class  | All cell types       |
-| 6   | Cell type                                       | - |
-| 7   | Threshold                      | 05 (indicating q-value < 1E-05)     |
-| 8   | Experimental IDs included | SRX070877,SRX150427,SRX092303,SRX070876,SRX150668,...|
-  
-****
-<a id="analysisList_schema"></a>
-###analysisList.tab
-Describing all proteins shown in Target Genes and Colocalization. ([Download] [analysisList])
-
-| Column     | Description                             | Example   |
-|------------|-----------------------------------------|-----------|
-| 1   | Antigen         | POU5F1     |
-| 2   | Cell type class in Colocalization | Epidermis,Pluripotent stem cell      |
-| 3   | Recorded (+) or not (-) in Target Genes                                     | +      |
-| 4   | Genome assembly                                   | hg19      |
 
 
 <!-- Links to files -->
