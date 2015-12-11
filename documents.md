@@ -217,7 +217,7 @@ ChIP-Atlas **in silico ChIP** accepts users' data in following three formats:
 
 In addition, following analyses are applicable by specifying the data for comparison on the [submission form][insilicoChIP] of **in silico ChIP**:
 
-|Data in 4.|Data in 5.       |Aims and analyses                                                   |
+|Data in pannel 4.|Data in pannel 5.       |Aims and analyses                                                   |
 |-------|-------------------|--------------------------------------------------------------------|
 |BED    |Random permutation |Proteins bound to BED intervals more often than by chance.          |
 |BED    |BED                |Proteins differentially bound between the two sets of BED intervals.|
@@ -229,9 +229,9 @@ In addition, following analyses are applicable by specifying the data for compar
 ###Requirements and acceptable data
 
 - Reference peak-call data (upper panels (**1** to **3**) of the [submission form][insilicoChIP])  
-Comprehensive peak-call data as described in **4. Peak browser**. The result will be returned more quickly if the classes of antigens and cell-types are specified.
+Comprehensive peak-call data as described above (**4. Peak browser**). The result will be returned more quickly if the classes of antigens and cell-types are specified.
 - BED (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])  
-[UCSC BED format][UCSC_BED], minimally requiring tab-delimited three columns describing chromosom, starting and ending positions.
+[UCSC BED format][UCSC_BED], minimally requiring tab-delimited three columns describing chromosome, starting and ending positions.
 
   ```html
   chr1<tab>1435385<tab>1436458
@@ -251,7 +251,7 @@ Comprehensive peak-call data as described in **4. Peak browser**. The result wil
 - Motif (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])   
 A sequence motif described in [IUPAC nucleic acid notation][IUPAC]. In addition to normal codes (ATGC), ambiguity characters are also acceptable (WSMKRYBDHVN).
 - Gene list (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])   
-Gene symbols described according to following nomenclatures:
+Gene symbols must be entered according to following nomenclatures:
     
     * [HGNC][HGNC] (*H. sapiens*)  
     * [MGI][MGI] (*M. musculus*)
@@ -260,6 +260,7 @@ Gene symbols described according to following nomenclatures:
     * [SGD][SGD] (*S. cerevisiae*)
 
   (eg. OCT3/4 => POU5F1; p53 => TP53)  
+  <br>
 If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemble format), use batch conversion tool such as [DAVID][DAVID] (Convert into OFFICIAL\_GENE\_SYMBOL with Gene ID Conversion Tool).
 
 ###Methods
@@ -284,8 +285,8 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
       The locations of TSSs are converted to BED format with the addition of widths specified in 'Distance range from TSS' on the [submission form][insilicoChIP]. If 'RefSeq coding gene' is set for the comparison, RefSeq coding genes excluding those in submitted list are processed to BED format as mentioned above.
 
 2. Counts the overlaps between the BED (originated from pannels **4** and **5** of the [submission form][insilicoChIP]) and reference peak-call data (specified on upper panels **1** to **3** of the [submission form][insilicoChIP]) with `bedtools intersect` command ([BedTools2][bedtools]; ver 2.23.0).
-3. *P*-values are calculated with two-tailed Fisher's exact probability test (see [example][insilicoChIPsample]). The null hypothesis is that the intersection of reference peaks with submitted data in pannel **4** occurs in the same proportion to those with data in pannel **5**. *Q*-Values are calculated with Benjamini & Hochberg method.
-4. Fold enrichment is calculated by column 6 / 7 of of the same row. If the ratio > 1, the rightmost column is 'TRUE', meaning that the proteins at column 3 binds to the data of pannel **4** in a greater proportion than to those of pannel **5** specified in the [submission form][insilicoChIP].
+3. *P*-values are calculated with two-tailed Fisher's exact probability test (see [example][insilicoChIPsample]). The null hypothesis is that the intersection of reference peaks with submitted data in pannel **4** occurs in the same proportion to those with data in pannel **5** of the [submission form][insilicoChIP]. *Q*-Values are calculated with Benjamini & Hochberg method.
+4. Fold enrichment is calculated by (column 6) / (column 7) of of the same row. If the ratio > 1, the rightmost column is 'TRUE', meaning that the proteins at column 3 binds to the data of pannel **4** in a greater proportion than to those of pannel **5** specified in the [submission form][insilicoChIP].
 
 
 <a id="downloads_doc"></a>
