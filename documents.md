@@ -447,7 +447,7 @@ Describing all celltypes recorded in ChIP-Atlas.
 [DDBJ]: http://www.ddbj.nig.ac.jp/index-e.html
 [ENA]: http://www.ebi.ac.uk/ena
 [SRX]: http://www.ncbi.nlm.nih.gov/books/NBK56913/
-[NCBImeta]: ftp://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata
+[NCBImeta]: http://ftp.ncbi.nlm.nih.gov/sra/reports/Metadata/
 [SraToolKit]: http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software
 [bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 [bowtie1]: http://bowtie-bio.sourceforge.net/index.shtml
