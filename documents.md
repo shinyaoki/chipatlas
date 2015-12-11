@@ -4,10 +4,11 @@ Documents for computational processing in ChIP-Atlas.
 1. [Data source](#data_source_doc)
 2. [Primary processing](#primary_processing_doc)
 3. [Data Annotation](#data_annotation_doc)
-4. [Peak browser](#peak_browser_doc)
-5. [Target genes](#target_genes_doc)
+4. [Peak Browser](#peak_browser_doc)
+5. [Target Genes](#target_genes_doc)
 6. [Colocalization](#colocalization_doc)
 7. [in silico ChIP](#virtual_chip_doc)
+8. [Downloads](#downloads_doc)
 
 <a id="data_source_doc"></a>
 ## 1. Data source
@@ -61,8 +62,8 @@ Experimental materials used for each SRX were manually annotated, by which it is
 
 ###Methods
 
-1. Sample metadata for all SRXs (biosample_set.xml) were downloaded [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies ([Doc S1][Doc_S1]) and those for cell types and tissues ([Doc S2][Doc_S2]).
-2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in [Table S1][Table_S1].
+1. Sample metadata for all SRXs (biosample_set.xml) were downloaded from [NCBI FTP site][NCBImeta] to extract attributes described for antigens and antibodies (see [here][ag_attributes]) and those for cell types and tissues (see [here][ct_attributes]).
+2. According to the attribute values described to each SRX, antigens and cell types used were manually annotated by curators who have been fully trained on molecular and developmental biology. Each annotation has 'Class' and 'Subclass' as shown in **antigenList.tab** ([Download][antigenList], [Table schema](#antigenList_schema)) and **celltypeList.tab** ([Download][celltypeList], [Table schema](#celltypeList_schema)).
 3. Criteria for antigens annotation:
     - **Histones**  
     Based on Brno nomenclature ([PMID: 15702071][PMID_15702071]).  
@@ -100,7 +101,7 @@ Experimental materials used for each SRX were manually annotated, by which it is
       Classified with yeast strains.
     - **Standardized Nomenclatures**  
       Nomenclatures of cell lines and tissue names were standardized according to those recorded in following frameworks and resources.
-        - Supplementary Table 2 in Yu et. al 2015 ([PMID: 25877200][PMID_25877200]), proposing unified cell-line names
+        - Supplementary Table S2 in Yu et. al 2015 ([PMID: 25877200][PMID_25877200]), proposing unified cell-line names
         - [ATCC], a nonprofit repository of cell lines
         - [MeSH] \(Medical Subject Headings\) for tissue names
         - [FlyBase] for cell lines of *D. melanogaster*  
@@ -110,8 +111,8 @@ Experimental materials used for each SRX were manually annotated, by which it is
 
 
 <a id="peak_browser_doc"></a>
-## 4. Peak browser
-This section allows users to search the proteins that are bound to given genomic loci on genome browser IGV. This is useful to predict the cis-regulatory element as well as to know the regulatory proteins and epigenetic status on given regions. BED4-formatted peak-call data made in **2.5** were concatenated and converted to BED9 + GFF3 format to be browsed on genome browser IGV.
+## 4. Peak Browser
+ChIP-Atlas **Peak Browser** allows users to search the proteins that are bound to given genomic loci on genome browser IGV. This is useful to predict the cis-regulatory element as well as to know the regulatory proteins and epigenetic status on given regions. BED4-formatted peak-call data made in **2.5** were concatenated and converted to BED9 + GFF3 format to be browsed on genome browser IGV.
 
 | Column     | Description                             | Example   |
 |------------|-----------------------------------------|-----------|
@@ -120,7 +121,7 @@ This section allows users to search the proteins that are bound to given genomic
 | Column 2   | Begin                                   | 1234      |
 | Column 3   | End                                     | 5678      |
 | Column 4*  | Sample metadata                         | (Strings) |
-| Column 5   | -10*log*<sub>10</sub>(MACS2 *q*-value)  | 345       |
+| Column 5   | -10Log<sub>10</sub>(MACS2 *q*-value)    | 345       |
 | Column 6   | .                                       | .         |
 | Column 7   | Begin (= Column 2)                      | 1234      |
 | Column 8   | End (= Column 3)                        | 5678      |
@@ -136,20 +137,20 @@ This section allows users to search the proteins that are bound to given genomic
   (If Column 5 is 0, 500 or 1000, then the color is blue, green or red, respectively)
 
 <a id="target_genes_doc"></a>
-## 5. Target genes
+## 5. Target Genes
 ###Introduction
-This section predicts the genes directly regulated by given proteins, according to binding profiles of all the public ChIP-seq data to gene loci. Target genes were adopted if the peak-call intervals of a given protein overlapped with transcription start site (TSS) ± N kb (N = 1, 5 or 10).
+ChIP-Atlas **Target Genes** predicts the genes directly regulated by given proteins, according to binding profiles of all the public ChIP-seq data to gene loci. Target genes were adopted if the peak-call intervals of a given protein overlapped with transcription start site (TSS) ± N kb (N = 1, 5 or 10).
 
 ###Methods
 
 1. Peak-call data:  
-  BED4-formatted peak-call data of each SRX made in section **2.5** were used (MACS2 *q*-value threshold = 1e-5; antigen class = 'TFs and others').
+  BED4-formatted peak-call data of each SRX made in section **2.5** were used (MACS2 *q*-value < 1E-05; antigen class = 'TFs and others').
 2. Preparation of TSS library:  
   Location of TSSs and gene symbols were according to refFlat files (at [UCSC FTP site][UCSC_FTP]), from which only protein-coding genes were used for this analysis.
 3. Preparation of STRING library:  
-  [STRING][STRING] is a comprehensive database recording protein-protein and protein-gene interactions from the experimental evidence. From this website, protein.actions.v10.txt.gz file describing all interactions were downloaded, and the protein IDs were converted to gene symbols with protein.aliases.v10.txt.gz file.
+  [STRING][STRING] is a comprehensive database recording protein-protein and protein-gene interactions from the experimental evidence. From this website, [protein.actions.v10.txt.gz][STRING_DL] file describing all interactions were downloaded, and the protein IDs were converted to gene symbols with [protein.aliases.v10.txt.gz][STRING_DL] file.
 4. Processing:  
-  `bedtools window` command ([bedtools][bedtools] ver 2.17.0) was used to search target genes of a peak-call data (**5.1**) from the TSS library (**5.2**) with a window size option (`-w 1000`, `5000` or `10000`). Peak-call data of the same antigens were piled up, and MACS2 scores (-10*log*<sub>10</sub>[MACS2 *q*-value]) were indicated as heatmap colors on the web browser (MACS2 score = 0, 500, 1000 => color = blue, green, red). If a gene intersected with multiple peaks of single SRX, the highest MACS2 score was chosen for the color indication. The 'Average' column on the leftmost of the table is the means of the MACS2 scores in the same row. The 'STRING' column on the rightmost indicates the STRING scores for the protein-gene interaction according to STRING library (**5.3**). For the detail, protein-gene pairs in protein.actions.v10.txt.gz file were extracted if matching to following all conditions:
+  `bedtools window` command ([bedtools][bedtools] ver 2.17.0) was used to search target genes of a peak-call data (**5.1**) from the TSS library (**5.2**) with a window size option (`-w 1000`, `5000` or `10000`). Peak-call data of the same antigens were piled up, and MACS2 scores (-10Log<sub>10</sub>[MACS2 *q*-value]) were indicated as heatmap colors on the web browser (MACS2 score = 0, 500, 1000 => color = blue, green, red) (see [example][tgSample]). If a gene intersected with multiple peaks of single SRX, the highest MACS2 score was chosen for the color indication. The 'Average' column on the leftmost of the table is the means of the MACS2 scores in the same row. The 'STRING' column on the rightmost indicates the STRING scores for the protein-gene interaction according to STRING library (**5.3**). For the detail, protein-gene pairs in [protein.actions.v10.txt.gz][STRING_DL] file were extracted if matching to following all conditions:
     - 1st column (item\_id\_a) == Query antigen
     - 2nd column (item\_id\_b) == Target gene
     - 3rd column (mode) == "expression"
@@ -158,7 +159,7 @@ This section predicts the genes directly regulated by given proteins, according 
 <a id="colocalization_doc"></a>
 ## 6. Colocalization
 ###Introduction
-It is well known that several kinds of transcription factors (TFs) make a complex to exert arranged or strong transcriptional activity (eg. Pou5f1, Nanog and Sox2 in mouse ES cells). ChIP-seq profiles of such the TFs are quite similar, often showing colocalization on multiple genomic regions. This section predicts colocalization partners of given TFs, evaluated by comprehensive and combinatorial similarity analyses of all public ChIP-seq data.
+It is well known that several kinds of transcription factors (TFs) make a complex to exert arranged or stronger transcriptional activity (eg. Pou5f1, Nanog and Sox2 in mouse ES cells). ChIP-seq profiles of such the TFs are quite similar, often showing colocalization on multiple genomic regions. ChIP-Atlas **Colocalization** predicts colocalization partners of given TFs, evaluated by comprehensive and combinatorial similarity analyses of all public ChIP-seq data.
 
 ###Algorithms
 BED4-formatted peak-call data made in section **2.5** were analyzed to evaluate the similarities to other peak-call data in identical cell-type class. The similarity was evaluated with CoLo, a tool to evaluate the colocalization of transcription factors (TFs) with multiple ChIP-seq peak-call data. Advantages to use CoLo is that:
@@ -198,7 +199,7 @@ Eventually, a set of nine Boolean results (similar or not) is returned to indica
   |L    |M    |2     |
   |L    |L    |1     |
 
-  If multiple H/M/L combinations were returned from SRX_1 and SRX_2, the highest score was adopted. The scores (1 to 9) were colored in blue, green to red, and colored in gray if all of the nine H/M/L combinations were false. The 'Average' column on the leftmost of the table is the means of the CoLo scores in the same row. The 'STRING' column on the rightmost indicates the STRING scores for the protein-protein interaction (**6.2**). For the detail, protein-protein pairs in protein.actions.v10.txt.gz file were extracted if matching to following all conditions:
+  If multiple H/M/L combinations were returned from SRX_1 and SRX_2, the highest score was adopted. The scores (1 to 9) were colored in blue, green to red, and colored in gray if all of the nine H/M/L combinations were false (see [example][coloSample]). The 'Average' column on the leftmost of the table is the means of the CoLo scores in the same row. The 'STRING' column on the rightmost indicates the STRING scores for the protein-protein interaction (**6.2**). For the detail, protein-protein pairs in [protein.actions.v10.txt.gz][STRING_DL] file were extracted if matching to following all conditions:
 
   - 1st column (item\_id\_a) == query antigen
   - 2nd column (item\_id\_b) == coassociation partner
@@ -208,13 +209,13 @@ Eventually, a set of nine Boolean results (similar or not) is returned to indica
 <a id="virtual_chip_doc"></a>
 ## 7. in silico ChIP
 ###Introduction
-This section accepts users' data in following three formats:
+ChIP-Atlas **in silico ChIP** accepts users' data in following three formats:
 
 - ChIP-seq data in BED format (to search similar ChIP-seq data)
 - Sequence motif (to search proteins bound to the motif)
 - Gene list (to search proteins bound to the genes)
 
-In addition, following analyses are applicable by specifying the data for comparison on the in silico ChIP page:
+In addition, following analyses are applicable by specifying the data for comparison on the [submission form][insilicoChIP] of **in silico ChIP**:
 
 |Data in 4.|Data in 5.       |Aims and analyses                                                   |
 |-------|-------------------|--------------------------------------------------------------------|
@@ -223,13 +224,13 @@ In addition, following analyses are applicable by specifying the data for compar
 |Motif  |Random permutation |Proteins bound to a sequence motif more often than by chance.                |
 |Motif  |Motif              |Proteins differentially bound between the two motifs.               |
 |Genes  |RefSeq coding genes|Proteins bound to genes more often than other RefSeq genes.         |
-|Genes  |Genes              |Proteins differentially bound between the two sets of gene list.    |
+|Genes  |Genes              |Proteins differentially bound between the two sets of gene lists.    |
 
 ###Requirements and acceptable data
 
-- Reference peak-call data (upper panels of the submission form)  
+- Reference peak-call data (upper panels (**1** to **3**) of the [submission form][insilicoChIP])  
 Comprehensive peak-call data as described in **4. Peak browser**. The result will be returned more quickly if the classes of antigens and cell-types are specified.
-- BED (lower panels of the submission form)  
+- BED (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])  
 [UCSC BED format][UCSC_BED], minimally requiring tab-delimited three columns describing chromosom, starting and ending positions.
 
   ```html
@@ -237,7 +238,7 @@ Comprehensive peak-call data as described in **4. Peak browser**. The result wil
   chrX<tab>4634643<tab>4635798
   ```
 
-  A header and column 4 or later can be included, but they are ignored for the analysis. BE CAREFUL that the BED files in the following genome assembly are only acceptable:
+  A header and column 4 or later can be included, but they are ignored for the analysis. BE CAREFUL that the BED files in the following genome assemblies are only acceptable:
   
   - hg19 (*H. sapiens*)
   - mm9 (*M. musculus*)
@@ -247,9 +248,9 @@ Comprehensive peak-call data as described in **4. Peak browser**. The result wil
   
   If the BED file is in other genome assembly, convert it to proper one with [UCSC liftOver tool][liftOver].
   
-- Motif (lower panels of the submission form)  
-A sequence motif described in [IUPAC nucleic acid notation][IUPAC]. In addition to ATGC, ambiguity characters are also acceptable (WSMKRYBDHVN).
-- Gene list (lower panels of the submission form)  
+- Motif (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])   
+A sequence motif described in [IUPAC nucleic acid notation][IUPAC]. In addition to normal codes (ATGC), ambiguity characters are also acceptable (WSMKRYBDHVN).
+- Gene list (lower panels  (**4** and **5**) of the [submission form][insilicoChIP])   
 Gene symbols described according to following nomenclatures:
     
     * [HGNC][HGNC] (*H. sapiens*)  
@@ -280,18 +281,166 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
 
 
 
-      The locations of TSSs are converted to BED format with the addition of widths specified in 'Distance range from TSS' on the submission form. If 'RefSeq coding genes…' is set for the comparison, RefSeq coding genes excluding those in submitted list are processed to BED format as mentioned above.
+      The locations of TSSs are converted to BED format with the addition of widths specified in 'Distance range from TSS' on the [submission form][insilicoChIP]. If 'RefSeq coding gene' is set for the comparison, RefSeq coding genes excluding those in submitted list are processed to BED format as mentioned above.
 
-2. Counts the overlaps between the BED (originated from 'My data' or 'Compare with') and reference peak-call data (specified on upper panels of the submission form) with `bedtools intersect` command ([BedTools2][bedtools]; ver 2.23.0).
-3. *P*-values are calculated with two-tailed Fisher's exact probability test. The null hypothesis is that the intersection of reference peak-call data with 'My data' occurs in the same proportion to those with 'Compare with'. *Q*-Values are calculated with Benjamini & Hochberg method.
-4. Fold enrichment is calculated by column 6 and 7 of resultant table. If the ratio > 1, the rightmost column is 'TRUE', meaning that the proteins at column 3 binds to 'My data' in a greater proportion than to 'Compare with' features.
+2. Counts the overlaps between the BED (originated from pannels **4** and **5** of the [submission form][insilicoChIP]) and reference peak-call data (specified on upper panels **1** to **3** of the [submission form][insilicoChIP]) with `bedtools intersect` command ([BedTools2][bedtools]; ver 2.23.0).
+3. *P*-values are calculated with two-tailed Fisher's exact probability test (see [example][insilicoChIPsample]). The null hypothesis is that the intersection of reference peaks with submitted data in pannel **4** occurs in the same proportion to those with data in pannel **5**. *Q*-Values are calculated with Benjamini & Hochberg method.
+4. Fold enrichment is calculated by column 6 / 7 of of the same row. If the ratio > 1, the rightmost column is 'TRUE', meaning that the proteins at column 3 binds to the data of pannel **4** in a greater proportion than to those of pannel **5** specified in the [submission form][insilicoChIP].
+
+
+<a id="downloads_doc"></a>
+## 8. Downloads
+###Data for each SRX
+All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentList.tab** ([Download] [experimentList], [Table schema](#experimentList_schema))  
+
+- **BigWig**  
+  _Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bw/**Experimental_ID**.bw  
+
+  _Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bw/**SRX097088**.bw
+  
+- **Peak-call (BED)**  
+  _Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bed**Threshold**/**Experimental_ID**.**Threshold**.bed  
+  (**Threshold** = 05, 10, or 20)  
+  
+  _Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bed**05**/**SRX097088**.**05**.bed  
+  (Peak-call data of SRX097088 with _q_-value < 1E-05.)
+  
+- **Peak-call (BigBed)**  
+  _Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bb**Threshold**/**Experimental_ID**.**Threshold**.bb  
+  (**Threshold** = 05, 10, or 20)  
+  
+  _Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bb**05**/**SRX097088**.**05**.bb  
+  (Peak-call data of SRX097088 with _q_-value < 1E-05.)
+
+<br />
+###Assembled Peak-call data used in Peak Browser
+_Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/assembled/**File_name**.bed  
+  (**Genome** and **File_name** is listed in **fileList.tab** \[[Download] [fileList], [Table schema](#fileList_schema)\])  
+  
+_Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/assembled/**Oth.ALL.05.GATA2.AllCell**.bed  
+  (All peak-call data of GATA2 in all cell types with _q_-value < 1E-05.)
+
+<br />
+###Analized data used in Target Genes
+_Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/target/**Protein**.**Distance**.tsv  
+  (**Protein**s are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
+  (**Distance** = 1, 5 or 10, indicating the distance [kb] from TSS.)  
+  
+_Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/target/**POU5F1**.**5**.tsv  
+  (TSV file describing the genes bound by POU5F1 at TSS ± 5 kb.)
+
+<br />
+###Analized data used in Colocalization
+_Download URL_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell\_type\_class**.tsv  
+  (**Protein** and **Cell\_type\_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
+  
+_Example_:  
+  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent\_stem\_cell**.tsv  
+  (TSV file describing the proteins colocalizing with POU5F1 in Pluripotent` `stem` `cell.)  
+  (Spaces ` ` in the name of cell type class must be replaced with underscores `_`.)
+
+<br />
+###Tables summarizing metadata and files  
+<a id="experimentList_schema"></a>
+
+- **experimentList.tab** ([Download] [experimentList])  
+Describing all ChIP-seq experiments recorded in ChIP-Atlas.
+
+| Column     | Description                             | Example   |
+|------------|-----------------------------------------|-----------|
+| 1   | Experimental ID (SRX, ERX, DRX)         | SRX097088     |
+| 2   | Genome assembly                                   | hg19      |
+| 3   | Antigen class                                     | TFs and others      |
+| 4   | Antigen                         | GATA2 |
+| 5   | Cell type class  | Blood       |
+| 6   | Cell type                                       | K-562 |
+| 7   | Cell type description                      | Primary Tissue=Blood\|Tissue Diagnosis=Leukemia Chronic Myelogenous      |
+| 8   | Processing logs (# of reads, % mapped, % duplicates, # of peaks [_q_ < 1E-05])                       | 30180878,82.3,42.1,6691      |
+| 9 | Title                              | GSM722415: GATA2 K562bmp r1 110325 3  |
+| 10- | Meta data submitted by the authors                              | source_name=GATA2 ChIP-seq K562 BMP  |
+|  |                               | cell line=K562  |
+|  |                               | chip antibody=GATA2  |
+|  |                               | antibody catalog number=Santa Cruz SC-9008  |
+<br />
+<a id="fileList_schema"></a>
+
+- **fileList.tab** ([Download] [fileList])  
+Describing all assembled peak-call data used in Peak Browser.
+
+| Column     | Description                             | Example   |
+|------------|-----------------------------------------|-----------|
+| 1   | File name         | Oth.ALL.05.GATA2.AllCell     |
+| 2   | Genome assembly                                   | hg19      |
+| 3   | Antigen class                                     | TFs and others      |
+| 4   | Antigen                         | GATA2 |
+| 5   | Cell type class  | All cell types       |
+| 6   | Cell type                                       | - |
+| 7   | Threshold                      | 05 (indicating _q_-value < 1E-05)     |
+| 8   | Experimental IDs included | SRX070877,SRX150427,SRX092303,SRX070876,SRX150668,...|
+  
+<br />
+<a id="analysisList_schema"></a>
+
+- **analysisList.tab** ([Download] [analysisList])  
+Describing all proteins shown in Target Genes and Colocalization.
+
+| Column     | Description                             | Example   |
+|------------|-----------------------------------------|-----------|
+| 1   | Antigen         | POU5F1     |
+| 2   | Cell type class in Colocalization | Epidermis,Pluripotent stem cell      |
+| 3   | Recorded (+) or not (-) in Target Genes                                     | +      |
+| 4   | Genome assembly                                   | hg19      |
+  
+<br />
+<a id="antigenList_schema"></a>
+
+- **antigenList.tab** ([Download] [antigenList])  
+Describing all antigens recorded in ChIP-Atlas.
+
+| Column     | Description                             | Example   |
+|------------|-----------------------------------------|-----------|
+| 1   | Genome assembly         | hg19     |
+| 2   | Antigen class                                     | TFs and others      |
+| 3   | Antigen                         | POU5F1 |
+| 4   | Number of experiments                                   | 24      |
+| 5   | Experimental IDs included | SRX011571,SRX011572,SRX017276,SRX021069,SRX021070,...|
+
+<br />
+<a id="celltypeList_schema"></a>
+
+- **celltypeList.tab** ([Download] [celltypeList])  
+Describing all celltypes recorded in ChIP-Atlas.
+
+| Column     | Description                             | Example   |
+|------------|-----------------------------------------|-----------|
+| 1   | Genome assembly         | hg19     |
+| 2   | Cell type class  | Prostate       |
+| 3   | Cell type                                       | VCaP |
+| 4   | Number of experiments                                   | 185      |
+| 5   | Experimental IDs included | SRX020917,SRX020918,SRX020919,SRX020920,SRX020921,...|
+
 
 <!-- Links to files -->
 [dataNumber]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/DataNumber.png "Data number"
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
-[Doc_S1]: http://devbio.med.kyushu-u.ac.jp/chipatlas/docs/Doc_S1.txt
-[Doc_S2]: http://devbio.med.kyushu-u.ac.jp/chipatlas/docs/Doc_S2.txt
-[Table_S1]: https://docs.google.com/spreadsheets/d/1W-ehO9nZd638sdKIQNw6ENLHsD3Oi5UuxQNLaOAJXIQ/pubhtml
+[ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt
+[ct_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ct_attributes.txt
+[antigenList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenList.tab
+[celltypeList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/celltypeList.tab
+[experimentList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/experimentList.tab
+[fileList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/fileList.tab
+[analysisList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/analysisList.tab
 
 <!-- Links to external web sites -->
 [NCBI]: http://www.ncbi.nlm.nih.gov/
@@ -317,7 +466,12 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
 [MeSH]: http://www.ncbi.nlm.nih.gov/mesh
 [UCSC_FTP]: http://hgdownload.cse.ucsc.edu/goldenPath
 [STRING]: http://string-db.org
+[STRING_DL]: http://string.embl.de/newstring_cgi/show_download_page.pl
 [UCSC_BED]: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
 [liftOver]: https://genome.ucsc.edu/cgi-bin/hgLiftOver
 [IUPAC]: https://en.wikipedia.org/wiki/Nucleic_acid_notation
 [DAVID]: https://david.ncifcrf.gov
+[tgSample]: http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/target/POU5F1.5.html
+[coloSample]: http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/colo/NANOG.Pluripotent_stem_cell.html
+[insilicoChIP]: http://chip-atlas.org/in_silico_chip
+[insilicoChIPsample]: http://dbarchive.biosciencedbc.jp/kyushu-u/sample/insilicoChIP_result_example.html

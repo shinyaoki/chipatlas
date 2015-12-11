@@ -162,8 +162,23 @@ echo $projectDir/results/*/public/*.list| xargs rm
 # $8 = SRX (コンマ区切り)             SRX059255,SRX063957,SRX059274,SRX059273,SRX059254
 
 
-
-
-
-
-
+# Antigen, CellType リスト の作成
+cat $projectDir/lib/assembled_list/experimentList.tab| awk -F '\t' -v projectDir=$projectDir '
+BEGIN {
+  print "Genome\tAntigen_class\tAntigen\tNum_data" > projectDir"/lib/assembled_list/antigenList.tab"
+  print "Genome\tCell_type_class\tCell_type\tNum_data" > projectDir"/lib/assembled_list/celltypeList.tab"
+  cmd = "sort"
+} {
+  a[$2 "\t" $3 "\t" $4]++
+  c[$2 "\t" $5 "\t" $6]++
+} END {
+  for (key in a) print key "\t" a[key] |& cmd
+  close(cmd, "to")
+  while((cmd |& getline var) > 0) print var >> projectDir"/lib/assembled_list/antigenList.tab"
+  close(cmd)
+  
+  for (key in c) print key "\t" c[key] |& cmd
+  close(cmd, "to")
+  while((cmd |& getline var) > 0) print var >> projectDir"/lib/assembled_list/celltypeList.tab"
+  close(cmd)
+}'
