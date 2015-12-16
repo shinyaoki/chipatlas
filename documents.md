@@ -10,7 +10,7 @@ Documents for computational processing in ChIP-Atlas.
 7. [in silico ChIP](#virtual_chip_doc)
 8. [Downloads](#downloads_doc)
 
-<a id="data_source_doc"></a>
+<a name="data_source_doc"></a>
 ## 1. Data source
 Currently, almost all of the academic journals require that authors studying with high throughput sequencer must submit their raw sequence data as SRAs (Sequence Read Archives) to public repositories ([NCBI][NCBI], [DDBJ][DDBJ] or [ENA][ENA]). Each experiment is assigned to an ID, called experimental accessions that begin with SRX, DRX or ERX (thereafter '[SRXs][SRX]' on behalf of them). Referring to corresponded 'experiment' and 'biosample' metadata in XML format (available from [NCBI FTP site][NCBImeta]), ChIP-Atlas used SRXs matching all of the following criteria:
 
@@ -21,7 +21,7 @@ Currently, almost all of the academic journals require that authors studying wit
 ![][dataNumber]
 
 
-<a id="primary_processing_doc"></a>
+<a name="primary_processing_doc"></a>
 ## 2. Primary processing
 ###Introduction
 Sequence raw data from SRXs shown above were aligned to reference genome with Bowtie2, before producing coverage data in BigWig format and peak-calls in BED format.  
@@ -55,7 +55,7 @@ BAM files made in (3) were used to peak-call with [MACS2][MACS2] (ver 2.1.0; `ma
 
 
 
-<a id="data_annotation_doc"></a>
+<a name="data_annotation_doc"></a>
 ## 3. Data Annotation
 ###Introduction
 Experimental materials used for each SRX were manually annotated, by which it is capable of extracting data matching with given keywords for antigens and cell types.
@@ -110,7 +110,7 @@ Experimental materials used for each SRX were manually annotated, by which it is
 6. Antigens or cell types were classified in 'No description' class if there was no attribute value.
 
 
-<a id="peak_browser_doc"></a>
+<a name="peak_browser_doc"></a>
 ## 4. Peak Browser
 ChIP-Atlas **Peak Browser** allows users to search the proteins that are bound to given genomic loci on genome browser IGV. This is useful to predict the cis-regulatory element as well as to know the regulatory proteins and epigenetic status on given regions. BED4-formatted peak-call data made in **2.5** were concatenated and converted to BED9 + GFF3 format to be browsed on genome browser IGV.
 
@@ -136,7 +136,7 @@ ChIP-Atlas **Peak Browser** allows users to search the proteins that are bound t
   Heatmap color codes for Column 5.  
   (If Column 5 is 0, 500 or 1000, then the color is blue, green or red, respectively)
 
-<a id="target_genes_doc"></a>
+<a name="target_genes_doc"></a>
 ## 5. Target Genes
 ###Introduction
 ChIP-Atlas **Target Genes** predicts the genes directly regulated by given proteins, according to binding profiles of all the public ChIP-seq data to gene loci. Target genes were adopted if the peak-call intervals of a given protein overlapped with transcription start site (TSS) ± N kb (N = 1, 5 or 10).
@@ -156,7 +156,7 @@ ChIP-Atlas **Target Genes** predicts the genes directly regulated by given prote
     - 3rd column (mode) == "expression"
     - 5th column (a\_is\_acting) == "1"
 
-<a id="colocalization_doc"></a>
+<a name="colocalization_doc"></a>
 ## 6. Colocalization
 ###Introduction
 It is well known that several kinds of transcription factors (TFs) make a complex to exert arranged or stronger transcriptional activity (eg. Pou5f1, Nanog and Sox2 in mouse ES cells). ChIP-seq profiles of such the TFs are quite similar, often showing colocalization on multiple genomic regions. ChIP-Atlas **Colocalization** predicts colocalization partners of given TFs, evaluated by comprehensive and combinatorial similarity analyses of all public ChIP-seq data.
@@ -206,7 +206,7 @@ Eventually, a set of nine Boolean results (similar or not) is returned to indica
   - 3rd column (mode) == "binding"
 
 
-<a id="virtual_chip_doc"></a>
+<a name="virtual_chip_doc"></a>
 ## 7. in silico ChIP
 ###Introduction
 ChIP-Atlas **in silico ChIP** accepts users' data in following three formats:
@@ -289,7 +289,7 @@ If the gene list are described in other format (eg. Gene IDs in Refseq or Emsemb
 4. Fold enrichment is calculated by (column 6) / (column 7) of of the same row. If the ratio > 1, the rightmost column is 'TRUE', meaning that the proteins at column 3 binds to the data of pannel **4** in a greater proportion than to those of pannel **5** specified in the [submission form][insilicoChIP].
 
 
-<a id="downloads_doc"></a>
+<a name="downloads_doc"></a>
 ## 8. Downloads
 ###Data for each SRX
 All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentList.tab** ([Download] [experimentList], [Table schema](#experimentList_schema))  
@@ -353,7 +353,7 @@ _Example_:
 
 <br />
 ###Tables summarizing metadata and files  
-<a id="experimentList_schema"></a>
+<a name="experimentList_schema"></a>
 
 - **experimentList.tab** ([Download] [experimentList])  
 Describing all ChIP-seq experiments recorded in ChIP-Atlas.
@@ -374,7 +374,7 @@ Describing all ChIP-seq experiments recorded in ChIP-Atlas.
 |  |                               | chip antibody=GATA2  |
 |  |                               | antibody catalog number=Santa Cruz SC-9008  |
 <br />
-<a id="fileList_schema"></a>
+<a name="fileList_schema"></a>
 
 - **fileList.tab** ([Download] [fileList])  
 Describing all assembled peak-call data used in Peak Browser.
@@ -391,7 +391,7 @@ Describing all assembled peak-call data used in Peak Browser.
 | 8   | Experimental IDs included | SRX070877,SRX150427,SRX092303,SRX070876,SRX150668,...|
   
 <br />
-<a id="analysisList_schema"></a>
+<a name="analysisList_schema"></a>
 
 - **analysisList.tab** ([Download] [analysisList])  
 Describing all proteins shown in Target Genes and Colocalization.
@@ -404,7 +404,7 @@ Describing all proteins shown in Target Genes and Colocalization.
 | 4   | Genome assembly                                   | hg19      |
   
 <br />
-<a id="antigenList_schema"></a>
+<a name="antigenList_schema"></a>
 
 - **antigenList.tab** ([Download] [antigenList])  
 Describing all antigens recorded in ChIP-Atlas.
@@ -417,8 +417,10 @@ Describing all antigens recorded in ChIP-Atlas.
 | 4   | Number of experiments                                   | 24      |
 | 5   | Experimental IDs included | SRX011571,SRX011572,SRX017276,SRX021069,SRX021070,...|
 
+![][antigenNumber]
+
 <br />
-<a id="celltypeList_schema"></a>
+<a name="celltypeList_schema"></a>
 
 - **celltypeList.tab** ([Download] [celltypeList])  
 Describing all celltypes recorded in ChIP-Atlas.
@@ -431,9 +433,10 @@ Describing all celltypes recorded in ChIP-Atlas.
 | 4   | Number of experiments                                   | 185      |
 | 5   | Experimental IDs included | SRX020917,SRX020918,SRX020919,SRX020920,SRX020921,...|
 
+![][cellTypeNumber]
 
 <!-- Links to files -->
-[dataNumber]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/DataNumber.png "Data number"
+[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/dataNumber.png "Data numbers"
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
 [ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt
 [ct_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ct_attributes.txt
@@ -442,6 +445,8 @@ Describing all celltypes recorded in ChIP-Atlas.
 [experimentList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/experimentList.tab
 [fileList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/fileList.tab
 [analysisList]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/analysisList.tab
+[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber.png "Antigen calsses"
+[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber.png "Cell type calsses"
 
 <!-- Links to external web sites -->
 [NCBI]: http://www.ncbi.nlm.nih.gov/
