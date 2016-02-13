@@ -22,6 +22,7 @@ if [ $Type = "0" ]; then
   sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行
   sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行
   sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh $projectDir             # in silico ChIP 用の BED ファイルを作成、w3oki へ転送
+  sh chipatlas/sh/dataNumbers.sh $projectDir                                    # データ数を集計し、グラフを作成
   qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成
   exit
 fi

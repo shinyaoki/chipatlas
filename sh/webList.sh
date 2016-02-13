@@ -163,21 +163,29 @@ echo $projectDir/results/*/public/*.list| xargs rm
 
 
 # Antigen, CellType リスト の作成
-cat $projectDir/lib/assembled_list/experimentList.tab| awk -F '\t' -v projectDir=$projectDir '
+cat $projectDir/lib/assembled_list/experimentList.tab| sort| awk -F '\t' -v projectDir=$projectDir '
 BEGIN {
-  print "Genome\tAntigen_class\tAntigen\tNum_data" > projectDir"/lib/assembled_list/antigenList.tab"
-  print "Genome\tCell_type_class\tCell_type\tNum_data" > projectDir"/lib/assembled_list/celltypeList.tab"
+  print "Genome\tAntigen_class\tAntigen\tNum_data\tID" > projectDir"/lib/assembled_list/antigenList.tab"
+  print "Genome\tCell_type_class\tCell_type\tNum_data\tID" > projectDir"/lib/assembled_list/celltypeList.tab"
   cmd = "sort"
 } {
   a[$2 "\t" $3 "\t" $4]++
   c[$2 "\t" $5 "\t" $6]++
+  srxA[$2 "\t" $3 "\t" $4] = srxA[$2 "\t" $3 "\t" $4] "," $1
+  srxC[$2 "\t" $5 "\t" $6] = srxC[$2 "\t" $5 "\t" $6] "," $1
 } END {
-  for (key in a) print key "\t" a[key] |& cmd
+  for (key in a) {
+    sub(",", "", srxA[key])
+    print key "\t" a[key] "\t" srxA[key] |& cmd
+  }
   close(cmd, "to")
   while((cmd |& getline var) > 0) print var >> projectDir"/lib/assembled_list/antigenList.tab"
   close(cmd)
   
-  for (key in c) print key "\t" c[key] |& cmd
+  for (key in c) {
+    sub(",", "", srxC[key])
+    print key "\t" c[key] "\t" srxC[key] |& cmd
+  }
   close(cmd, "to")
   while((cmd |& getline var) > 0) print var >> projectDir"/lib/assembled_list/celltypeList.tab"
   close(cmd)

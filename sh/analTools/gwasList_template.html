@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<FONT face="Helvetica Neue" color="333333">
+<title>ChIP-Atlas / in silico ChIP for GWAS</title>
+
+<script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.datatables.net/release-datatables/media/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<style type="text/css">
+<!--
+.bodyMargin {margin: 30px 30px 30px 30px ;}
+
+.table1 {
+	margin: 10px auto;
+}
+@media (max-width:767px) { .table1 {
+    width: auto;
+	margin: 0;
+} }
+-->
+</style>
+</head>
+<body class="bodyMargin" onresize="location.reload()">
+<h1>ChIP-Atlas / in silico ChIP for GWAS</h1>
+<p>Search for proteins significantly bound to GWAS traits.</p>
+
+<script>
+jQuery.fn.dataTableExt.aTypes.unshift(
+	function ( sData )
+	{
+		var sValidChars = "0123456789-,./";
+		var Char;
+		var bDecimal = false;
+		for ( i=0 ; i<sData.length ; i++ )
+		{
+			Char = sData.charAt(i);
+			if (sValidChars.indexOf(Char) == -1)
+			{
+				return null;
+			}
+			if ( Char == "," )
+			{
+				if ( bDecimal )
+				{
+					return null;
+				}
+				bDecimal = true;
+			}
+		}
+		
+		return 'numeric-comma';
+	}
+);
+
+jQuery.fn.dataTableExt.oSort['numeric-comma-asc']  = function(a,b) {
+	var x = (a == "-") ? 0 : a.replace( /,/, "" );
+	var y = (b == "-") ? 0 : b.replace( /,/, "" );
+	x = parseFloat( x );
+	y = parseFloat( y );
+    return ((x < y) ? -1 : ((x > y) ?  1 : 0));
+};
+
+jQuery.fn.dataTableExt.oSort['numeric-comma-desc'] = function(a,b) {
+	var x = (a == "-") ? 0 : a.replace( /,/, "" );
+	var y = (b == "-") ? 0 : b.replace( /,/, "" );
+	x = parseFloat( x );
+	y = parseFloat( y );
+	return ((x < y) ?  1 : ((x > y) ? -1 : 0));
+};
+
+$(document).ready(function() {
+    $('#example').dataTable( {
+        "aaSorting": [[4, 'asc']],
+        "sScrollY": $(window).height() / 1.5,
+        "bPaginate": true,
+        "bFilter": true,
+        "bSort": true,
+        "bInfo": true,
+        "bProcessing": true,
+        "bAutoWidth": true,
+        "iDisplayLength": 100,
+        "aLengthMenu": [[100, 200, 500, -1], [100, 200, 500, "All"]]
+    } );
+} );
+</script>
+
+
+
+
+<div class="table1">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+<thead>
+<tr style="text-decoration: none;">
+<th title="Links to GWAS catalog.">GWAS trait</th>
+<th title="Show results in HTML or TSV format.">Results</th>
+<th title="Numbers of traits in non-coding regions.">Num of traits</th>
+<th title="Minimum Log10P values.">Min(Log P)</th>
+<th title="Minimum Log10Q values.">Min(Log Q)</th>
+</tr>
+</thead>
+<tbody>
+__tbody__
+</tbody>
+</table>
+
+<script type="text/javascript">
+(function (){
+  var Tbl = document.getElementById('example');
+  for (var i = 1; i < Tbl.rows.length; i++) {
+    var trait = Tbl.rows[i].cells[0].innerHTML.replace(/</g,">").split(">")
+    Tbl.rows[i].cells[0].innerHTML = Tbl.rows[i].cells[0].innerHTML.replace(/liTitle/, "Link to GWAS catalog of '" + trait[8] + "'");
+    Tbl.rows[i].cells[1].title = "Show proteins enriched to '" + trait[8] + "' traits.";
+    Tbl.rows[i].cells[2].title = "Loci of " + "'" + trait[8] + "' traits in hg19 genome assembly.";
+  }
+})();
+</script>

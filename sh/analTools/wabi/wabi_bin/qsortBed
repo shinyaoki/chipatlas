@@ -1,0 +1,49 @@
+#!/bin/sh
+#$ -S /bin/sh
+
+tmpDir="/home/w3oki/tmp/"$RANDOM$RANDOM$RANDOM
+
+while getopts ht: option
+do
+    case "$option" in
+    h)
+        echo "
+--------------------------------------------------------------------
+                              qsortBed
+--------------------------------------------------------------------
+入力 Bed ファイルをクイックにソートする。
+sort -k1,1 -k2,2n と同じ結果を返すが、通常のコマンドより 6-7 倍速い。
+染色体ごとに Bed ファイルを分けたのちに、ソートしている。
+
+
+使用例
+
+qsortBed in.bed
+または
+cat in.bed| qsortBed
+
+
+オプション
+-t    テンポラリフォルダを指定。
+      (default: -t tmp/\$RANDOM\$RANDOM\$RANDOM)
+"
+        exit 0
+        ;;
+    t)
+        tmpDir="$OPTARG"
+        ;;
+    esac
+done
+
+shift `expr $OPTIND - 1`
+
+rm -rf "$tmpDir"
+mkdir "$tmpDir"
+awk -F '\t' -v tmpDir="$tmpDir""/" '{print > tmpDir $1}' $1
+
+for chr in `ls "$tmpDir"| sort -k1,1`; do
+  sort -k2,2n "$tmpDir"/$chr
+done
+
+rm -r "$tmpDir"
+exit

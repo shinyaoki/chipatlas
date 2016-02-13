@@ -44,11 +44,7 @@ if [ "$Type" != "QSUB" ]; then
       "analysed" )
         echo "echo == assembled_list =="
         echo "put -c $projectDir/lib/inSilicoChIP/lineNum.tsv -o data/util/lineNum.tsv"
-        echo "put -c $projectDir/lib/assembled_list/analysisList.tab -o data/metadata/analysisList.tab"
-        echo "put -c $projectDir/lib/assembled_list/experimentList.tab -o data/metadata/experimentList.tab"
-        echo "put -c $projectDir/lib/assembled_list/fileList.tab -o data/metadata/fileList.tab"
-        echo "put -c $projectDir/lib/assembled_list/antigenList.tab -o data/metadata/antigenList.tab"
-        echo "put -c $projectDir/lib/assembled_list/celltypeList.tab -o data/metadata/celltypeList.tab"
+        echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/lib/assembled_list data/metadata"
         echo "put -c $projectDir/sh/ag_attributes.txt -o data/metadata/ag_attributes.txt"
         echo "put -c $projectDir/sh/ct_attributes.txt -o data/metadata/ct_attributes.txt"
         for Genome in `ls $projectDir/results`; do
@@ -73,7 +69,7 @@ else
     echo $fn $qn
     lftp -f $fn.lftp
     echo "finished"
-    Nerror=`cat $fn.log| grep -c "gnutls_record_recv"`
+    Nerror=`cat $fn.log| grep -c -e "gnutls_record_recv" -e "Login incorrect"`
     if [ "$Nerror" = "0" ]; then
       break
     fi
@@ -99,7 +95,7 @@ fi
 
 exit
 
-
+Login incorrect
 
 
 総入れ替え
