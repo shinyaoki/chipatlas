@@ -25,12 +25,12 @@ if [ "$Type" != "QSUB" ]; then
       "eachData" )
         for Genome in `ls $projectDir/results`; do
           echo "echo == $Genome BigWig =="
-          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/BigWig data/$Genome/eachData/bw"
+          echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$Genome/BigWig data/$Genome/eachData/bw"
           for qVal in `ls $projectDir/results/$Genome/| grep Bed| cut -c4-`; do
             echo "echo == $Genome BigBed $qVal =="
-            echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/Bed$qVal/BigBed data/$Genome/eachData/bb$qVal"
+            echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$Genome/Bed$qVal/BigBed data/$Genome/eachData/bb$qVal"
             echo "echo == $Genome Bed $qVal =="
-            echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/Bed$qVal/Bed data/$Genome/eachData/bed$qVal"
+            echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$Genome/Bed$qVal/Bed data/$Genome/eachData/bed$qVal"
           done
         done
       ;;
@@ -38,20 +38,42 @@ if [ "$Type" != "QSUB" ]; then
         for Genome in `ls $projectDir/results`; do
           echo "echo == $Genome assembled =="
           echo "mkdir data/$Genome/assembled_new"
-          echo "mirror -R --verbose=3 --parallel=8 $projectDir/results/$Genome/public data/$Genome/assembled_new"
+          echo "mirror -R --verbose=3 --parallel=4 $projectDir/results/$Genome/public data/$Genome/assembled_new"
         done
       ;;
       "analysed" )
         echo "echo == assembled_list =="
-        echo "put -c $projectDir/lib/inSilicoChIP/lineNum.tsv -o data/util/lineNum.tsv"
-        echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/lib/assembled_list data/metadata"
-        echo "put -c $projectDir/sh/ag_attributes.txt -o data/metadata/ag_attributes.txt"
-        echo "put -c $projectDir/sh/ct_attributes.txt -o data/metadata/ct_attributes.txt"
+        echo "rm data/util/lineNum.tsv"
+        echo "put $projectDir/lib/inSilicoChIP/lineNum.tsv -o data/util/lineNum.tsv"
+        echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/lib/assembled_list data/metadata"
+        echo "rm data/metadata/ag_attributes.txt"
+        echo "put $projectDir/sh/ag_attributes.txt -o data/metadata/ag_attributes.txt"
+        echo "rm data/metadata/ct_attributes.txt"
+        echo "put $projectDir/sh/ct_attributes.txt -o data/metadata/ct_attributes.txt"
+        
+        # CoLo, targetGenes の転送
         for Genome in `ls $projectDir/results`; do
           echo "echo == $Genome colo =="
-          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/colo data/$Genome/colo"
+          echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$Genome/colo data/$Genome/colo"
           echo "echo == $Genome target =="
-          echo "mirror -R --delete --verbose=3 --parallel=8 $projectDir/results/$Genome/targetGenes data/$Genome/target"
+          echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$Genome/targetGenes data/$Genome/target"
+        done
+        
+        # in silico ChIP の転送 (約３時間)
+        for html in `ls $projectDir/results/*/insilicoChIP_preProcessed/*/results/*list.html`; do
+          genome=`echo $html| cut -d '/' -f3`
+          anal=`echo $html| cut -d '/' -f5`
+          case $anal in
+            "fantomEnhancer" ) bedDir="bed";;
+            "fantomPromoter" ) bedDir="geneList";;
+            "gwas" )           bedDir="ldDhsBed";;
+          esac
+          
+          echo "echo == $genome $anal in silico ChIP =="
+          echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv data/$genome/insilicoChIP_preProcessed/$anal/results"
+          echo "mirror -R --delete --verbose=3 --parallel=4 $projectDir/results/$genome/insilicoChIP_preProcessed/$anal/$bedDir data/$genome/insilicoChIP_preProcessed/$anal/bed"
+          echo "rm data/$genome/insilicoChIP_preProcessed/$anal/"$anal"List.html"
+          echo "put $html -o data/$genome/insilicoChIP_preProcessed/$anal/"$anal"List.html"
         done
       ;;
     esac
