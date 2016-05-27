@@ -26,8 +26,8 @@
   スパコンに Downloads/classification フォルダを chipatlas/ 配下にアップロード
 
 
-# 新しい assembled ファイルの作成
-  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド (DDBJ)
+# 新しい assembled ファイルの作成  (しばらく待つので、研究室の Mac から実行)
+  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド (DDBJ しばらく待つので、研究室の Mac から実行)
   
     public 配下に .bed, .bed.idx が作られる
     chipatlas/lib/assembled_list 配下に experimentList.tab, fileList.tab が作られる。
@@ -36,8 +36,8 @@
       CAUTION_makeBigBed.txt
       
 # colo, targetGenes の実行 (しばらく待つので、研究室の Mac から実行)
-  sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド (DDBJ)
-  sh chipatlas/sh/transferDDBJtoNBDC.sh "assemble"  # <<=== コマンド (DDBJ)  assemble データを NBDC に転送
+  sh chipatlas/sh/transferDDBJtoNBDC.sh "assemble"  # <<=== コマンド (DDBJ)  assemble データを NBDC に転送 (2016/05/27 12:46-)
+  sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド (DDBJ しばらく待つので、研究室の Mac から実行)
 
     colo の実行
     targetGenes の実行

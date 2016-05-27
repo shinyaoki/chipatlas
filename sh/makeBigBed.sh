@@ -14,7 +14,6 @@ done
 shift `expr $OPTIND - 1`
 
 projectDir=$1
-QSUB="sh $projectDir/sh/QSUB.sh"
 logDir=makeBigBed_log
 
 ####################################################################################################################################
@@ -31,9 +30,9 @@ if [ $mode = "initial" ]; then
 
   splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/2000)}'`
   split -a 3 -l $splitN $logDir/makeBigBed.list $logDir/MAKEBIGBEDTMP
-  short=`sh $projectDir/sh/QSUB.sh shortOrweek`
+  ql=`sh $projectDir/sh/QSUB.sh mem`
   for tmpList in `ls $logDir/MAKEBIGBEDTMP*`; do
-    cat $tmpList| qsub $short -N makeBigBed -l s_vmem=8G,mem_req=8G -o $tmpList.log -e $tmpList.log
+    cat $tmpList| qsub $ql -N makeBigBed -l s_vmem=8G,mem_req=8G -o $tmpList.log -e $tmpList.log
   done
 
   # 全部終わったら、assembled リストを作成

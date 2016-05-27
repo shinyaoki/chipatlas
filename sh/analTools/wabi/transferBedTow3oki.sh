@@ -8,6 +8,7 @@ rm -rf $tmpDir
 mkdir -p $tmpDir/results
 mkdir -p $tmpDir/lineNum
 
+ql=`sh chipatlas/sh/QSUB.sh mem`
 for Genome in `ls $projectDir/results/`; do
   mkdir -p $tmpDir/results/$Genome/public
   for bed in `echo $projectDir/results/$Genome/public/*.AllAg.AllCell.bed`; do
@@ -17,7 +18,7 @@ for Genome in `ls $projectDir/results/`; do
     echo "tail -n+2 $bed| tr '=;' '\t\t'| cut -f 1,2,3,5 > $outBed;\
           split -l 50000000 $outBed $outBed. ;\
           wc -l $outBed > $tmpDir/lineNum/$i;\
-          rm $outBed"| qsub -N trfB2w3 -l short -o /dev/null -e /dev/null
+          rm $outBed"| qsub -N trfB2w3 $ql -o /dev/null -e /dev/null
   done
 done
 

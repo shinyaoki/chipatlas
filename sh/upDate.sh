@@ -16,7 +16,6 @@ fi
 
 
 projectDir=$1
-QSUB="sh $projectDir/sh/QSUB.sh"
 
 newMeta=$(basename `ls $projectDir/lib/metadata/NCBI_SRA_Metadata_Full_2*.metadata.tab| sort| tail -n1`| cut -d '.' -f1) # 所持している最新版
 
@@ -82,8 +81,9 @@ mkdir $projectDir/lib/metadata/splitDir
 splitN=`wc -l $projectDir/lib/metadata/SRXsForDelete.tab| awk '{print int($1/100)}'`
 split -l $splitN $projectDir/lib/metadata/SRXsForDelete.tab $projectDir/lib/metadata/splitDir/
 
+ql=`sh $projectDir/sh/QSUB.sh mem`
 for splitFn in `ls $projectDir/lib/metadata/splitDir/*`; do
-  $QSUB -o /dev/null -e /dev/null -pe def_slot 1 $projectDir/sh/metaDelete.sh $splitFn $projectDir
+  qsub $ql -o /dev/null -e /dev/null -pe def_slot 1 $projectDir/sh/metaDelete.sh $splitFn $projectDir
 done
 
 while :; do

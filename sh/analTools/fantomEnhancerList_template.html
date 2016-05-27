@@ -76,7 +76,7 @@ jQuery.fn.dataTableExt.oSort['numeric-comma-desc'] = function(a,b) {
 
 $(document).ready(function() {
     $('#example').dataTable( {
-        "aaSorting": [[5, 'asc']],
+        "aaSorting": [[6, 'asc']],
         "sScrollY": $(window).height() / 1.5,
         "bPaginate": true,
         "bFilter": true,
@@ -99,12 +99,15 @@ $(document).ready(function() {
 <tr style="text-decoration: none;">
 <th title="FANTOM5 sample IDs.">IDs</th>
 <th title="FANTOM5 sample names.">Sample names</th>
-<th title="Show results in HTML or TSV format.">Results</th>
-<th title="Numbers of specific enhancers.">Num of enhancers</th>
+<th title="Show results of enrichment analysis.">Enrichment</th>
+<th title="Show results of cluster analysis.">Clustering</th>
+<th title="Show intersections with tissue-specific enhancers.">Intersections</th>
+<th title="Numbers of tissue-specific enhancers.">Num of enhancers</th>
 <th title="Minimum Log10P values.">Min(Log P)</th>
 <th title="Minimum Log10Q values.">Min(Log Q)</th>
 </tr>
 </thead>
+
 <tbody>
 __tbody__
 </tbody>
@@ -116,9 +119,11 @@ __tbody__
   for (var i = 1; i < Tbl.rows.length; i++) {
     var trait = Tbl.rows[i].cells[0].innerHTML.replace(/</g,">").split(">")
     var Trait = Tbl.rows[i].cells[1].innerHTML.replace(/</g,">").split(">")
-    Tbl.rows[i].cells[0].innerHTML = Tbl.rows[i].cells[0].innerHTML.replace(/liTitle/, "Link to FANTOM5 of '" + trait[8] + " " + Trait[0] + "'");
+    Tbl.rows[i].cells[0].innerHTML = Tbl.rows[i].cells[0].innerHTML.replace(/liTitle/, "Link to FANTOM5 web site of '" + trait[8] + " " + Trait[0] + "'");
     Tbl.rows[i].cells[2].title = "Show proteins enriched to '" + Trait[0] + "'-specific enhancers.";
-    Tbl.rows[i].cells[3].title = "Loci of " + "'" + Trait[0] + "'-specific enhancers in hg19 genome assembly.";
+    Tbl.rows[i].cells[3].title = "Show genomic and protein clusters of '" + Trait[0] + "'-specific enhancers.";
+    Tbl.rows[i].cells[4].title = "Show intersections with '" + Trait[0] + "'-specific enhancers.";
+    Tbl.rows[i].cells[5].title = "Loci of " + "'" + Trait[0] + "'-specific enhancers in hg19 genome assembly.";
   }
 })();
 </script>

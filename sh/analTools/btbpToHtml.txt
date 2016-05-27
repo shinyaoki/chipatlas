@@ -99,15 +99,15 @@ $(document).ready(function() {
 <th title="Links to experimental accessions.">ID</th>
 <th title="Antigen class.">Antigen class</th>
 <th title="Antigen.">Antigen</th>
-<th title="Cell-type calss.">Cell calss</th>
-<th title="Cell-type.">Cell</th>
+<th title="Cell-type class.">Cell class</th>
+<th title="Cell type.">Cell</th>
 <th title="Number of peaks called for the accession ID at column 1.">Num of peaks</th>
-<th title="Number of peaks overlapping with '___Targets___'.">Overlaps / ___Targets___</th>
-<th title="Number of peaks overlapping with '___References___'.">Overlaps / ___References___</th>
-<th title="Log10(p-value) calculated by Fisher's exact test to compare the probability of column 7 and 8.">Log p-val </th>
-<th title="Log10(q-value) calculated by Benjamini and Hochberg method.">Log q-val </th>
-<th title="The ratio of column 7 to 8, meaning how many fold the Antigens are enriched more to '___Targets___' than to '___References___'.">Fold Enrichment</th>
-<th title="If the Fold Enrichment > 1, the Antigens are enriched more to '___Targets___', else more to '___References___'.">FE > 1?</th>
+<th title="Number of peaks overlapping with ‘___Targets___’.">Overlaps / ___Targets___</th>
+<th title="Number of peaks overlapping with ‘___References___’.">Overlaps / ___References___</th>
+<th title="Log10(P-value) calculated by Fisher’s exact test to compare the probability of column 7 and 8.">Log P-val </th>
+<th title="Log10(Q-value) calculated by Benjamini and Hochberg method.">Log Q-val </th>
+<th title="The ratio of column 7 to 8, meaning how many fold the Antigens are enriched more to ‘___Targets___’ than to ‘___References___’.">Fold Enrichment</th>
+<th title="If the Fold Enrichment > 1, the Antigens are enriched more to ‘___Targets___’, otherwise more to ‘___References___’.">FE > 1?</th>
 </tr>
 </thead>
 <tbody>

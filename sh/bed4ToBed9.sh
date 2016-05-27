@@ -24,7 +24,6 @@ shift `expr $OPTIND - 1`
 ####################################################################################################################################
 if [ $Type = "0" ]; then
   projectDir=`echo $0| sed 's[/sh/bed4ToBed9.sh[['`
-  QSUB="sh $projectDir/sh/QSUB.sh"
   GENOME=`ls $projectDir/results/| tr '\n' ' '`
   QVAL=$(ls $projectDir/results/`ls $projectDir/results/| head -n1`| grep Bed| cut -c 4-| tr '\n' ' ')
   rm -rf $projectDir/tmpDirForSort
@@ -86,8 +85,9 @@ if [ $Type = "0" ]; then
     rm $projectDir/results/$Genome/tag/tmp.tag.txt
   done
 
-
+  
   for Genome in `echo $GENOME`; do
+    ql=`sh $projectDir/sh/QSUB.sh mem`
     rm -rf $projectDir/results/$Genome/[DES]RX[0-9]*
     rm -rf $projectDir/results/$Genome/log/bed4ToBed9
     rm -rf $projectDir/results/$Genome/public
@@ -98,7 +98,7 @@ if [ $Type = "0" ]; then
                   # 全て, ヒストンのみ, Inputのみ, Pol2のみ, DNaseのみ, その他 (TFs), 記述なし, 分類不能
         Logfile=$projectDir/results/$Genome/log/bed4ToBed9/$agType.$qVal.log.txt
         # 不要: nSlot=`du -sm $projectDir/results/$Genome/Bed$qVal/Bed/| awk '{printf "%d", int($1/950)+1}'`
-        $QSUB -o $Logfile -e $Logfile $projectDir/sh/bed4ToBed9.sh -r $agType $qVal $Genome $projectDir
+        qsub $ql -o $Logfile -e $Logfile $projectDir/sh/bed4ToBed9.sh -r $agType $qVal $Genome $projectDir
       # qsub                         -pe def_slot 4     chipome_ver3/sh/bed4ToBed9.sh -r His       05    mm9     chipome_ver3
       done
     done

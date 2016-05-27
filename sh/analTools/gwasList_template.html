@@ -27,7 +27,7 @@
 </head>
 <body class="bodyMargin" onresize="location.reload()">
 <h1>ChIP-Atlas / in silico ChIP for GWAS</h1>
-<p>Search for proteins significantly bound to GWAS traits.</p>
+<p>Search for proteins significantly bound around GWAS SNPs.</p>
 
 <script>
 jQuery.fn.dataTableExt.aTypes.unshift(
@@ -75,7 +75,7 @@ jQuery.fn.dataTableExt.oSort['numeric-comma-desc'] = function(a,b) {
 
 $(document).ready(function() {
     $('#example').dataTable( {
-        "aaSorting": [[4, 'asc']],
+        "aaSorting": [[5, 'asc']],
         "sScrollY": $(window).height() / 1.5,
         "bPaginate": true,
         "bFilter": true,
@@ -97,8 +97,10 @@ $(document).ready(function() {
 <thead>
 <tr style="text-decoration: none;">
 <th title="Links to GWAS catalog.">GWAS trait</th>
-<th title="Show results in HTML or TSV format.">Results</th>
-<th title="Numbers of traits in non-coding regions.">Num of traits</th>
+<th title="Show results of enrichment analysis.">Enrichment</th>
+<th title="Show results of cluster analysis.">Clustering</th>
+<th title="Show intersections with LD-DHSs.">Intersections</th>
+<th title="Numbers of LD-DHS in non-coding regions.">Num of LD-DHS</th>
 <th title="Minimum Log10P values.">Min(Log P)</th>
 <th title="Minimum Log10Q values.">Min(Log Q)</th>
 </tr>
@@ -114,8 +116,10 @@ __tbody__
   for (var i = 1; i < Tbl.rows.length; i++) {
     var trait = Tbl.rows[i].cells[0].innerHTML.replace(/</g,">").split(">")
     Tbl.rows[i].cells[0].innerHTML = Tbl.rows[i].cells[0].innerHTML.replace(/liTitle/, "Link to GWAS catalog of '" + trait[8] + "'");
-    Tbl.rows[i].cells[1].title = "Show proteins enriched to '" + trait[8] + "' traits.";
-    Tbl.rows[i].cells[2].title = "Loci of " + "'" + trait[8] + "' traits in hg19 genome assembly.";
+    Tbl.rows[i].cells[1].title = "Show proteins enriched to the LD-DHSs of '" + trait[8] + "' .";
+    Tbl.rows[i].cells[2].title = "Show genomic and protein clusters of the LD-DHSs of '" + trait[8] + "' .";
+    Tbl.rows[i].cells[3].title = "Show intersections with the LD-DHSs of '" + trait[8] + "' .";
+    Tbl.rows[i].cells[4].title = "Loci of LD-DHS of " + "'" + trait[8] + "' in hg19 genome assembly.";
   }
 })();
 </script>

@@ -16,7 +16,7 @@ metaData=$4
 nslot=`cat $projectDir/sh/preferences.txt |awk -F '\t' '{if ($1 == "nSlotForSrT") printf "%s", $2}'`
 Sz=0
 prevT=`date +%s`
-intT=1800
+intT=21600
 HDsize=`cat $projectDir/sh/preferences.txt |awk -F '\t' '{if ($1 == "HDsize") printf "%s", $2}'`
 let HDsize=$HDsize-2
 
@@ -70,11 +70,11 @@ for Genome in `echo $GENOME`; do
       if [ $difT -gt $intT ]; then
         prevT=$curT
         Sz=`du -s --block-size=1T|cut -f1`
-        if [ $Sz -lt $HDsize ]; then # HDD 容量が 18 TB 以下の時は、次回の du は 30 分後、それ以上の時は 100 秒後
+        if [ $Sz -lt $HDsize ]; then # HDD 容量が 28 TB 以下の時は、次回の du は 30 分後、それ以上の時は 100 秒後
           intT=1800
           let Dif=$HDsize-$Sz
-          if [ $Dif -gt 10 ]; then  # HDD 残量が 10 TB 以上の時は、次回の du は 3 時間後
-            intT=10800
+          if [ $Dif -gt 10 ]; then  # HDD 残量が 10 TB 以上の時は、次回の du は 6 時間後
+            intT=21600
           fi
         else
           intT=100
@@ -82,8 +82,8 @@ for Genome in `echo $GENOME`; do
       fi
       
       if [ $nQ -le 10 -a $Sz -lt $HDsize ]; then # ジョブ待ち数が 11 以下で、HDD 容量が 18 TB 以下の時に submit する
-#        short=`sh $projectDir/sh/QSUB.sh shortOrweek`
-        qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $short $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+        ql=`sh $projectDir/sh/QSUB.sh mem`
+        qsub $ql -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $short $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
         sleep 1
         break
       fi

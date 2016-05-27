@@ -17,7 +17,7 @@ if [ $1 = "INITIAL" ]; then
     mkdir $tgDir tmpDirForTargetGenes
   done
   
-  short=`sh $projectDir/sh/QSUB.sh shortOrweek`
+  ql=`sh $projectDir/sh/QSUB.sh mem`
   for TF_Genome in `cat $projectDir/lib/assembled_list/fileList.tab| awk -F '\t' -v GENOME="$GENOME" -v projectDir=$projectDir '
   BEGIN {
     N = split(GENOME, g, " ")
@@ -32,7 +32,7 @@ if [ $1 = "INITIAL" ]; then
       print $4 "|" $2
     }
   }'`; do
-    qsub -o /dev/null -e /dev/null $short $projectDir/sh/targetGenes.sh $TF_Genome $projectDir  # TF_Genome = POU5F1|hg19
+    qsub -o /dev/null -e /dev/null $ql $projectDir/sh/targetGenes.sh $TF_Genome $projectDir  # TF_Genome = POU5F1|hg19
   done
   exit
 fi

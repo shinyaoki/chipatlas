@@ -1,9 +1,10 @@
+
 <!DOCTYPE HTML>
 <html lang='en'>
 <head>
 <meta charset='utf-8'>
 <FONT face="Helvetica Neue" color="333333">
-<title>___Title___</title>
+<title>ChIP-Atlas / Keyword search</title>
 
 <script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.js"></script>
 <script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.dataTables.js"></script>
@@ -25,8 +26,12 @@
 </style>
 </head>
 <body class="bodyMargin" onresize="location.reload()">
-<h1>ChIP-Atlas / in silico ChIP</h1>
-<p>___Header___</p>
+<h1>ChIP-Atlas / Keyword search</h1>
+<p>Search for ChIP-seq data with keywords.</p>
+<p class="radio-area">
+  <input type="radio" name="lang" value="ruby" __1__> Simple search<br>
+  <input type="radio" name="lang" value="perl" __2__> Advanced search
+</p>
 
 <script>
 jQuery.fn.dataTableExt.aTypes.unshift(
@@ -74,7 +79,7 @@ jQuery.fn.dataTableExt.oSort['numeric-comma-desc'] = function(a,b) {
 
 $(document).ready(function() {
     $('#example').dataTable( {
-        "aaSorting": [[8, 'asc']],
+        "aaSorting": [[__sortKey__, 'asc']],
         "sScrollY": $(window).height() / 1.5,
         "bPaginate": true,
         "bFilter": true,
@@ -90,24 +95,19 @@ $(document).ready(function() {
 
 
 
-
 <div class="table1">
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-<caption><h2>___Caption___</h2></caption>
 <thead>
 <tr style="text-decoration: none;">
-<th title="Links to experimental accessions.">ID</th>
-<th title="Antigen class.">Antigen class</th>
-<th title="Antigen.">Antigen</th>
-<th title="Cell-type class.">Cell class</th>
-<th title="Cell type.">Cell</th>
-<th title="Number of peaks called for the accession ID at column 1.">Num of peaks</th>
-<th title="Number of peaks overlapping with ‘___Targets___’.">Overlaps / ___Targets___</th>
-<th title="Number of peaks overlapping with ‘___References___’.">Overlaps / ___References___</th>
-<th title="Log10(P-value) calculated by Fisher’s exact test to compare the probability of column 7 and 8.">Log P-val </th>
-<th title="Log10(Q-value) calculated by Benjamini and Hochberg method.">Log Q-val </th>
-<th title="The ratio of column 7 to 8, meaning how many fold the Antigens are enriched more to ‘___Targets___’ than to ‘___References___’.">Fold Enrichment</th>
-<th title="If the Fold Enrichment > 1, the Antigens are enriched more to ‘___Targets___’, otherwise more to ‘___References___’.">FE > 1?</th>
+<th title="Experimental IDs.">SRX ID</th>
+<th title="Experimental IDs in GEO">GEO ID</th>
+<th title="Genome assemblies (hg19, mm9, dm3, ce10, sacCer3)">Genome</th>
+<th title="Curated antibody classes.">Antibody classe</th>
+<th title="Curated antibodies.">Antibody</th>
+<th title="Curated cell type classes.">Cell type class</th>
+<th title="Curated cell types.">Cell type</th>
+<th title="Titles by authors.">Title</th>
+<th title="Attributes by authors.">Attributes</th>
 </tr>
 </thead>
 <tbody>

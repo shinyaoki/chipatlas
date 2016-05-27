@@ -23,6 +23,16 @@ done| sed 's/^ //'| awk -F '\t' '{
 
 if [ $1 = "shortOrweek" ]; then
   echo -n $short
+elif [ $1 = "mem" ]; then
+  bin/qm| head -n5| awk '{
+    if ($1 ~ "week") w += $4 -$2
+    else if ($1 ~ "short") s += $4 - $2
+  } END {
+    if (w < s) printf "-l short"
+  }'
 else
   echo qsub $short $Para| sh
 fi
+
+
+

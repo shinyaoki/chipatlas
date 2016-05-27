@@ -437,9 +437,9 @@ All cell types recorded in ChIP-Atlas.
 ![][cellTypeNumber]
 
 <!-- Links to files -->
-[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160115.png "Data numbers"
-[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160115.png "Antigen classes"
-[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160115.png "Cell type classes"
+[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160526.png "Data numbers"
+[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160526.png "Antigen classes"
+[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160526.png "Cell type classes"
 
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
 [ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt

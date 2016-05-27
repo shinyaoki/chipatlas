@@ -2,7 +2,6 @@
 #$ -S /bin/sh
 
 projectDir=$1
-QSUB="sh $projectDir/sh/QSUB.sh"
 
 # 最新の MetadataFull の名前を取得
 MetadataFull=`ftp -n -v ftp.ncbi.nlm.nih.gov << EOS | grep NCBI_SRA_Metadata_Full_2| awk '{print $9}'| sort| tail -n1
@@ -73,8 +72,9 @@ split -a 3 -l $splitN metadataAccNo.txt splitDir/
 
 cd
 
+ql=`sh $projectDir/sh/QSUB.sh mem`
 for j in `ls $projectDir/lib/metadata/splitDir/*`; do
-  $QSUB -o /dev/null -e /dev/null -pe def_slot 1 $projectDir/sh/metadataSplit.sh "$j" $projectDir/lib/metadata/$MetadataFullDir
+  qsub $ql -o /dev/null -e /dev/null -pe def_slot 1 $projectDir/sh/metadataSplit.sh "$j" $projectDir/lib/metadata/$MetadataFullDir
 done
 
 echo "$projectDir/lib/metadata/$MetadataFullDir.metadata.tab を作成中..."

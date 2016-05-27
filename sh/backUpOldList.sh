@@ -12,7 +12,7 @@ cat << EOS | lftp
   set net:limit-total-rate 31457280
   mkdir data/history/$Date
   mkdir data/history/$Date/classification
-  mirror -R --verbose=3 --parallel=8 $projectDir/classification data/history/$Date/classification
+  mirror -R --verbose=3 --parallel=1 $projectDir/classification data/history/$Date/classification
   get data/util/lineNum.tsv 
   put lineNum.tsv -o data/history/$Date/lineNum.tsv
   put $projectDir/lib/assembled_list/analysisList.tab -o data/history/$Date/analysisList.tab

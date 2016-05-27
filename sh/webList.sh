@@ -149,6 +149,10 @@ done > $projectDir/lib/assembled_list/experimentList.tab
 rm $projectDir/results/$Genome/summary/all*.txt alignmentPercentage.tab
 
 
+# WEB 検索用 HTML の作成
+sh chipatlas/sh/refineSearchList.sh
+
+
 # filelist.tab の作成
 echo $projectDir/results/*/public/*.list| xargs cat > $projectDir/lib/assembled_list/fileList.tab
 echo $projectDir/results/*/public/*.list| xargs rm

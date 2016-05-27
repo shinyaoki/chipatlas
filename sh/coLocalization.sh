@@ -30,7 +30,7 @@ if [ $1 = "INITIAL" ]; then
     }'`
     nSRX=`echo "$Param"| awk '{printf "%d", gsub("," "", $0)}'`
     if [ "$nSRX" -lt 500 ]; then
-      short=`sh $projectDir/sh/QSUB.sh shortOrweek`
+      short=`sh $projectDir/sh/QSUB.sh mem`
     else
       short=" "
     fi

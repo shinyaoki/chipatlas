@@ -33,10 +33,11 @@ if [ $Mode = "initial" ]; then
   
   # 抗原大分類と細胞大分類を掛け合わせる
   for Genome in `echo $GENOME`; do
+    ql=`sh $projectDir/sh/QSUB.sh mem`
     for bedFile in `ls -l $projectDir/results/$Genome/public/*bed| awk '{if ($5 > 0) printf "%s ", $10}'`; do
       # bedFile = xhipome_ver3/results/hg19/public/InP.ALL.60.AllAg.AllCell.bed
       for LargeCellType in `cut -f2 $projectDir/classification/ct_Index.$Genome.tab| cut -c1-3|sort|uniq`; do
-        $QSUB -o /dev/null -e /dev/null $projectDir/sh/classify.sh -m x $projectDir "$LargeCellType" $bedFile $Genome
+        qsub $ql -o /dev/null -e /dev/null $projectDir/sh/classify.sh -m x $projectDir "$LargeCellType" $bedFile $Genome
                                                                                   #  LargeCellType = PSC Lng ALL Unc など
       done
     done
@@ -55,6 +56,7 @@ if [ $Mode = "initial" ]; then
   done
   
   for Index in `ls $projectDir/classification/*Index*.tab`; do
+    ql=`sh $projectDir/sh/QSUB.sh mem`
     echo $Index >> classify.log.txt
     ctORag=`basename $Index| cut -d '_' -f1`    # 例 ct または ag
     Genome=`basename $Index| cut -d '.' -f2`    # 例 hg19
@@ -83,8 +85,7 @@ if [ $Mode = "initial" ]; then
   splitN=`cat $projectDir/classify.tmp| wc -l| awk '{print int($1/500)}'`
   split -l $splitN $projectDir/classify.tmp CLASSIFY_TMP
   for tmpList in `ls CLASSIFY_TMP*`; do
-    short=`sh $projectDir/sh/QSUB.sh shortOrweek`
-    cat $tmpList| qsub $short -N classify.sh -o /dev/null -e /dev/null
+    cat $tmpList| qsub $ql -N classify.sh -o /dev/null -e /dev/null
   done
 
   # classify.sh が全て終わったら、makeBigBed 投入

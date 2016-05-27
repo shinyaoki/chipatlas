@@ -25,7 +25,7 @@ p1 <- p1 + geom_bar(
 p1 <- p1 + scale_fill_manual(values = c("#558ED5", "#9BBB59", "#F79646"))
 p1 <- p1 + scale_x_discrete(limits=c("S. cerevisiae", "C. elegans", "D. melanogaster", "M. musculus", "H. sapiens"))
 p1 <- p1 + coord_flip()
-p1 <- p1 + theme(legend.position="none")
+p1 <- p1 + theme(legend.position="none", plot.margin=unit(x=c(10,10,0,0), units="mm"))
 p1 <- p1 + labs(x="Organism\n", y=paste("\n# of ChIP-seq data in ChIP-Atlas\n"))
 p1 = p1 + theme(axis.text.x = element_text(size=12, color="#555555"),axis.text.y = element_text(size=12, color="#555555")) 
 
@@ -44,7 +44,7 @@ p2 <- p2 + geom_bar(
 p2 <- p2 + scale_fill_manual(values = c("#558ED5", "#9BBB59", "#F79646"))
 p2 <- p2 + scale_x_discrete(limits=c("S. cerevisiae", "C. elegans", "D. melanogaster", "M. musculus", "H. sapiens"))
 p2 <- p2 + coord_flip()
-p2 <- p2 + theme(legend.position = c(0.85, 0.3))
+p2 <- p2 + theme(legend.position = c(0.85, 0.3), plot.margin=unit(x=c(10,10,0,0), units="mm"))
 p2 <- p2 + labs(x="Organism\n", y=paste("\n# of DNase-seq data in ChIP-Atlas\n(", today, ")"))
 p2 = p2 + theme(axis.text.x = element_text(size=12, color="#555555"),axis.text.y = element_text(size=12, color="#555555")) 
 
