@@ -1,492 +1,533 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh
-
-geneBody="chipatlas/results/hg19/insiicoChIP_preProcessed/lib/hg19_allGeneBody.bed"
-gwasCatalog="chipatlas/results/hg19/insiicoChIP_preProcessed/lib/gwasCatalog_original.bed"
-allGWAS="chipatlas/results/hg19/insiicoChIP_preProcessed/lib/allGWASfor_insilicoChIP.bed"
-id2name="chipatlas/results/hg19/insiicoChIP_preProcessed/lib/ff5id2name.tab"
-rm -rf chipatlas/results/hg19/insiicoChIP_preProcessed
-rm -rf chipatlas/results/mm9/insiicoChIP_preProcessed
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/fantomPromoter/geneList
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/fantomPromoter/results
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/bed
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results
-mkdir -p chipatlas/results/hg19/insiicoChIP_preProcessed/lib
-mkdir -p chipatlas/results/mm9/insiicoChIP_preProcessed/fantomPromoter/geneList
-mkdir -p chipatlas/results/mm9/insiicoChIP_preProcessed/fantomPromoter/results
-mkdir -p chipatlas/results/mm9/insiicoChIP_preProcessed/lib
-
-
 ##########################################################################################################################################################################
-#                                                                         GWAS catalog
+#                                                      初期モード : GWAS, FANTOM のためのジョブを投入
 ##########################################################################################################################################################################
-# Gene body BED ファイルの作成
-curl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| gunzip| cut -f3,5,6| sort -k1,1 -k2,2n| bedtools merge -i stdin > "$geneBody"
+# qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh initial
 
-# GWAS の ダウンロード
-    # 除去 %&()*+.:;
-    # そのまま ',-
-    # スペースに /
-curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' '{
-  if (!a[$10]++) i++
-  trait = $10
-  gsub(/Red vs\. non-red hair color/, "Red vs  non-red hair color", trait)
-  gsub(/[%&\(\)\*+\.\:\;]/, "", trait)
-  gsub(/\//, " ", trait)
-  gsub(/ /, "_", trait)
-  printf "%s\t%04d\t%s\n", $0, i, trait
-}' > "$gwasCatalog" # $1-3 = BED,  $9 = title, $10 = trait, $23 = ID for trait, $24 = 記号文字を修正した trait
+if [ $1 = "initial" ]; then
+  rm -rf chipatlas/results/hg19/insilicoChIP_preProcessed
+  rm -rf chipatlas/results/mm9/insilicoChIP_preProcessed
+  mkdir chipatlas/results/hg19/insilicoChIP_preProcessed
+  mkdir chipatlas/results/mm9/insilicoChIP_preProcessed
+  
+  qsub -N GWAS -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_GWAS.sh
+  qsub -N FF_Enhancer -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomEnhancer.sh
+  qsub -N FF_Pr_hg19 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh hg19
+  qsub -N FF_Pr_mm9 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh mm9
+  exit
+fi
+##########################################################################################################################################################################
+#                                                      処理モード : barchart や clustering のための前処理、後処理
+##########################################################################################################################################################################
+# sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh P gwas 3 hg19
+# sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh P fantomEnhancer 5 hg19
+# sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh P fantomPromoter 5 hg19 5000 5000
 
-# 疾患特異的 BED ファイルの作成
-width=500
-cat "$gwasCatalog"| awk -F '\t' -v width=$width '{
-  printf "%s\t%d\t%d\t%s\n", $1, $2-width, $2+width, $24
-}'| bedtools intersect -v -a stdin -b "$geneBody"| sort -k1,1 -k2,2n| uniq| tee "$allGWAS"| awk -F '\t' -v dir="chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/bed" -v gwasCatalog="$gwasCatalog" '
-BEGIN {
-  while ((getline < gwasCatalog) > 0) a[$24] = $23
-} {
-  bed = dir "/" a[$4] ".bed"
-  print > bed
-}'
-
-# 疾患特異的 GWAS とその他の GWAS で in silico ChIP
-for bed in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/bed/*.bed`; do
-  outFn=`echo $bed| sed 's/.bed$//g'| sed 's[/bed/[/results/[g'`
-  bn=$(cat "$gwasCatalog"| awk -v id=`basename $outFn` -F '\t' '{if (id == $23) print $24}'| head -n1| tr '_' ' ')
-  qsub -o /dev/null -e /dev/null bin/insilicoChIP -a $bed -b $allGWAS -Q 10 -A "$bn" -B "Other GWAS" -T "$bn vs Other GWAS" -v -o bed hg19 "$outFn"
-done
-
-while :; do
-  qN=`qstat| awk '$3 == "insilicoCh"'| wc -l`
-  if [ $qN -eq 0 ]; then
-    rm chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/*_Overlap.bb
-    rm chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/*_Overlap.bed
-    break
-  fi
-done
-
-# 疾患特異的 GWAS リストの作成
-gwasCatalog="chipatlas/results/hg19/insiicoChIP_preProcessed/lib/gwasCatalog_original.bed"
-awk -F '\t' -v gwasCatalog="$gwasCatalog" '
-BEGIN {
-  while ((getline < gwasCatalog) > 0) a[$23] = $10
-} {
-  if (FNR == 1) {
-    for (i in a) {
-      fn = "/" i ".tsv"
-      if (FILENAME ~ fn) {
-        trait = a[i]
-        id = i
-      }
+if [ $1 = "P" ]; then 
+  anal=$2
+  qVal=$3
+  genome=$4
+  up=$5      # fantomPromoter の場合のみ
+  down=$6    # fantomPromoter の場合のみ
+  
+  # 不要なファイルの消去
+  rm chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bb &
+  rm -r chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*BED &
+  
+  # 指定した qVal 以下のデータを集計し、TSV ファイルを作成
+  key="BloodBreastDigestive tractLungProstateCardiovascularLiverNeural"
+  mkdir chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/summerized
+  mkdir chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/df
+  
+  for tsv in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*tsv| grep -v summerized`; do
+    id=`basename $tsv| sed 's/\.tsv//g'`
+    summerizedTSV="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/summerized/$id.tsv"
+    echo "disease nr cellType pval"| tr ' ' '\t' > $summerizedTSV
+    cat $tsv| sort -t $'\t' -k9n| awk -F '\t' -v id="$id" -v qVal=$qVal -v key="$key" '{
+      if(key !~ $4) $4 = "Others"
+      if ($10 + 0 < - qVal) printf "%s\t%d\t%s\t%s\n", id, NR, $4, - $9
+    }' >> $summerizedTSV
+  done
+  
+  
+  # 個々の id について計算
+  ql=`sh chipatlas/sh/QSUB.sh mem`
+  for tsv in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.tsv`; do
+    id=`basename "$tsv"| sed 's/\.tsv$//'`
+    if [ $anal = "fantomPromoter" ]; then
+      nm="R_FP"$genome
+      qsub $ql -o /dev/null -e /dev/null -N "$nm" chipatlas/sh/analTools/preProcessed_insilicoChIP.sh "$id" $anal $qVal $genome $up $down
+    else
+      nm=`echo "R_"$anal| cut -c1-10`
+      qsub $ql -o /dev/null -e /dev/null -N "$nm" chipatlas/sh/analTools/preProcessed_insilicoChIP.sh "$id" $anal $qVal $genome
+    fi
+  done
+  
+  while :; do
+    qN=`qstat| awk -v nm="$nm" 'nm == $3'| wc -l`
+    if [ $qN -eq 0 ]; then
+      break
+    fi
+  done
+  
+  
+  # PNG や PDF の有無を整理
+  fileList="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/file01.tsv"
+  {
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.html
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*[0-9].tsv
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bed
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.png
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.pdf
+  }| awk '{
+    N = split($10, a, "/")
+    sub("_", ".", a[N])
+    split(a[N], b, ".")
+    id = b[1]
+    prfx = substr(b[2], 1, 2)
+    d[id]++
+    if ($5 > 0) x[id, prfx]++
+  } END {
+    for (id in d) printf "%s\t%d\t%d\t%d\t%d\t%d\t%d\n", id, x[id, "ht"], x[id, "cl"], x[id, "ts"], x[id, "Ov"], x[id, "pn"], x[id, "pd"]
+  }' > "$fileList"
+  # id            html    cls.tsv  tsv     Overlap.bed  png     pdf
+  # CL:0000127    1       0        1       1            0       0
+  
+  
+  # 公開用 リスト (HTML) の作成
+  id2name="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/lib/ff5id2name.tab"
+  gwasCatalog="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/gwasCatalog_original.bed"
+  for tsv in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*[0-9].tsv`; do
+    id=`basename $tsv| sed 's/\.tsv//'`
+    echo $id"@"`head -n1 $tsv| cut -f9,10`| tr '@ ' '\t\t'
+  done| awk -F '\t' -v gwasCatalog="$gwasCatalog" -v id2name="$id2name" -v fileList="$fileList" -v genome=$genome -v anal=$anal '
+  BEGIN {
+    if (anal == "gwas") {  # gwas の場合
+      while ((getline < gwasCatalog) > 0) a["GWAS:" $23] = $10
+    } else {               # fantomEnhancer, fantomPromoter の場合
+      while ((getline < id2name) > 0) a[$1] = toupper(substr($2, 1, 1)) substr($2, 2, 1000)
     }
+    while ((getline < fileList) > 0) {
+      for (i=2; i<=7; i++) f[$1, i] = $i
+    }
+  } {
+    id = $1
+    trait = a[id]
     gsub("%", "", trait)
     gwasQuery = trait
-    htmlUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/gwas/results/" id ".html"
-    tsvUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/gwas/results/" id ".tsv"
-    zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/gwas/results/" id "_BED.zip"
-    bedUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/gwas/bed/" id ".bed"
-    wclbed = "cat chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/bed/" id ".bed| wc -l"
+    
+    if (anal == "fantomEnhancer") bedDir = "bed"
+    if (anal == "fantomPromoter") bedDir = "geneList"
+    if (anal == "gwas")           bedDir = "ldDhsBed"
+
+    htmlUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".html"
+    tsvUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".tsv"
+    itsUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id "_Overlap.bed"
+    pngUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".png"
+    pdfUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".pdf"
+    cltUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".cls.tsv"
+    bedUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/bed/" id ".bed"
+    wclbed = "cat chipatlas/results/" genome "/insilicoChIP_preProcessed/" anal "/" bedDir "/" id ".bed| wc -l"
     wclbed | getline num
     close(wclbed)
     gsub(" ", "%20", gwasQuery)
-    
   
-    printf "<tr>\n<td><a target=\"_blank\" style=\"text-decoration: none\" href=\"https://www.ebi.ac.uk/gwas/search?query="
-    printf "%s", gwasQuery
-    printf "\"><i class=\"fa fa-info-circle\" title=\"liTitle\"></i> </a>"
-    printf trait
-    printf "</td>\n"
-    
-    printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", htmlUrl
-    printf "\">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", tsvUrl
-    printf "\">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", zipUrl
-    printf "\">BED</a></td>\n"
-    
-    printf "<td align=\"right\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", bedUrl
-    printf "\">%d</a></td>\n", num
-    
-    printf "<td align=\"right\">%.1f</td>\n", $9
-    printf "<td align=\"right\">%.1f</td>\n", $10
-  }
-}' chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/*tsv| awk -v gwasList_template="chipatlas/sh/analTools/gwasList_template.html" '
-BEGIN {
-  while ((getline < gwasList_template) > 0) {
-    if ($1 == "__tbody__") break
-    print
-  }
-  close(gwasList_template)
-} {
-  print
-} END {
-  while ((getline < gwasList_template) > 0) {
-    if (j > 0) print
-    if ($1 == "__tbody__") j = 1
-  }
-}' > chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/gwaslist.html
-
-# 疾患特異的 GWAS 結果にリンクを設ける
-for html in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/*.html`; do
-  id=`basename $html| sed 's/\.html//'`
-  cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id '{
-    if ($0 ~ "<caption><h2>") {
-      zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/gwas/results/" id "_BED.zip"
-      $0 = $0 "\n" "<caption><a target=\"_blank\" style=\"text-decoration: none\" href=\"" zipUrl "\">Download overlapped regions in BED format.</a><br><br><br></caption>"
-    }
-    print $0
-  }' > $html"tmp"
-  mv $html"tmp" $html
-done
-
-# GWAS と overlap する BED ファイルを 整形する
-for dir in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/| grep "_BED"`; do
-  qsub -o /dev/null -e /dev/null -l short chipatlas/sh/analTools/preProcessed_insilico_BED.sh "chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/$dir" gwas $width
-done # chr12   115836521       115836522       CTCF_@SRX199886   rs1292011
-
-
-##########################################################################################################################################################################
-#                                                                         FANTOM Enhancer
-##########################################################################################################################################################################
-
-# 細胞名とその ID の対応表のダウンロードと整形
-for list in Cell_Ontology_terms_list Human_Disease_Ontology_terms_list Uber_Anatomy_Ontology_terms_list; do
-  curl "http://fantom.gsc.riken.jp/5/sstar/$list"| awk -F '\"' '{
-    if ($1 ~ /td data-sort-value=$/) {
-      printf "%s\t", $8
-      getline
-      print $3
-    }
-  }'| tr -d '>'| tr '<' '\t'| cut -f1-2| tr '/' '|'
-done > "$id2name"
-  # CL:0000077      mesothelial cell
-
-# facet_differentially_expressed_enhancers の DL
-curl http://enhancer.binf.ku.dk/presets/facet_differentially_expressed_0.05.tgz > facet_differentially_expressed_0.05.tgz
-cd chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed
-tar zxvf ~/facet_differentially_expressed_0.05.tgz
-cd
-rm facet_differentially_expressed_0.05.tgz
-mv chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/0_05/* chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/
-rm -r chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/0_05
-
-
-ls chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/*bed| awk -F '\t' -v id2name="$id2name" '
-BEGIN {
-  while ((getline < id2name) > 0) {     # Fantom enhancer の facet 名を正式名称に変える
-    gsub(" ", "_", $2)
-    x[$1] = $2          # x[UBERON:0002106] = spleen
-  }
-} {
-  split($1, f, "/")     # f[6] = UBERON:0002106_spleen_differentially_expressed_enhancers.bed
-  split(f[7], i, "_")   # i[1] = UBERON:0002106
-  print "mv " $1 " chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/" i[1] "_" x[i[1]] "_differentially_expressed_enhancers.bed"
-}'| sh
-#####################################################################################
-## 注意: Fantom enhancer の facet 名は、正式でないものがある
-#####################################################################################
-# ID              正式名称                         Fantom enhancer
-# CL:0002327      mammary gland epithelial cell   mammary epithelial cell
-# CL:0000188      cell of skeletal muscle         skeletal muscle cell
-# CL:0000746      cardiac muscle cell             cardiac myocyte
-# UBERON:0001044  saliva-secreting gland          salivary gland
-
-
-# facet_differentially_expressed_enhancers をまとめる
-bedB="chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/differentially_expressed_enhancers_uniq.bed"
-for bed in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/*.bed`; do
-  outfn="chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/"`basename "$bed"| sed 's/_/@/'| cut -d '@' -f1`".bed"
-  description=`basename "$bed"| sed 's/_differentially_expressed_enhancers\.bed//'`
-  cut -f1-3 $bed| sort -k1,1 -k2,2n| uniq| awk -v description="$description" '{print $0 "\t" description}'| tee $outfn
-  rm "$bed"
-done| cut -f1-3| sort -k1,1 -k2,2n| uniq > "$bedB"  # chr1  1005293  1005547  重複する領域を削除 (重要!!!!)
-
-# in silico ChIP の実行
-for bedA in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/*.bed`; do
-  titleA=`head -n1 "$bedA"| cut -f4| sed 's/_/@/'| cut -d '@' -f2| tr '_' ' '| sed 's/\(.\)\(.*\)/\U\1\L\2/g'`
-  outFn=`echo "$bedA"| sed 's[/bed/[/results/['| sed 's/\.bed$//'`
-  cut -f1-3 "$bedA" > "$bedA".tmp
-  qsub -o /dev/null -e /dev/null bin/insilicoChIP -a "$bedA".tmp -b "$bedB" -Q 10 -A "$titleA" -B "Other enhancers" -v -o bed hg19 "$outFn"
-done
-
-while :; do
-  qN=`qstat| awk '$3 == "insilicoCh"'| wc -l`
-  if [ $qN -eq 0 ]; then
-    rm chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/*.bed.tmp
-    rm chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/*_Overlap.bb
-    rm chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/*_Overlap.bed
-    break
-  fi
-done
-
-# 組織特異的 Enhancer リストの作成
-awk -F '\t' -v id2name="$id2name" '
-BEGIN {
-  while ((getline < id2name) > 0) {
-    c = substr($2, 1, 1)
-    sub(c, toupper(c), $2)
-    a[$1] = $2      #a[CL:0000050] = Megakaryocyte-erythroid progenitor cell
-  }
-} {
-  if (FNR == 1) {
-    for (i in a) {
-      fn = "/" i ".tsv"
-      if (FILENAME ~ fn) {
-        trait = a[i]
-        id = i
-      }
-    }
-    htmlUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/" id ".html"
-    tsvUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/" id ".tsv"
-    bedUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/" id ".bed"
-    zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/" id "_BED.zip"
-    wclbed = "cat chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/bed/" id ".bed| wc -l"
-    wclbed | getline num
-    close(wclbed)
-    
-    printf "<tr>\n<td><a target=\"_blank\" style=\"text-decoration: none\" href=\"http://fantom.gsc.riken.jp/5/sstar/"
-    printf "%s", id
-    printf "\"><i class=\"fa fa-info-circle\" title=\"liTitle\"></i> </a>"
-    printf id "</td>\n<td>" trait
-    printf "</td>\n"
-    
-    printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", htmlUrl
-    printf "\">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", tsvUrl
-    printf "\">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", zipUrl
-    printf "\">BED</a></td>\n"
-    
-    printf "<td align=\"right\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", bedUrl
-    printf "\">%d</a></td>\n", num
-    
-    printf "<td align=\"right\">%.1f</td>\n", $9
-    printf "<td align=\"right\">%.1f</td>\n", $10
-  }
-}' chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/*tsv| awk -v template="chipatlas/sh/analTools/fantomEnhancerList_template.html" '
-BEGIN {
-  while ((getline < template) > 0) {
-    if ($1 == "__tbody__") break
-    print
-  }
-  close(template)
-} {
-  print
-} END {
-  while ((getline < template) > 0) {
-    if (j > 0) print
-    if ($1 == "__tbody__") j = 1
-  }
-}' > chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/fantomEnhancerlist.html
-
-# 組織特異的 Enhancer の結果にリンクを設ける
-for html in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/*.html`; do
-  id=`basename $html| sed 's/\.html//'`
-  cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id '{
-    if ($0 ~ "<caption><h2>") {
-      zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/" id "_BED.zip"
-      $0 = $0 "\n" "<caption><a target=\"_blank\" style=\"text-decoration: none\" href=\"" zipUrl "\">Download overlapped regions in BED format.</a><br><br><br></caption>"
-    }
-    print $0
-  }' > $html"tmp"
-  mv $html"tmp" $html
-done
-
-# 組織特異的 Enhancer と overlap する BED ファイルを 整形する
-for dir in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/| grep "_BED"`; do
-  qsub -o /dev/null -e /dev/null -l short chipatlas/sh/analTools/preProcessed_insilico_BED.sh "chipatlas/results/hg19/insiicoChIP_preProcessed/fantomEnhancer/results/$dir" enhancer
-done # chr12   115836521       115836522       CTCF_@SRX199886   rs1292011
-
-
-
-##########################################################################################################################################################################
-#                                                                         FANTOM Promoter
-##########################################################################################################################################################################
-
-for genome in hg19 mm9; do
-  p2g="chipatlas/results/$genome/insiicoChIP_preProcessed/lib/promoter2geneSymbols.bed"
-  case $genome in
-    "hg19" ) org=human;;
-    "mm9" )  org=mouse;;
-  esac
-  # promoter と gene symbol のダウンロードと整形
-  curl "http://fantom.gsc.riken.jp/5/datafiles/phase1.3/extra/TSS_classifier/TSS_"$org".bed.gz"| gunzip| tr '@,' '\t\t'| awk -F '\t' -v OFS='\t' -v fn="$fn" '{
-    if ($4 != "p") print $1, $2, $3, $5, $4, $8
-  }' > "$p2g"  # chr10   101621605       101621610       Mgat4c  p18     +
-
-  # 細胞特異的プロモータリストのダウンロードと整形
-  urlHead="http://fantom.gsc.riken.jp/5/datafiles/phase1.3/extra/Sample_ontology_enrichment_of_CAGE_peaks/"
-  curl "$urlHead""$genome""exp_cell_types_general_term_excluded.txt.gz"| gunzip > chipatlas/results/$genome/insiicoChIP_preProcessed/lib/specificPromoters.CL.txt
-  curl "$urlHead""$genome""exp_disease_general_term_excluded.txt.gz"| gunzip > chipatlas/results/$genome/insiicoChIP_preProcessed/lib/specificPromoters.DOID.txt
-  curl "$urlHead""$genome""exp_uberon_general_term_excluded.txt.gz"| gunzip > chipatlas/results/$genome/insiicoChIP_preProcessed/lib/specificPromoters.UBERON.txt
-  # chr10:100993894..100993906,-    CL:0000097[p.value=7.36e-45,n=5];CL:0002028[p.value=7.36e-45,n=5];CL:0000163[p.value=2.47e-25,n=9];CL:0000151[p.value=7.52e-07,n=36]
-
-  # 細胞特異的 gene list の作成
-  geneListDir="chipatlas/results/"$genome"/insiicoChIP_preProcessed/fantomPromoter/geneList"
-  for class in CL DOID UBERON; do
-    cat "chipatlas/results/$genome/insiicoChIP_preProcessed/lib/specificPromoters.$class.txt"| tr ';' '\t'| awk -F '\t' -v OFS='\t' -v p2g="$p2g" '
-    BEGIN {
-      while ((getline < p2g) > 0) a[$1 ":" $2 ".." $3 "," $6] = $4
-    } {
-      for (i=2; i<=NF; i++) print a[$1], $i
-    }'| tr '[' '\t'| awk -F '\t' -v OFS='\t' '{
-      if ($2 != "NA" && $1 != "" && $2 != "") print $1, $2
-    }'| sort| uniq| awk -F '\t' -v geneListDir="$geneListDir" -v OFS='\t' '{
-      fn = geneListDir "/" $2 ".geneList.txt"
-      print $1 >> fn
-      close(fn)
-    }'
-  done
-done
-
-
-# in silico ChIP の実行
-up=10000
-down=10000
-for genome in hg19 mm9; do
-  for geneList in `ls "chipatlas/results/"$genome"/insiicoChIP_preProcessed/fantomPromoter/geneList/"*.geneList.txt`; do
-    id=`basename $geneList| cut -d '.' -f1`
-    titleA=`cat $id2name| awk -F '\t' -v id="$id" '$1 == id {printf $2}'| sed 's/\(.\)\(.*\)/\U\1\L\2/g'`
-    titleB="Other RefSeq genes"
-    outfn="chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/"$id
-    qsub -o /dev/null -e /dev/null bin/insilicoChIP -a "$geneList" -A "$titleA" -B "$titleB" -T "$titleA vs $titleB" -o -u $up -d $down gene "$genome" "$outfn"
-  done
-done
-
-
-
-
-while :; do
-  qN=`qstat| awk '$3 == "insilicoCh"'| wc -l`
-  if [ $qN -eq 0 ]; then
-    rm chipatlas/results/*/insiicoChIP_preProcessed/fantomPromoter/results/*_Overlap.bb
-    rm chipatlas/results/*/insiicoChIP_preProcessed/fantomPromoter/results/*_Overlap.bed
-    break
-  fi
-done
-
-# 組織特異的 gene リストの作成
-for genome in hg19 mm9; do
-  awk -F '\t' -v id2name="$id2name" -v genome=$genome '
-  BEGIN {
-    while ((getline < id2name) > 0) {
-      c = substr($2, 1, 1)
-      sub(c, toupper(c), $2)
-      a[$1] = $2      #a[CL:0000050] = Megakaryocyte-erythroid progenitor cell
-    }
-  } {
-    if (FNR == 1) {
-      for (i in a) {
-        fn = "/" i ".tsv"
-        if (FILENAME ~ fn) {
-          trait = a[i]
-          id = i
-        }
-      }
-      htmlUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insiicoChIP_preProcessed/fantomPromoter/results/" id ".html"
-      tsvUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insiicoChIP_preProcessed/fantomPromoter/results/" id ".tsv"
-      bedUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insiicoChIP_preProcessed/fantomPromoter/geneList/" id ".geneList.txt"
-      zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insiicoChIP_preProcessed/fantomPromoter/results/" id "_BED.zip"
-      wclbed = "cat chipatlas/results/" genome "/insiicoChIP_preProcessed/fantomPromoter/geneList/" id ".geneList.txt| wc -l"
-      wclbed | getline num
-      close(wclbed)
-      
+    if (anal == "gwas") {  # gwas の場合
+      printf "<tr>\n<td><a target=\"_blank\" style=\"text-decoration: none\" href=\"https://www.ebi.ac.uk/gwas/search?query="
+      printf "%s", gwasQuery
+      printf "\"><i class=\"fa fa-info-circle\" title=\"liTitle\"></i> </a>"
+      printf trait
+    } else {               # fantomEnhancer, fantomPromoter の場合
       printf "<tr>\n<td><a target=\"_blank\" style=\"text-decoration: none\" href=\"http://fantom.gsc.riken.jp/5/sstar/"
       printf "%s", id
       printf "\"><i class=\"fa fa-info-circle\" title=\"liTitle\"></i> </a>"
       printf id "</td>\n<td>" trait
-      printf "</td>\n"
-      
-      printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-      printf "%s", htmlUrl
-      printf "\">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-      printf "%s", tsvUrl
-      printf "\">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-      printf "%s", zipUrl
-      printf "\">BED</a></td>\n"
-      
-      printf "<td align=\"right\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-      printf "%s", bedUrl
-      printf "\">%d</a></td>\n", num
-      
-      printf "<td align=\"right\">%.1f</td>\n", $9
-      printf "<td align=\"right\">%.1f</td>\n", $10
     }
-  }' chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/*tsv| awk -v template="chipatlas/sh/analTools/fantomPromoterList_template.html" -v genome=$genome '
+    printf "</td>\n"
+    
+    printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 2] == 1) printf " href=\"%s", htmlUrl
+    printf "\">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
+    printf "%s", tsvUrl
+    printf "\">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
+    printf "%s", pngUrl
+    printf "\">Image</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 7] == 1) printf " href=\"%s", pdfUrl
+    printf "\">Image</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
+    printf "%s", cltUrl
+    printf "\">TSV</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
+    printf "%s", itsUrl
+    printf "\">BED</a></td>\n"
+    
+    printf "<td align=\"right\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
+    printf "%s", bedUrl
+    printf "\">%d</a></td>\n", num
+    
+    printf "<td align=\"right\">%.1f</td>\n", $2   # P-val
+    printf "<td align=\"right\">%.1f</td>\n", $3  # Q-val
+  }'| awk -v gwasList_template="chipatlas/sh/analTools/"$anal"List_template.html" '
   BEGIN {
-    while ((getline < template) > 0) {
+    while ((getline < gwasList_template) > 0) {
       if ($1 == "__tbody__") break
       print
     }
-    close(template)
+    close(gwasList_template)
   } {
     print
   } END {
-    while ((getline < template) > 0) {
-      sub("__GENOME__", genome, $0)
+    while ((getline < gwasList_template) > 0) {
       if (j > 0) print
       if ($1 == "__tbody__") j = 1
     }
-  }' > chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/fantomPromoterlist.html
-done
-
-# 組織特異的 Enhancer の結果にリンクを設ける
-for genome in hg19 mm9; do
-  for html in `ls chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/*.html`; do
+  }' > chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/"$anal"list.html
+  
+  
+  # 結果 (HTML) にリンクを設ける
+  for html in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.html`; do
     id=`basename $html| sed 's/\.html//'`
-    cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id -v genome=$genome '{
-      if ($0 ~ "<caption><h2>") {
-        zipUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insiicoChIP_preProcessed/fantomPromoter/results/" id "_BED.zip"
-        $0 = $0 "\n" "<caption><a target=\"_blank\" style=\"text-decoration: none\" href=\"" zipUrl "\">Download overlapped regions in BED format.</a><br><br><br></caption>"
-      }
+    newStr=`cat "chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/"$anal"list.html"| grep "$id"| grep "html"| sed 's/<td align="center">//g'| sed 's[</td>[@[g'`
+    cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id -v newStr="$newStr" '
+    BEGIN {
+      split(newStr, a, "@")
+    } {
       print $0
+      if ($0 ~ "<caption><h2>") {
+        printf "<caption>Downloads: Enrichment ("
+        printf a[1]
+        printf "), Clustering ("
+        printf a[2]
+        printf "), Intersections ("
+        printf a[3]
+        printf ")<br><br><br></caption>\n"
+      }
     }' > $html"tmp"
     mv $html"tmp" $html
   done
-done
+  
+  exit
+fi
 
+##########################################################################################################################################################################
+#                                                      個別 id モード : R で barchart や clustering をおこなう
+##########################################################################################################################################################################
+# qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh UBERON:0002106 gwas 3 hg19
+# qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh UBERON:0002106 fantomEnhancer 5 hg19
+# qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh UBERON:0002106 fantomPromoter 5 hg19 5000 5000
 
-# Gene と overlap する BED ファイルを 整形する
-for genome in hg19 mm9; do
-  for dir in `ls chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/| grep "_BED"`; do
-    qsub -o /dev/null -e /dev/null -l short chipatlas/sh/analTools/preProcessed_insilico_BED.sh "chipatlas/results/"$genome"/insiicoChIP_preProcessed/fantomPromoter/results/$dir" promoter $up $down
-  done
-done
+id="$1"
+anal=$2
+qVal=$3
+genome=$4
+up=$5      # fantomPromoter の場合のみ
+down=$6    # fantomPromoter の場合のみ
 
+# Overlap する BED ファイルを 整形する
+case $anal in
+  "gwas")
+    gwasLD="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/gwas_original+LD0.9.bed"
+    bed="chipatlas/results/$genome/insilicoChIP_preProcessed/gwas/results/tsv/"$id"_Overlap.bed"
+    extd=`grep extd "chipatlas/sh/analTools/insilicoChIP_GWAS.sh"| head -n1| cut -d '=' -f2`
+    ID=`echo $id| cut -c6-`
     
     
-    awk -v up=$up -v down=$down -v OFS='\t' -v tss="$tss" -F '\t' '
+    cat "$gwasLD"| awk -F '\t' -v OFS='\t' -v extd=$extd '{
+      print $1, $25 - extd, $26 + extd, $4, $23
+    }'| intersectBed -a "$bed" -b stdin -wa -wb| tr '@' '\t'| awk -F '\t' -v OFS='\t' -v ID="$ID" '  # chr10   101365262       101365356       CEBPB_     SRX150578        chr10   101357717       101366816       rs11190179      0001
+    BEGIN {
+      while ((getline < "chipatlas/lib/assembled_list/experimentList.tab") > 0) {
+        for (i=4; i<=6; i++) x[$1, i] = $i
+      }
+    } {
+      if (!a[$2,$3,$4,$5]++) {
+        print $1, $2, $3, $5, x[$5, 4], x[$5, 5], x[$5, 6], $9  # chr11   9110514   9111008   SRX062358     AR    Prostate     LNCAP   rs2647528 (座位は LD-DHS)
+      }
+    }' > "$bed"tmp
+    mv "$bed"tmp "$bed"
+    ;;
+  "fantomEnhancer")
+    bed="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomEnhancer/results/tsv/"$id"_Overlap.bed"
+    cat "$bed"| sed 's/_@/@/'| tr '@' '\t'| awk -F '\t' -v OFS='\t' '
+    BEGIN {
+      while ((getline < "chipatlas/lib/assembled_list/experimentList.tab") > 0) {
+        for (i=4; i<=6; i++) x[$1, i] = $i
+      }
+    } {
+      print $1, $2, $3, $5, x[$5, 4], x[$5, 5], x[$5, 6]
+    }' > "$bed"tmp
+    mv "$bed"tmp "$bed"
+    # chr1    7764543   7764931   SRX1165098    CREB1   Liver   Hep G2  (座位は Enhancer)
+    ;;
+  "fantomPromoter")
+    tss="chipatlas/lib/TSS/uniqueTSS."$genome".bed"
+    bed="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/results/tsv/"$id"_Overlap.bed"
+    cat "$bed"| awk -v up=$up -v down=$down -v OFS='\t' -v tss="$tss" -F '\t' '
     BEGIN {
       while ((getline < tss) > 0) {
         beg = ($5 == "+")? $2 - up : $3 - down
         end = ($5 == "+")? $2 + down : $3 + up
-        b[$1, beg, end] = $4  # g[chr15, 67348194, 67368194] = MEF2B
-        a[$1, beg, end] = ($5 == "+")? $1 "\t" $2 "\t" $2+1 : $1 "\t" $3-1 "\t" $3  # g[chr1, 1269844, 1269845] = TAS1R3
-        c[$1, beg, end] = t[$1, beg, end] "\t" $6 "\t" $5
+        b[$1, beg, end] = $4          # b[chr9, 108087714, 108097714] = Bsn
+        c[$1, beg, end] = $6 "\t" $5  # c[chr9, 108087714, 108097714] = NM_007567    +/-
+      }
+      while ((getline < "chipatlas/lib/assembled_list/experimentList.tab") > 0) {
+        for (i=4; i<=6; i++) x[$1, i] = $i
       }
     } {
-      ofn = FILENAME "tmp"
-      print a[$1, $2, $3], $4, b[$1, $2, $3], c[$1, $2, $3] >> ofn
-      close(ofn)
-    }' chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/"$dir/"*.bed
-    for bed in `ls chipatlas/results/$genome/insiicoChIP_preProcessed/fantomPromoter/results/"$dir/"*.bed`; do
-      sort -k1,1 -k2,2n $bed"tmp"| uniq > $bed
-      rm $bed"tmp"
-    done
-  done # chr21  45138977  45138978  SP1_@SRX100550  PDXK  NM_003681   +
-done
+      split($4, r, "@")
+      srx = r[2]
+      print $1, $2, $3, srx, x[srx, 4], x[srx, 5], x[srx, 6], c[$1, $2, $3], b[$1, $2, $3]
+    }' > "$bed"tmp
+    #  chr12   86109062   86119062   SRX1115328   Gata3   Blood   Th2   NM_023409   -   Npc2
+    #  <==      TSS ± 5kb      ==>   <==      Overlap する SRX     ==>   <== TSS の遺伝子 ==>
+    mv $bed"tmp" $bed
+    
+    # geneList を BED にする (unique TSS とマッチするもの)
+    gl="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/geneList/$id.geneList.txt"
+    gb="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/geneList/$id.bed"
+    cat $tss| awk -F '\t' -v OFS='\t' -v gl="$gl" '
+    BEGIN {
+      while ((getline < gl) > 0) x[$1]++
+    } {
+      if (!y[$4]++ && x[$4] > 0) print
+    }' > "$gb"
+    ;;
+esac
 
-promoter up down
 
-# Gene と overlap する BED ファイルを 整形する
-for dir in `ls chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/| grep "_BED"`; do
-  qsub -o /dev/null -e /dev/null -l short chipatlas/sh/analTools/preProcessed_insilico_BED.sh "chipatlas/results/hg19/insiicoChIP_preProcessed/gwas/results/$dir" gwas
-done # chr12   115836521       115836522       CTCF_@SRX199886   rs1292011
+# R で bar chart 描画
+R-3.2.3/bin/R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
+  args <- commandArgs(trailingOnly = T)
+  library("ggplot2")
+  library(grid)
+  library(RColorBrewer)
+  
+  anal <- args[1]
+  genome <- args[2]
+  id <- args[3]
+  
+  tsv <- paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/summerized/", id, ".tsv", sep="")
+  data <- read.csv(tsv, sep="\t", header=T)
+  
+  ct <- data$cellType
+  ctc <- c("Blood", "Breast", "Cardiovascular", "Digestive tract", "Liver", "Lung", "Neural", "Others", "Prostate")
+  colP <- c(brewer.pal(9,"Set1")[c(1, 3, 4, 8, 7, 2, 6, 9, 5)])
+  names(colP) <- ctc
+
+  colp <- data.frame(
+    ctc = names(summary(ct)),
+    colP = colP[names(summary(ct))],
+    num = summary(ct)
+  )
+  # Blood = 赤, Lung = 青, Breast = 緑, Cardiovascular = 紫, Prostate = オレンジ, Neural = 黄, Liver = 茶, Digestive tract = ピンク, Others = グレー
+
+  png(paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/tsv/", id, ".png", sep=""), height=4800, width=4800, res=720)
+  
+  grid.newpage()
+  g <- ggplot(
+    data,
+    aes (                  # ggplot オプション設定
+      x = nr,           # x 軸を df$group とする
+      y = pval,          # y 軸を df$length とする
+      fill = cellType
+    )
+  )
+  g <- g + geom_bar(                    # plotbarに当たる関数
+    width = 1,
+    stat = "identity"
+  )
+  gb <- g + theme(
+    legend.position="none",
+    panel.background = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.title.x = element_text(angle = 180, hjust = 0.5, vjust = 0.5),
+    axis.text.x = element_text(angle = 90, hjust = 0.5, vjust = 0.5),
+    axis.text.y = element_text(angle = 90, hjust = 0.5, vjust = 0.5),
+    panel.background = element_blank()
+  )
+  
+  gb <- gb + scale_fill_manual(values = as.character(subset(colp, colp$num > 0)$colP))
+  gb <- gb + xlab("Rank") + ylab("−Log10(P-value)")
+  
+  print(gb)
+  dev.off()
+DDD
+
+
+# PNG ファイルを時計回りに 90 度回転させる
+png="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/$id.png"
+convert -rotate 90 "$png" "$png"tmp.png
+mv "$png"tmp.png "$png"
+
+
+# R でクラスター解析し、描画する
+  # 結合部位と TFs のクラスター解析
+  # 病気ごとに結合の有無を 0/1 で表す
+tsv="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/$id.tsv"
+df="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/df/$id.df"
+cat "chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/"$id"_Overlap.bed"| awk -F '\t' -v OFS='\t' -v tsv="$tsv" -v qVal=$qVal -v anal=$anal -v genome=$genome '
+BEGIN {
+  while ((getline < tsv) > 0) {
+    if ($10 < - qVal) {
+      s[$1]++
+      p[$1] = $1 " | " $3 " | " $4 " | " $5
+    }
+  }
+} {
+  if (s[$4] > 0) {
+    locus = $1 ":" $2 "-" $3
+    c[locus]++
+    x[locus, $4] = 1
+  }
+} END {
+  printf "exp"
+  for (locus in c) printf "\t%s", locus
+  printf "\n"
+  for (srx in p) {
+    printf p[srx]
+    for (locus in c) printf "\t%d", x[locus, srx]
+    printf "\n"
+  }
+}' > "$df"
+
+
+# df のうち、行 (SRX) または列 (locus) が２つ未満の場合は cluster 解析しない
+clusterOK=`cat "$df"| awk -v df="$df" '{
+  if (NR == 1) x = NF
+} END {
+  if (x > 2 && NR > 2) printf "1"
+  else                 printf "0"
+}'`
+
+if [ $clusterOK = 0 ]; then
+  exit
+fi
+
+# クラスター解析
+R-3.2.3/bin/R --vanilla --args $anal $genome $id << 'DDD'
+  args <- commandArgs(trailingOnly = T)
+  library(reshape2)
+  library(gplots)
+  library(RColorBrewer)
+  library(grid)
+  
+  anal <- args[1]
+  genome <- args[2]
+  id <- args[3]
+  
+  methD="euclidean"
+  methH="complete"
+  
+  # 色の定義
+  colN <- c(1, 3, 4, 8, 7, 2, 6, 9, 5, 0)
+  colP <- c(brewer.pal(9,"Set1")[colN], "#eeeeee")
+  colC <- c("Blood", "Breast", "Cardiovascular", "Digestive tract", "Liver", "Lung", "Neural", "Others", "Prostate", "NA")
+  names(colN) <- colC
+  names(colP) <- colN
+    # Blood = 赤, Lung = 青, Breast = 緑, Cardiovascular = 紫, Prostate = オレンジ, Neural = 黄, Liver = 茶, Digestive tract = ピンク, Others = グレー
+    
+  # クラスタリング結果の PDF と TSV ファイルを作成
+  fnPDF <- paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/tsv/", id, ".pdf", sep="")
+  pdf(fnPDF, width = 70, height = 70)
+  outtsv <- paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/tsv/", id, ".cls.tsv", sep="")
+  system(paste('awk \'BEGIN {printf \"\t\"}\' > ', outtsv))
+
+  # データの読み込みと整形
+  dc <- read.table(paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/df/", id, ".df", sep=""), sep="\t", header = T)
+  m <- data.matrix(dc[, colnames(dc) != "exp"]) # 行列型に変換 (列 "exp" は除去)
+  rownames(m) <- dc$exp # 行の名前を追加
+  
+  m2 <- m
+  m3 <- m
+  
+  # 行または列が１つしかないときはクラスタリングを行えない。######################
+#    if (length(colnames(m3)) < 1 || length(rownames(m3)) < 1) {
+#      system(paste("rm ", fnPDF, outtsv))
+#      next
+#    }
+  # 距離の計算とクラスタリング
+  d1<-dist(m, method=methD)
+  d2<-dist(t(m), method=methD)
+  c1 <- hclust(d1, method=methH)
+  c2 <- hclust(d2, method=methH)
+  
+  # 実験 ID に Cell type class を割り当てる
+  srx <- c(1, rownames(m))
+  F <- 1
+  for (L in strsplit(rownames(m) , " \\| ")) {
+    F <- c(F, L[3])
+  }
+  names(F) <- srx
+  F[is.na(charmatch(F, colC))] <- "Others"
+
+  # Overlap した場合の値 (=1) を Cell type class の ID (colN) に置換する
+  for (cClass in colC) {
+    m2[F[rownames(m)] == cClass & m == 1] <- colN[cClass]
+  }
+  Q <- sort(unique(c(m2)))
+
+  # Cell type class がない場合は繰り下げる
+  j <- 0
+  for (k in Q) {
+    m3[m2 == k] <- j
+    j <- j + 1
+  }
+
+  # ヒートマップ
+  heatmap(
+    m3,
+    Colv=as.dendrogram(c2),
+    Rowv=as.dendrogram(c1),
+    scale="none",
+    margins = c(20, 20),
+    col=colP[as.character(Q)]
+  )
+
+  # 凡例
+  par(fig = c(0, 0.1, 0.88, 0.98), mar=c(0,0,0,0), new=TRUE)
+  plot(
+    y = c(1:9),
+    x = rep(1,9),
+    pch=15, # 四角を描く
+    cex=5,  # 四角の大きさ
+    col=colP[as.character(colN[rev(colC[c(1:7, 9, 8)])])],
+    axes=FALSE, xlab="", ylab=""
+  )
+  text(
+    y = c(1:9),
+    x = rep(1.02,9),
+    labels=rev(colC[c(1:7, 9, 8)]),
+    pos = 4
+  )
+
+  dev.off()
+  
+  # クラスタリング結果の TSV ファイルを作成
+  lb1 <- c(c1$labels)[rev(c(c1$order))] # 行ラベル (SRX など)
+  lb2 <- c(c2$labels)[c(c2$order)] # 列ラベル (ゲノム座位)
+  
+  # クラスタリング結果のマトリクスを作る
+  m4 <- matrix(
+    m2[rev(c1$order), c2$order],
+    nrow = length(c1$order),
+    ncol = length(c2$order)
+  )
+  colnames(m4) <- lb2
+  rownames(m4) <- lb1
+  
+  # Overlap した Cell class に置換
+  j <- 0
+  for (cls in colC) {
+    j <- j + 1
+    m4[m4 == j] <- colC[which(colN == j)]
+  }
+  m4[m4 == 0] <- "NA"
+  
+  # 書き出し
+  write.table(m4, quote = FALSE, sep = "\t", file=outtsv, append = TRUE)
+DDD
+
+
+
+
+
