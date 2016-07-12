@@ -11,6 +11,7 @@ short=`for qName in week_hdd.q week_ssd.q short.q; do
   }'
 done| sort -k1nr| head -n1| awk '{
   if ($2 == "short.q") printf "-l short"
+  else                 printf "%s", " "
 }'`
 
 Para=$(for i in `seq $#`; do
@@ -21,17 +22,28 @@ done| sed 's/^ //'| awk -F '\t' '{
   printf "%s ", $1
 }')
 
+conf=`cat bin/conf.ql.txt`  # 1: week.q  2: short.q  0: 強制を解除
+
 if [ $1 = "shortOrweek" ]; then
-  echo -n $short
+  echo -n "$short"| awk -v conf=$conf '{
+    if (conf == 0) printf "%s", $0
+    if (conf == 1) printf " "
+    if (conf == 2) printf "-l short"
+  }'
 elif [ $1 = "mem" ]; then
   bin/qm| head -n5| awk '{
     if ($1 ~ "week") w += $4 -$2
     else if ($1 ~ "short") s += $4 - $2
   } END {
     if (w < s) printf "-l short"
+    else printf " "
+  }'| awk -v conf=$conf '{
+    if (conf == 0) printf "%s", $0
+    if (conf == 1) printf " "
+    if (conf == 2) printf "-l short"
   }'
 else
-  echo qsub $short $Para| sh
+  echo qsub "$short" $Para| sh
 fi
 
 

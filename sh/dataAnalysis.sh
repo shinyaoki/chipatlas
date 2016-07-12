@@ -19,13 +19,13 @@ if [ $Type = "0" ]; then
   projectDir=`echo $0| sed 's[/sh/dataAnalysis.sh[['`
   rm -rf makeBigBed_log
   
-  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (9:40-, 2016/05/26)
+  sh $projectDir/sh/dataNumbers.sh $projectDir                                 # データ数を集計し、グラフを作成
+  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (12 日間, 2016/06/28)
   sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行 (1 時間弱, 2016/05/26)
   sh $projectDir/sh/analTools/wabi/transferBedTow3oki.sh $projectDir           # in silico ChIP 用の BED ファイルを作成、w3oki へ転送 (2 時間弱, 2016/05/26)
   rm -rf $projectDir/lib/inSilicoChIP
   mv tmpDirFortransferBedTow3oki $projectDir/lib/inSilicoChIP
   qsub -o /dev/null -e /dev/null $projectDir/sh/analTools/preProcessed_insilicoChIP.sh initial   # GWAS, FANTOM データの in silico ChIP (６時間, 2016/05/26)
-  sh $projectDir/sh/dataNumbers.sh $projectDir                                    # データ数を集計し、グラフを作成
   qsub -o /dev/null -e /dev/null $projectDir/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成
   exit
 fi
@@ -45,6 +45,7 @@ while :; do
   if [ $qNum = "0" ]; then
     break
   fi
+  sleep 60
 done
 
 
@@ -69,6 +70,8 @@ for Genome in `ls $projectDir/results`; do
   }'
 done > $projectDir/lib/assembled_list/analysisList.tab
 rm tmpFileForColoList tmpFileFortargetGenesList
+
+bin/alertFromDDBJ "ChIP-Atlas アラート" "dataAnalysis.sh 完了"
 
 # $1 = 抗原小
 # $2 = 細胞大 (Colo 用、コンマ区切り、ない場合は "-")

@@ -10,7 +10,7 @@ if [ $1 = "INITIAL" ]; then
     rm -rf $projectDir/results/$Genome/colo tmpDirForColo
     mkdir $projectDir/results/$Genome/colo tmpDirForColo
   done
-  qVal=`cat $projectDir/sh/preferences.txt| awk '$1 == "qVal" {printf "%s", $2}'`
+  qVal=`cat $projectDir/sh/preferences.txt| awk '$1 == "qVal" {printf "%s", $3}'` # qVal (= 10)
   IFS_BACKUP=$IFS
   IFS=$'\n'
   
@@ -31,8 +31,10 @@ if [ $1 = "INITIAL" ]; then
     nSRX=`echo "$Param"| awk '{printf "%d", gsub("," "", $0)}'`
     if [ "$nSRX" -lt 500 ]; then
       short=`sh $projectDir/sh/QSUB.sh mem`
-    else
+    elif [ "$nSRX" -lt 1500 ]; then
       short=" "
+    else
+      short="-l month -l medium"
     fi
     qsub -l s_vmem=$nMem -l mem_req=$nMem $short $projectDir/sh/coLocalization.sh $projectDir "$Param"
     IFS=$'\n'
@@ -61,7 +63,7 @@ BEGIN {
 }'`  # SRX リスト (geneList にないものは削除。スペース区切り)
 
 HLM="3 2 1" # High, Middle, Low の値
-qVal=`cat $projectDir/sh/preferences.txt| awk '$1 == "qVal" {printf "%s", $2}'` # 最大の qVal (= 05)
+qVal=`cat $projectDir/sh/preferences.txt| awk '$1 == "qVal" {printf "%s", $3}'` # qVal (= 10)
 jobDir="tmpDirForColo/$JOB_ID"
 mkdir -p $jobDir/inBed
 

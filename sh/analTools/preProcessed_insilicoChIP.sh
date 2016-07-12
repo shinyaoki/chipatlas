@@ -33,8 +33,8 @@ if [ $1 = "P" ]; then
   down=$6    # fantomPromoter の場合のみ
   
   # 不要なファイルの消去
-  rm chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bb &
-  rm -r chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*BED &
+  rm chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bb
+  rm -r chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*BED
   
   # 指定した qVal 以下のデータを集計し、TSV ファイルを作成
   key="BloodBreastDigestive tractLungProstateCardiovascularLiverNeural"
@@ -72,12 +72,13 @@ if [ $1 = "P" ]; then
     fi
   done
   
-  
+
   # PNG や PDF の有無を整理
   fileList="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/file01.tsv"
   {
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.html
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*[0-9].tsv
+    ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*cls.tsv
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bed
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.png
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.pdf
@@ -146,20 +147,22 @@ if [ $1 = "P" ]; then
       printf id "</td>\n<td>" trait
     }
     printf "</td>\n"
-    
+  #               2       3        4       5            6       7
+  # id            html    cls.tsv  tsv     Overlap.bed  png     pdf
+  # CL:0000127    1       0        1       1            0       0
     printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
-    if (f[id, 2] == 1) printf " href=\"%s", htmlUrl
-    printf "\">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", tsvUrl
-    printf "\">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", pngUrl
-    printf "\">Image</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
-    if (f[id, 7] == 1) printf " href=\"%s", pdfUrl
-    printf "\">Image</a>, <a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", cltUrl
-    printf "\">TSV</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
-    printf "%s", itsUrl
-    printf "\">BED</a></td>\n"
+    if (f[id, 2] == 1) printf " href=\"%s\"", htmlUrl
+    printf ">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 4] == 1) printf " href=\"%s\"", tsvUrl
+    printf ">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 6] == 1) printf " href=\"%s\"", pngUrl
+    printf ">Image</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 7] == 1) printf " href=\"%s\"", pdfUrl
+    printf ">Image</a>, <a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 3] == 1) printf " href=\"%s\"", cltUrl
+    printf ">TSV</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
+    if (f[id, 5] == 1) printf " href=\"%s\"", itsUrl
+    printf ">BED</a></td>\n"
     
     printf "<td align=\"right\"><a target=\"_blank\" style=\"text-decoration: none\" href=\""
     printf "%s", bedUrl
@@ -232,6 +235,10 @@ case $anal in
     ID=`echo $id| cut -c6-`
     
     
+# $1   $2   $3   $4      $10    $23   $24             $25     $26
+# chr  beg  end  SNP_ID  trait  ID    修正済みtrait    LD_beg  LD_end
+# 注意: a[$10, $25, $26] は重複がある (同じ LD-block 内に $123 があるため)
+
     cat "$gwasLD"| awk -F '\t' -v OFS='\t' -v extd=$extd '{
       print $1, $25 - extd, $26 + extd, $4, $23
     }'| intersectBed -a "$bed" -b stdin -wa -wb| tr '@' '\t'| awk -F '\t' -v OFS='\t' -v ID="$ID" '  # chr10   101365262       101365356       CEBPB_     SRX150578        chr10   101357717       101366816       rs11190179      0001
@@ -240,8 +247,8 @@ case $anal in
         for (i=4; i<=6; i++) x[$1, i] = $i
       }
     } {
-      if (!a[$2,$3,$4,$5]++) {
-        print $1, $2, $3, $5, x[$5, 4], x[$5, 5], x[$5, 6], $9  # chr11   9110514   9111008   SRX062358     AR    Prostate     LNCAP   rs2647528 (座位は LD-DHS)
+      if (ID == $10) {
+        if (!a[$1,$2,$3,$5]++ ) print $1, $2, $3, $5, x[$5, 4], x[$5, 5], x[$5, 6], $9  # chr11   9110514   9111008   SRX062358     AR    Prostate     LNCAP   rs2647528 (座位は LD-DHS)
       }
     }' > "$bed"tmp
     mv "$bed"tmp "$bed"
@@ -434,6 +441,8 @@ R-3.2.3/bin/R --vanilla --args $anal $genome $id << 'DDD'
 
   # データの読み込みと整形
   dc <- read.table(paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/df/", id, ".df", sep=""), sep="\t", header = T)
+  colnames(dc) <- sub("\\.", ":", colnames(dc))
+  colnames(dc) <- sub("\\.", "-", colnames(dc))
   m <- data.matrix(dc[, colnames(dc) != "exp"]) # 行列型に変換 (列 "exp" は除去)
   rownames(m) <- dc$exp # 行の名前を追加
   

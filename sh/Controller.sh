@@ -83,7 +83,7 @@ for Genome in `echo $GENOME`; do
       
       if [ $nQ -le 10 -a $Sz -lt $HDsize ]; then # ジョブ待ち数が 11 以下で、HDD 容量が 18 TB 以下の時に submit する
         ql=`sh $projectDir/sh/QSUB.sh mem`
-        qsub $ql -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $short $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+        qsub $ql -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
         sleep 1
         break
       fi

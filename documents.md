@@ -9,6 +9,7 @@ Documents for computational processing in ChIP-Atlas.
 6. [Colocalization](#colocalization_doc)
 7. [in silico ChIP](#virtual_chip_doc)
 8. [Downloads](#downloads_doc)
+9. [External Genome Browser](#external_genome_browser)
 
 <a name="data_source_doc"></a>
 ## 1. Data source
@@ -437,9 +438,9 @@ All cell types recorded in ChIP-Atlas.
 ![][cellTypeNumber]
 
 <!-- Links to files -->
-[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160526.png "Data numbers"
-[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160526.png "Antigen classes"
-[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160526.png "Cell type classes"
+[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160617.png "Data numbers"
+[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160617.png "Antigen classes"
+[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160617.png "Cell type classes"
 
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
 [ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt
@@ -483,3 +484,9 @@ All cell types recorded in ChIP-Atlas.
 [coloSample]: http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/colo/NANOG.Pluripotent_stem_cell.html
 [insilicoChIP]: http://chip-atlas.org/in_silico_chip
 [insilicoChIPsample]: http://dbarchive.biosciencedbc.jp/kyushu-u/sample/insilicoChIP_result_example.html
+<a name="external_genome_browser"></a>
+## 9. External Genome Browser
+BigBed and BigWig format files in ChIP-Atlas database are now able to be browsed on UCSC Genome Browser. Use links below to jump to UCSC Genome Browser.
+- [genome.ucsc.edu](http://genome.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
+- [genome-asia.ucsc.edu (asian mirror)](http://genome-asia.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
+Currently track hub feature is only provided based on files for each individual experiment, but we are working on to browse files assembled by antigen and cell types. See [Using UCSC Genome Browser Track Hubs](https://genome.ucsc.edu/goldenpath/help/hgTrackHubHelp.html) for more details.

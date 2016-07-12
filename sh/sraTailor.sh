@@ -43,6 +43,18 @@ echo -e "\nsra ファイルのダウンロード中...\n"
 /home/$LoginID/.aspera/connect/bin/ascp -QT -i /home/$LoginID/.aspera/connect/etc/asperaweb_id_dsa.openssh  -L $ResDir -k 1 -l 100000000 \
 anonftp@ftp-trace.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByExp/sra/$SorD/$SRX_short/$SRX $ResDir
 
+Nstop=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Session Stop" -e "ascp: "`
+Nnone=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Server aborted session: No such file or directory" -e "Completed: 0K bytes"`
+if [ $Nstop -gt 0 -a $Nnone -eq 0 ]; then  # 通信障害の場合、再投稿
+  ql=`sh $projectDir/sh/QSUB.sh mem`
+  Logfile="$projectDir/results/$Genome/log/$SRX.log.txt"
+  rm -f $Logfile
+  rm -rf $ResDir
+  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $NSLOTS $ql $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$qVal"
+  exit
+fi
+
+
 mv $ResDir/$SRX/*RR*/*RR* $ResDir
 cd $ResDir
 SRR=`ls [DSE]RR* | head -n1| cut -d '.' -f1`

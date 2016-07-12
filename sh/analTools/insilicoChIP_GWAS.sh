@@ -1,10 +1,11 @@
 #!/bin/sh
 #$ -S /bin/sh
 
-# qsub chipatlas/sh/analTools/insilicoChIP_FantomEnhancer.sh
+# qsub chipatlas/sh/analTools/insilicoChIP_GWAS.sh
 
 extd=1000
 geneBody="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/hg19_allGeneBody.bed"
+snpLoci="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/snpLoci.bed"
 exons="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/hg19_allExons.bed"
 gwasCatalog="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/gwasCatalog_original.bed"
 ldBlock="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/ld_0.9_EUR.txt"
@@ -14,6 +15,7 @@ allGWASuniq="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/allGWASfo
 dhsBed="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/DHS.10.merged.bed"
 dhsLDuniq="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/allLD-DHS_uniq.bed"
 summerizedTSV="chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/results/summerized.tsv"
+id2name="chipatlas/lib/id2name4Gwas.tab"
 qVal=2
 
 mkdir -p chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib
@@ -35,22 +37,68 @@ curl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| g
   for (i=1; i<length(a); i++) print $3, a[i], b[i]
 }'| sort -k1,1 -k2,2n| bedtools merge -i stdin > "$exons"
 
+
+# GWAS ID の作成 (初めての時のみ)
+if [ ! `ls "$id2name"` ]; then
+  curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' '{
+    trait = $10
+    gsub(/Red vs\. non-red hair color/, "Red vs  non-red hair color", trait)
+    gsub(/[%&\(\)\*+\.\:\;]/, "", trait)
+    gsub(/\//, " ", trait)
+    gsub(/ /, "_", trait)
+    if (!a[trait]++) {
+      i++
+      printf "%04d\t%s\n", i, trait
+    }
+  }' > "$id2name"
+fi
+
 # GWAS の ダウンロード
     # 除去 %&()*+.:;
     # そのまま ',-
     # スペースに /
-curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' '{
+    
+  # GWAS Catalog には同じ rs 番号でも、複数箇所存在することがある。その全てが hap chromosome
+  # 例) rs17207986
+  # chr6            32079566 32079567 rs17207986
+  # chr6_cox_hap2   3550228  3550229  rs17207986
+  # chr6_dbb_hap3   3358740  3358741  rs17207986
+  # chr6_mcf_hap5   3459394  3459395  rs17207986
+  # chr6:32079567 (1000G データ)
+  
+  # しかも 同じ rs 番号でも 1000G と GWAS で座位が異なることもある (GWAS のほうがマチガイ)
+  #            1000G (正)   GWAS (誤)
+  # rs5031002  23:66942625  X:66942625
+  
+  # したがって同じ rs で同じ trait の重複は削除する。
+  # GWAS の rs と座位が 1000G のそれと一致したときのみ LD-block をつける。一致しない場合は GWAS の座位のまま。
+  
+curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' -v id2name="$id2name" '
+BEGIN {
+  while ((getline < id2name) > 0) {
+    x[$2] = $1 + 0
+    lastId = $1 + 0
+  }
+} {
   trait = $10
   gsub(/Red vs\. non-red hair color/, "Red vs  non-red hair color", trait)
   gsub(/[%&\(\)\*+\.\:\;]/, "", trait)
   gsub(/\//, " ", trait)
   gsub(/ /, "_", trait)
-  if (!a[trait]++) i++
-  printf "%s\t%04d\t%s\n", $0, i, trait
-}' > "$gwasCatalog" # $1-3 = BED,  $9 = title, $10 = trait, $23 = ID for trait, $24 = 記号文字を修正した trait
+
+  if (!x[trait]) {
+    lastId++
+    x[trait] = lastId  # 新しく入った trait に 新規 ID を発行
+  }
+  printf "%s\t%04d\t%s\n", $0, x[trait], trait
+}'| awk -F '\t' '!a[$4, $10]++'| sort -t $'\t' -k23n > "$gwasCatalog"  # $1-3 = BED, $4 = SNP ID, $9 = title, $10 = trait, $23 = ID for trait, $24 = 記号文字を修正した trait
+cut -f23- "$gwasCatalog"| awk '!a[$0]++' > "$id2name"
 
 # LD block の ダウンロード (1000G phase 3, r2 = 0.9, EUR)
 curl http://www.broadinstitute.org/mpg/snpsnap/database/EUR/ld0.9/ld0.9_collection.tab.gz| gunzip > "$ldBlock"
+# $1           $2          $10 LD-left   $11 LD-right   (注: $1 の座標は gwasCatalog の $1:$3 に相当)
+# 4:98562671   rs9999992   98552585      98643888
+
 
 # GWAS catalog に LD block をひもづける
 cat "$ldBlock"| awk -F '\t' -v gwasCatalog="$gwasCatalog" '
@@ -58,15 +106,22 @@ BEGIN {
   while ((getline < gwasCatalog) > 0) g[$4]++
   close(gwasCatalog)
 } {
-  if (g[$2] > 0) r[$2] = $10 "\t" $11
+  if (g[$2] > 0) {
+    p[$2] = $1
+    r[$2] = $10 "\t" $11
+  } else {
+    delete g[$2]
+  }
 } END {
   while ((getline < gwasCatalog) > 0) {
-    if (!r[$4]) r[$4] = $3 "\t" $3
+    locus = substr($1, 4, 100) ":" $3
+    if (length(r[$4]) == 0 || locus != p[$4]) r[$4] = $3 "\t" $3
     print $0 "\t" r[$4]
   }
 }' > "$gwasLD"
-# $1   $2   $3   $10    $23   $24             $25     $26
-# chr  beg  end  trait  ID    修正済みtrait    LD_beg  LD_end
+# $1   $2   $3   $4      $10    $23   $24             $25     $26
+# chr  beg  end  SNP_ID  trait  ID    修正済みtrait    LD_beg  LD_end
+# 注意: a[$10, $25, $26] は重複がある (同じ LD-block 内に $123 があるため)
 
 
 # 疾患特異的 LD+extension BED ファイルの作成
