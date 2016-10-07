@@ -16,15 +16,27 @@ mkdir -p chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/results
 ##########################################################################################################################################################################
 
 # 細胞名とその ID の対応表のダウンロードと整形
-for list in Cell_Ontology_terms_list Human_Disease_Ontology_terms_list Uber_Anatomy_Ontology_terms_list; do
-  curl "http://fantom.gsc.riken.jp/5/sstar/$list"| awk -F '\"' '{
-    if ($1 ~ /td data-sort-value=$/) {
-      printf "%s\t", $8
+{
+  for list in Cell_Ontology_terms_list Human_Disease_Ontology_terms_list Uber_Anatomy_Ontology_terms_list; do
+    curl "http://fantom.gsc.riken.jp/5/sstar/$list"| awk -F '\"' '{
+      if ($1 ~ /td data-sort-value=$/) {
+        printf "%s\t", $8
+        getline
+        print $3
+      }
+    }'| tr -d '>'| tr '<' '\t'| cut -f1-2| tr '/' '|'
+  done
+  
+  idfn=`curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/"| grep "obo.txt"| head -n1| tr '""' '\t\t'| cut -f8`
+  curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/""$idfn"| awk '{
+    if ($1 == "id:" && ($2 ~ "CL:" || $2 ~ "DOID:" || $2 ~ "UBERON:")) {
+      printf $2
       getline
-      print $3
+      sub("name: ", "", $0)
+      print "\t" $0
     }
-  }'| tr -d '>'| tr '<' '\t'| cut -f1-2| tr '/' '|'
-done > "$id2name"
+  }'
+}| awk '!a[$1]++' > "$id2name"
   # CL:0000077      mesothelial cell
 
 # facet_differentially_expressed_enhancers の DL
@@ -67,6 +79,24 @@ for bedA in `ls chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/
   outFn=`echo "$bedA"| sed 's[/bed/[/results/tsv/['| sed 's/\.bed$//'`
   qsub $ql -o /dev/null -e /dev/null -N "iscF5Enh" bin/insilicoChIP -a "$bedA" -b "$bedB" -Q 10 -A "$titleA" -B "Other enhancers" -T "$titleA vs Other enhancers" -v -o bed hg19 "$outFn"
 done
+
+# 公開用リストを作成
+awk -F '\t' -v fn="x" '{
+  if (fn != FILENAME) {
+    fn = FILENAME
+    N = split(fn, a, "/")
+    id = a[N]
+    sub(/\.bed$/, "", id)
+  }
+  locus = $1 "\t" $2 "\t" $3
+  x[locus] = x[locus] "," id
+} END {
+  for (l in x) {
+    sub(",", "", x[l])
+    print l "\t" x[l]
+  }
+}' chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/bed/*bed| sort -k1,1 -k2,2n > chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/lib/tissue_specific_enhancers.bed
+
 
 while :; do
   qN=`qstat| awk '$3 == "iscF5Enh"'| wc -l`

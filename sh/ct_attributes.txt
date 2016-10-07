@@ -19,6 +19,7 @@ cell type abbreviation
 cell line/clone
 Cell line
 source_name
+Sample Name
 cell type
 LINE
 Cell type

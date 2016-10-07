@@ -15,15 +15,27 @@ mkdir -p chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/resu
 #                                                                         FANTOM Promoter
 ##########################################################################################################################################################################
 # 細胞名とその ID の対応表のダウンロードと整形
-for list in Cell_Ontology_terms_list Human_Disease_Ontology_terms_list Uber_Anatomy_Ontology_terms_list; do
-  curl "http://fantom.gsc.riken.jp/5/sstar/$list"| awk -F '\"' '{
-    if ($1 ~ /td data-sort-value=$/) {
-      printf "%s\t", $8
+{
+  for list in Cell_Ontology_terms_list Human_Disease_Ontology_terms_list Uber_Anatomy_Ontology_terms_list; do
+    curl "http://fantom.gsc.riken.jp/5/sstar/$list"| awk -F '\"' '{
+      if ($1 ~ /td data-sort-value=$/) {
+        printf "%s\t", $8
+        getline
+        print $3
+      }
+    }'| tr -d '>'| tr '<' '\t'| cut -f1-2| tr '/' '|'
+  done
+  
+  idfn=`curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/"| grep "obo.txt"| head -n1| tr '""' '\t\t'| cut -f8`
+  curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/""$idfn"| awk '{
+    if ($1 == "id:" && ($2 ~ "CL:" || $2 ~ "DOID:" || $2 ~ "UBERON:")) {
+      printf $2
       getline
-      print $3
+      sub("name: ", "", $0)
+      print "\t" $0
     }
-  }'| tr -d '>'| tr '<' '\t'| cut -f1-2| tr '/' '|'
-done > "$id2name"
+  }'
+}| awk '!a[$1]++' > "$id2name"
   # CL:0000077      mesothelial cell
 
 
@@ -73,6 +85,25 @@ for geneList in `ls "$geneListDir"/*.geneList.txt`; do
   outfn="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/results/tsv/"$id
   qsub $ql -o /dev/null -e /dev/null -N $genome"Prom" bin/insilicoChIP -a "$geneList" -A "$titleA" -B "$titleB" -T "$titleA vs $titleB" -o -u $up -d $down gene "$genome" "$outfn"
 done
+
+
+# 公開用リストを作成
+awk -F '\t' -v fn="x" '{
+  if (fn != FILENAME) {
+    fn = FILENAME
+    N = split(fn, a, "/")
+    id = a[N]
+    sub(/\.geneList.txt$/, "", id)
+  }
+  locus = $1
+  x[locus] = x[locus] "," id
+} END {
+  for (l in x) {
+    sub(",", "", x[l])
+    print l "\t" x[l]
+  }
+}' chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/geneList/*.geneList.txt| sort > chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/lib/tissue_specific_genes.txt
+
 
 while :; do
   qN=`qstat| awk -v jb=$genome"Prom" '$3 == jb'| wc -l`

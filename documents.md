@@ -298,58 +298,58 @@ All ChIP-seq experiments recorded in ChIP-Atlas are described in **experimentLis
 
 - **BigWig**  
   _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bw/**Experimental_ID**.bw  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/eachData/bw/**Experimental_ID**.bw  
 
   _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bw/**SRX097088**.bw
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/eachData/bw/**SRX097088**.bw
   
 - **Peak-call (BED)**  
   _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bed**Threshold**/**Experimental_ID**.**Threshold**.bed  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/eachData/bed**Threshold**/**Experimental_ID**.**Threshold**.bed  
   (**Threshold** = 05, 10, or 20)  
   
   _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bed**05**/**SRX097088**.**05**.bed  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/eachData/bed**05**/**SRX097088**.**05**.bed  
   (Peak-call data of SRX097088 with _q_-value < 1E-05.)
   
 - **Peak-call (BigBed)**  
   _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/eachData/bb**Threshold**/**Experimental_ID**.**Threshold**.bb  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/eachData/bb**Threshold**/**Experimental_ID**.**Threshold**.bb  
   (**Threshold** = 05, 10, or 20)  
   
   _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/eachData/bb**05**/**SRX097088**.**05**.bb  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/eachData/bb**05**/**SRX097088**.**05**.bb  
   (Peak-call data of SRX097088 with _q_-value < 1E-05.)
 
 <br />
 ###Assembled Peak-call data used in “Peak Browser”
 _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/assembled/**File_name**.bed  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/assembled/**File_name**.bed  
   (**Genome** and **File_name** are listed in **fileList.tab** \[[Download] [fileList], [Table schema](#fileList_schema)\])  
   
 _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/assembled/**Oth.ALL.05.GATA2.AllCell**.bed  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/assembled/**Oth.ALL.05.GATA2.AllCell**.bed  
   (All peak-call data of GATA2 in all cell types with _q_-value < 1E-05.)
 
 <br />
 ###Analyzed data used in “Target Genes”
 _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/target/**Protein**.**Distance**.tsv  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/target/**Protein**.**Distance**.tsv  
   (**Protein**s are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
   (**Distance** = 1, 5, or 10, indicating the distance [kb] from TSS.)  
   
 _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/target/**POU5F1**.**5**.tsv  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/target/**POU5F1**.**5**.tsv  
   (TSV file describing the genes bound by POU5F1 at TSS ± 5 kb.)
 
 <br />
 ###Analyzed data used in “Colocalization”
 _Download URL_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**Genome**/colo/**Protein**.**Cell\_type\_class**.tsv  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**Genome**/colo/**Protein**.**Cell\_type\_class**.tsv  
   (**Protein** and **Cell\_type\_class** are listed in **analysisList.tab** \[[Download] [analysisList], [Table schema](#analysisList_schema)\])  
   
 _Example_:  
-  <a>http://dbarchive.biosciencedbc.jp</a>/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent\_stem\_cell**.tsv  
+  http<a>:</a>//dbarchive.biosciencedbc.jp/kyushu-u/**hg19**/colo/**POU5F1**.**Pluripotent\_stem\_cell**.tsv  
   (TSV file describing the proteins colocalizing with POU5F1 in Pluripotent` `stem` `cell.)  
   (Spaces ` ` in the name of cell type class must be replaced with underscores `_`.)
 
@@ -437,10 +437,19 @@ All cell types recorded in ChIP-Atlas.
 
 ![][cellTypeNumber]
 
+<a name="external_genome_browser"></a>
+## 9. External Genome Browser
+BigBed and BigWig format files in ChIP-Atlas database are now able to be browsed on UCSC Genome Browser. Use links below to jump to UCSC Genome Browser.
+- [genome.ucsc.edu](http://genome.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
+- [genome-asia.ucsc.edu (asian mirror)](http://genome-asia.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
+Currently track hub feature is only provided based on files for each individual experiment, but we are working on to browse files assembled by antigen and cell types. See [Using UCSC Genome Browser Track Hubs](https://genome.ucsc.edu/goldenpath/help/hgTrackHubHelp.html) for more details.
+
+
+
 <!-- Links to files -->
-[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160617.png "Data numbers"
-[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160617.png "Antigen classes"
-[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160617.png "Cell type classes"
+[dataNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20160909.png "Data numbers"
+[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20160909.png "Antigen classes"
+[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20160909.png "Cell type classes"
 
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
 [ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt
@@ -484,9 +493,3 @@ All cell types recorded in ChIP-Atlas.
 [coloSample]: http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/colo/NANOG.Pluripotent_stem_cell.html
 [insilicoChIP]: http://chip-atlas.org/in_silico_chip
 [insilicoChIPsample]: http://dbarchive.biosciencedbc.jp/kyushu-u/sample/insilicoChIP_result_example.html
-<a name="external_genome_browser"></a>
-## 9. External Genome Browser
-BigBed and BigWig format files in ChIP-Atlas database are now able to be browsed on UCSC Genome Browser. Use links below to jump to UCSC Genome Browser.
-- [genome.ucsc.edu](http://genome.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
-- [genome-asia.ucsc.edu (asian mirror)](http://genome-asia.ucsc.edu/cgi-bin/hgHubConnect?hubUrl=http://data.dbcls.jp/~inutano/trackhub/chip-atlas/hub.txt)
-Currently track hub feature is only provided based on files for each individual experiment, but we are working on to browse files assembled by antigen and cell types. See [Using UCSC Genome Browser Track Hubs](https://genome.ucsc.edu/goldenpath/help/hgTrackHubHelp.html) for more details.

@@ -48,10 +48,6 @@ if [ $mode = "initial" ]; then
           echo $fn >> CAUTION_makeBigBed.txt
         fi
       done
-
-exit
-      qsub -o UploadToServer.log.txt -e UploadToServer.log.txt $projectDir/sh/UploadToServer.sh $projectDir
-      rm -r $logDir
       exit
     fi
   done
@@ -165,17 +161,25 @@ function symbolSub(Str,underScore) {
   printf "%s\t%s\t%s\t%s\t%s\n", $11, $12, $13, $14, $15
 }' > $inBn.bed.tmp
 
-
-# Bed index の作成
+# カラーでスペース入りの BigBed 作成 (UCSC 用)
 rm $inBn.bed.meta
 mv $inBn.bed.tmp $inBn.bed
+
+tail -n+2 $inBn.bed| awk -F '\t' -v OFS='\t' '{
+  if (!x[$4]++) {
+    split($4, a, ";")
+    gsub("%20", " ", a[2])
+    sub("Name=", "", a[2])
+    sub("ID=", "", a[1])
+    str[$4] = a[2] " " a[1]
+  }
+  print $1, $2, $3, str[$4], $5, ".", $2, $3, $9
+}' > $inBn.bed.tmp
+
+$projectDir/bin/bedToBigBed -type=bed9 -tab $inBn.bed.tmp $projectDir/lib/genome_size/$Genome.chrom.sizes $inBn.bb
+rm $inBn.bed.tmp
+
+# Bed index の作成
 java -Xmx2000m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed
 
-
-
-
-
-
-
-
-
+exit

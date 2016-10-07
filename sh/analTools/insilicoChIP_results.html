@@ -1,0 +1,98 @@
+
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<FONT face="Helvetica Neue" color="333333">
+<title>ChIP-Atlas / Results of enrichment analysis</title>
+
+<script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="https://www.datatables.net/release-datatables/media/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.datatables.net/release-datatables/media/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+
+
+<style type="text/css">
+<!--
+.bodyMargin {margin: 30px 30px 30px 30px ;}
+
+table {
+width: 500px;
+height: auto;
+border-collapse: collapse;
+}
+th {
+padding: 6px;
+text-align: left;
+color: #333;
+background-color: #eee;
+border: 1px solid #b9b9b9;
+}
+td {
+padding: 6px;
+text-align: left;
+color: #333;
+border: 1px solid #b9b9b9;
+}
+.m {
+text-align: center;
+}
+a.LINK:after {
+  font-family: FontAwesome;
+  content: '\f08e';
+}
+
+-->
+</style>
+</head>
+<body class="bodyMargin" onresize="location.reload()">
+<h1>ChIP-Atlas / Results of enrichment analysis</h1>
+<p>Search for proteins significantly bound to FANTOM5 enhancers/promoters and GWAS SNPs.</p>
+
+</script>
+
+
+
+<br>
+<table>
+  <tr>
+    <th>Enrichment for</th>
+    <th>Genome</th>
+    <th >Libraries</th>
+  </tr>
+  <tr>
+    <td><a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomEnhancer/fantomEnhancerList.html">FANTOM5 enhancers</a></td>
+    <td>Human hg19</td>
+    <td>
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomEnhancer/tissue_specific_enhancers.bed">Enhancers</a>, 
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomEnhancer/FANTOM_IDs.tab">IDs</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/gwas/gwasList.html">GWAS SNPs</a></td>
+    <td>Human hg19</td>
+    <td>
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/gwas/LD-DHSs.bed">LD-DHSs</a>, 
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/gwas/GWAS_IDs.tab">IDs</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomPromoter/fantomPromoterList.html">FANTOM5 promoters</a></td>
+    <td>Human hg19</td>
+    <td>
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomPromoter/tissue_specific_genes.txt">Genes</a>, 
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomEnhancer/FANTOM_IDs.tab">IDs</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/mm9/insilicoChIP_preProcessed/fantomPromoter/fantomPromoterList.html">FANTOM5 promoters</a></td>
+    <td>Mouse mm9</td>
+    <td>
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/mm9/insilicoChIP_preProcessed/fantomPromoter/tissue_specific_genes.txt">Genes</a>, 
+      <a target="_blank" style="text-decoration: none" href="http://dbarchive.biosciencedbc.jp/kyushu-u/hg19/insilicoChIP_preProcessed/fantomEnhancer/FANTOM_IDs.tab">IDs</a>
+    </td>
+  </tr>
+</table>
+
+</body>

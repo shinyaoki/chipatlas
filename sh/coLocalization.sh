@@ -19,22 +19,24 @@ if [ $1 = "INITIAL" ]; then
     #   抗原大                     抗原小        細胞小        qVal          細胞大 (Others は含む)
     if ($3 == "TFs and others" && $4 == "-" && $6 == "-" && $7 == qVal && $5 != "All cell types" && $5 != "No description" && $5 != "Unclassified") {
       gsub(" ", "_", $5)
-      print $2 " " $5 " " $8  # Genome 細胞大 SRX   <- 細胞大はスペースをアンダーバーに置換
+      gsub(",", "@", $8)
+      print $2 "/" $5 "/" $8  # Genome/細胞大/SRX   <- 細胞大はスペースをアンダーバーに置換
     }
   }'`; do
     IFS=$IFS_BACKUP
     nMem=`echo "$Param"| awk '{
-      N = int(gsub("," "", $0) / 100) + 4
+      N = int(gsub("@" "", $0) / 100) + 4
       if (N >= 4) N = 4
       printf "%dG", N*4
     }'`
-    nSRX=`echo "$Param"| awk '{printf "%d", gsub("," "", $0)}'`
+    nSRX=`echo "$Param"| awk '{printf "%d", gsub("@" "", $0)}'`
     if [ "$nSRX" -lt 500 ]; then
       short=`sh $projectDir/sh/QSUB.sh mem`
     elif [ "$nSRX" -lt 1500 ]; then
       short=" "
     else
       short="-l month -l medium"
+      nMem=`echo $nSRX| awk '{printf "%dG", $1 / 100 * 1.5}'`
     fi
     qsub -l s_vmem=$nMem -l mem_req=$nMem $short $projectDir/sh/coLocalization.sh $projectDir "$Param"
     IFS=$'\n'
@@ -47,9 +49,9 @@ fi
 #                                                             以下、qsub モード
 ####################################################################################################################################
 projectDir=$1
-Genome=`echo $2| cut -d ' ' -f1`
-ctL=`echo $2| cut -d ' ' -f2`   # 細胞大はスペースをアンダーバーに置換
-SRX=`echo $2| cut -d ' ' -f3| tr ',' '\n'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome '
+Genome=`echo $2| cut -d '/' -f1`
+ctL=`echo $2| cut -d '/' -f2`   # 細胞大はスペースをアンダーバーに置換
+SRX=`echo $2| cut -d '/' -f3| tr '@' '\n'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome '
 BEGIN {
   geneList = projectDir "/lib/geneList/" Genome ".txt"
   expList =  projectDir "/lib/assembled_list/experimentList.tab"

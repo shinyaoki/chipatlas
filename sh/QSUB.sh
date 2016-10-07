@@ -22,13 +22,14 @@ done| sed 's/^ //'| awk -F '\t' '{
   printf "%s ", $1
 }')
 
-conf=`cat bin/conf.ql.txt`  # 1: week.q  2: short.q  0: 強制を解除
+conf=`cat bin/conf.ql.txt`  # 1: week.q  2: short.q  3: debug.q  0: 強制を解除
 
 if [ $1 = "shortOrweek" ]; then
   echo -n "$short"| awk -v conf=$conf '{
     if (conf == 0) printf "%s", $0
     if (conf == 1) printf " "
     if (conf == 2) printf "-l short"
+    if (conf == 3) printf "-l debug"
   }'
 elif [ $1 = "mem" ]; then
   bin/qm| head -n5| awk '{
@@ -41,6 +42,7 @@ elif [ $1 = "mem" ]; then
     if (conf == 0) printf "%s", $0
     if (conf == 1) printf " "
     if (conf == 2) printf "-l short"
+    if (conf == 3) printf "-l debug"
   }'
 else
   echo qsub "$short" $Para| sh

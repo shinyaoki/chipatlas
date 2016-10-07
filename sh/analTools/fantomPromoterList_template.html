@@ -15,7 +15,7 @@
 <style type="text/css">
 <!--
 .bodyMargin {margin: 30px 30px 30px 30px ;}
-
+img {vertical-align:middle;}
 .table1 {
 	margin: 10px auto;
 }
@@ -23,6 +23,20 @@
     width: auto;
 	margin: 0;
 } }
+td#t1 {background-color: #E41A1C; color: white;}
+td#t2 {background-color: #377EB8; color: white;}
+td#t3 {background-color: #4DAF4A; color: white;}
+td#t4 {background-color: #984EA3; color: white;}
+td#t5 {background-color: #FF7F00; color: white;}
+td#t6 {background-color: #FFFF33; color: black;}
+td#t7 {background-color: #A65628; color: white;}
+td#t8 {background-color: #F781BF; color: white;}
+td#t9 {background-color: #999999; color: white;}
+td#t1,td#t2,td#t3,td#t4,td#t5,td#t6,td#t7,td#t8,td#t9 {
+  padding: 3px;
+  width: 150px;
+}
+
 -->
 </style>
 </head>
@@ -112,6 +126,14 @@ __tbody__
 </tbody>
 </table>
 
+
+<p> Cell type classes:</p>
+<table class="tbl">
+  <tr><td id="t1">Blood</td><td id="t2">Lung</td><td id="t3">Breast</td></tr>
+  <tr><td id="t4">Cardiovascular</td><td id="t5">Prostate</td><td id="t6">Neural</td></tr>
+  <tr><td id="t7">Liver</td><td id="t8">Digestive tract</td><td id="t9">Others</td></tr>
+</table>
+
 <script type="text/javascript">
 (function (){
   var Tbl = document.getElementById('example');
@@ -119,7 +141,7 @@ __tbody__
     var trait = Tbl.rows[i].cells[0].innerHTML.replace(/</g,">").split(">")
     var Trait = Tbl.rows[i].cells[1].innerHTML.replace(/</g,">").split(">")
     Tbl.rows[i].cells[0].innerHTML = Tbl.rows[i].cells[0].innerHTML.replace(/liTitle/, "Link to FANTOM5 web site of '" + trait[8] + " " + Trait[0] + "'");
-    Tbl.rows[i].cells[2].title = "Show proteins enriched to '" + Trait[0] + "'-specific genes.";
+    Tbl.rows[i].cells[2].title = "Show proteins enriched to '" + Trait[0] + "'-specific genes, with the image showing enriched cell type classes in top 50.";
     Tbl.rows[i].cells[3].title = "Show genomic and protein clusters of '" + Trait[0] + "'-specific genes.";
     Tbl.rows[i].cells[4].title = "Show intersections with '" + Trait[0] + "'-specific genes.";
     Tbl.rows[i].cells[5].title = "Genes specifically expressed in " + "'" + Trait[0] + "'.";

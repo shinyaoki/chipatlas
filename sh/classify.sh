@@ -51,37 +51,37 @@ if [ $Mode = "initial" ]; then
   done
 
   # 抗原小分類と細胞小分類をつける
-  for Genome in `echo $GENOME`; do
-    BEDFILE["$Genome"]=`ls $projectDir/results/$Genome/public/*bed| tr '\n' ' '`
-  done
-  
   for Index in `ls $projectDir/classification/*Index*.tab`; do
-    ql=`sh $projectDir/sh/QSUB.sh mem`
-    echo $Index >> classify.log.txt
     ctORag=`basename $Index| cut -d '_' -f1`    # 例 ct または ag
     Genome=`basename $Index| cut -d '.' -f2`    # 例 hg19
     indexForFgrep=`cut -f2 $Index| sort| uniq| tr '\n ' ' _'` # PSC@_Embryonic_stem_cells など
-
-    for idx in `echo $indexForFgrep`; do # 例: idx = PSC@_Embryonic_stem_cells など
-      LargeType=`echo $idx| cut -c1-3` # PSC など
-      SmallType=`echo $idx| cut -c6-`  # Embryonic_stem_cells など
-      
-      for bedFile in `echo ${BEDFILE[$Genome]}`; do # xhipome_ver3/results/hg19/public/His.ALL.50.AllAg.AllCell.bed など
-        LargeAg=`basename $bedFile| cut -d '.' -f1` # His Oth など
-        LargeCt=`basename $bedFile| cut -d '.' -f2` # ALL PSC など
-        if [ "$ctORag" = "ct" ]; then
-          if [ "$LargeType" != "$LargeCt" ]; then
-            continue
-          fi
-        elif [ "$ctORag" = "ag" ]; then
-          if [ "$LargeType" != "$LargeAg" ]; then
-            continue
-          fi
-        fi
-        echo -e "$RANDOM\tsh $projectDir/sh/classify.sh -m m $LargeType \"$SmallType\" $ctORag $bedFile"
-      done
-    done
-  done| sort| cut -f2- > $projectDir/classify.tmp
+        
+    ls $projectDir/results/$Genome/public/*bed| awk -F '/' '{print $NF}'| tr '.' '\t'| awk -F '\t' -v ctORag="$ctORag" -v indexForFgrep="$indexForFgrep" -v projectDir="$projectDir" -v Genome=$Genome '
+    BEGIN {
+      N = split(indexForFgrep, a, " ")
+      for (i=1; i<=N; i++) {
+        LargeType = substr(a[i], 1, 3)     # PSC など
+        SmallType = substr(a[i], 6, 3000)  # Embryonic_stem_cells など
+        n[LargeType]++
+        x[LargeType, n[LargeType]] = SmallType  # x[PSC, 3] = Embryonic_stem_cells
+      }
+    } {
+      LargeAg = $1 # His Oth など
+      LargeCt = $2 # ALL PSC など
+      bedFile = projectDir "/results/" Genome "/public/" $1 "." $2 "." $3 "." $4 "." $5 "." $6
+      if (ctORag == "ag") {
+        for (i=1; i<=n[LargeAg]; i++) {
+          print "sh " projectDir "/sh/classify.sh -m m " LargeAg " \"" x[LargeAg, i] "\" "ctORag " " bedFile
+        }
+      } else if (ctORag == "ct") {
+        for (i=1; i<=n[LargeCt]; i++) {
+          print "sh " projectDir "/sh/classify.sh -m m " LargeCt " \"" x[LargeCt, i] "\" "ctORag " " bedFile
+        }
+      }
+    }'
+  done| awk '{print rand() "\t" $0}'| sort -n| cut -f2- > $projectDir/classify.tmp
+  
+  ql=`sh $projectDir/sh/QSUB.sh mem`
   splitN=`cat $projectDir/classify.tmp| wc -l| awk '{print int($1/500)}'`
   split -l $splitN $projectDir/classify.tmp CLASSIFY_TMP
   for tmpList in `ls CLASSIFY_TMP*`; do

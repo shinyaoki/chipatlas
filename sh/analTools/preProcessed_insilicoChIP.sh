@@ -7,8 +7,8 @@
 # qsub chipatlas/sh/analTools/preProcessed_insilicoChIP.sh initial
 
 if [ $1 = "initial" ]; then
-  rm -rf chipatlas/results/hg19/insilicoChIP_preProcessed
-  rm -rf chipatlas/results/mm9/insilicoChIP_preProcessed
+  mv chipatlas/results/hg19/insilicoChIP_preProcessed chipatlas/results/hg19/insilicoChIP_preProcessed_old
+  mv chipatlas/results/mm9/insilicoChIP_preProcessed chipatlas/results/mm9/insilicoChIP_preProcessed_old
   mkdir chipatlas/results/hg19/insilicoChIP_preProcessed
   mkdir chipatlas/results/mm9/insilicoChIP_preProcessed
   
@@ -16,6 +16,9 @@ if [ $1 = "initial" ]; then
   qsub -N FF_Enhancer -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomEnhancer.sh
   qsub -N FF_Pr_hg19 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh hg19
   qsub -N FF_Pr_mm9 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh mm9
+  
+  rm -rf chipatlas/results/hg19/insilicoChIP_preProcessed_old
+  rm -rf chipatlas/results/mm9/insilicoChIP_preProcessed_old
   exit
 fi
 ##########################################################################################################################################################################
@@ -31,10 +34,6 @@ if [ $1 = "P" ]; then
   genome=$4
   up=$5      # fantomPromoter の場合のみ
   down=$6    # fantomPromoter の場合のみ
-  
-  # 不要なファイルの消去
-  rm chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*Overlap.bb
-  rm -r chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*BED
   
   # 指定した qVal 以下のデータを集計し、TSV ファイルを作成
   key="BloodBreastDigestive tractLungProstateCardiovascularLiverNeural"
@@ -127,6 +126,7 @@ if [ $1 = "P" ]; then
     tsvUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".tsv"
     itsUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id "_Overlap.bed"
     pngUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".png"
+    psmUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id "_small.png"
     pdfUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".pdf"
     cltUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/results/" id ".cls.tsv"
     bedUrl = "http://dbarchive.biosciencedbc.jp/kyushu-u/" genome "/insilicoChIP_preProcessed/" anal "/bed/" id ".bed"
@@ -154,9 +154,14 @@ if [ $1 = "P" ]; then
     if (f[id, 2] == 1) printf " href=\"%s\"", htmlUrl
     printf ">HTML</a>, <a target=\"_blank\" style=\"text-decoration: none\""
     if (f[id, 4] == 1) printf " href=\"%s\"", tsvUrl
-    printf ">TSV</a>, <a target=\"_blank\" style=\"text-decoration: none\""
-    if (f[id, 6] == 1) printf " href=\"%s\"", pngUrl
-    printf ">Image</a></td><td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
+    printf ">TSV</a>"
+    if (f[id, 6] == 1) {
+      printf "<a target=\"_blank\" style=\"text-decoration: none\" href=\"%s\">", pngUrl
+      printf ", <img src=\"" psmUrl "\" width=\"30\" height=\"30\"></a>"
+    }
+    printf "</td>"
+    
+    printf "<td align=\"center\"><a target=\"_blank\" style=\"text-decoration: none\""
     if (f[id, 7] == 1) printf " href=\"%s\"", pdfUrl
     printf ">Image</a>, <a target=\"_blank\" style=\"text-decoration: none\""
     if (f[id, 3] == 1) printf " href=\"%s\"", cltUrl
@@ -196,6 +201,8 @@ if [ $1 = "P" ]; then
       split(newStr, a, "@")
     } {
       print $0
+      if ($0 ~ "bodyMargin {margin:") print "img {vertical-align:middle;}"
+
       if ($0 ~ "<caption><h2>") {
         printf "<caption>Downloads: Enrichment ("
         printf a[1]
@@ -226,6 +233,10 @@ genome=$4
 up=$5      # fantomPromoter の場合のみ
 down=$6    # fantomPromoter の場合のみ
 
+# 不要なファイルの消去
+rm chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/"$id""_Overlap.bb"
+rm -r chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/"$id""_BED"
+  
 # Overlap する BED ファイルを 整形する
 case $anal in
   "gwas")
@@ -358,14 +369,66 @@ R-3.2.3/bin/R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
   
   print(gb)
   dev.off()
+
+  # Small size の PNG を作成
+  png(paste("chipatlas/results/", genome, "/insilicoChIP_preProcessed/", anal, "/results/tsv/", id, "_small.png", sep=""), height=60, width=60, res=9)
+  
+  if (anal == "gwas") {
+    lineNum <- 20
+  } else {
+    lineNum <- 50
+  }
+  
+  data <- read.csv(tsv, sep="\t", header=T)
+  if (nrow(data) > lineNum) {
+    data <- data[1:lineNum,]
+  }
+  ct <- data$cellType
+
+  colp <- data.frame(
+    ctc = names(summary(ct)),
+    colP = colP[names(summary(ct))],
+    num = summary(ct)
+  )
+      
+  
+  grid.newpage()
+  g <- ggplot(
+    data,
+    aes (                  # ggplot オプション設定
+      x = nr,           # x 軸を df$group とする
+      y = pval,          # y 軸を df$length とする
+      fill = cellType
+    )
+  ) + xlim(0, lineNum+1)
+  g <- g + geom_bar(                    # plotbarに当たる関数
+    width = 1,
+    stat = "identity"
+  )
+  gb <- g + theme(
+    panel.background = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    legend.position="none",
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.line = element_blank()
+  )
+  
+  gb <- gb + scale_fill_manual(values = as.character(subset(colp, colp$num > 0)$colP))
+  print(gb)
+  dev.off()
 DDD
 
 
 # PNG ファイルを時計回りに 90 度回転させる
-png="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/$id.png"
-convert -rotate 90 "$png" "$png"tmp.png
-mv "$png"tmp.png "$png"
-
+for p in ".png" "_small.png"; do
+  png="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/$id""$p"
+  convert -rotate 90 "$png" "$png"tmp.png
+  mv "$png"tmp.png "$png"
+done
 
 # R でクラスター解析し、描画する
   # 結合部位と TFs のクラスター解析

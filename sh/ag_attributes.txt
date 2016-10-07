@@ -80,3 +80,4 @@ cataog number
 antibody vendor/catalog/lot
 vendor/catalog
 source_name
+Sample Name

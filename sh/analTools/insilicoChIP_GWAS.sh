@@ -95,7 +95,7 @@ BEGIN {
 cut -f23- "$gwasCatalog"| awk '!a[$0]++' > "$id2name"
 
 # LD block の ダウンロード (1000G phase 3, r2 = 0.9, EUR)
-curl http://www.broadinstitute.org/mpg/snpsnap/database/EUR/ld0.9/ld0.9_collection.tab.gz| gunzip > "$ldBlock"
+curl https://data.broadinstitute.org/mpg/snpsnap/database/EUR/ld0.9/ld0.9_collection.tab.gz| gunzip > "$ldBlock"
 # $1           $2          $10 LD-left   $11 LD-right   (注: $1 の座標は gwasCatalog の $1:$3 に相当)
 # 4:98562671   rs9999992   98552585      98643888
 
@@ -181,6 +181,24 @@ BEGIN {
     qsub $ql -o /dev/null -e /dev/null -N iscGWAS bin/insilicoChIP -a "$bed" -b "$dhsLDuniq" -Q 10 -A "$bn" -B "Other GWAS" -T "$bn vs Other GWAS" -v -o bed hg19 "$outFn"
   fi > /dev/null
 done
+
+# 公開用リストを作成
+awk -F '\t' -v fn="x" '{
+  if (fn != FILENAME) {
+    fn = FILENAME
+    N = split(fn, a, "/")
+    id = a[N]
+    sub(/\.bed$/, "", id)
+  }
+  locus = $1 "\t" $2 "\t" $3
+  x[locus] = x[locus] "," id
+} END {
+  for (l in x) {
+    sub(",", "", x[l])
+    print l "\t" x[l]
+  }
+}' chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/ldDhsBed/*.bed| sort -k1,1 -k2,2n > chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/LD-DHSs.bed
+cat "$id2name"| awk '{print "GWAS:" $0}'| tr '_' ' ' > chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/lib/GWAS_IDs.tab
 
 while :; do
   qN=`qstat| awk '$3 == "iscGWAS"'| wc -l`
