@@ -4,3 +4,4 @@ nSlotForSrT	4	sraTailor のためのスロット数 (Controller.sh)
 HDsize	30	保存容量 (TB) (Controller.sh)
 qLarge	50	MACS2 によらずに作る q-val threshold (bed4ToBigBed.sh)
 www	http://chip-atlas.org	Web site の URL
+JOB_NUM_4_wait	10	SraTailor のジョブ待ち数 (default = 10)

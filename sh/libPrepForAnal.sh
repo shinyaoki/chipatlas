@@ -22,8 +22,14 @@ for Genome in `ls $projectDir/results`; do
     ;;
     mm9)
       echo -e "$Genome\tEnsembl_MGI" >> keyForStringFiltering
-      curl ftp://ftp.informatics.jax.org/pub/reports/MRK_List1.rpt| awk -F '\t' '{
+      curl http://www.informatics.jax.org/downloads/reports/MRK_List1.rpt| awk -F '\t' '{
         if (NR > 1 && $11 == "protein coding gene") print $7
+      }'
+    ;;
+    rn6)
+      echo -e "$Genome\tEnsembl_RGD" >> keyForStringFiltering
+      curl ftp://ftp.rgd.mcw.edu/pub/data_release/GENES_RAT.txt| awk -F '\t' '{
+        if ($37 == "protein-coding") print $2
       }'
     ;;
     dm3)
@@ -47,7 +53,7 @@ for Genome in `ls $projectDir/results`; do
     ;;
     sacCer3)
       echo -e "$Genome\tEnsembl_SGD" >> keyForStringFiltering
-      curl http://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans.fasta.gz| gunzip| awk '{
+      curl https://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans.fasta.gz| gunzip| awk '{
         if ($1 ~ ">") print $2
       }'
     ;;
@@ -60,14 +66,14 @@ done
 ####################################################################################################################################
 for Genome in `ls $projectDir/results`; do
   if [ $Genome != "sacCer3" ]; then
-    curl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/refFlat.txt.gz| gunzip| awk -F '\t' '{
+    bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/refFlat.txt.gz| gunzip| awk -F '\t' '{
       if ($4 == "+") TSS = $5
       else           TSS = $6
       printf "%s\t%s\t%s\t%s\n", $3, TSS, $1, $2
     }'
   else # sacCer3 は refFlat がないので、xenoRefFlat を使い、geneList と一致するものだけを抽出
     geneList=$projectDir/lib/geneList/$Genome.txt
-    curl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/xenoRefFlat.txt.gz| gunzip| awk -F '\t' -v geneList=$geneList '
+    bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/xenoRefFlat.txt.gz| gunzip| awk -F '\t' -v geneList=$geneList '
     BEGIN {
       while ((getline < geneList) > 0) g[$1]++
     } {
@@ -100,11 +106,11 @@ mkdir $projectDir/lib/TSS
 mv keyForStringFiltering $stringDir/keyForStringFiltering.tab
 cd $stringDir
 
-curl http://string-db.org/newstring_download/protein.aliases.v10.txt.gz| gunzip| sed 's/\./\!/'| tr '!' '\t'| awk -F '\t' '{
+curl https://stringdb-static.org/download/protein.aliases.v10.5.txt.gz| gunzip| sed 's/\./\!/'| tr '!' '\t'| awk -F '\t' '{
   print $1 "\t" $1 "." $2 "\t" $3 "\t" $4
 }' > protein.aliases.v10.txt
 
-curl http://string-db.org/newstring_download/species.v10.txt > species.v10.txt
+curl https://stringdb-static.org/download/species.v10.5.txt > species.v10.txt
 
 # curl http://string.uzh.ch/download/protected/string_10/protein.links.full.v10.txt.gz| gunzip > protein.links.full.v10.txt
 # curl http://string-db.org/newstring_download/protein.links.detailed.v10.txt.gz| gunzip > protein.links.detailed.v10.txt
@@ -157,7 +163,8 @@ done
 
 
 # protein.actions.v10 を生物種で分ける
-curl http://string-db.org/newstring_download/protein.actions.v10.txt.gz| gunzip| tee protein.actions.v10.txt| awk -F '\t' '
+wget https://stringdb-static.org/download/protein.actions.v10.5.txt.gz
+cat protein.actions.v10.5.txt.gz| gunzip| cut -f1-4,6,7| tee protein.actions.v10.txt| awk -F '\t' '
 BEGIN {
   while ((getline < "genomeID.tab") > 0) {
     gid[$1] = $2   # gid["9606"] = "hg19"
@@ -176,12 +183,20 @@ BEGIN {
   sub("\\.", SUBSEP, $2)  # $2 = 9607<SUBSEP>ENSP00000259917
   split($1, a, SUBSEP)    # a[1] = 9606, a[2] = ENSP00000259915
   split($2, b, SUBSEP)    # b[1] = 9607, b[2] = ENSP00000259917
+  $5 = ($5 == "f") ? 0 : 1
   if (a[1] == b[1] && Prot[$1] && Prot[$2]) print Prot[$1] "\t" Prot[$2] "\t" $3 "\t" $4 "\t" $5 "\t" $6 >> "protein.actions.v10." gid[a[1]] ".txt"
 }'    # POU5F1    NANOG   expression    inhibition    0/1   360
+rm protein.actions.v10.5.txt.gz
 
 exit
+
+
+================================================================================================
+以下、不要
+================================================================================================
+
 # protein.links.detailed.v10 を生物種で分ける
-curl http://string-db.org/newstring_download/protein.links.detailed.v10.txt.gz| gunzip| tee protein.links.detailed.v10.txt| awk -F '\t' '
+curl https://stringdb-static.org/download/protein.links.detailed.v10.5.txt.gz| gunzip| tee protein.links.detailed.v10.txt| awk -F '\t' '
 BEGIN {
   while ((getline < "genomeID.tab") > 0) {
     gid[$1] = $2   # gid["9606"] = "hg19"

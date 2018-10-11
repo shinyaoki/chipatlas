@@ -6,7 +6,8 @@
 
 if [ "$1" = "" ]; then
   projectDir=`echo $0| sed 's[/sh/upDate.sh[['`
-  qsub $projectDir/sh/upDate.sh $projectDir
+  ql=`sh $projectDir/sh/QSUB.sh mem`
+  qsub $ql -pe def_slot 4- $projectDir/sh/upDate.sh $projectDir
   exit
 fi
 
@@ -76,33 +77,42 @@ join -v2 -t $'\t' -1 1 -2 1 $newMeta $oldMeta| cut -f1 >> $projectDir/lib/metada
 
 
 # 変更または削除されたものについて、これまでの result を消去する。
-rm -rf $projectDir/lib/metadata/splitDir
-mkdir $projectDir/lib/metadata/splitDir
-splitN=`wc -l $projectDir/lib/metadata/SRXsForDelete.tab| awk '{print int($1/100)}'`
-split -l $splitN $projectDir/lib/metadata/SRXsForDelete.tab $projectDir/lib/metadata/splitDir/
-
-ql=`sh $projectDir/sh/QSUB.sh mem`
-for splitFn in `ls $projectDir/lib/metadata/splitDir/*`; do
-  qsub $ql -o /dev/null -e /dev/null -pe def_slot 1 $projectDir/sh/metaDelete.sh $splitFn $projectDir
-done
-
-while :; do
-  qstatN=`qstat| awk '{if ($3 == "metaDelete") print}'| wc -l`
-  if [ $qstatN -eq 0 ]; then
-    break
-  fi
-done
+QVAL=`cat $projectDir/sh/preferences.txt| awk -F '\t' '$1 == "qVal" {print $2}'`
+{
+  echo $projectDir/results/*/BigWig/*RX*.bw
+  echo $projectDir/results/*/log/*RX*.log.txt
+  echo $projectDir/results/*/metadata/*RX*.meta.txt
+  echo $projectDir/results/*/summary/*RX*.txt
+  echo $projectDir/results/*/Bed*/Bed/*RX*.*.bed
+  echo $projectDir/results/*/Bed*/BigBed/*RX*.*.bb
+}| tr ' ' '\n'| tr '/.' '  '| awk '{
+  for (i=4; i<=NF; i++) if ($i ~ /[DES]RX[0-9][0-9]/) print $3 "\t" $i
+}'| awk '!a[$0]++'| awk -v delList="$projectDir/lib/metadata/SRXsForDelete.tab" -v QVAL="$QVAL" -v pd=$projectDir '
+BEGIN {
+  while ((getline < delList) > 0) x[$1]++
+  N = split(QVAL, q, " ")
+} x[$2] > 0 {
+  printf "rm"
+  printf " " pd "/results/" $1 "/BigWig/" $2 ".bw"
+  printf " " pd "/results/" $1 "/log/" $2 ".log.txt"
+  printf " " pd "/results/" $1 "/metadata/" $2 ".meta.txt"
+  printf " " pd "/results/" $1 "/summary/" $2 ".txt"
+  for (i=1; i<=N; i++) {
+    printf " " pd "/results/" $1 "/Bed" q[i] "/Bed/" $2 "." q[i] ".bed"
+    printf " " pd "/results/" $1 "/Bed" q[i] "/BigBed/" $2 "." q[i] ".bb"
+  }
+  printf "\n"
+}'| sh
 
 rm $newMeta.tmp $oldMeta.tmp
 rm $projectDir/lib/metadata/SRXsForDelete.tab
-rm -r $projectDir/lib/metadata/splitDir
 
 
 # Controller.sh を実行
 GENOME=`ls $projectDir/results/| tr '\n' ' '`
 QVAL=$(ls $projectDir/results/`ls $projectDir/results/| head -n1`| grep Bed| cut -c 4-| tr '\n' ' ')
 
-qsub $projectDir/sh/Controller.sh "$GENOME" $projectDir "$QVAL" $projectDir/lib/metadata/NCBI_SRA_Metadata_Full_for_update.metadata.tab
+qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 $projectDir/sh/Controller.sh "$GENOME" $projectDir "$QVAL" $projectDir/lib/metadata/NCBI_SRA_Metadata_Full_for_update.metadata.tab
 # $1 ゲノム (例 "hg19 mm9 ce10 dm3 sacCer3")
 # $2 projectDir (例 chipome_ver3)
 # $3 Qval (例 "05 10 20")

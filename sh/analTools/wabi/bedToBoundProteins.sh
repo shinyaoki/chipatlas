@@ -173,7 +173,7 @@ BEGIN {
   if (($2+$3)*$4 == 0) FE = "inf"
   else                 FE = ($2/($2+$3))/($4/($4+$5))  # Fold enrichment = (a/ac)/(b/bd)
   printf "%s\t%s\t%s/%s\t%s/%s\t%s\t%s\t%s\n", $1, a[$1], $2, $2+$3, $4, $4+$5, $6, $7, FE
-}'| sort -t $'\t' -k9n -k10nr| awk -F '\t' -v tmp="$tmpF"3 '  # 総ピーク数
+}'| sort -t $'\t' -k8n -k10nr| awk -F '\t' -v tmp="$tmpF"3 '  # 総ピーク数
 BEGIN {
   while ((getline < tmp) > 0) peakN[$1] += $2
 } {

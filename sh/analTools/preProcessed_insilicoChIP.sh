@@ -12,10 +12,11 @@ if [ $1 = "initial" ]; then
   mkdir chipatlas/results/hg19/insilicoChIP_preProcessed
   mkdir chipatlas/results/mm9/insilicoChIP_preProcessed
   
-  qsub -N GWAS -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_GWAS.sh
-  qsub -N FF_Enhancer -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomEnhancer.sh
-  qsub -N FF_Pr_hg19 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh hg19
-  qsub -N FF_Pr_mm9 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh mm9
+  ql=`sh chipatlas/sh/QSUB.sh mem`
+  qsub $ql -N GWAS -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_GWAS.sh
+  qsub $ql -N FF_Enhancer -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomEnhancer.sh
+  qsub $ql -N FF_Pr_hg19 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh hg19
+  qsub $ql -N FF_Pr_mm9 -o /dev/null -e /dev/null chipatlas/sh/analTools/insilicoChIP_FantomPromoter.sh mm9
   
   rm -rf chipatlas/results/hg19/insilicoChIP_preProcessed_old
   rm -rf chipatlas/results/mm9/insilicoChIP_preProcessed_old
@@ -192,14 +193,20 @@ if [ $1 = "P" ]; then
   }' > chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/"$anal"list.html
   
   
-  # 結果 (HTML) にリンクを設ける
+  # 結果 (HTML) にリンクを設ける、タイトルを修正
   for html in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.html`; do
     id=`basename $html| sed 's/\.html//'`
+    if [ $anal = "gwas" ]; then
+      title=`cat "chipatlas/lib/id2name4Gwas.tab"| awk -v id="$id" -F '\t' '"GWAS:" $1 == id {printf $2}'| tr '_' ' '`
+    else
+      title=`cat "chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/lib/ff5id2name.tab"| awk -F '\t' -v id="$id" '$1 == id {printf $2}'| sed 's/\(.\)\(.*\)/\U\1\L\2/g'`
+    fi
     newStr=`cat "chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/"$anal"list.html"| grep "$id"| grep "html"| sed 's/<td align="center">//g'| sed 's[</td>[@[g'`
-    cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id -v newStr="$newStr" '
+    cat $html| sed 's[<p>Search for proteins significantly bound to your data\.</p>[['| awk -v id=$id -v newStr="$newStr" -v title="$title" '
     BEGIN {
       split(newStr, a, "@")
     } {
+      gsub("tmpTiTle", title, $0)
       print $0
       if ($0 ~ "bodyMargin {margin:") print "img {vertical-align:middle;}"
 
@@ -598,8 +605,5 @@ R-3.2.3/bin/R --vanilla --args $anal $genome $id << 'DDD'
   # 書き出し
   write.table(m4, quote = FALSE, sep = "\t", file=outtsv, append = TRUE)
 DDD
-
-
-
 
 

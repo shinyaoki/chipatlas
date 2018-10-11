@@ -22,7 +22,7 @@ for genome in `ls $projectDir/results`; do
       ql=`sh $projectDir/sh/QSUB.sh mem`
       Logfile="$projectDir/results/$genome/log/$srx.log.txt"
       rm -f $Logfile
-      qsub -N "srT$genome" -o $Logfile -e $Logfile -pe def_slot $nslot $ql $projectDir/sh/sraTailor.sh $srx $genome $projectDir "$QVAL"
+      qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 -N "srT$genome" -o $Logfile -e $Logfile -pe def_slot $nslot $ql $projectDir/sh/sraTailor.sh $srx $genome $projectDir "$QVAL"
     fi
   done
 done
@@ -59,3 +59,6 @@ Session Stop  (Error: Client unable to connect to server (check UDP port and fir
 # メモリ不足 (メモリをあげれば再実行可能)
 (コアダンプ)
 
+# Rr になると、いろいろおかしいことになる => checkCoreDump.sh で検出できるようにしている
+
+# アライメントが異常に遅い (原因不明, 例: SRX189413 hg19) 

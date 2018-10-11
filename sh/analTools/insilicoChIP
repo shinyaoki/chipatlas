@@ -49,9 +49,10 @@ shufN=1
 ff=0
 vv=0
 oo=0
+Rr=0
 
 # パラメータの処理
-while getopts a:b:p:d:u:T:A:B:P:C:Q:hfvo option
+while getopts a:b:p:d:u:T:A:B:P:C:Q:hfvoR option
 do
   case "$option" in
     h)
@@ -112,6 +113,10 @@ do
             path/to/FILENMAE_Overlap.bed と  path/to/FILENMAE_Overlap.bb ができる。さらに、
             path/to/FILENMAE_BED デイレクトリ配下に、SRX ごとに分けた BED ファイルができる。
             
+    -R    P-val の計算に Rfisher を使用するため、爆速になる。
+            2017.04.05 に気づいたが、Rfisher でも 1E-324 まで計算できることが判明。
+            特別な理由がない限り、このオプションを用いた方が良い。
+            
             
   "$'\e[32m''TYPE = bed'$'\e[m'" の場合のみ
     -p    Random permutation の回数 (defalt = 10)
@@ -148,6 +153,7 @@ do
     f) ff=1;;
     v) vv=1;;
     o) oo=1;;
+    R) Rr=1;;
   esac
 done
 
@@ -200,9 +206,9 @@ case $typeA in
           "1") # -v が指定された場合、B.bed から A.bed の要素を除去する。
             cat "$inBedB"| awk -v inBedA="$inBedA" '
             BEGIN {
-              while ((getline < inBedA) > 0) a[$0]++
+              while ((getline < inBedA) > 0) a[$1,$2,$3]++
             } {
-              if (a[$0] + 0 < 1) print
+              if (a[$1,$2,$3] + 0 < 1) print
             }' > "$bedB"
             ;;
         esac
@@ -274,14 +280,27 @@ if [ $oo -eq 1 ]; then
   rm -rf "$bn""_BED"
   mkdir "$bn""_BED"
   ovlpBed="$bn""_Overlap"
-  cat "$tmpF"2| awk -F '\t' -v outDir="$bn""_BED" -v expL="$expL" '
+ cat "$tmpF"2| awk -F '\t' -v outDir="$bn""_BED" -v expL="$expL" '
   BEGIN {
     while ((getline < expL) > 0) p[$1] = $4
   } {
     if ($8 == "A") {
-      outBed = outDir "/" $4 ".bed"
-      printf "%s\t%s\t%s\t%s\n", $5, $6, $7, p[$4]"_@"$4 >> outBed
-      close(outBed)
+      i++
+      outBed[$4] = outDir "/" $4 ".bed"
+      x[$4] = x[$4] sprintf("%s\t%s\t%s\t%s\n", $5, $6, $7, p[$4]"_@"$4)
+      if (i == 100000) {
+        i = 0             # メモリオーバー と過剰な I/O 負荷を防ぐため、10 万行ごとに書き出し
+        for (srx in x) {
+          printf x[srx] >> outBed[srx]
+          close(outBed[srx])
+        }
+        delete x
+      }
+    }
+  } END {
+    for (srx in x) {
+      printf x[srx] >> outBed[srx]
+      close(outBed[srx])
     }
   }'
   cat "$bn""_BED"/*bed| sort -k1,1 -k2,2n| uniq| tr ' ' '_' > "$ovlpBed"".bed"
@@ -289,9 +308,20 @@ if [ $oo -eq 1 ]; then
 fi
 
 
+# -R オプションによって、Fisher 検定の方法を変える。
+function fisheR() {
+  if [ $Rr = 0 ]; then  # -R 指定なし => 自作の fisher
+    cat $1| awk '{
+      print "echo " $0 " `bin/fisher -p " $2 " " $3 " " $4 " " $5 "`"
+    }'| sh 2>/dev/null| tr ' ' '\t'
+  else                  # -R 指定あり => Rfisher
+    cat $1 > "$tmpF"4
+    bin/Rfisher -f "$tmpF"4 -k2
+    rm "$tmpF"4
+  fi
+}
 
-
-
+# Fisher 検定を行い、TSV と HTML を作成
 cat "$tmpF"2| awk -F '\t' -v wclA=$wclA -v wclB=$wclB -v shufN=$shufN '{  # カウント
   if(NR % 1000000 == 0) delete x
   if (!x[$4,$9]++) {
@@ -303,9 +333,7 @@ cat "$tmpF"2| awk -F '\t' -v wclA=$wclA -v wclB=$wclB -v shufN=$shufN '{  # カ�
   for (srx in SRX) {
     printf "%s\t%d\t%d\t%d\t%d\n", srx, a[srx], wclA - a[srx], int(b[srx] / shufN + 0.5), wclB / shufN -int(b[srx] / shufN + 0.5)
   }
-}'| awk '{  # Fisher 検定
-  print "echo " $0 " `bin/fisher -p " $2 " " $3 " " $4 " " $5 "`"
-}'| sh 2>/dev/null| tr ' ' '\t' | awk -F '\t' '{
+}'| fisheR| awk -F '\t' '{    # Fisher 検定
   for (i=1; i<NF; i++) printf "%s\t", $i
   if ($NF == 0) print "-324"
   else          print log($NF)/log(10)
@@ -316,7 +344,7 @@ BEGIN {
   if (($2+$3)*$4 == 0) FE = "inf"
   else                 FE = ($2/($2+$3))/($4/($4+$5))  # Fold enrichment = (a/ac)/(b/bd)
   printf "%s\t%s\t%s/%s\t%s/%s\t%s\t%s\t%s\n", $1, a[$1], $2, $2+$3, $4, $4+$5, $6, $7, FE
-}'| sort -t $'\t' -k9n -k10nr| awk -F '\t' -v tmp="$tmpF"3 '  # 総ピーク数
+}'| sort -t $'\t' -k8n -k10nr| awk -F '\t' -v tmp="$tmpF"3 '  # 総ピーク数
 BEGIN {
   while ((getline < tmp) > 0) peakN[$1] += $2
 } {
@@ -353,7 +381,7 @@ BEGIN {
 
 
 
-rm $tmpF "$tmpF"2 "$tmpF"3 "$bedA" "$bedB"
+rm -f $tmpF "$tmpF"2 "$tmpF"3 "$bedA" "$bedB"
 
 #       ある SRX と重なる   重ならない
 # bedA              a         c       a+c = bedA の行数 (= wclA)

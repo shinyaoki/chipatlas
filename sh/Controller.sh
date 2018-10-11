@@ -17,12 +17,12 @@ nslot=`cat $projectDir/sh/preferences.txt |awk -F '\t' '{if ($1 == "nSlotForSrT"
 Sz=0
 prevT=`date +%s`
 intT=21600
-HDsize=`cat $projectDir/sh/preferences.txt |awk -F '\t' '{if ($1 == "HDsize") printf "%s", $2}'`
+HDsize=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $4/1000000000}')
 let HDsize=$HDsize-2
 
 
-qsub $projectDir/sh/TimeCourse.sh $projectDir "$GENOME"
-qsub -o /dev/null -e /dev/null -pe def_slot 4 $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
+qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 $projectDir/sh/TimeCourse.sh $projectDir "$GENOME"
+qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 -o libPrepForAnal.log.txt -e libPrepForAnal.log.txt -pe def_slot 4 $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
 
 
 for Genome in `echo $GENOME`; do
@@ -45,7 +45,7 @@ for Genome in `echo $GENOME`; do
     if ($4  == "ChIP-Seq" || $4  == "DNase-Hypersensitivity")\
     if ($5  == "GENOMIC")\
     if ($6  == "ChIP" || $6  == "DNase")\
-    if ($11 ~  "Illumina")\
+    if ($11 ~  "Illumina" || $11 ~  "NextSeq" || $11 ~  "HiSeq")\
     if ($17 ~  ORG)\
       print
   }' > $projectDir/results/$Genome/metadataForRun.txt
@@ -63,17 +63,18 @@ for Genome in `echo $GENOME`; do
     awk -v Srx=$SRX '{if ($1 == Srx) print}' $projectDir/results/$Genome/metadataForRun.txt > $projectDir/results/$Genome/metadata/$SRX.meta.txt
     
     while :; do
-      nQ=`qstat|tail -n +3| awk '{print $5}'|cut -c1|grep -cv -e "r"` # state が qw または t の数
+      nW=`cat chipatlas/sh/preferences.txt| awk '$1 == "JOB_NUM_4_wait" {printf $2}'` # ジョブ待ち数
+      nQ=`qstat|tail -n +3| awk '$3 ~ "srT" && $5 !~ /r$/ {i++} END {printf "%d", i}'` # state が qw または t の数
       curT=`date +%s`
       let difT=$curT-$prevT
       
       if [ $difT -gt $intT ]; then
         prevT=$curT
-        Sz=`du -s --block-size=1T|cut -f1`
-        if [ $Sz -lt $HDsize ]; then # HDD 容量が 28 TB 以下の時は、次回の du は 30 分後、それ以上の時は 100 秒後
-          intT=1800
+        Sz=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $2/1000000000}')
+        if [ $Sz -lt $HDsize ]; then # HDD 空き容量が 2 TB 以上の時は、次回の計測は 3 分後、それ以下の時は 100 秒後
+          intT=180
           let Dif=$HDsize-$Sz
-          if [ $Dif -gt 10 ]; then  # HDD 残量が 10 TB 以上の時は、次回の du は 6 時間後
+          if [ $Dif -gt 10 ]; then  # HDD 残量が 10 TB 以上の時は、次回の計測は 6 時間後
             intT=21600
           fi
         else
@@ -81,7 +82,7 @@ for Genome in `echo $GENOME`; do
         fi
       fi
       
-      if [ $nQ -le 10 -a $Sz -lt $HDsize ]; then # ジョブ待ち数が 11 以下で、HDD 容量が 18 TB 以下の時に submit する
+      if [ $nQ -le $nW -a $Sz -lt $HDsize ]; then # ジョブ待ち数が 11 以下で、HDD 空き容量が 2 TB 以上の時に submit する
         ql=`sh $projectDir/sh/QSUB.sh mem`
         qsub $ql -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
         sleep 1
@@ -93,41 +94,49 @@ done
 exit
 
 # 計算がエラーになる場合
-#                   qstat     SRXディレクトリ     Bed/BigWig     log        summary      例
-# (1) コアダンンプ    残らず     残る               できない        できる      できない      SRX328589 (hg19)
-# (2) aspera エラー  残る       残る               できない        できる      できない      混雑状況によるため再現できない -> 再投入が必要
-# (3) MACS2 エラー   残らず     残らず              できない        できる      できる       SRX211437 (sacCer3)
+#                     qstat     SRXディレクトリ     Bed/BigWig     log        summary      例
+# (1) コアダンンプ      残らず     残る               できない        できる      できない      SRX328589 (hg19)
+# (2) aspera エラー    残る       残る               できない        できる      できない      混雑状況によるため再現できない -> 再投入が必要
+# (3) MACS2 エラー     残らず     残らず              できない        できる      できる       SRX211437 (sacCer3)
+# (4) 時間切れ         残らず     残る                できない        できる      できない      SRX716883 (mm9)
+# (5) MACS メモリ不足  残らず     残る                できる         できる       できない      DRX048524 (hg19)
 
 # Aspera エラーの場合の再投入
 
 projectDir=chipatlas
-Genome=hg19
-nslot="8-16"
+Genome=mm9
+nslot="8-64"
 
-for SRX in SRX100439  SRX100442  SRX190188  SRX193600  SRX328589  SRX328591  SRX610813  SRX610814; do
+for SRX in SRX814801 SRX810565 SRX258122 SRX1098159 SRX1098158 SRX1098157 SRX1098156; do
   QVAL="05 10 20"
   Logfile="$projectDir/results/$Genome/log/$SRX.log.txt"
   
   rm -f $Logfile
   rm -rf $projectDir/results/$Genome/$SRX
   
-  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot -l month -l medium $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
 done
 
 
 projectDir=chipatlas
-Genome=mm9
-nslot="8-16"
-for SRX in DRX012091 DRX012092 DRX012093 DRX012094 DRX012095 ERX132886 SRX258122 SRX338012 SRX472712 SRX500192 SRX500194 SRX849410 SRX849411 SRX849412 SRX849413 SRX849414 SRX849415 SRX849416 SRX849417 SRX849418 SRX849419 SRX849420 SRX849421 SRX849422 SRX849423 SRX849424 SRX849425 SRX849426 SRX849427 SRX849428 SRX849429 SRX849430 SRX849431 SRX849432 SRX849433 SRX849434 SRX849435 SRX849436 SRX849437 SRX849438 SRX849439 SRX849440 SRX849441; do
+Genome=rn6
+nslot="8-64"
+for SRX in SRX1776226; do
   QVAL="05 10 20"
   Logfile="$projectDir/results/$Genome/log/$SRX.log.txt"
   
   rm -f $Logfile
   rm -rf $projectDir/results/$Genome/$SRX
   
-  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot -l month -l medium -l s_vmem=128G -l mem_req=128G $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
 done
 
-
-SRX849410 SRX849411 SRX849412 SRX849413 SRX849415 SRX849416 SRX849417 SRX849418 SRX849419 SRX849420 SRX849421 SRX849422 SRX849423 SRX849424 SRX849425 SRX849426 SRX849427 SRX849428 SRX849429 SRX849431 SRX849433 SRX849435 SRX849436 SRX849437 SRX849438 SRX849439 SRX849440 SRX849441
-
+chipatlas/results/mm9/SRX814801:
+chipatlas/results/mm9/SRX810565:
+chipatlas/results/mm9/SRX258122:
+chipatlas/results/mm9/SRX1098159:
+chipatlas/results/mm9/SRX1098158:
+chipatlas/results/mm9/SRX1098157:
+chipatlas/results/mm9/SRX1098156:
+chipatlas/results/hg19/SRX100439:
+SRX814801 SRX810565 SRX258122 SRX1098159 SRX1098158 SRX1098157 SRX1098156

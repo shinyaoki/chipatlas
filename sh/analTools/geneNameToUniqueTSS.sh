@@ -6,33 +6,33 @@ projectDir=$1
 for Genome in `ls $projectDir/results/`; do
   case $Genome in
     "hg19" | "mm9" )
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/knownCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/knownCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
         # chr1  566134  566155  14  uc021oek.1  uc021oek.1  $5 と $6 はユニーク
       
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/knownToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/knownToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
         # uc002qts.2  NM_014219  $2 のみユニーク
       
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
         # SELPLG  NM_001206609  chr12  -  109015679  109025854  109016844  109025677  2  109015679,109025634,  109018088,109025854,  $1 も $2 もユニークでない
       ;;
     "ce10" )
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/ce6/database/sangerCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/ce6/database/sangerCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
         # chrII  7855746  7857530  8213  T09A5.8  T09A5.8  $5 と $6 はユニーク
         
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/ce6/database/sangerToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/ce6/database/sangerToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
         # T09A5.8  NM_063251  $2 のみユニーク
         
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/ce10/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/ce10/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
         # cec-3  NM_063251  chrII  -  7856026  7857417  7856026  7857417  7  7856026,7856131,  7856088,7856248,  $1 も $2 もユニークでない
       ;;
     "dm3" )
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/flyBaseCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/flyBaseCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
         # chr2L  15039495  15043335  12137  CG3497-RA  n/a
         
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/flyBaseToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/flyBaseToRefSeq.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
         # CG3497-RA  NM_057520
         
-        curl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
+        bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/dm3/database/refFlat.txt.gz| gunzip| sort -k3| awk -F '\t' '{print $2 "\t" $4 "\t" $1 "\trefFlat"}'
         # Su(H)  NM_057520  chr2L  +  15039487  15043334  15039936  15042618  4  15039487,15041094,15042033,15042306,  15040320,15041975,15042241,15043334,
       ;;
   esac| awk -F '\t' '{
@@ -51,13 +51,13 @@ for Genome in `ls $projectDir/results/`; do
   case $Genome in
     "sacCer3" ) # 酵母は RefSeq genes がない
         {
-          curl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
+          bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdCanonical.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownCanonical"}'
           # chrM  27665  27812  5  Q0080  P00856  $5 はユニーク
           
-          curl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdToName.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
+          bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdToName.txt.gz| gunzip| awk -F '\t' '{print $0 "\tknownToRefSeq"}'
           # Q0080  ATP8  $1 と $2 はユニーク
           
-          curl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdGene.txt.gz| gunzip| awk -F '\t' '{print $12 "\t" $4 "\t" $2 "\trefFlat"}'
+          bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/sgdGene.txt.gz| gunzip| awk -F '\t' '{print $12 "\t" $4 "\t" $2 "\trefFlat"}'
           # 585  Q0080  chrM  +  27665  27812  27665  27812  1  27665,  27812,  P00856  $2 はユニーク, $12 が n/a ならば non-coding
         }| awk -F '\t' '{
           if ($7 == "knownCanonical") kcan[$5] = $0    # kcan["Q0080"] = chrM  27665  27812  5  Q0080  P00856
@@ -70,6 +70,18 @@ for Genome in `ls $projectDir/results/`; do
         }'| sort -k1,1 -k2,2n| awk -F '\t' '{
           if ($6 != "n/a")  printf "%s\t%s\t%s\t%s\t%s\t%s\n", $1, $2, $3, $8, $10, $5
         }' > $projectDir/lib/TSS/uniqueTSS.$Genome.bed
+      ;;
+    "rn6" ) # ラットは RefSeq genes がないので、RGD の ID で代用
+        curl ftp://ftp.rgd.mcw.edu/pub/data_release/GENES_RAT.txt| awk -F '\t' -v OFS='\t' '{
+          if ($1 + 0 > 0 && $37 == "protein-coding" && length($44) > 0) {
+            split($44, a, ";")
+            split($45, b, ";")
+            split($46, c, ";")
+            split($47, d, ";")
+            sub("MT", "M", a[1])
+            print "chr" a[1], b[1], c[1], $2, d[1], "RGD_" $1
+          }
+        }'| sort -k1,1 -k2,2n > $projectDir/lib/TSS/uniqueTSS.$Genome.bed
       ;;
   esac
 done

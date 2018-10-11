@@ -25,7 +25,7 @@
     td {
       padding: 5px;
     }
-    ＃clipb,#clipb_ex {
+    ＃clipb {
       color: #eeeeee;
     }
     #resultname {
@@ -34,17 +34,16 @@
   </style>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 </head>
 
 
 <body>
   <h1>Curator for ChIP-Atlas</h1>
-  <p id="transient"></p>
+
   <div id="blockRight">
     <h3 id="result">Result: </h3>
     <div id="copybtn">
-      <input type="button" id="btn_result_copy" value="Copy to Clipboard" data-clipboard-target='#clipb'>
+      <input type="button" id="btn_result_copy" value="Copy to Clipboard">
     </div>
     <h4>Manual annotation</h4>
     <select id="list_Class">
@@ -84,30 +83,14 @@
     <br>
     <br>
     <br>
-    <h5>Intial settings: <input type="button" id="Intial2" value="Copy" data-clipboard-text='
-[
-  {
-    "op": "core/column-addition",
-    "description": "Create column judge at index 5 based on column new using expression grel:\"\"",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "newColumnName": "judge",
-    "columnInsertIndex": 5,
-    "baseColumnName": "new",
-    "expression": "grel:\"\"",
-    "onError": "set-to-blank"
-  }
-]
-'></h5>
-    <h5>Judge settings: <input type="button" id="Judge2" value="Copy" data-clipboard-text='if(join(row.record.cells["old"].value, "") == join(row.record.cells["new"].value, ""), "yet", "OK")'></h5>
+    <h5>Intial settings: <input type="button" id="Intial" value="Copy"></h5>
+    <h5>Judge settings: <input type="button" id="Judge" value="Copy"></h5>
     <h5>Excluded strings:</h5>
     <input type="text" id="text_excl" value="">
-    <input type="button" id="Excl2" value="Copy" data-clipboard-target='#clipb_ex'>
+    <input type="button" id="Excl" value="Copy">
   <font color="#eeeeee">
-    <a id="clipb"></a>
-    <a id="clipb_ex"></a>
+    <a id="clipb">
+    </a>
   </font>
   </div>
 
@@ -117,24 +100,16 @@
     var curationType = setType();
     var cellTypeDisc = cellTypeDiscription();
     var ctMatrix = searchCellTypeDiscription();
-    var clipboard = new Clipboard('#Intial2' );
-    var clipboard = new Clipboard('#Judge2');
-    var clipboard = new Clipboard('#Excl2');
-    var clipboard = new Clipboard('#btn_result_copy');
+    var clip = new ZeroClipboard($("#btn_result_copy").get(0));
+    var ini = new ZeroClipboard($("#Intial").get(0));
+    var judge = new ZeroClipboard($("#Judge").get(0));
+    var excl = new ZeroClipboard($("#Excl").get(0));
     
-    clipboard.on('success', function(e) {
-      e.clearSelection();
-    });
-        
     tsvWithGenome(genome);
     changeListClass();
     readGeneList(genome);
     $("#table").html(" ");
 
-    // Excluded strings の設定
-    $('#text_excl').on('change || keyup', function(){
-      $('#clipb_ex').html('^(?!.*' + $('#text_excl').val() + ').*$');
-    });
     // タイプの変更
     $('#list_type').on("change", function(){
       curationType = setType();
@@ -179,6 +154,21 @@
     // コピーボタン
     clip.on("ready beforecopy", function() {
       $("#btn_result_copy").get(0).dataset.clipboardText = $("#clipb").html();
+    });
+    // Initial settings
+    ini.on("ready beforecopy", function() {
+      var iniStr = '[\n  {\n    "op": "core/column-addition",\n    "description": "Create column judge at index 5 based on column new using expression grel:\\\"\\\"",\n    "engineConfig": {\n      "facets": [],\n      "mode": "row-based"\n    },\n    "newColumnName": "judge",\n    "columnInsertIndex": 5,\n    "baseColumnName": "new",\n    "expression": "grel:\\\"\\\"",\n    "onError": "set-to-blank"\n  }\n]\n';
+      $("#Intial").get(0).dataset.clipboardText = iniStr;
+    });
+    // Judge settings
+    judge.on("ready beforecopy", function() {
+      var judgeStr = 'if(join(row.record.cells["old"].value, "") == join(row.record.cells["new"].value, ""), "yet", "OK")';
+      $("#Judge").get(0).dataset.clipboardText = judgeStr;
+    });
+    // Judge settings
+    excl.on("ready beforecopy", function() {
+      var exc = $("#text_excl").val();
+      $("#Excl").get(0).dataset.clipboardText = '^(?!.*' + exc + ').*$';
     });
 
     // 遺伝子リストからサーチ

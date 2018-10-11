@@ -4,9 +4,6 @@
 # sh chipatlas/sh/analTools/wabi/transferBedTow3oki.sh chipatlas
 projectDir=$1
 tmpDir=tmpDirFortransferBedTow3oki
-rm -rf $tmpDir
-mkdir -p $tmpDir/results
-mkdir -p $tmpDir/lineNum
 
 ql=`sh chipatlas/sh/QSUB.sh mem`
 for Genome in `ls $projectDir/results/`; do
@@ -15,16 +12,25 @@ for Genome in `ls $projectDir/results/`; do
     outBed=$tmpDir/results/$Genome/public/`basename $bed`
     let i=$i+1
     # BED ファイルの整形、5000万行ごとに分割し、core dump を防ぐ
-    echo "tail -n+2 $bed| tr '=;' '\t\t'| cut -f 1,2,3,5 > $outBed;\
-          split -l 50000000 $outBed $outBed. ;\
-          wc -l $outBed > $tmpDir/lineNum/$i;\
-          rm $outBed"| qsub -N trfB2w3 $ql -o /dev/null -e /dev/null
+    
+    cat << 'DDD' > $tmpDir/sh/$i
+#!/bin/sh
+#$ -S /bin/sh
+DDD
+    cat << DDD >> $tmpDir/sh/$i
+      split -l 50000000 $outBed $outBed.
+      wc -l $outBed > $tmpDir/lineNum/$i
+      rm $outBed
+DDD
+    qsub -N trfB2w3 $ql -o /dev/null -e /dev/null $tmpDir/sh/$i
   done
 done
+
 
 while :; do
   qN=`qstat| awk '$3 == "trfB2w3"'| wc -l`
   if [ "$qN" -eq 0 ]; then
+    rm -r $tmpDir/sh
     break
   else
     echo "Waiting for converting Bed files..."
@@ -64,6 +70,7 @@ cmnd=$(echo -e '
     rm -r "$dirWab2"_old
   done
   
+  cp -r chipatlas/lib/TSS w3oki/chipatlas/lib/
   cp -f chipatlas/lib/assembled_list/experimentList.tab w3oki/chipatlas/lib/assembled_list/experimentList.tab
   cp -f chipatlas/lib/assembled_list/fileList.tab w3oki/chipatlas/lib/assembled_list/fileList.tab
   rm -r w3oki/tmpDirFortransferBedTow3oki

@@ -6,7 +6,8 @@ projectDir=$1
 # Function (Download of tools)
 mdCurl() { # $1=URL $2=output $3=md5 $4=devbio_tool
   for i in `seq 10`; do
-    curl -y60 -Y1 -C - -o $2 $1
+#   curl -y60 -Y1 -C - -o $2 $1
+    bin/ntcurl -o "-y60 -Y1 -C - -o $2" $1
     DL_sum=`md5sum $2 | cut -d ' ' -f1`
     if [ "$3" = "$DL_sum" ] ; then
       break
@@ -28,7 +29,7 @@ finalCheck() {  # $1=Tool, $2=Command, $3=lines
 md5_BedT=e7209a6f88f8df844474369bd40db8be
 md5_BoWt=a3a001a8c97b991f6beb596f6c9674b6
 md5_MCS2=ad105b9ad25bc2eedc78c38d54cf76e8
-md5_SraT=904a57b67c13b94623c8e13520b4a387
+md5_SraT=e119e421460fd8eb20451aad87618e80
 md5_SamT=ff8b46e6096cfb452003b1ec5091d86a
 md5_tBtF=d202a7204fdf377e3aecf03c7939fb75
 md5_bTBB=811f84b7b5a953843c3369fa9db8844e
@@ -77,8 +78,11 @@ unzip -d $projectDir/bin/ $projectDir/bin/bowtie2-2.2.2-linux-x86_64.zip
 
 # sratoolkit
 echo -e "\e[32mInstalling sratoolkit...\e[m"
-mdCurl http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.3.2-4/sratoolkit.2.3.2-4-ubuntu64.tar.gz $projectDir/bin/sratoolkit.2.3.2-4-ubuntu64.tar.gz $md5_SraT sratoolkit.2.3.2-4-ubuntu64.tar.gz
-tar xvzf $projectDir/bin/sratoolkit.2.3.2-4-ubuntu64.tar.gz -C $projectDir/bin
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.0/sratoolkit.2.9.0-ubuntu64.tar.gz
+if [ `md5sum sratoolkit.2.9.0-ubuntu64.tar.gz| cut -d ' ' -f1` = $md5_SraT ]; then
+  mv sratoolkit.2.9.0-ubuntu64.tar.gz $projectDir/bin/
+  tar xvzf $projectDir/bin/sratoolkit.2.9.0-ubuntu64.tar.gz -C $projectDir/bin
+fi
 
 # samtools
 echo -e "\e[32mInstalling samtools...\e[m"  
@@ -137,7 +141,7 @@ fi
 # Removal of archives
 rm $projectDir/bin/BEDTools.tar.gz
 rm $projectDir/bin/bowtie2-2.2.2-linux-x86_64.zip
-rm $projectDir/bin/sratoolkit.2.3.2-4-ubuntu64.tar.gz
+rm $projectDir/bin/sratoolkit.2.9.0-ubuntu64.tar.gz
 rm $projectDir/bin/samtools-0.1.19.tar.bz2
 rm $projectDir/bin/MACS2-2.1.0.20140616.tar.gz
 

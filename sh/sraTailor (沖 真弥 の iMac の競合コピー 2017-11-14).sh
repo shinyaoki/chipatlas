@@ -21,7 +21,7 @@ ResDir=$projectDir/results/$Genome/$bn
 declare -A size                # -Aでハッシュ宣言 
 PastT=`date +%s`
 
-fastqDump=/home/$LoginID/$projectDir/bin/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump
+fastqDump=/home/$LoginID/$projectDir/bin/sratoolkit.2.3.2-4-ubuntu64/bin/fastq-dump
 bowtie2=/home/$LoginID/$projectDir/bin/bowtie2-2.2.2/bowtie2
 samtools=/home/$LoginID/$projectDir/bin/samtools-0.1.19/samtools
 macs2=/usr/local/bin/macs2
@@ -40,8 +40,6 @@ mkdir $ResDir
 echo -e "\nJob ID = $JOB_ID\n"
 echo -e "\nsra ファイルのダウンロード中...\n"
 
-
-cat << 'DDD' > /dev/null # 2017/11/13 以前は web サイトにアクセスし、ラン情報を取得
 for srr in `curl -s "https://www.ncbi.nlm.nih.gov/sra?term=$SRX"| awk '$0 ~ "<div>Layout: <span>" {
   gsub("?run=", "\n")
   gsub("\"", "\t")
@@ -59,18 +57,6 @@ for srr in `curl -s "https://www.ncbi.nlm.nih.gov/sra?term=$SRX"| awk '$0 ~ "<di
     anonftp@ftp-trace.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/$SorD/$SRR_short/$srr/$srr.sra $ResDir/$srr.sra
   fi
 done
-DDD
-
-# SorP=0: SINGLE, 1: PAIRED
-runInfo=`cat $projectDir/lib/metadata/SRA_Metadata_RunInfo.tab| awk '$1 == "'$SRX'"'`
-SorP=`echo $runInfo| cut -d ' ' -f2`
-for srr in `echo $runInfo| cut -d ' ' -f3-`; do
-  SorD=`echo $srr| tr -d '[0-9]'`
-  SRR_short=`echo $srr | cut -b 1-6`
-  /home/$LoginID/.aspera/connect/bin/ascp -QT -i /home/$LoginID/.aspera/connect/etc/asperaweb_id_dsa.openssh -L $ResDir -k 1 -l 100000000 \
-  anonftp@ftp-trace.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/$SorD/$SRR_short/$srr/$srr.sra $ResDir/$srr.sra
-done
-echo $runInfo| awk 'NF < 3 {print "NO_RUN_INFO"}'
 
 Nstop=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Session Stop" -e "ascp: "`
 Nnone=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Server aborted session: No such file or directory" -e "Completed: 0K bytes"`

@@ -30,7 +30,7 @@ for fn in `ls $projectDir/sh/cellTypeDescription/*.tab`; do
       if ($5 && $5 != "-") printf "\tDevelopmental Stage=%s", $5
       printf "\n"
     }
-    if (fn ~ "mesh2015.tab") {
+    if (fn ~ "mesh") {
       printf "3\t%s", $2
       if ($3) printf "\tMeSH Description=%s", $3
       printf "\n"
@@ -55,12 +55,14 @@ done| awk -F '\t' '{
 }' > $projectDir/sh/cellTypeDescription/cellTypeDescription.txt
       # 1       K-562   Primary Tissue=Blood|Tissue Diagnosis=Leukemia Chronic Myelogenous
 
-
-echo $projectDir/results/*/log/*.log.txt| xargs cat| awk -v minQval=$minQval '{
-  if ($0 ~ "Job ID = ") x = ""
-  if ($0 ~ "overall alignment rate") x = $1
-  if ($0 ~ "Command line: callpeak" && $0 ~ "-q 1e-" minQval) printf "%s\t%f\n", $6 , x
-}'| tr -d '%'| sed 's/.bam//' > alignmentPercentage.tab
+rm -f "alignmentPercentage.tab"
+for Genome in `ls $projectDir/results/| tr '\n' ' '`; do
+  awk -v minQval=$minQval '{
+    if ($0 ~ "Job ID = ") x = ""
+    if ($0 ~ "overall alignment rate") x = $1
+    if ($0 ~ "Command line: callpeak" && $0 ~ "-q 1e-" minQval) printf "%s\t%f\n", $6 , x
+  }' $projectDir/results/$Genome/log/*.log.txt| tr -d '%'| sed 's/.bam//' >> alignmentPercentage.tab
+done
 
 # experimentlist.tab の作成
 for Genome in `ls $projectDir/results/| tr '\n' ' '`; do
@@ -154,8 +156,10 @@ sh chipatlas/sh/refineSearchList.sh
 
 
 # filelist.tab の作成
-echo $projectDir/results/*/public/*.list| xargs cat > $projectDir/lib/assembled_list/fileList.tab
-echo $projectDir/results/*/public/*.list| xargs rm
+for genome in `ls $projectDir/results/`; do
+  echo $projectDir/results/$genome/public/*.list| xargs cat
+  echo $projectDir/results/$genome/public/*.list| xargs rm
+done > $projectDir/lib/assembled_list/fileList.tab
 # $1 = ファイル名                     His.Lar.10.H3K4me3.AllCell.bed
 # $2 = Genome                       ce10
 # $3 = 抗原 大                       Histone

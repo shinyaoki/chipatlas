@@ -28,6 +28,9 @@ mkdir -p chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/results
   done
   
   idfn=`curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/"| grep "obo.txt"| head -n1| tr '""' '\t\t'| cut -f8`
+  if [ "$idfn" = "" ]; then
+    idfn="ff-phase2-140729.obo.txt"
+  fi
   curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/""$idfn"| awk '{
     if ($1 == "id:" && ($2 ~ "CL:" || $2 ~ "DOID:" || $2 ~ "UBERON:")) {
       printf $2
@@ -75,7 +78,7 @@ cat chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/bed/*.bed| s
 ql=`sh chipatlas/sh/QSUB.sh mem`
 for bedA in `ls chipatlas/results/hg19/insilicoChIP_preProcessed/fantomEnhancer/bed/*.bed`; do
   id=`basename $bedA| sed 's/\.bed//'`
-  titleA=`cat "$id2name"| awk -F '\t' -v id="$id" '$1 == id {printf $2}'| sed 's/\(.\)\(.*\)/\U\1\L\2/g'`
+  titleA="tmpTiTle"
   outFn=`echo "$bedA"| sed 's[/bed/[/results/tsv/['| sed 's/\.bed$//'`
   qsub $ql -o /dev/null -e /dev/null -N "iscF5Enh" bin/insilicoChIP -a "$bedA" -b "$bedB" -Q 10 -A "$titleA" -B "Other enhancers" -T "$titleA vs Other enhancers" -v -o bed hg19 "$outFn"
 done

@@ -6,6 +6,7 @@
 
 if [ $1 = "INITIAL" ]; then
   projectDir=$2
+  rm -f paramListForColo.tab
   for Genome in `ls $projectDir/results`; do
     rm -rf $projectDir/results/$Genome/colo tmpDirForColo
     mkdir $projectDir/results/$Genome/colo tmpDirForColo
@@ -33,12 +34,15 @@ if [ $1 = "INITIAL" ]; then
     if [ "$nSRX" -lt 500 ]; then
       short=`sh $projectDir/sh/QSUB.sh mem`
     elif [ "$nSRX" -lt 1500 ]; then
-      short=" "
+      short="-l d_rt=1440:00:00 -l s_rt=1440:00:00"
     else
-      short="-l month -l medium"
-      nMem=`echo $nSRX| awk '{printf "%dG", $1 / 100 * 1.5}'`
+      short="-l d_rt=1440:00:00 -l s_rt=1440:00:00"  # month_medium は CPU 速度が遅いため、week node のほうがいいかも (2017.09.12)
+    # short="-l month -l medium -l d_rt=1440:00:00 -l s_rt=1440:00:00"
+      nMem=`echo $nSRX| awk '{printf "%dG", $1 / 100 * 2}'`
     fi
-    qsub -l s_vmem=$nMem -l mem_req=$nMem $short $projectDir/sh/coLocalization.sh $projectDir "$Param"
+    echo "$Param" >> paramListForColo.tab
+    let nParm=nParm+1
+    qsub -l s_vmem=$nMem -l mem_req=$nMem $short $projectDir/sh/coLocalization.sh $projectDir "$nParm"
     IFS=$'\n'
   done
   IFS=$IFS_BACKUP
@@ -49,9 +53,10 @@ fi
 #                                                             以下、qsub モード
 ####################################################################################################################################
 projectDir=$1
-Genome=`echo $2| cut -d '/' -f1`
-ctL=`echo $2| cut -d '/' -f2`   # 細胞大はスペースをアンダーバーに置換
-SRX=`echo $2| cut -d '/' -f3| tr '@' '\n'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome '
+Parm=`cat paramListForColo.tab| awk -v nParm=$2 'NR == nParm'`
+Genome=`echo $Parm| cut -d '/' -f1`
+ctL=`echo $Parm| cut -d '/' -f2`   # 細胞大はスペースをアンダーバーに置換
+SRX=`echo $Parm| cut -d '/' -f3| tr '@' '\n'| awk -F '\t' -v projectDir=$projectDir -v Genome=$Genome '
 BEGIN {
   geneList = projectDir "/lib/geneList/" Genome ".txt"
   expList =  projectDir "/lib/assembled_list/experimentList.tab"

@@ -22,6 +22,11 @@ logDir=makeBigBed_log
 if [ $mode = "initial" ]; then
   rm -rf $logDir
   mkdir $logDir
+  tmpDir=tmpDirFortransferBedTow3oki
+  rm -rf $tmpDir
+  mkdir -p $tmpDir/results
+  mkdir -p $tmpDir/lineNum
+  mkdir -p $tmpDir/sh
 
   # 全ての Bed ファイルをランダムに振り分け、makeBigBed.sh の qsub モードに渡す。
   echo $projectDir/results/*/public/*.bed| xargs ls| awk -v PRD=$projectDir '{
@@ -30,16 +35,29 @@ if [ $mode = "initial" ]; then
 
   splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/2000)}'`
   split -a 3 -l $splitN $logDir/makeBigBed.list $logDir/MAKEBIGBEDTMP
+  mkdir tmp/$logDir  # シェルスクリプトファイルを作成
+  awk -v logDir=$logDir -v fn="__dammy__" '{
+    if (FNR == 1) {
+      close(fn)
+      fn = "tmp/" FILENAME
+      print "#!/bin/sh\n#$ -S /bin/sh" > fn
+    }
+    print $0 >> fn
+  }' $logDir/MAKEBIGBEDTMP[a-z][a-z][a-z]
+  
   ql=`sh $projectDir/sh/QSUB.sh mem`
-  for tmpList in `ls $logDir/MAKEBIGBEDTMP*`; do
-    cat $tmpList| qsub $ql -N makeBigBed -l s_vmem=8G,mem_req=8G -o $tmpList.log -e $tmpList.log
+  for tmpList in `ls tmp/$logDir/MAKEBIGBEDTMP*`; do
+    logF=`echo $tmpList.log| cut -d '/' -f2-`
+    # qsub $ql -N makeBigBed -l s_vmem=8G,mem_req=8G -o $logF -e $logF $tmpList (旧バージョン 2017.09.10 まで)
+    qsub $ql -N makeBigBed -l s_vmem=12G -l mem_req=12G -o $logF -e $logF $tmpList # (新バージョン: コンマをなくし、qchange 可能にした。)
   done
 
-  # 全部終わったら、assembled リストを作成
+  # 全部終わったら、assembled リストを作成、ダウンロード用の全ピークコールデータの作成
   while :; do
-    qN=`qstat| awk '{if ($3 == "makeBigBed") print}' | wc -l`
+    qN=`qstat| awk '{if ($3 == "makeBigBed" || $3 ~ "allPeaks") print}' | wc -l`
     if [ $qN -eq 1 ]; then
-      qsub $projectDir/sh/webList.sh $projectDir
+      ql=`sh $projectDir/sh/QSUB.sh mem`
+      qsub $ql -l s_vmem=12G -l mem_req=12G $projectDir/sh/webList.sh $projectDir
       
       # makeBigBed でコアダンプがあれば知らせる。
       rm -f CAUTION_makeBigBed.txt
@@ -161,10 +179,17 @@ function symbolSub(Str,underScore) {
   printf "%s\t%s\t%s\t%s\t%s\n", $11, $12, $13, $14, $15
 }' > $inBn.bed.tmp
 
-# カラーでスペース入りの BigBed 作成 (UCSC 用)
 rm $inBn.bed.meta
 mv $inBn.bed.tmp $inBn.bed
 
+# in silico ChIP 用のファイル、allPeaks_light.bed の作成
+NN=`echo "$inBn"| awk '{printf "%d", ($0 ~ "AllAg.AllCell")? 1 : 0}'`
+if [ "$NN" = "1" ]; then
+  ql=`sh $projectDir/sh/QSUB.sh mem`
+  qsub -o /dev/null -e /dev/null $ql chipatlas/sh/allPeaks_light.sh "$inBn"
+fi
+
+# カラーでスペース入りの BigBed 作成 (UCSC 用)
 tail -n+2 $inBn.bed| awk -F '\t' -v OFS='\t' '{
   if (!x[$4]++) {
     split($4, a, ";")
@@ -178,6 +203,7 @@ tail -n+2 $inBn.bed| awk -F '\t' -v OFS='\t' '{
 
 $projectDir/bin/bedToBigBed -type=bed9 -tab $inBn.bed.tmp $projectDir/lib/genome_size/$Genome.chrom.sizes $inBn.bb
 rm $inBn.bed.tmp
+
 
 # Bed index の作成
 java -Xmx2000m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed

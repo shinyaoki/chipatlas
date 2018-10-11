@@ -30,12 +30,13 @@ echo "Document のグラフを更新中..."
 
 # ENOCODE と RoadMap のデータ数をカウント
 {
-  tail -n+2 $projectDir/lib/ENCODE_RoadMap/sra_result_ENCODE.csv| awk -F '"' '{ #"
-    print $2 "\tENCODE"
-  }'
-  tail -n+2 $projectDir/lib/ENCODE_RoadMap/sra_result_Roadmap.csv| awk -F '"' '{ #"
-    print $2 "\tRoadMap"
-  }'
+  cat $projectDir/lib/ENCODE_RoadMap/sra_result_ENCODE.csv| awk -F '=' '$0 ~ /^SRA Run Selector:/ {
+    print $2
+  }'| tr ',' '\n'| grep [DES]RX| awk '!a[$1]++ {print $1 "\tENCODE"}'
+  cat $projectDir/lib/ENCODE_RoadMap/sra_result_Roadmap.csv| awk -F '=' '$0 ~ /^SRA Run Selector:/ {
+    print $2
+  }'| tr ',' '\n'| grep [DES]RX| awk '!a[$1]++ {print $1 "\tRoadMap"}'
+    
 }| awk -F '\t' -v expList="$expList" '
 BEGIN {
   while ((getline < expList) > 0) {
@@ -49,8 +50,8 @@ BEGIN {
   if (s[$1] > 0) p[$1] = $2
 } END {
   Np = split("ENCODE RoadMap Others", P, " ")
-  Nx = split("hg19 mm9 dm3 ce10 sacCer3", x, " ")
-  Ny = split("H. sapiens (hg19)|M. musculus (mm9)|D. melanogaster (dm3)|C. elegans (ce10)|S. cerevisiae (sacCer3)", y, "|")
+  Nx = split("hg19 mm9 rn6 dm3 ce10 sacCer3", x, " ")
+  Ny = split("H. sapiens (hg19)|M. musculus (mm9)|R. norvegicus (rn6)|D. melanogaster (dm3)|C. elegans (ce10)|S. cerevisiae (sacCer3)", y, "|")
   Ne = split("ChIP-seq DNase-seq", e, " ")
   
   for (srx in g) n[A[srx], g[srx], p[srx]]++
@@ -78,7 +79,7 @@ cat "$tmpF1"| sed 's/ (/@/'| tr '@' '\t'| awk -F '\t' '{
     for (i=3; i<=5; i++) x[Exp, $1, i-2] = $i
   }
 } END {
-  Ng = split("S. cerevisiae|C. elegans|D. melanogaster|M. musculus|H. sapiens", g, "|")
+  Ng = split("S. cerevisiae|C. elegans|D. melanogaster|R. norvegicus|M. musculus|H. sapiens", g, "|")
   for (Exp in f) {
     print "Organism, Project, Numbers" > f[Exp]
     for (i=1; i<=Ng; i++) for (j=1; j<=3; j++) print g[i] ", " j ", " x[Exp, g[i], j] >> f[Exp]
@@ -95,7 +96,7 @@ cat "$expList"| awk -F '\t' '{
   x[$2, $3]++
   y[$2, $5]++
 } END {
-  Ng = split("hg19|mm9|dm3|ce10|sacCer3", g, "|")
+  Ng = split("hg19|mm9|rn6|dm3|ce10|sacCer3", g, "|")
   Na = split("DNase-seq|Histone|RNA polymerase|TFs and others|Input control|Unclassified|No description", a, "|")
   Nc = split("Adipocyte|Adult|Blood|Bone|Breast|Cardiovascular|Cell line|Digestive tract|Embryo|Embryonic fibroblast|Epidermis|Gonad|Kidney|Larvae|Liver|Lung|Muscle|Neural|Pancreas|Placenta|Pluripotent stem cell|Prostate|Pupae|Spleen|Uterus|Yeast strain|Others|Unclassified|No description", c, "|")
   for (i=1; i<=Ng; i++) for (j=1; j<=Na; j++) printf "%s\t%s\t%d\n", g[i], a[j], x[g[i], a[j]]
@@ -106,7 +107,7 @@ cat "$expList"| awk -F '\t' '{
 # 抗原、細胞クラスによる集計
 cat "$expList"| awk -F '\t' '
 BEGIN {
-  Ng = split("hg19|mm9|dm3|ce10|sacCer3", g, "|")
+  Ng = split("hg19|mm9|rn6|dm3|ce10|sacCer3", g, "|")
   Nc = split("No description|Unclassified|Others|Yeast strain|Uterus|Spleen|Pupae|Prostate|Pluripotent stem cell|Placenta|Pancreas|Neural|Muscle|Lung|Liver|Larvae|Kidney|Gonad|Epidermis|Embryonic fibroblast|Embryo|Digestive tract|Cell line|Cardiovascular|Breast|Bone|Blood|Adult|Adipocyte", c, "|")
   Na = split("No description|Unclassified|Input control|TFs and others|RNA polymerase|Histone|DNase-seq", a, "|")
   for (i=1; i<=Ng; i++) G[g[i]] = i

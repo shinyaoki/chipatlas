@@ -92,7 +92,8 @@ mdCurl() { # $1=Adress, $2=Output, $3=md5
   mdcretval=0
   
   for num in `seq 30` ; do
-    curl -y60 -Y1 -C - -o $2 $1
+#   curl -y60 -Y1 -C - -o $2 $1
+    bin/ntcurl -o "-y60 -Y1 -C - -o $2" $1
     ori_sum=$3
     DL_sum=`md5sum $2 | cut -d ' ' -f1`
     if [ "$ori_sum" = "$DL_sum" ] ; then

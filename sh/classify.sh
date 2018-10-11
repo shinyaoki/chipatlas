@@ -94,7 +94,7 @@ if [ $Mode = "initial" ]; then
     if [ $qstatN -eq 1 ]; then
       rm -f $projectDir/classification/*.tmpIndexForFgrep
       rm CLASSIFY_TMP* $projectDir/classify.tmp
-      qsub -o /dev/null -e /dev/null $projectDir/sh/makeBigBed.sh -i $projectDir
+      qsub -pe def_slot 4 -o /dev/null -e /dev/null $projectDir/sh/makeBigBed.sh -i $projectDir
       exit
     fi
   done

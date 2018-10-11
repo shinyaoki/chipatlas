@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <title>ChIP-Atlas Curator</title>
+  <FONT face="Helvetica Neue" color="333333">
+  <style type="text/css">
+    body {
+        background-color: #eee;
+    }
+    
+    a {
+        font-size: 24px;
+        color: white;
+        background-color: blue;
+        border: 1px solid #aaa;
+        padding: 8px;
+        text-decoration: none;
+      }
+  </style>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
+</head>
+
+
+<body>
+<input id="text" value="Sample Text">
+<button id="btn">コピーする</button><br><br>
+<input value="" placeholder="試しにここに貼り付ける">
+
+
+<script type="text/javascript">
+var btn = document.getElementById("btn");
+var text = document.getElementById("text");
+var clip = new ZeroClipboard(btn);
+clip.on("ready beforecopy", function() {
+  btn.dataset.clipboardText = text.value;
+});
+try {
+  if(!new ActiveXObject('ShockwaveFlash.ShockwaveFlash')) {
+    btn.style.display = "none";
+  }
+}
+catch(e) {
+  if(navigator.mimeTypes ["application/x-shockwave-flash"] === undefined) {
+    btn.style.display = "none";
+  }
+}</script>
+

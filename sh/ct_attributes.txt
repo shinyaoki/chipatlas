@@ -51,6 +51,7 @@ origin
 tissue of origin
 description
 cell types
+tissue/cells
 cell subtype
 source tissue
 tag
@@ -112,3 +113,4 @@ devstage
 marker
 dev_stage
 health_state
+sample comment

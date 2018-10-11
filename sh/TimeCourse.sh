@@ -15,8 +15,8 @@ T=60
 iniT=`date +%s`
 while :; do
   curT=`date +%s`
-  let pasT=$curT-$iniT
-  Tera=`du -s --block-size=1G|awk '{printf "%.2f", $1/1000}'`
+  pasT=`echo $curT $iniT| awk '{printf ($1 - $2) / 3600}'`
+  Tera=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%.2f", $2/1000000000}')
   echo -en "$pasT\t$Tera"
 
   for Genome in `echo $GENOME`; do

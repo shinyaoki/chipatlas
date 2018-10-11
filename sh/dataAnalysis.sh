@@ -20,13 +20,12 @@ if [ $Type = "0" ]; then
   rm -rf makeBigBed_log
   
   sh $projectDir/sh/dataNumbers.sh $projectDir                                 # データ数を集計し、グラフを作成
-  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (18 日, 2016/09/09)
+  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (17 日, 2016/10/09)
   sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行 (1 時間弱, 2016/05/26)
   sh $projectDir/sh/analTools/wabi/transferBedTow3oki.sh $projectDir           # in silico ChIP 用の BED ファイルを作成、w3oki へ転送 (2 時間弱, 2016/05/26)
   rm -rf $projectDir/lib/inSilicoChIP
   mv tmpDirFortransferBedTow3oki $projectDir/lib/inSilicoChIP
   qsub -o /dev/null -e /dev/null $projectDir/sh/analTools/preProcessed_insilicoChIP.sh initial   # GWAS, FANTOM データの in silico ChIP (６時間, 2016/05/26)
-  qsub -o /dev/null -e /dev/null -l month -l medium $projectDir/sh/dataAnalysis.sh -l $projectDir   # analysisList.tab の作成
   exit
 fi
 
@@ -48,6 +47,8 @@ while :; do
   sleep 60
 done
 
+# 公開用の in silico ChIP データの作成 (FF enhancer と GWAS のみ)
+sh $projectDir/sh/analTools/insilicoChIP_public.sh
 
 # analysisList.tab の作成
 for Genome in `ls $projectDir/results`; do
@@ -80,5 +81,4 @@ bin/alertFromDDBJ "ChIP-Atlas アラート" "dataAnalysis.sh 完了"
 # ファイル名
 # Colo : $1.gsub(" ", "_", $2).html
 # Target : $1.html
-
 

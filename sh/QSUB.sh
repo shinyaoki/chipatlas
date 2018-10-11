@@ -1,7 +1,7 @@
 #!/bin/sh
 #$ -S /bin/sh
 mode=0
-short=`for qName in week_hdd.q week_ssd.q short.q; do
+short=`for qName in month_hdd.q month_ssd.q short.q; do
   qstat -f| grep $qName| awk -v qName=$qName '{
     split($3, arr, "/")
     x = x + arr[2]
@@ -32,8 +32,8 @@ if [ $1 = "shortOrweek" ]; then
     if (conf == 3) printf "-l debug"
   }'
 elif [ $1 = "mem" ]; then
-  bin/qm| head -n5| awk '{
-    if ($1 ~ "week") w += $4 -$2
+  bin/qm| head -n9| awk '{
+    if ($1 ~ "month" && $1 !~ "medium") w += $4 - $2
     else if ($1 ~ "short") s += $4 - $2
   } END {
     if (w < s) printf "-l short"
@@ -43,10 +43,8 @@ elif [ $1 = "mem" ]; then
     if (conf == 1) printf " "
     if (conf == 2) printf "-l short"
     if (conf == 3) printf "-l debug"
+    if (conf == 4) printf "-l month -l medium"
   }'
 else
   echo qsub "$short" $Para| sh
 fi
-
-
-

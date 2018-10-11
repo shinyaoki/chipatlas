@@ -27,6 +27,9 @@ mkdir -p chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/resu
   done
   
   idfn=`curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/"| grep "obo.txt"| head -n1| tr '""' '\t\t'| cut -f8`
+  if [ "$idfn" = "" ]; then
+    idfn="ff-phase2-140729.obo.txt"
+  fi
   curl "http://fantom.gsc.riken.jp/5/datafiles/phase2.0/extra/Ontology/""$idfn"| awk '{
     if ($1 == "id:" && ($2 ~ "CL:" || $2 ~ "DOID:" || $2 ~ "UBERON:")) {
       printf $2
@@ -80,7 +83,7 @@ down=5000
 ql=`sh chipatlas/sh/QSUB.sh mem`
 for geneList in `ls "$geneListDir"/*.geneList.txt`; do
   id=`basename $geneList| cut -d '.' -f1`
-  titleA=`cat $id2name| awk -F '\t' -v id="$id" '$1 == id {printf $2}'| sed 's/\(.\)\(.*\)/\U\1\L\2/g'`
+  titleA="tmpTiTle"
   titleB="Other RefSeq genes"
   outfn="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/results/tsv/"$id
   qsub $ql -o /dev/null -e /dev/null -N $genome"Prom" bin/insilicoChIP -a "$geneList" -A "$titleA" -B "$titleB" -T "$titleA vs $titleB" -o -u $up -d $down gene "$genome" "$outfn"
