@@ -57,23 +57,22 @@ eval `cat bin/w3oki| grep -e "username=" -e "password="`
 
 # w3oki で実行するためのコマンド
 cmnd=$(echo -e '
-  rm -rf w3oki/tmpDirFortransferBedTow3oki
+  rm -rf /lustre7/home/w3oki/tmpDirFortransferBedTow3oki
   for genome in `ls tmpDirFortransferBedTow3oki/results/`; do
-    dirOkiS="tmpDirFortransferBedTow3oki/results/$genome/public"        # okishinya アカウントの public フォルダ
-    dirWab1="w3oki/tmpDirFortransferBedTow3oki/results/$genome/public"  # w3oki アカウントの 一時的 public フォルダ
-    dirWab2="w3oki/chipatlas/results/$genome/public"                    # w3oki アカウントの 計算用 public フォルダ
-    mkdir -p w3oki/tmpDirFortransferBedTow3oki/results/$genome
+    dirOkiS="tmpDirFortransferBedTow3oki/results/$genome/public"                      # okishinya アカウントの public フォルダ
+    dirWab1="/lustre7/home/w3oki/tmpDirFortransferBedTow3oki/results/$genome/public"  # w3oki アカウントの 一時的 public フォルダ
+    dirWab2="/lustre7/home/w3oki/chipatlas/results/$genome/public"                    # w3oki アカウントの 計算用 public フォルダ
+    mkdir -p /lustre7/home/w3oki/tmpDirFortransferBedTow3oki/results/$genome
     echo okishinya から w3oki へ $genome の BED ファイルを転送中...
     cp -r "$dirOkiS" "$dirWab1"
     mv "$dirWab2" "$dirWab2"_old
     mv "$dirWab1" "$dirWab2"
     rm -r "$dirWab2"_old
   done
-  
-  cp -r chipatlas/lib/TSS w3oki/chipatlas/lib/
-  cp -f chipatlas/lib/assembled_list/experimentList.tab w3oki/chipatlas/lib/assembled_list/experimentList.tab
-  cp -f chipatlas/lib/assembled_list/fileList.tab w3oki/chipatlas/lib/assembled_list/fileList.tab
-  rm -r w3oki/tmpDirFortransferBedTow3oki
+  cp -r chipatlas/lib/TSS /lustre7/home/w3oki/chipatlas/lib/
+  cp -f chipatlas/lib/assembled_list/experimentList.tab /lustre7/home/w3oki/chipatlas/lib/assembled_list/experimentList.tab
+  cp -f chipatlas/lib/assembled_list/fileList.tab /lustre7/home/w3oki/chipatlas/lib/assembled_list/fileList.tab
+  rm -r /lustre7/home/w3oki/tmpDirFortransferBedTow3oki
   exit
 '| awk '{
   gsub("\"", "\\\"", $0)    # ダブルクォートと $ の前にバックスラッシュをつける

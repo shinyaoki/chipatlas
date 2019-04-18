@@ -1,6 +1,6 @@
 
 # データのアップデート。
-  upDateNCBI # <<=== コマンド (DDBJ, iMac, MacBook) 最新の Metadata のバージョン check (password を求められるが、リターンで良い)
+  upDateNCBI # <<=== コマンド (DDBJ, iMac, MacBook) 最新の Metadata のバージョン check
   sh chipatlas/sh/upDate.sh  # <<=== コマンド (DDBJ) すぐに qsub されるので、どの mac でも可能
   
 # run 中の time course の閲覧コマンド: wn timecourse4chipatlas
@@ -16,7 +16,7 @@
   sh chipatlas/sh/listForClassify.sh  # <<=== コマンド (DDBJ)
 
 # 古い classification のバックアップ、個別データの転送
-  backUpOldList 201808  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
+  backUpOldList 201902  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
   transferDDBJtoNBDC eachData  # <<=== コマンド (ラボのMac)  個別データを NBDC に転送。
                                # 転送状況コマンド (ラボの Mac => nbdc =>): trfNBDC eachData.log
 
@@ -40,8 +40,8 @@
   OK だったら、スパコンに Downloads/classification フォルダを chipatlas/ 配下にアップロード
 
 
-# 新しい assembled ファイルの作成  (しばらく待つので、研究室の Mac から実行)
-  sh chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド (DDBJ しばらく待つので、研究室の Mac から実行)
+# 新しい assembled ファイルの作成
+  qsub -e /dev/null -o /dev/null chipatlas/sh/bed4ToBed9.sh  # <<=== コマンド (DDBJ) すぐに qsub されるので、どの mac でも可能。半日くらいかかる。
   
     public 配下に .bed, .bed.idx が作られる
     allPeaks_light 配下に allPeaks_light.bed がつくられる。
@@ -75,7 +75,7 @@
   データ数などのグラフが変わっているので、wiki でコピペ。
 
 # 引用論文の更新
-  Mendelay に追加し、ChIP-Atlas citations Markdown というスタイルでコピーし、テキストの .__. を --. に置換し、下記にペースト
+  Mendelay に追加し、ChIP-Atlas citations Markdown というスタイルでコピーし、"ctm" というコマンドを実行して、下記にペースト
   https://github.com/inutano/chip-atlas/blob/master/views/publications.markdown
 
 # 連絡
@@ -84,8 +84,8 @@
   
 # Wabi データの整理、消去
   wabi              # <<=== コマンド (Mac)  w3oki アカウントにログイン
-  table4wabiRequest # <<=== コマンド (Mac)  wabi へのリクエストを tsv 形式で整理する (table4wabiRequest.tsv)
-  tail -n+2 table4wabiRequest.tsv | cut -c1-7| uniq -c # <<=== コマンド (Mac)  wabi へのリクエスト数を月毎に表示
+  table4wabiRequest # <<=== コマンド (Mac)  wabi へのリクエストを tsv 形式で整理する (table4wabiRequest.YYYYMMDD.tsv)
+  tail -n+2 table4wabiRequest.YYYYMMDD.tsv | cut -c1-7| uniq -c # <<=== コマンド (Mac)  wabi へのリクエスト数を月毎に表示
   # deleteWabiResult  # <<=== コマンド (w3oki)  二週間前までのデータを消去
 
 # スパコンの重要なファイルを iMac に保存
@@ -189,7 +189,7 @@ makeBigBed # qsub モードは不可
     sh chipatlas/sh/listForClassify.sh  # <<=== コマンド (DDBJ)
   
   # 古い classification のバックアップ、個別データの転送
-    backUpOldList 201808  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
+    backUpOldList 201811  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
     transferDDBJtoNBDC eachData  # <<=== コマンド (ラボのMac)  個別データを NBDC に転送。
                                  # 転送状況コマンド (ラボの Mac => nbdc =>): trfNBDC eachData.log
 
@@ -213,3 +213,15 @@ makeBigBed # qsub モードは不可
 
   # 以降の assembled BEDの作成は CoLo が終了してから行う (sh chipatlas/sh/bed4ToBed9.sh から)
 =====================================================================================
+
+Awstats の取得
+1) https://905945394038.signin.aws.amazon.com/console
+2) サービス一覧から S3 を選択
+3) chip-atlas-awstats-backup というバケットをクリック
+4) 必要な .txt 形式のファイルをダウンロード
+5) FileZilla を起動し、下記のとおり接続
+   ホスト: ftp2013.biosciencedbc.jp
+   ユーザー名: oki
+   パスワード: #NShw16ni
+   ポート: 21
+6) 右下にある accesslog フォルダに .txt ファイルをアップロード

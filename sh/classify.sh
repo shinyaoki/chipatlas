@@ -34,7 +34,7 @@ if [ $Mode = "initial" ]; then
   # 抗原大分類と細胞大分類を掛け合わせる
   for Genome in `echo $GENOME`; do
     ql=`sh $projectDir/sh/QSUB.sh mem`
-    for bedFile in `ls -l $projectDir/results/$Genome/public/*bed| awk '{if ($5 > 0) printf "%s ", $10}'`; do
+    for bedFile in `ls -l $projectDir/results/$Genome/public/*bed| awk '{if ($5 > 0) printf "%s ", $9}'`; do
       # bedFile = xhipome_ver3/results/hg19/public/InP.ALL.60.AllAg.AllCell.bed
       for LargeCellType in `cut -f2 $projectDir/classification/ct_Index.$Genome.tab| cut -c1-3|sort|uniq`; do
         qsub $ql -o /dev/null -e /dev/null $projectDir/sh/classify.sh -m x $projectDir "$LargeCellType" $bedFile $Genome

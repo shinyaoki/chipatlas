@@ -50,6 +50,7 @@ ff=0
 vv=0
 oo=0
 Rr=0
+title=0
 
 # パラメータの処理
 while getopts a:b:p:d:u:T:A:B:P:C:Q:hfvoR option
@@ -168,7 +169,9 @@ outHtml="$bn".html
 bedA="$bn".bedA
 bedB="$bn".bedB
 tmpF="$bn.tmpForinsilicoChIP"
-title="$descriptionA vs $descriptionB"
+if [ "$title" = "0" ]; then
+  title="$descriptionA vs $descriptionB"
+fi
 # TypeB の設定
 case $typeA in
   "bed") 
@@ -192,7 +195,7 @@ case $typeA in
     case $typeB in
       "rnd")  # TypeB = random の場合、bedtools shuffle を行う
         for i in `seq $permTime`; do
-          bedtools shuffle -i "$bedA" -g "$pd/lib/genome_size/$genome.chrom.sizes"
+          chipatlas/bin/bedtools-2.17.0/bin/shuffleBed -i "$bedA" -g "$pd/lib/genome_size/$genome.chrom.sizes"
         done > "$bedB"
         if [ $ff -eq 0 ]; then
           shufN=$permTime
@@ -280,14 +283,20 @@ if [ $oo -eq 1 ]; then
   rm -rf "$bn""_BED"
   mkdir "$bn""_BED"
   ovlpBed="$bn""_Overlap"
- cat "$tmpF"2| awk -F '\t' -v outDir="$bn""_BED" -v expL="$expL" '
+ cat "$tmpF"2| awk -F '\t' -v outDir="$bn""_BED" -v expL="$expL" -v typeA="$typeA" '
   BEGIN {
     while ((getline < expL) > 0) p[$1] = $4
+    if (typeA == "gene") {
+      while ((getline < "'$bedA'") > 0) g[$1,$2,$3] = g[$1,$2,$3] "," $4
+      for (l in g) sub(",", "", g[l])
+    }
   } {
     if ($8 == "A") {
       i++
       outBed[$4] = outDir "/" $4 ".bed"
-      x[$4] = x[$4] sprintf("%s\t%s\t%s\t%s\n", $5, $6, $7, p[$4]"_@"$4)
+      str = $4
+      if (typeA == "gene") str = str "_" g[$5, $6, $7]
+      x[$4] = x[$4] sprintf("%s\t%s\t%s\t%s\n", $5, $6, $7, p[$4]"_@"str)
       if (i == 100000) {
         i = 0             # メモリオーバー と過剰な I/O 負荷を防ぐため、10 万行ごとに書き出し
         for (srx in x) {

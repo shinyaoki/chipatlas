@@ -22,7 +22,7 @@ let HDsize=$HDsize-2
 
 
 qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 $projectDir/sh/TimeCourse.sh $projectDir "$GENOME"
-qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 -o libPrepForAnal.log.txt -e libPrepForAnal.log.txt -pe def_slot 4 $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
+qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 -o libPrepForAnal.log.txt -e libPrepForAnal.log.txt -l s_vmem=30G -l mem_req=30G $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
 
 
 for Genome in `echo $GENOME`; do
@@ -114,7 +114,7 @@ for SRX in SRX814801 SRX810565 SRX258122 SRX1098159 SRX1098158 SRX1098157 SRX109
   rm -f $Logfile
   rm -rf $projectDir/results/$Genome/$SRX
   
-  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot -l month -l medium $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
 done
 
 
@@ -128,7 +128,7 @@ for SRX in SRX1776226; do
   rm -f $Logfile
   rm -rf $projectDir/results/$Genome/$SRX
   
-  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot -l month -l medium -l s_vmem=128G -l mem_req=128G $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
+  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $nslot -l s_vmem=128G -l mem_req=128G $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$QVAL"
 done
 
 chipatlas/results/mm9/SRX814801:

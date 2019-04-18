@@ -81,14 +81,22 @@ done
 up=5000
 down=5000
 ql=`sh chipatlas/sh/QSUB.sh mem`
+tmpF="tmp/insilicoChIP_qsub_fantomPro_"$genome
+rm -f "$tmpF"*
 for geneList in `ls "$geneListDir"/*.geneList.txt`; do
   id=`basename $geneList| cut -d '.' -f1`
   titleA="tmpTiTle"
   titleB="Other RefSeq genes"
   outfn="chipatlas/results/$genome/insilicoChIP_preProcessed/fantomPromoter/results/tsv/"$id
-  qsub $ql -o /dev/null -e /dev/null -N $genome"Prom" bin/insilicoChIP -a "$geneList" -A "$titleA" -B "$titleB" -T "$titleA vs $titleB" -o -u $up -d $down gene "$genome" "$outfn"
-done
+  echo sh bin/insilicoChIP -a \"$geneList\" -A \"$titleA\" -B \"$titleB\" -T \"$titleA vs $titleB\" -o -u $up -d $down gene "$genome" \"$outfn\"
+done| awk '{print rand() "\t" $0}'| sort -k1n| cut -f2-| awk '{
+  if ((NR - 1) % 10 == 0) print "#!/bin/sh\n#$ -S /bin/sh"
+  print
+}'| split -l 12 - "$tmpF"
 
+for tmp in `ls "$tmpF"*`; do
+  qsub $ql -o /dev/null -e /dev/null -N $genome"Prom" "$tmp"
+done
 
 # 公開用リストを作成
 awk -F '\t' -v fn="x" '{
@@ -111,6 +119,7 @@ awk -F '\t' -v fn="x" '{
 while :; do
   qN=`qstat| awk -v jb=$genome"Prom" '$3 == jb'| wc -l`
   if [ $qN -eq 0 ]; then
+    rm -f "$tmpF"*
     sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh P fantomPromoter $qVal $genome $up $down
     break
   fi

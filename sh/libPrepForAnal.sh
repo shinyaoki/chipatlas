@@ -53,9 +53,10 @@ for Genome in `ls $projectDir/results`; do
     ;;
     sacCer3)
       echo -e "$Genome\tEnsembl_SGD" >> keyForStringFiltering
-      curl https://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans.fasta.gz| gunzip| awk '{
-        if ($1 ~ ">") print $2
-      }'
+      # curl https://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans.fasta.gz| gunzip| awk '{
+      #   if ($1 ~ ">") print $2
+      # }'
+      curl https://dbarchive.biosciencedbc.jp/kyushu-u/others/lib/geneList/sacCer3.txt
     ;;
   esac| sort| uniq > $projectDir/lib/geneList/$Genome.txt
 done
@@ -106,11 +107,12 @@ mkdir $projectDir/lib/TSS
 mv keyForStringFiltering $stringDir/keyForStringFiltering.tab
 cd $stringDir
 
-curl https://stringdb-static.org/download/protein.aliases.v10.5.txt.gz| gunzip| sed 's/\./\!/'| tr '!' '\t'| awk -F '\t' '{
+ver=`curl https://stringdb-static.org/cgi/download.pl| awk -F '\047' '$0 ~ "string_database_version_dotted" {printf "v" $2}'`
+curl https://stringdb-static.org/download/protein.aliases.$ver.txt.gz| gunzip| sed 's/\./\!/'| tr '!' '\t'| awk -F '\t' '{
   print $1 "\t" $1 "." $2 "\t" $3 "\t" $4
-}' > protein.aliases.v10.txt
+}' > protein.aliases.$ver.txt
 
-curl https://stringdb-static.org/download/species.v10.5.txt > species.v10.txt
+curl https://stringdb-static.org/download/species.$ver.txt > species.$ver.txt
 
 # curl http://string.uzh.ch/download/protected/string_10/protein.links.full.v10.txt.gz| gunzip > protein.links.full.v10.txt
 # curl http://string-db.org/newstring_download/protein.links.detailed.v10.txt.gz| gunzip > protein.links.detailed.v10.txt
@@ -127,7 +129,7 @@ cat ~/$projectDir/sh/preferences.txt| awk -F '\t' -v projectDir=$projectDir -v h
       g[a[1]] = a[2]      # g["hg19"] = "Homo sapiens"
       org[a[2]] = a[1]    # org["Homo sapiens"] = "hg19"
     }
-    while ((getline < "species.v10.txt") > 0) {
+    while ((getline < "species.'$ver'.txt") > 0) {
       if (org[$3]) gid[$1] = org[$3]    # gid["9606"] = "hg19"
     }
     for (key in gid) print key "\t" gid[key] >> "genomeID.tab"
@@ -137,10 +139,10 @@ cat ~/$projectDir/sh/preferences.txt| awk -F '\t' -v projectDir=$projectDir -v h
         gene[$1,key]++    # gene["POU5F1","hg19"]
       }
     }
-    while ((getline < "protein.aliases.v10.txt") > 0) {   # protein.aliases.v10 を生物種で分ける
+    while ((getline < "protein.aliases.'$ver'.txt") > 0) {   # protein.aliases.v10 を生物種で分ける
       if(gene[$3,gid[$1]]) {
         sub("\\.", SUBSEP, $2)  # $1 = 9606<SUBSEP>ENSP00000259915
-        print $2 "\t" $3 "\t" $4 >> "protein.aliases.v10." gid[$1] ".tmp" # けっこうメモリを消費する
+        print $2 "\t" $3 "\t" $4 >> "protein.aliases.'$ver'." gid[$1] ".tmp" # けっこうメモリを消費する
       }
     }
   }
@@ -149,22 +151,22 @@ cat ~/$projectDir/sh/preferences.txt| awk -F '\t' -v projectDir=$projectDir -v h
 # 重複する ID を除く
 for Genome in `ls ~/$projectDir/results`; do
   Filter=`cat keyForStringFiltering.tab| grep $Genome| cut -f2`
-  cat protein.aliases.v10.$Genome.tmp| awk -F '\t' -v Filter=$Filter '{
+  cat protein.aliases.$ver.$Genome.tmp| awk -F '\t' -v Filter=$Filter '{
     if (tolower($3) !~ "synonym" && $3 ~ Filter) {  # Synonym を除き、Filter にマッチするものを残す
       x[$1] = $2
       n[$1]++                                       # それでも重複するものは削除
     }
   } END {
     for (key in x) if (n[key] == 1) print key "\t" x[key]   # 9606<SUBSEP>ENSP00000259915   POU5F1
-  }' > protein.aliases.v10.$Genome.txt
-  rm protein.aliases.v10.$Genome.tmp
+  }' > protein.aliases.$ver.$Genome.txt
+  rm protein.aliases.$ver.$Genome.tmp
 done
 
 
 
 # protein.actions.v10 を生物種で分ける
-wget https://stringdb-static.org/download/protein.actions.v10.5.txt.gz
-cat protein.actions.v10.5.txt.gz| gunzip| cut -f1-4,6,7| tee protein.actions.v10.txt| awk -F '\t' '
+wget https://stringdb-static.org/download/protein.actions.$ver.txt.gz
+cat protein.actions.$ver.txt.gz| gunzip| cut -f1-4,6,7| tee protein.actions.$ver.txt| awk -F '\t' '
 BEGIN {
   while ((getline < "genomeID.tab") > 0) {
     gid[$1] = $2   # gid["9606"] = "hg19"
@@ -172,7 +174,7 @@ BEGIN {
   close("genomeID.tab")
   
   for (key in gid) {
-    fn = "protein.aliases.v10." gid[key] ".txt"
+    fn = "protein.aliases.'$ver'." gid[key] ".txt"
     while ((getline < fn) > 0) {
       Prot[$1] = $2   # Prot[9606<SUBSEP>ENSP00000259915] = POU5F1
     }
@@ -184,9 +186,9 @@ BEGIN {
   split($1, a, SUBSEP)    # a[1] = 9606, a[2] = ENSP00000259915
   split($2, b, SUBSEP)    # b[1] = 9607, b[2] = ENSP00000259917
   $5 = ($5 == "f") ? 0 : 1
-  if (a[1] == b[1] && Prot[$1] && Prot[$2]) print Prot[$1] "\t" Prot[$2] "\t" $3 "\t" $4 "\t" $5 "\t" $6 >> "protein.actions.v10." gid[a[1]] ".txt"
+  if (a[1] == b[1] && Prot[$1] && Prot[$2]) print Prot[$1] "\t" Prot[$2] "\t" $3 "\t" $4 "\t" $5 "\t" $6 >> "protein.actions.'$ver'." gid[a[1]] ".txt"
 }'    # POU5F1    NANOG   expression    inhibition    0/1   360
-rm protein.actions.v10.5.txt.gz
+rm protein.actions.$ver.txt.gz
 
 exit
 

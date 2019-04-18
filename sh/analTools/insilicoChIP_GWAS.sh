@@ -28,19 +28,19 @@ mkdir -p chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/results/tsv
 #                                                                         GWAS catalog
 ##########################################################################################################################################################################
 # Gene body BED ファイルの作成
-bin/ntcurl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| gunzip| cut -f3,5,6| sort -k1,1 -k2,2n| bedtools merge -i stdin > "$geneBody"
+curl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| gunzip| cut -f3,5,6| sort -k1,1 -k2,2n| software/bedtools2/bin/bedtools merge -i stdin > "$geneBody"
 
 # Exon BED ファイルの作成
-bin/ntcurl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| gunzip| awk -F '\t' -v OFS='\t' '{
+curl "http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/refFlat.txt.gz"| gunzip| awk -F '\t' -v OFS='\t' '{
   split($10, a, ",")
   split($11, b, ",")
   for (i=1; i<length(a); i++) print $3, a[i], b[i]
-}'| sort -k1,1 -k2,2n| bedtools merge -i stdin > "$exons"
+}'| sort -k1,1 -k2,2n| chipatlas/bin/bedtools-2.17.0/bin/bedtools merge -i stdin > "$exons"
 
 
 # GWAS ID の作成 (初めての時のみ)
 if [ ! `ls "$id2name"` ]; then
-  bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' '{
+  curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' '{
     trait = $10
     gsub(/Red vs\. non-red hair color/, "Red vs  non-red hair color", trait)
     gsub(/[%&\(\)\*+\.\:\;]/, "", trait)
@@ -73,7 +73,7 @@ fi
   # したがって同じ rs で同じ trait の重複は削除する。
   # GWAS の rs と座位が 1000G のそれと一致したときのみ LD-block をつける。一致しない場合は GWAS の座位のまま。
   
-bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' -v id2name="$id2name" '
+curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/gwasCatalog.txt.gz| gunzip| cut -f2-| sort -t $'\t' -k10| awk -F '\t' -v id2name="$id2name" '
 BEGIN {
   while ((getline < id2name) > 0) {
     x[$2] = $1 + 0
@@ -127,7 +127,7 @@ BEGIN {
 # 疾患特異的 LD+extension BED ファイルの作成
 cat "$gwasLD"| awk -F '\t' -v extd=$extd '{
   print $1 "\t" $25 - extd "\t" $26 + extd "\t" $23 "\t" $24
-}'| bedtools intersect -v -a stdin -b "$exons"| sort -k1,1 -k2,2n| uniq| tee "$allGWAS"| awk '{
+}'| chipatlas/bin/bedtools-2.17.0/bin/bedtools intersect -v -a stdin -b "$exons"| sort -k1,1 -k2,2n| uniq| tee "$allGWAS"| awk '{
   bed = "chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/bed/GWAS:" $4 ".bed"
   print >> bed
   close(bed)
@@ -135,14 +135,14 @@ cat "$gwasLD"| awk -F '\t' -v extd=$extd '{
 cut -f1-3 "$allGWAS"| uniq > "$allGWASuniq"
 
 # DNase-seq データのマージ
-cat chipatlas/lib/inSilicoChIP/results/hg19/public/DNS.ALL.10.AllAg.AllCell.bed.*| mergeBed -i stdin > "$dhsBed"
+cat chipatlas/lib/inSilicoChIP/results/hg19/public/DNS.ALL.10.AllAg.AllCell.bed.*| chipatlas/bin/bedtools-2.17.0/bin/bedtools merge -i stdin > "$dhsBed"
 
 # 各種疾患 LD-block のうち、DHS と重なるものを抽出
 rm -f rm tmp/insilicoChIP_preProcessedgwas*
 ql=`sh chipatlas/sh/QSUB.sh mem`
 for bed in `ls "chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/bed/"*bed`; do
   outBed=`echo "$bed"| sed 's[/bed/[/ldDhsBed/['`
-  echo "intersectBed -a \"$dhsBed\" -b \"$bed\"| sort -k1,1 -k2,2n| mergeBed -i stdin > \"$outBed\""
+  echo "chipatlas/bin/bedtools-2.17.0/bin/bedtools intersect -a \"$dhsBed\" -b \"$bed\"| sort -k1,1 -k2,2n| chipatlas/bin/bedtools-2.17.0/bin/bedtools merge -i stdin > \"$outBed\""
 done > tmp/insilicoChIP_preProcessedgwas
 split -l 20 tmp/insilicoChIP_preProcessedgwas tmp/insilicoChIP_preProcessedgwasx
 
@@ -170,6 +170,7 @@ cat chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/ldDhsBed/*bed| sort -k
 
 # LD-DHS で疾患特異的 GWAS とその他の GWAS で in silico ChIP
 ql=`sh chipatlas/sh/QSUB.sh mem`
+rm -f rm tmp/insilicoChIP_qsub_gwas*
 for txt in `ls "chipatlas/results/hg19/insilicoChIP_preProcessed/gwas/ldDhsBed/"*bed| awk -F '\t' -v gwasCatalog="$gwasCatalog" '
 BEGIN {
   while ((getline < gwasCatalog) > 0) a[$23] = $24
@@ -185,8 +186,15 @@ BEGIN {
   outFn=`echo $bed| sed 's/.bed$//g'| sed 's[/ldDhsBed/[/results/tsv/[g'`
   titleA="tmpTiTle"
   if [ $wcl -ge 1 ]; then # 登録数が 1 以上のみ in silico ChIP をおこなう
-    qsub $ql -o /dev/null -e /dev/null -N iscGWAS bin/insilicoChIP -a "$bed" -b "$dhsLDuniq" -Q 10 -A "$titleA" -B "Other GWAS" -T "$titleA vs Other GWAS" -v -o bed hg19 "$outFn"
-  fi > /dev/null
+    echo sh bin/insilicoChIP -a \"$bed\" -b \"$dhsLDuniq\" -Q 10 -A \"$titleA\" -B \"Other GWAS\" -T \"$titleA vs Other GWAS\" -v -o bed hg19 \"$outFn\"
+  fi
+done| awk '{print rand() "\t" $0}'| sort -k1n| cut -f2-| awk '{
+  if ((NR - 1) % 10 == 0) print "#!/bin/sh\n#$ -S /bin/sh"
+  print
+}'| split -l 12 - tmp/insilicoChIP_qsub_gwas
+
+for tmp in `ls tmp/insilicoChIP_qsub_gwas*`; do
+  qsub $ql -o /dev/null -e /dev/null -N iscGWAS "$tmp"
 done
 
 # 公開用リストを作成
@@ -211,6 +219,7 @@ while :; do
   qN=`qstat| awk '$3 == "iscGWAS"'| wc -l`
   if [ $qN -eq 0 ]; then
     sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh P gwas $qVal hg19
+    rm -f tmp/insilicoChIP_qsub_gwas*
     break
   fi
 done

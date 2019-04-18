@@ -1,5 +1,7 @@
 #!/bin/sh
 #$ -S /bin/sh
+#$ -e tmpDirForColo/$JOB_ID/log.txt
+#$ -o tmpDirForColo/$JOB_ID/log.txt
 
 # 初期モード
 # sh chipatlas/sh/coLocalization.sh INITIAL chipatlas
@@ -25,24 +27,21 @@ if [ $1 = "INITIAL" ]; then
     }
   }'`; do
     IFS=$IFS_BACKUP
-    nMem=`echo "$Param"| awk '{
-      N = int(gsub("@" "", $0) / 100) + 4
-      if (N >= 4) N = 4
-      printf "%dG", N*4
-    }'`
     nSRX=`echo "$Param"| awk '{printf "%d", gsub("@" "", $0)}'`
-    if [ "$nSRX" -lt 500 ]; then
-      short=`sh $projectDir/sh/QSUB.sh mem`
-    elif [ "$nSRX" -lt 1500 ]; then
-      short="-l d_rt=1440:00:00 -l s_rt=1440:00:00"
-    else
-      short="-l d_rt=1440:00:00 -l s_rt=1440:00:00"  # month_medium は CPU 速度が遅いため、week node のほうがいいかも (2017.09.12)
-    # short="-l month -l medium -l d_rt=1440:00:00 -l s_rt=1440:00:00"
-      nMem=`echo $nSRX| awk '{printf "%dG", $1 / 100 * 2}'`
-    fi
+    opt_qsub=`echo "$nSRX"| awk '{
+      N = $1
+      mem = 20 + N / 100
+      if (mem > 64) mem = 64
+      if (N < 1000) slot = 1
+      else if (N < 1500) slot = 4
+      else if (N < 2000) slot = 8
+      else slot = 16
+      Mem = mem / slot
+      printf "-l s_vmem=" Mem "G -l mem_req=" Mem "G -pe def_slot " slot "-"
+    }'`
     echo "$Param" >> paramListForColo.tab
     let nParm=nParm+1
-    qsub -l s_vmem=$nMem -l mem_req=$nMem $short $projectDir/sh/coLocalization.sh $projectDir "$nParm"
+    qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 $opt_qsub $projectDir/sh/coLocalization.sh $projectDir "$nParm"
     IFS=$'\n'
   done
   IFS=$IFS_BACKUP
@@ -53,6 +52,7 @@ fi
 #                                                             以下、qsub モード
 ####################################################################################################################################
 projectDir=$1
+ini=`date +%s`
 Parm=`cat paramListForColo.tab| awk -v nParm=$2 'NR == nParm'`
 Genome=`echo $Parm| cut -d '/' -f1`
 ctL=`echo $Parm| cut -d '/' -f2`   # 細胞大はスペースをアンダーバーに置換
@@ -99,27 +99,33 @@ BEGIN {
 # tmpDirForColo/123456/inBed/SRX100441.bed	hESC_H1	NA	BCL11A	SRX100441	BCL11A_hg19
 
 # CoLo の実行
+rMEM=$SGE_HGR_mem_req
+Mem=`echo $SGE_HGR_mem_req| tr -d 'G'| awk '{printf "%dG", $1*0.8}'`
+export SGE_HGR_mem_req=$Mem
 mem=`echo $SGE_HGR_mem_req| tr -d 'G'| awk '{printf "-Xmx%dm", 1000*$1*0.8}'`
-echo "AAAAA" $mem $SGE_HGR_mem_req $NSLOTS `cat $jobDir/list.tab| wc -l ` $ctL $Genome
-
-/usr/local/pkg/java/current-1.7/bin/java $mem -jar $projectDir/bin/coloCA.jar $jobDir/list.tab $jobDir/colo.txt $jobDir/colo.gml
+java $mem -jar $projectDir/bin/coloCA.jar $jobDir/list.tab $NSLOTS $jobDir/colo.txt $jobDir/colo.gml
 
 # CoLo が作った gml ファイルを整形
 outGml=`echo $projectDir/results/$Genome/colo/$ctL.gml| tr ' ' '_'`
-cat $jobDir/colo.gml| awk -v JI="$JOB_ID" '{
+cat $jobDir/colo.gml| awk -v JI="$JOB_ID" -v list="$jobDir/list.tab" '
+BEGIN {
+  while ((getline < list) > 0) {
+    n++
+    split($5, s, "@")
+    x[n] = s[2]
+  }
+} {
   if ($1 == "label" && NR != 3) {
+    i++
     ag = $5
     st = $6
     no = $2
     sub("\"", "", st)
     sub("\"No.", "_", no)
     print "label \"" ag no "\""
-  } else if ($1 == "path"){
-    regExp = JI "@"
-    sub(regExp, "", $0)
-    N = split($3, a, "/")
-    split(a[N], b, "_")
-    print "srx \"" b[1] "\""
+    print "srx \"" x[int((i-1)/3)+1] "\""
+  } else if ($1 == "path" || $1 == "size") {
+    q = 1
   } else {
     print
   }
@@ -128,7 +134,6 @@ cat $jobDir/colo.gml| awk -v JI="$JOB_ID" '{
     print "strength \"" st "\""
   }
 }' > $outGml
-
 
 # 整形した gml ファイルをもとに web 用にランキングを作成
 for outTSV in $(cat $outGml| awk -v outGml=$outGml -v valHLM="$HLM" -v Genome=$Genome -v projectDir=$projectDir -v jobDir=$jobDir -v ctL=$ctL '
@@ -247,9 +252,39 @@ for tsv in `ls "$jobDir/"*tsv`; do            # tsv の種類: 抗原.細胞大.
   mv "$outfn" $projectDir/results/$Genome/colo/
 done
 
-cat coLocalization.sh.o$JOB_ID coLocalization.sh.e$JOB_ID > $jobDir/log.txt
-rm coLocalization*$JOB_ID
+echo "JOB_ID = $JOB_ID"
+echo "SGE_HGR_mem_req = $rMEM"
+echo "NSLOTS = $NSLOTS"
+echo "Genome = $Genome"
+echo "Cell_type_class = $ctL"
+echo `date +%s` $ini| awk '{print "Calcuration_time = " $1-$2 " sec, " ($1-$2)/60 " min, " ($1-$2)/3600 " hr"}'
+
+exit
 
 
-
+####################################################################################################################################
+#                                                             以下、実行結果のまとめ
+####################################################################################################################################
+function qsum() {
+  qreport -j $1| awk -v OFS='\t' '
+  BEGIN {
+    while ((getline < "tmpDirForColo/'$1'/log.txt") > 0) {
+      if ($1 == "datanum:") datanum = $2
+      if ($1 == "peaknum:") peaknum = $2
+      if ($1 == "SGE_HGR_mem_req") SGE_HGR_mem_req = $3
+      if ($1 == "NSLOTS") NSLOTS = $3
+      if ($1 == "Genome") Genome = $3
+      if ($1 == "Cell_type_class") Cell_type_class = $3
+      if ($1 == "Calcuration_time") Calcuration_time = $3 "\t" $5 "\t" $7
+    }
+  } $1 == "maxvmem" {
+    print datanum, peaknum, NSLOTS, $2, SGE_HGR_mem_req, Calcuration_time, '$1', Genome, Cell_type_class
+  }'
+}
+for id in `ls tmpDirForColo`; do
+  qsum $id &
+done| sort -k1n| awktt '
+BEGIN {
+  print "nBed", "peaknum", "nSlot", "maxvmem", "r_mem", "sec", "min", "hr", "JobID", "Genome", "Cell"
+} 1'
 

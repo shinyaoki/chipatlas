@@ -29,11 +29,16 @@ if [ $mode = "initial" ]; then
   mkdir -p $tmpDir/sh
 
   # 全ての Bed ファイルをランダムに振り分け、makeBigBed.sh の qsub モードに渡す。
-  echo $projectDir/results/*/public/*.bed| xargs ls| awk -v PRD=$projectDir '{
-    print rand() "\tsh " PRD "/sh/makeBigBed.sh " PRD " " $1
-  }'| sort -k1nr| cut -f2 > $logDir/makeBigBed.list
+  for genome in `ls $projectDir/results`; do
+    echo $projectDir/results/$genome/public/*.bed| tr ' ' '\n'| awk -v PRD=$projectDir '
+    BEGIN {
+      srand('$RANDOM')
+    } {
+      print rand() "\tsh " PRD "/sh/makeBigBed.sh " PRD " " $1
+    }'
+  done| sort -k1nr| cut -f2 > $logDir/makeBigBed.list
 
-  splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/2000)}'`
+  splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/3000)}'`
   split -a 3 -l $splitN $logDir/makeBigBed.list $logDir/MAKEBIGBEDTMP
   mkdir tmp/$logDir  # シェルスクリプトファイルを作成
   awk -v logDir=$logDir -v fn="__dammy__" '{
@@ -76,7 +81,7 @@ fi
 #                                                         以下、qsub モード
 ####################################################################################################################################
 # sh xhipome_ver3/sh/makeBigBed.sh xhipome_ver3 xhipome_ver3/results/hg19/public/Oth.NoD.60.Nr2f2.AllCell.bed
-
+echo $JOB_ID
 inBed=$2                            # xhipome_ver3/results/hg19/public/ALL.ALL.05.AllAg.AllCell.bed
 inBn=`echo $inBed| sed s/.bed$//`   # xhipome_ver3/results/hg19/public/ALL.ALL.05.AllAg.AllCell
 Genome=`echo $inBed| sed "s/$projectDir//"| cut -d '/' -f3`

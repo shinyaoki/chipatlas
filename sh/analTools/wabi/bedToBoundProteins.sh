@@ -59,13 +59,22 @@ hed="Search for proteins significantly bound to your data."
 wabiID=`cat job_info.json| tr -d '"":,'| awk '$1 == "requestId" {printf "%s", $2}'`
 srxUrl="http://chip-atlas.org/view?id="
 
-
-
-for VAR in bedA bedB outTsv outHtml typeA typeB descriptionA descriptionB title permTime distanceDown distanceUp genome antigenClass cellClass threshold; do
-  eval $VAR='$'1
-  eval echo $VAR "=" '$'1
-  shift
-done
+bedA="$1"
+bedB="$2"
+outTsv="$3"
+outHtml="$4"
+typeA="$5"
+typeB="$6"
+descriptionA="$7"
+descriptionB="$8"
+title="$9"
+permTime="${10}"
+distanceDown="${11}"
+distanceUp="${12}"
+genome="${13}"
+antigenClass="${14}"
+cellClass="${15}"
+threshold="${16}"
 
 for fn in $bedA $bedB; do
   cat $fn| tr -d '\015' > tmpForinBed
@@ -94,7 +103,7 @@ case $typeA in
     case $typeB in
       "rnd")  # TypeB = random の場合、bedtools shuffle を行う
         for i in `seq $permTime`; do
-          bedtools shuffle -i $bedA -g /home/w3oki/chipatlas/lib/genome_size/$genome.chrom.sizes
+          /home/w3oki/bin/bedtools2/bin/bedtools shuffle -i $bedA -g /home/w3oki/chipatlas/lib/genome_size/$genome.chrom.sizes
         done > $bedB
         shufN=$permTime
         ;;
@@ -148,6 +157,11 @@ for bedL in `ls $bedL.*`; do
   /home/w3oki/bin/bedtools2/bin/bedtools intersect -sorted -a $bedL -b $tmpF -wb >> "$tmpF"2
 done
 
+function fisheR() {
+  cat $1 > "$tmpF"4
+  /home/w3oki/bin/Rfisher -f "$tmpF"4 -k2
+  rm "$tmpF"4
+}
 
 cat "$tmpF"2| awk -F '\t' -v wclA=$wclA -v wclB=$wclB -v shufN=$shufN '{  # カウント
   if(NR % 1000000 == 0) delete x
@@ -160,9 +174,7 @@ cat "$tmpF"2| awk -F '\t' -v wclA=$wclA -v wclB=$wclB -v shufN=$shufN '{  # カ�
   for (srx in SRX) {
     printf "%s\t%d\t%d\t%d\t%d\n", srx, a[srx], wclA - a[srx], int(b[srx] / shufN + 0.5), wclB / shufN -int(b[srx] / shufN + 0.5)
   }
-}'| awk '{  # Fisher 検定
-  print "echo " $0 " `/home/w3oki/bin/fisher -p " $2 " " $3 " " $4 " " $5 "`"
-}'| sh 2>/dev/null| tr ' ' '\t' | awk -F '\t' '{
+}'| fisheR| awk -F '\t' '{    # Fisher 検定
   for (i=1; i<NF; i++) printf "%s\t", $i
   if ($NF == 0) print "-324"
   else          print log($NF)/log(10)

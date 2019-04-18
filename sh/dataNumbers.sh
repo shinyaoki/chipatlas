@@ -120,7 +120,8 @@ BEGIN {
 
 
 # R の実行
-R-3.2.3/bin/Rscript $projectDir/sh/dataNumbers.R
+module load singularity/2.6.1
+singularity exec "library/singularity/img/R-3.4.3-ggplot2.simg" Rscript "$projectDir/sh/dataNumbers.R"
 
 rm "$tmpF1" "$tmpF2" "$tmpF3" "$tmpF4"
 

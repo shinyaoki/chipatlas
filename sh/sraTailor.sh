@@ -21,7 +21,7 @@ ResDir=$projectDir/results/$Genome/$bn
 declare -A size                # -Aでハッシュ宣言 
 PastT=`date +%s`
 
-fastqDump=/home/$LoginID/$projectDir/bin/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump
+fastqDump=/home/$LoginID/$projectDir/bin/sratoolkit.2.9.4-ubuntu64/bin/fasterq-dump
 bowtie2=/home/$LoginID/$projectDir/bin/bowtie2-2.2.2/bowtie2
 samtools=/home/$LoginID/$projectDir/bin/samtools-0.1.19/samtools
 macs2=/usr/local/bin/macs2
@@ -70,17 +70,32 @@ for srr in `echo $runInfo| cut -d ' ' -f3-`; do
   /home/$LoginID/.aspera/connect/bin/ascp -QT -i /home/$LoginID/.aspera/connect/etc/asperaweb_id_dsa.openssh -L $ResDir -k 1 -l 100000000 \
   anonftp@ftp-trace.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/$SorD/$SRR_short/$srr/$srr.sra $ResDir/$srr.sra
 done
-echo $runInfo| awk 'NF < 3 {print "NO_RUN_INFO"}'
 
+echo $runInfo| awk 'NF < 3 {print "NO_RUN_INFO"}'
+NRI=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c NO_RUN_INFO`
+if [ $NRI -gt 0 ]; then
+  rm -rf $ResDir
+  exit
+fi
+
+sleep 10
 Nstop=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Session Stop" -e "ascp: "`
 Nnone=`cat $projectDir/results/$Genome/log/$SRX.log.txt| grep -c -e "Server aborted session: No such file or directory" -e "Completed: 0K bytes"`
-if [ $Nstop -gt 0 -a $Nnone -eq 0 ]; then  # 通信障害の場合、再投稿
-  ql=`sh $projectDir/sh/QSUB.sh mem`
-  Logfile="$projectDir/results/$Genome/log/$SRX.log.txt"
-  rm -f $Logfile
-  rm -rf $ResDir
-  qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $NSLOTS $ql $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$qVal"
-  exit
+
+
+if [ $Nstop -gt 0 ]; then  # 通信障害の場合、再投稿
+  if [ $Nnone -eq 0 ]; then
+    ql=`sh $projectDir/sh/QSUB.sh mem`
+    Logfile="$projectDir/results/$Genome/log/$SRX.log.txt"
+    rm -f $Logfile
+    rm -rf $ResDir
+    qsub -N "srT$Genome" -o $Logfile -e $Logfile -pe def_slot $NSLOTS $ql $projectDir/sh/sraTailor.sh $SRX $Genome $projectDir "$qVal"
+    exit
+  else  # SRA がない場合は強制終了
+    echo NO_SRA_FOUND
+    rm -rf $ResDir
+    exit
+  fi
 fi
 
 cd $ResDir
@@ -101,16 +116,33 @@ fi
 echo ""
 echo -e "\nfastq に変換中...\n"
 
+function fqd_error() {
+  while :; do
+    errN=`cat $1| grep -c -e "timeout exhausted while creating" -e "connection failed while opening"`
+    sucN=`cat $1| grep -c "Time loading reference"`
+    if [ $errN -gt 0 ]; then
+      echo "fastq-dump エラーにより強制終了します。"
+      rm -rf $2
+      qdel $3
+    fi
+    if [ $sucN -gt 0 ]; then
+      break
+    fi
+    sleep 100
+  done
+}
+
+# fqd_error /home/$LoginID/$projectDir/results/$Genome/log/$SRX.log.txt /home/$LoginID/$ResDir $JOB_ID &
 for SRAs in `ls| grep ".sra"`; do
   SRAfn=`echo $SRAs| cut -d '.' -f1`
-  $fastqDump $Split -A $SRAfn /home/$LoginID/$ResDir/$SRAfn.sra &
+  mv $SRAs $SRAfn
+  /home/$LoginID/bin/nt "$fastqDump -O ~/$ResDir -t ~/$ResDir/fastqDump_tmp_$SRAfn $Split $SRAfn" &
   WaitNum=$WaitNum" "$!
+  sleep 1
 done
 wait $WaitNum
 
 rm *.log
-rm -r [DSE]RX*
-rm *.sra
 
 lfq=`ls -1 *.fastq | wc -l`
 ls -1 *.fastq | awk -v Lfq="$lfq" -v BN=$bn -v SORP="$SorP" '{
@@ -130,7 +162,8 @@ ls -1 *.fastq | awk -v Lfq="$lfq" -v BN=$bn -v SORP="$SorP" '{
   }
 }' |/bin/sh
 
-rm [DSE]RR*.fastq     #########
+rm [DSE]RR*     #########
+rm -r fastqDump_tmp*
 
 if [ $SorP = "0" ] ; then
   size["fastq"]=`ls -l $bn.fq| awk '{print $5}'`
@@ -276,6 +309,7 @@ size["Time"]=`echo "$CurT $PastT" | awk '{printf "%.2f\n", ($1-$2)/60}'`
   echo ""
 } > $projectDir/results/$Genome/summary/$SRX.txt
 
+exit
 # $1 = SRX
 # $2 = Single or Paired
 # $3 = FastQ サイズ

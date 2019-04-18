@@ -21,7 +21,7 @@ projectDir=$1
 newMeta=$(basename `ls $projectDir/lib/metadata/NCBI_SRA_Metadata_Full_2*.metadata.tab| sort| tail -n1`| cut -d '.' -f1) # 所持している最新版
 
 # 最新の MetadataFull の名前を取得
-MetadataFull=`ftp -n -v ftp.ncbi.nlm.nih.gov << EOS | grep NCBI_SRA_Metadata_Full_2| awk '{print $9}'| sort| tail -n1| cut -d '.' -f1
+MetadataFull=`lftp ftp.ncbi.nlm.nih.gov << EOS | grep NCBI_SRA_Metadata_Full_2| awk '{print $9}'| sort| tail -n1| cut -d '.' -f1
 user anonymous \n
 cd sra/reports/Metadata
 ls

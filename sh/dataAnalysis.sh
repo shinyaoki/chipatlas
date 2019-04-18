@@ -20,8 +20,8 @@ if [ $Type = "0" ]; then
   rm -rf makeBigBed_log
   
   sh $projectDir/sh/dataNumbers.sh $projectDir                                 # データ数を集計し、グラフを作成
-  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (17 日, 2016/10/09)
   sh $projectDir/sh/targetGenes.sh INITIAL $projectDir                         # targetGenes の実行 (1 時間弱, 2016/05/26)
+  sh $projectDir/sh/coLocalization.sh INITIAL $projectDir                      # colo の実行 (17 日, 2016/10/09)
   sh $projectDir/sh/analTools/wabi/transferBedTow3oki.sh $projectDir           # in silico ChIP 用の BED ファイルを作成、w3oki へ転送 (2 時間弱, 2016/05/26)
   rm -rf $projectDir/lib/inSilicoChIP
   mv tmpDirFortransferBedTow3oki $projectDir/lib/inSilicoChIP

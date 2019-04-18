@@ -11,8 +11,12 @@ if [ $1 = "initial" ]; then
   rm -r Collabo/yojima/share/ChipAtlasAnnotation/word_data
   ql=`sh chipatlas/sh/QSUB.sh mem`
   for genome in `ls chipatlas/results`; do
+    case $genome in
+      mm9 | hg19) Nslot="4-";;
+      *)          Nslot="1" ;;
+    esac
     for TYPE in antigen celltype; do
-      qsub $ql -l s_vmem=16G -l mem_req=16G -e /dev/null -o /dev/null chipatlas/sh/ML_curation.sh $genome $TYPE
+      qsub $ql -pe def_slot $Nslot -e /dev/null -o /dev/null chipatlas/sh/ML_curation.sh $genome $TYPE
     done
   done
   exit
@@ -42,7 +46,7 @@ testData="Collabo/yojima/share/ChipAtlasAnnotation/label_feature/"$genome"/"$tod
 log="run_all_"$today"_"$genome"_"$TYPE"_log.txt"
 
 sh chipatlas/sh/textForMachineLearning.sh "$inData" "$trainingData" "$testData"
-sh Collabo/yojima/share/sh/run_all.sh $genome $TYPE
+sh Collabo/yojima/share/sh/run_all2.sh $genome $TYPE
   # Collabo/yojima/share/ChipAtlasAnnotation/word_data/GENOME/DATE 配下にいろんなファイルができる
 
 

@@ -38,7 +38,9 @@ mkdir $tagDir
 
 # FastQ サイズがゼロでないBed を入力
 echo $projectDir/results/$Genome/summary/*txt| xargs cat | awk '{if ($3 > 0) print "cat '$projectDir'/results/'$Genome'/metadata/" $1 ".meta.txt"}'| sh\
-| sed 's/[^0-9a-zA-Z\t"#%&\(\)'\''*+,-./:;=?\^_{}~" ]//g'|tr -d '"'| awk -F '\t' -v Dir=$tagDir -v PD=$projectDir ' #"
+| sed 's/-/___HYPHEN___/g'\
+| sed 's/[^0-9a-zA-Z\t"#%&\(\)'\''*+,-./:;=?\^_{}~" ]//g'\
+|tr -d '"'| sed 's/___HYPHEN___/-/g'| awk -F '\t' -v Dir=$tagDir -v PD=$projectDir ' #"
                                                                   # 削除される記号は @ † ‡ § ¶ ダブルクオート パイプ など。 この時点でスペースはそのまま。
 BEGIN {
   agAttributes = PD"/sh/ag_attributes.txt"

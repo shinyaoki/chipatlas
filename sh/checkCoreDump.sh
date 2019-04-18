@@ -56,6 +56,7 @@ for genome in `ls $projectDir/results`; do
         if ($0 ~ "ncbi_error_report.xml") x++
         if ($0 ~ "Stale file handle") x++
         if ($0 ~ "NO_RUN_INFO") x++
+        if ($0 ~ "NO_SRA_FOUND") x++
         if ($0 ~ "_1.fq: そのようなファイルやディレクトリはありません") x++
         if ($0 ~ "connection failed while opening file") x++
         if ($0 ~ "timeout exhausted while creating") x++

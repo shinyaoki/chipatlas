@@ -54,24 +54,33 @@ if [ $1 = "P" ]; then
   
   # 個々の id について計算
   ql=`sh chipatlas/sh/QSUB.sh mem`
+  if [ $anal = "fantomPromoter" ]; then
+    nm="R_FP"$genome
+  else
+    nm=`echo "R_"$anal| cut -c1-10`
+  fi
+  tmpF="tmp/insilicoChIP_qsub_"$nm
+  rm -f "$tmpF"*
+
   for tsv in `ls chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.tsv`; do
     id=`basename "$tsv"| sed 's/\.tsv$//'`
-    if [ $anal = "fantomPromoter" ]; then
-      nm="R_FP"$genome
-      qsub $ql -o /dev/null -e /dev/null -N "$nm" chipatlas/sh/analTools/preProcessed_insilicoChIP.sh "$id" $anal $qVal $genome $up $down
-    else
-      nm=`echo "R_"$anal| cut -c1-10`
-      qsub $ql -o /dev/null -e /dev/null -N "$nm" chipatlas/sh/analTools/preProcessed_insilicoChIP.sh "$id" $anal $qVal $genome
-    fi
+    echo sh chipatlas/sh/analTools/preProcessed_insilicoChIP.sh \"$id\" $anal $qVal $genome $up $down
+  done| awk '{print rand() "\t" $0}'| sort -k1n| cut -f2-| awk '{
+    if ((NR - 1) % 10 == 0) print "#!/bin/sh\n#$ -S /bin/sh"
+    print
+  }'| split -l 12 - "$tmpF"
+
+  for tmp in `ls "$tmpF"*`; do
+    qsub $ql -o /dev/null -e /dev/null -N "$nm" "$tmp"
   done
-  
+
   while :; do
     qN=`qstat| awk -v nm="$nm" 'nm == $3'| wc -l`
     if [ $qN -eq 0 ]; then
+      rm "$tmpF"*
       break
     fi
   done
-  
 
   # PNG や PDF の有無を整理
   fileList="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/file01.tsv"
@@ -83,7 +92,7 @@ if [ $1 = "P" ]; then
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.png
     ls -l chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/*.pdf
   }| awk '{
-    N = split($10, a, "/")
+    N = split($NF, a, "/")
     sub("_", ".", a[N])
     split(a[N], b, ".")
     id = b[1]
@@ -259,7 +268,7 @@ case $anal in
 
     cat "$gwasLD"| awk -F '\t' -v OFS='\t' -v extd=$extd '{
       print $1, $25 - extd, $26 + extd, $4, $23
-    }'| intersectBed -a "$bed" -b stdin -wa -wb| tr '@' '\t'| awk -F '\t' -v OFS='\t' -v ID="$ID" '  # chr10   101365262       101365356       CEBPB_     SRX150578        chr10   101357717       101366816       rs11190179      0001
+    }'| chipatlas/bin/bedtools-2.17.0/bin/bedtools intersect -a "$bed" -b stdin -wa -wb| tr '@' '\t'| awk -F '\t' -v OFS='\t' -v ID="$ID" '  # chr10   101365262       101365356       CEBPB_     SRX150578        chr10   101357717       101366816       rs11190179      0001
     BEGIN {
       while ((getline < "chipatlas/lib/assembled_list/experimentList.tab") > 0) {
         for (i=4; i<=6; i++) x[$1, i] = $i
@@ -321,7 +330,8 @@ esac
 
 
 # R で bar chart 描画
-R-3.2.3/bin/R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
+module load singularity
+singularity exec "library/singularity/img/R-3.4.3-ggplot2.simg" R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
   args <- commandArgs(trailingOnly = T)
   library("ggplot2")
   library(grid)
@@ -367,8 +377,7 @@ R-3.2.3/bin/R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
     panel.grid.minor = element_blank(),
     axis.title.x = element_text(angle = 180, hjust = 0.5, vjust = 0.5),
     axis.text.x = element_text(angle = 90, hjust = 0.5, vjust = 0.5),
-    axis.text.y = element_text(angle = 90, hjust = 0.5, vjust = 0.5),
-    panel.background = element_blank()
+    axis.text.y = element_text(angle = 90, hjust = 0.5, vjust = 0.5)
   )
   
   gb <- gb + scale_fill_manual(values = as.character(subset(colp, colp$num > 0)$colP))
@@ -415,7 +424,6 @@ R-3.2.3/bin/R --vanilla --args "$anal" "$genome" "$id" << 'DDD'
   gb <- g + theme(
     panel.background = element_blank(),
     panel.grid.minor = element_blank(),
-    panel.background = element_blank(),
     legend.position="none",
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
@@ -433,7 +441,7 @@ DDD
 # PNG ファイルを時計回りに 90 度回転させる
 for p in ".png" "_small.png"; do
   png="chipatlas/results/$genome/insilicoChIP_preProcessed/$anal/results/tsv/$id""$p"
-  convert -rotate 90 "$png" "$png"tmp.png
+  software/ImageMagick-7.0.8-34/utilities/magick convert -rotate 90 "$png" "$png"tmp.png
   mv "$png"tmp.png "$png"
 done
 
@@ -481,7 +489,7 @@ if [ $clusterOK = 0 ]; then
 fi
 
 # クラスター解析
-R-3.2.3/bin/R --vanilla --args $anal $genome $id << 'DDD'
+singularity exec "library/singularity/img/R-3.4.3-ggplot2.simg" R --vanilla --args $anal $genome $id << 'DDD'
   args <- commandArgs(trailingOnly = T)
   library(reshape2)
   library(gplots)
