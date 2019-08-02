@@ -38,7 +38,7 @@ if [ $mode = "initial" ]; then
     }'
   done| sort -k1nr| cut -f2 > $logDir/makeBigBed.list
 
-  splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/3000)}'`
+  splitN=`cat $logDir/makeBigBed.list| wc -l| awk '{print int($1/5000)}'`
   split -a 3 -l $splitN $logDir/makeBigBed.list $logDir/MAKEBIGBEDTMP
   mkdir tmp/$logDir  # シェルスクリプトファイルを作成
   awk -v logDir=$logDir -v fn="__dammy__" '{
@@ -54,7 +54,7 @@ if [ $mode = "initial" ]; then
   for tmpList in `ls tmp/$logDir/MAKEBIGBEDTMP*`; do
     logF=`echo $tmpList.log| cut -d '/' -f2-`
     # qsub $ql -N makeBigBed -l s_vmem=8G,mem_req=8G -o $logF -e $logF $tmpList (旧バージョン 2017.09.10 まで)
-    qsub $ql -N makeBigBed -l s_vmem=12G -l mem_req=12G -o $logF -e $logF $tmpList # (新バージョン: コンマをなくし、qchange 可能にした。)
+    qsub $ql -N makeBigBed -l s_vmem=16G -l mem_req=16G -o $logF -e $logF $tmpList # (新バージョン: コンマをなくし、qchange 可能にした。)
   done
 
   # 全部終わったら、assembled リストを作成、ダウンロード用の全ピークコールデータの作成
@@ -62,13 +62,16 @@ if [ $mode = "initial" ]; then
     qN=`qstat| awk '{if ($3 == "makeBigBed" || $3 ~ "allPeaks") print}' | wc -l`
     if [ $qN -eq 1 ]; then
       ql=`sh $projectDir/sh/QSUB.sh mem`
-      qsub $ql -l s_vmem=12G -l mem_req=12G $projectDir/sh/webList.sh $projectDir
+      qsub $ql -l s_vmem=16G -l mem_req=16G $projectDir/sh/webList.sh $projectDir
       
       # makeBigBed でコアダンプがあれば知らせる。
       rm -f CAUTION_makeBigBed.txt
       for fn in `ls makeBigBed_log/*log`; do
         if [ "`tail -n1 $fn`" != "Done" ]; then
-          echo $fn >> CAUTION_makeBigBed.txt
+          echo Not Done: $fn >> CAUTION_makeBigBed.txt
+        fi
+        if [ `grep -c java.lang.OutOfMemoryError $fn` -gt 0 ]; then
+          echo OutOfMemoryError: $fn >> CAUTION_makeBigBed.txt
         fi
       done
       exit
@@ -160,6 +163,8 @@ function symbolSub(Str,underScore) {
   }
   printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", p[NumSlash], Genome, agL[z[1]], agS, ctL[z[2]], ctS, z[3], SRX > inBn ".list"
                                              # ファイル名  ゲノム   抗原大     抗原小  細胞大    細胞小  q-Val SRX
+  if (length(agL[AG]) > 0) AG = agL[AG]
+  if (length(ctL[CL]) > 0) CL = ctL[CL]
   printf "track name=\"%s (@ %s) %d\" url=\"%s/view?id=$$\" gffTags=\"on\"\n", AG, CL, z[3]*10, www
 } {
   if ($7 ~ "_@") {
@@ -211,6 +216,6 @@ rm $inBn.bed.tmp
 
 
 # Bed index の作成
-java -Xmx2000m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed
+java -Xmx2500m -Djava.awt.headless=true -jar $projectDir/bin/IGVTools/igvtools.jar index $inBn.bed
 
 exit

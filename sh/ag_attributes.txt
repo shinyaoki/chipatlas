@@ -1,4 +1,6 @@
 ArrayExpress-Immunoprecipitate
+Antibody
+Antibody_Source
 hgn
 chip antiboy
 chip-ab
@@ -80,6 +82,8 @@ catalogue number
 cataog number
 antibody vendor/catalog/lot
 vendor/catalog
+Title
+sample_description
 source_name
 Sample Name
 sample comment

@@ -16,7 +16,7 @@
   sh chipatlas/sh/listForClassify.sh  # <<=== コマンド (DDBJ)
 
 # 古い classification のバックアップ、個別データの転送
-  backUpOldList 201902  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
+  backUpOldList 201907  # <<=== コマンド (ラボのMac, スパコンでない。実行した月を入力)
   transferDDBJtoNBDC eachData  # <<=== コマンド (ラボのMac)  個別データを NBDC に転送。
                                # 転送状況コマンド (ラボの Mac => nbdc =>): trfNBDC eachData.log
 
@@ -56,19 +56,16 @@
   sh chipatlas/sh/dataAnalysis.sh  # <<=== コマンド (DDBJ しばらく待つので、研究室の Mac から実行)
 
     MarkDown の更新（手動）
-    colo の実行  # 2017年 8月 : 22 日間, 9月 : 16 日 (month_hdd.q), 9月 : 17 日 (month_ssd.q)  !!! week node のほうが CPU 性能が良く早いかも。
+    colo の実行
     targetGenes の実行
     in silico ChIP 用の BED ファイルを作成、w3oki へ転送
     in silico ChIP の実行
-    analysisList.tab の作成
     
-# CoLo 終了後、analysisList.tab の作成。すぐに qsub になるので、どの Mac でも可能。
+# CoLo 終了後、analysisList.tab の作成。すぐに qsub になるので、どの Mac でも可能。10 分くらいで終了
   qsub -o /dev/null -e /dev/null chipatlas/sh/dataAnalysis.sh -l chipatlas
 # NBDC サーバにアップロード, chipatlas の圧縮
   transferDDBJtoNBDC analysed  # <<=== コマンド (ラボのMac)  colo, target, 全対応表, またその他の非公開用の全ファイルを NBDC に転送 (2016年 7月 12h)
                                # 転送状況コマンド (ラボの Mac => nbdc =>): trfNBDC analysed.log
-# echo "tar -c chipatlas| bin/pbzip2 > backUp_ChIP-Atlas.tar.bz2"| qsub -l month -l medium -e /dev/null -o /dev/null -N bu_pbzip2 -pe def_slot 10-
-# echo "cd striped_18; split -a3 backUp_ChIP-Atlas.tar.bz2 -b 10000000000 backUp_ChIP-Atlas.tar.bz2_"| qsub -l month -l medium -e /dev/null -o /dev/null -N split_pbzip2 # (6/20 14:42-)
 
 
 # MarkDown の更新
@@ -220,7 +217,7 @@ Awstats の取得
 3) chip-atlas-awstats-backup というバケットをクリック
 4) 必要な .txt 形式のファイルをダウンロード
 5) FileZilla を起動し、下記のとおり接続
-   ホスト: ftp2013.biosciencedbc.jp
+   ホスト: ftp-awstats.biosciencedbc.jp
    ユーザー名: oki
    パスワード: #NShw16ni
    ポート: 21

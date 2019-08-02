@@ -16,15 +16,15 @@ iniT=`date +%s`
 while :; do
   curT=`date +%s`
   pasT=`echo $curT $iniT| awk '{printf ($1 - $2) / 3600}'`
-  Tera=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%.2f", $2/1000000000}')
+  Tera=$(lfs quota -u `pwd -P| cut -d/ -f5` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%.2f", $2/1000000000}')
   echo -en "$pasT\t$Tera"
 
   for Genome in `echo $GENOME`; do
     submit=`qstat|grep srT| awk '{if ($5 == "r") print}'| grep -c $Genome`
-    finish=`ls $projectDir/results/$Genome/summary|wc -l`
+    finish=`ls $projectDir/results/$Genome/summary| wc -l`
     echo -en "\t$submit\t$finish"
   done
   echo ""
   sleep $T
   
-done >> timecourse.$1.txt
+done >> timecourse.$1.tsv

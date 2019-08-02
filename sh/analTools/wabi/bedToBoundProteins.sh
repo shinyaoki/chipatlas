@@ -29,12 +29,17 @@ function geneToBed () {  # $1 = 入力 Bed ファイル名  $2 = Genome  $3 = di
   genomeForGeneToBed=$2
   upBp=$3
   dnBp=$4
+  id2gene="/home/w3oki/chipatlas/lib/id2symbol/id2symbol."$genomeForGeneToBed".tsv"
   tssList="/home/w3oki/chipatlas/lib/TSS/uniqueTSS."$genomeForGeneToBed".bed"
-  cat $tssList| awk -v inGene=$inGene -v upBp=$upBp -v dnBp=$dnBp '
+  cat $tssList| awk -v inGene=$inGene -v upBp=$upBp -v dnBp=$dnBp -v id2gene=$id2gene '
   BEGIN {
+    while ((getline < id2gene) > 0) {
+      gsub(/[^a-zA-Z0-9\t_\n]/, "_", $0)
+      G[tolower($1)] = tolower($2)
+    }
     while ((getline < inGene) > 0) {
       gsub(/[^a-zA-Z0-9\t_\n]/, "_", $1)
-      g[tolower($1)]++
+      g[G[tolower($1)]]++
     }
     close(inGene)
   } {

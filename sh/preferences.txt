@@ -1,4 +1,4 @@
-Genome	hg19=Homo_sapiens mm9=Mus_musculus ce10=Caenorhabditis_elegans dm3=Drosophila_melanogaster sacCer3=Saccharomyces_cerevisiae	ゲノムアセンブリと学名 (intialize.sh, Controller.sh)
+Genome	hg19,hg38=Homo_sapiens mm9,mm10=Mus_musculus rn6=Rattus_norvegicus ce10,ce11=Caenorhabditis_elegans dm3,dm6=Drosophila_melanogaster sacCer3=Saccharomyces_cerevisiae	ゲノムアセンブリと学名 (intialize.sh, Controller.sh)
 qVal	05 10 20	ピークコールの q-val (intialize.sh)
 nSlotForSrT	4	sraTailor のためのスロット数 (Controller.sh)
 HDsize	30	保存容量 (TB) (Controller.sh)

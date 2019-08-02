@@ -11,6 +11,7 @@ if [ "$1" = "" ]; then
   for Genome in `ls $projectDir/results`; do
     qsub $ql -o /dev/null -e /dev/null $projectDir/sh/listForClassify.sh $projectDir $Genome
   done
+  rm -rf ncbi
   exit
 fi
 

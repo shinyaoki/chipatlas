@@ -17,13 +17,12 @@ nslot=`cat $projectDir/sh/preferences.txt |awk -F '\t' '{if ($1 == "nSlotForSrT"
 Sz=0
 prevT=`date +%s`
 intT=21600
-HDsize=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $4/1000000000}')
+HDsize=$(lfs quota -u `pwd -P| cut -d/ -f5` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $4/1000000000}')
 let HDsize=$HDsize-2
 
 
 qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 $projectDir/sh/TimeCourse.sh $projectDir "$GENOME"
 qsub -l d_rt=1440:00:00 -l s_rt=1440:00:00 -o libPrepForAnal.log.txt -e libPrepForAnal.log.txt -l s_vmem=30G -l mem_req=30G $projectDir/sh/libPrepForAnal.sh $projectDir # Colo や Target のためのライブラリ
-
 
 for Genome in `echo $GENOME`; do
   # Organism Name の取得
@@ -32,7 +31,7 @@ for Genome in `echo $GENOME`; do
       split($2, all, " ")
       for (key in all) {
         split (all[key], arr, "=")
-        if (arr[1] == G) {
+        if (arr[1] ~ G) {
           gsub ("_", " ", arr[2])
           printf "%s", arr[2]
         }
@@ -70,7 +69,7 @@ for Genome in `echo $GENOME`; do
       
       if [ $difT -gt $intT ]; then
         prevT=$curT
-        Sz=$(lfs quota -u `pwd -P| cut -d/ -f4` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $2/1000000000}')
+        Sz=$(lfs quota -u `pwd -P| cut -d/ -f5` /`pwd -P| cut -d/ -f2`| tail -n1| awk '{printf "%d", $2/1000000000}')
         if [ $Sz -lt $HDsize ]; then # HDD 空き容量が 2 TB 以上の時は、次回の計測は 3 分後、それ以下の時は 100 秒後
           intT=180
           let Dif=$HDsize-$Sz

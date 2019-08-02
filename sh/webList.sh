@@ -57,11 +57,11 @@ done| awk -F '\t' '{
 
 rm -f "alignmentPercentage.tab"
 for Genome in `ls $projectDir/results/| tr '\n' ' '`; do
-  awk -v minQval=$minQval '{
+  echo $projectDir/results/$Genome/log/*.log.txt| xargs cat| awk -v minQval=$minQval '{
     if ($0 ~ "Job ID = ") x = ""
     if ($0 ~ "overall alignment rate") x = $1
     if ($0 ~ "Command line: callpeak" && $0 ~ "-q 1e-" minQval) printf "%s\t%f\n", $6 , x
-  }' $projectDir/results/$Genome/log/*.log.txt| tr -d '%'| sed 's/.bam//' >> alignmentPercentage.tab
+  }'| tr -d '%'| sed 's/.bam//'| awk -F '/' '{print $NF}' >> alignmentPercentage.tab
 done
 
 # experimentlist.tab の作成

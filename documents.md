@@ -494,9 +494,9 @@ Currently track hub feature is only provided based on files for each individual 
 
 
 <!-- Links to files -->
-[dataNumber]: https://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20190322.png "Data numbers"
-[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20190322.png "Antigen classes"
-[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20190310.png "Cell type classes"
+[dataNumber]: https://dbarchive.biosciencedbc.jp/kyushu-u/metadata/allDataNumber_20190720.png "Data numbers"
+[antigenNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/antigenNumber_20190720.png "Antigen classes"
+[cellTypeNumber]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/cellTypeNumber_20190720.png "Cell type classes"
 
 [flowchart]: http://devbio.med.kyushu-u.ac.jp/chipatlas/img/flowchart.png "Flow chart"
 [ag_attributes]: http://dbarchive.biosciencedbc.jp/kyushu-u/metadata/ag_attributes.txt

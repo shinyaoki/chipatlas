@@ -14,25 +14,25 @@ rm -f keyForStringFiltering
 
 for Genome in `ls $projectDir/results`; do
   case $Genome in
-    hg19)
+    "hg19" | "hg38" )
       echo -e "$Genome\tBioMart_HUGO" >> keyForStringFiltering
       curl ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/locus_types/gene_with_protein_product.txt| awk -F '\t' '{
         if (NR > 1) print $2
       }'
     ;;
-    mm9)
+    "mm9" | "mm10" )
       echo -e "$Genome\tEnsembl_MGI" >> keyForStringFiltering
       curl http://www.informatics.jax.org/downloads/reports/MRK_List1.rpt| awk -F '\t' '{
         if (NR > 1 && $11 == "protein coding gene") print $7
       }'
     ;;
-    rn6)
+    "rn6" )
       echo -e "$Genome\tEnsembl_RGD" >> keyForStringFiltering
       curl ftp://ftp.rgd.mcw.edu/pub/data_release/GENES_RAT.txt| awk -F '\t' '{
         if ($37 == "protein-coding") print $2
       }'
     ;;
-    dm3)
+    "dm3" | "dm6" )
       echo -e "$Genome\tFlyBase" >> keyForStringFiltering
       gtfVersion=`curl ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/current/gtf/md5sum.txt| awk '{printf "%s", $2}'`
       curl ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/current/gtf/$gtfVersion| gunzip| awk -F '\t' '{
@@ -42,7 +42,7 @@ for Genome in `ls $projectDir/results`; do
         }
       }'
     ;;
-    ce10)
+    "ce10" | "ce11" )
       echo -e "$Genome\tWormBase" >> keyForStringFiltering
       curl ftp://ftp.wormbase.org/pub/wormbase/releases/WS230/species/c_elegans/c_elegans.WS230.protein.fa.gz| gunzip| awk -F '\t' '{
         if ($1 ~ ">" && $4 ~ "locus:") {
@@ -51,7 +51,7 @@ for Genome in `ls $projectDir/results`; do
         }
       }'
     ;;
-    sacCer3)
+    "sacCer3" )
       echo -e "$Genome\tEnsembl_SGD" >> keyForStringFiltering
       # curl https://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans.fasta.gz| gunzip| awk '{
       #   if ($1 ~ ">") print $2
@@ -67,14 +67,14 @@ done
 ####################################################################################################################################
 for Genome in `ls $projectDir/results`; do
   if [ $Genome != "sacCer3" ]; then
-    bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/$Genome/database/refFlat.txt.gz| gunzip| awk -F '\t' '{
+    cat $projectDir/lib/ucsc_tmp/$Genome.refFlat.txt.gz| gunzip| awk -F '\t' '{
       if ($4 == "+") TSS = $5
       else           TSS = $6
       printf "%s\t%s\t%s\t%s\n", $3, TSS, $1, $2
     }'
   else # sacCer3 は refFlat がないので、xenoRefFlat を使い、geneList と一致するものだけを抽出
     geneList=$projectDir/lib/geneList/$Genome.txt
-    bin/ntcurl http://hgdownload.cse.ucsc.edu/goldenPath/sacCer3/database/xenoRefFlat.txt.gz| gunzip| awk -F '\t' -v geneList=$geneList '
+    cat $projectDir/lib/ucsc_tmp/$Genome.refFlat.txt.gz| gunzip| awk -F '\t' -v geneList=$geneList '
     BEGIN {
       while ((getline < geneList) > 0) g[$1]++
     } {
@@ -126,8 +126,9 @@ cat ~/$projectDir/sh/preferences.txt| awk -F '\t' -v projectDir=$projectDir -v h
     for (i=1; i<=N; i++) {
       gsub("_", " ", sp[i])
       split(sp[i], a, "=")
-      g[a[1]] = a[2]      # g["hg19"] = "Homo sapiens"
-      org[a[2]] = a[1]    # org["Homo sapiens"] = "hg19"
+      split(a[1], t, ",")
+      g[t[1]] = a[2]      # g["hg19"] = "Homo sapiens"
+      org[a[2]] = t[1]    # org["Homo sapiens"] = "hg19"
     }
     while ((getline < "species.'$ver'.txt") > 0) {
       if (org[$3]) gid[$1] = org[$3]    # gid["9606"] = "hg19"
@@ -189,6 +190,14 @@ BEGIN {
   if (a[1] == b[1] && Prot[$1] && Prot[$2]) print Prot[$1] "\t" Prot[$2] "\t" $3 "\t" $4 "\t" $5 "\t" $6 >> "protein.actions.'$ver'." gid[a[1]] ".txt"
 }'    # POU5F1    NANOG   expression    inhibition    0/1   360
 rm protein.actions.$ver.txt.gz
+
+function copy_action() {
+  cat protein.actions.v11.0.$1.txt > protein.actions.v11.0.$2.txt
+}
+copy_action hg19 hg38
+copy_action mm9 mm10
+copy_action ce10 ce11
+copy_action dm3 dm6
 
 exit
 

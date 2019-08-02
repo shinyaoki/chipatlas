@@ -37,7 +37,8 @@ if [ $1 = "INITIAL" ]; then
       else if (N < 2000) slot = 8
       else slot = 16
       Mem = mem / slot
-      printf "-l s_vmem=" Mem "G -l mem_req=" Mem "G -pe def_slot " slot "-"
+      if (slot > 1) slot = slot "-"
+      printf "-l s_vmem=" Mem "G -l mem_req=" Mem "G -pe def_slot " slot
     }'`
     echo "$Param" >> paramListForColo.tab
     let nParm=nParm+1

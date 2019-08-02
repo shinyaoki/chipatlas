@@ -6,6 +6,36 @@
 
 if [ "$1" = "" ]; then
   projectDir=`echo $0| sed 's[/sh/upDate.sh[['`
+  ucscURL="http://hgdownload.cse.ucsc.edu/goldenPath"
+  echo "UCSC よりライブラリファイルをダウンロードしています。"
+  for Genome in `ls $projectDir/results`; do
+    if [ $Genome != "sacCer3" ]; then
+      curl $ucscURL/$Genome/database/refFlat.txt.gz
+    else # sacCer3 は refFlat がないので、xenoRefFlat を使い、geneList と一致するものだけを抽出
+      curl $ucscURL/$Genome/database/xenoRefFlat.txt.gz
+    fi > $projectDir/lib/ucsc_tmp/$Genome.refFlat.txt.gz
+    
+    case $Genome in
+    "hg19" | "hg38" | "mm9" | "mm10" )
+      curl $ucscURL/$Genome/database/knownCanonical.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.knownCanonical.txt.gz
+      curl $ucscURL/$Genome/database/knownToRefSeq.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.knownToRefSeq.txt.gz
+      ;;
+    "ce10" | "ce11" )
+      curl $ucscURL/ce6/database/sangerCanonical.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.sangerCanonical.txt.gz
+      curl $ucscURL/ce6/database/sangerToRefSeq.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.sangerToRefSeq.txt.gz
+      ;;
+    "dm3" | "dm6" )
+      curl $ucscURL/dm3/database/flyBaseCanonical.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.flyBaseCanonical.txt.gz
+      curl $ucscURL/dm3/database/flyBaseToRefSeq.txt.gz> $projectDir/lib/ucsc_tmp/$Genome.flyBaseToRefSeq.txt.gz
+      ;;
+    "sacCer3" ) # 酵母は RefSeq genes がない
+      curl $ucscURL/sacCer3/database/sgdCanonical.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.sgdCanonical.txt.gz
+      curl $ucscURL/sacCer3/database/sgdToName.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.sgdToName.txt.gz
+      curl $ucscURL/sacCer3/database/sgdGene.txt.gz > $projectDir/lib/ucsc_tmp/$Genome.sgdGene.txt.gz
+      ;;
+    esac
+  done
+  curl $ucscURL/hg19/database/gwasCatalog.txt.gz > $projectDir/lib/ucsc_tmp/gwasCatalog.txt.gz
   ql=`sh $projectDir/sh/QSUB.sh mem`
   qsub $ql -pe def_slot 4- $projectDir/sh/upDate.sh $projectDir
   exit
